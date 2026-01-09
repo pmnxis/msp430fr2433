@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <device>
   <name>MSP430FR2433</name>
   <size>2</size>
@@ -21,7 +22,7 @@
               <maximum>255</maximum>
             </range>
           </writeConstraint>
-        <fields>
+          <fields>
             <field>
               <name>P1IN0</name>
               <description>P1IN0</description>
@@ -79,7 +80,7 @@
               <access>read-write</access>
             </field>
           </fields>
-          </register>
+        </register>
         <register>
           <name>P2IN</name>
           <description>Port 2 Input</description>
@@ -92,7 +93,7 @@
               <maximum>255</maximum>
             </range>
           </writeConstraint>
-        <fields>
+          <fields>
             <field>
               <name>P2IN0</name>
               <description>P2IN0</description>
@@ -150,7 +151,7 @@
               <access>read-write</access>
             </field>
           </fields>
-          </register>
+        </register>
         <register>
           <name>P1OUT</name>
           <description>Port 1 Output</description>
@@ -163,7 +164,7 @@
               <maximum>255</maximum>
             </range>
           </writeConstraint>
-        <fields>
+          <fields>
             <field>
               <name>P1OUT0</name>
               <description>P1OUT0</description>
@@ -221,7 +222,7 @@
               <access>read-write</access>
             </field>
           </fields>
-          </register>
+        </register>
         <register>
           <name>P2OUT</name>
           <description>Port 2 Output</description>
@@ -234,7 +235,7 @@
               <maximum>255</maximum>
             </range>
           </writeConstraint>
-        <fields>
+          <fields>
             <field>
               <name>P2OUT0</name>
               <description>P2OUT0</description>
@@ -292,7 +293,7 @@
               <access>read-write</access>
             </field>
           </fields>
-          </register>
+        </register>
         <register>
           <name>P1DIR</name>
           <description>Port 1 Direction</description>
@@ -305,7 +306,7 @@
               <maximum>255</maximum>
             </range>
           </writeConstraint>
-        <fields>
+          <fields>
             <field>
               <name>P1DIR0</name>
               <description>P1DIR0</description>
@@ -363,7 +364,7 @@
               <access>read-write</access>
             </field>
           </fields>
-          </register>
+        </register>
         <register>
           <name>P2DIR</name>
           <description>Port 2 Direction</description>
@@ -376,7 +377,7 @@
               <maximum>255</maximum>
             </range>
           </writeConstraint>
-        <fields>
+          <fields>
             <field>
               <name>P2DIR0</name>
               <description>P2DIR0</description>
@@ -434,7 +435,7 @@
               <access>read-write</access>
             </field>
           </fields>
-          </register>
+        </register>
         <register>
           <name>P1REN</name>
           <description>Port 1 Resistor Enable</description>
@@ -447,7 +448,7 @@
               <maximum>255</maximum>
             </range>
           </writeConstraint>
-        <fields>
+          <fields>
             <field>
               <name>P1REN0</name>
               <description>P1REN0</description>
@@ -505,7 +506,7 @@
               <access>read-write</access>
             </field>
           </fields>
-          </register>
+        </register>
         <register>
           <name>P2REN</name>
           <description>Port 2 Resistor Enable</description>
@@ -518,7 +519,7 @@
               <maximum>255</maximum>
             </range>
           </writeConstraint>
-        <fields>
+          <fields>
             <field>
               <name>P2REN0</name>
               <description>P2REN0</description>
@@ -576,7 +577,7 @@
               <access>read-write</access>
             </field>
           </fields>
-          </register>
+        </register>
         <register>
           <name>P1SEL0</name>
           <description>Port 1 Selection 0</description>
@@ -589,7 +590,7 @@
               <maximum>255</maximum>
             </range>
           </writeConstraint>
-        <fields>
+          <fields>
             <field>
               <name>P1SEL0_0</name>
               <description>P1SEL0_0</description>
@@ -647,7 +648,7 @@
               <access>read-write</access>
             </field>
           </fields>
-          </register>
+        </register>
         <register>
           <name>P2SEL0</name>
           <description>Port 2 Selection 0</description>
@@ -660,7 +661,7 @@
               <maximum>255</maximum>
             </range>
           </writeConstraint>
-        <fields>
+          <fields>
             <field>
               <name>P2SEL0_0</name>
               <description>P2SEL0_0</description>
@@ -718,7 +719,7 @@
               <access>read-write</access>
             </field>
           </fields>
-          </register>
+        </register>
         <register>
           <name>P1SEL1</name>
           <description>Port 1 Selection 1</description>
@@ -731,7 +732,7 @@
               <maximum>255</maximum>
             </range>
           </writeConstraint>
-        <fields>
+          <fields>
             <field>
               <name>P1SEL1_0</name>
               <description>P1SEL1_0</description>
@@ -789,7 +790,7 @@
               <access>read-write</access>
             </field>
           </fields>
-          </register>
+        </register>
         <register>
           <name>P2SEL1</name>
           <description>Port 2 Selection 1</description>
@@ -802,7 +803,7 @@
               <maximum>255</maximum>
             </range>
           </writeConstraint>
-        <fields>
+          <fields>
             <field>
               <name>P2SEL1_0</name>
               <description>P2SEL1_0</description>
@@ -860,7 +861,7 @@
               <access>read-write</access>
             </field>
           </fields>
-          </register>
+        </register>
         <register>
           <name>P1IES</name>
           <description>Port 1 Interrupt Edge Select</description>
@@ -873,7 +874,7 @@
               <maximum>255</maximum>
             </range>
           </writeConstraint>
-        <fields>
+          <fields>
             <field>
               <name>P1IES0</name>
               <description>P1IES0</description>
@@ -931,7 +932,7 @@
               <access>read-write</access>
             </field>
           </fields>
-          </register>
+        </register>
         <register>
           <name>P2IES</name>
           <description>Port 2 Interrupt Edge Select</description>
@@ -944,7 +945,7 @@
               <maximum>255</maximum>
             </range>
           </writeConstraint>
-        <fields>
+          <fields>
             <field>
               <name>P2IES0</name>
               <description>P2IES0</description>
@@ -1002,7 +1003,7 @@
               <access>read-write</access>
             </field>
           </fields>
-          </register>
+        </register>
         <register>
           <name>P1IE</name>
           <description>Port 1 Interrupt Enable</description>
@@ -1015,7 +1016,7 @@
               <maximum>255</maximum>
             </range>
           </writeConstraint>
-        <fields>
+          <fields>
             <field>
               <name>P1IE0</name>
               <description>P1IE0</description>
@@ -1073,7 +1074,7 @@
               <access>read-write</access>
             </field>
           </fields>
-          </register>
+        </register>
         <register>
           <name>P2IE</name>
           <description>Port 2 Interrupt Enable</description>
@@ -1086,7 +1087,7 @@
               <maximum>255</maximum>
             </range>
           </writeConstraint>
-        <fields>
+          <fields>
             <field>
               <name>P2IE0</name>
               <description>P2IE0</description>
@@ -1144,7 +1145,7 @@
               <access>read-write</access>
             </field>
           </fields>
-          </register>
+        </register>
         <register>
           <name>P1IFG</name>
           <description>Port 1 Interrupt Flag</description>
@@ -1157,7 +1158,7 @@
               <maximum>255</maximum>
             </range>
           </writeConstraint>
-        <fields>
+          <fields>
             <field>
               <name>P1IFG0</name>
               <description>P1IFG0</description>
@@ -1215,7 +1216,7 @@
               <access>read-write</access>
             </field>
           </fields>
-          </register>
+        </register>
         <register>
           <name>P2IFG</name>
           <description>Port 2 Interrupt Flag</description>
@@ -1228,7 +1229,7 @@
               <maximum>255</maximum>
             </range>
           </writeConstraint>
-        <fields>
+          <fields>
             <field>
               <name>P2IFG0</name>
               <description>P2IFG0</description>
@@ -1286,7 +1287,7 @@
               <access>read-write</access>
             </field>
           </fields>
-          </register>
+        </register>
         <register>
           <name>P1IV</name>
           <description>Port 1 Interrupt Vector Word</description>
@@ -1320,7 +1321,7 @@
               <maximum>255</maximum>
             </range>
           </writeConstraint>
-        <fields>
+          <fields>
             <field>
               <name>P3IN0</name>
               <description>P3IN0</description>
@@ -1378,7 +1379,7 @@
               <access>read-write</access>
             </field>
           </fields>
-          </register>
+        </register>
         <register>
           <name>P3OUT</name>
           <description>Port 3 Output</description>
@@ -1391,7 +1392,7 @@
               <maximum>255</maximum>
             </range>
           </writeConstraint>
-        <fields>
+          <fields>
             <field>
               <name>P3OUT0</name>
               <description>P3OUT0</description>
@@ -1449,7 +1450,7 @@
               <access>read-write</access>
             </field>
           </fields>
-          </register>
+        </register>
         <register>
           <name>P3DIR</name>
           <description>Port 3 Direction</description>
@@ -1462,7 +1463,7 @@
               <maximum>255</maximum>
             </range>
           </writeConstraint>
-        <fields>
+          <fields>
             <field>
               <name>P3DIR0</name>
               <description>P3DIR0</description>
@@ -1520,7 +1521,7 @@
               <access>read-write</access>
             </field>
           </fields>
-          </register>
+        </register>
         <register>
           <name>P3REN</name>
           <description>Port 3 Resistor Enable</description>
@@ -1533,7 +1534,7 @@
               <maximum>255</maximum>
             </range>
           </writeConstraint>
-        <fields>
+          <fields>
             <field>
               <name>P3REN0</name>
               <description>P3REN0</description>
@@ -1591,7 +1592,7 @@
               <access>read-write</access>
             </field>
           </fields>
-          </register>
+        </register>
         <register>
           <name>P3SEL0</name>
           <description>Port 3 Selection0</description>
@@ -1604,7 +1605,7 @@
               <maximum>255</maximum>
             </range>
           </writeConstraint>
-        <fields>
+          <fields>
             <field>
               <name>P3SEL0_0</name>
               <description>P3SEL0_0</description>
@@ -1662,7 +1663,7 @@
               <access>read-write</access>
             </field>
           </fields>
-          </register>
+        </register>
         <register>
           <name>P3SEL1</name>
           <description>Port 3 Selection1</description>
@@ -1675,7 +1676,7 @@
               <maximum>255</maximum>
             </range>
           </writeConstraint>
-        <fields>
+          <fields>
             <field>
               <name>P3SEL1_0</name>
               <description>P3SEL1_0</description>
@@ -1733,7 +1734,7 @@
               <access>read-write</access>
             </field>
           </fields>
-          </register>
+        </register>
       </registers>
     </peripheral>
     <peripheral>
@@ -1781,7 +1782,7 @@
               <maximum>255</maximum>
             </range>
           </writeConstraint>
-        <fields>
+          <fields>
             <field>
               <name>UCBUSY</name>
               <description>USCI Busy Flag</description>
@@ -1839,7 +1840,7 @@
               <access>read-write</access>
             </field>
           </fields>
-          </register>
+        </register>
         <register>
           <name>UCA0ABCTL</name>
           <description>USCI A0 LIN Control</description>
@@ -2304,7 +2305,7 @@
               <maximum>255</maximum>
             </range>
           </writeConstraint>
-        <fields>
+          <fields>
             <field>
               <name>UCBUSY</name>
               <description>USCI Busy Flag</description>
@@ -2362,7 +2363,7 @@
               <access>read-write</access>
             </field>
           </fields>
-          </register>
+        </register>
         <register>
           <name>UCA1ABCTL</name>
           <description>USCI A1 LIN Control</description>
@@ -2857,7 +2858,7 @@
               <maximum>255</maximum>
             </range>
           </writeConstraint>
-        <fields>
+          <fields>
             <field>
               <name>UCBCNT0</name>
               <description>USCI Byte Counter Bit 0</description>
@@ -2915,7 +2916,7 @@
               <access>read-write</access>
             </field>
           </fields>
-          </register>
+        </register>
         <register>
           <name>UCB0CTLW1</name>
           <description>USCI B0 Control Word Register 1</description>
@@ -3653,7 +3654,7 @@
           <name>UCB0IE_I2C</name>
           <description>USCI B0 Interrupt Enable Register</description>
           <alternateRegister>UCB0IE</alternateRegister>
-        <addressOffset>42</addressOffset>
+          <addressOffset>42</addressOffset>
           <size>16</size>
           <resetMask>65535</resetMask>
           <fields>
@@ -3763,7 +3764,7 @@
               <access>read-write</access>
             </field>
           </fields>
-          </register>
+        </register>
         <register>
           <name>UCB0IFG</name>
           <description>USCI B0 Interrupt Flags Register</description>
@@ -3775,7 +3776,7 @@
           <name>UCB0IFG_I2C</name>
           <description>USCI B0 Interrupt Flags Register</description>
           <alternateRegister>UCB0IFG</alternateRegister>
-        <addressOffset>44</addressOffset>
+          <addressOffset>44</addressOffset>
           <size>16</size>
           <resetMask>65535</resetMask>
           <fields>
@@ -3885,7 +3886,7 @@
               <access>read-write</access>
             </field>
           </fields>
-          </register>
+        </register>
         <register>
           <name>UCB0IV</name>
           <description>USCI B0 Interrupt Vector Register</description>
@@ -4183,10 +4184,32 @@
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
-          <field><name>PMMPW</name><description>PMM Password</description><bitOffset>8</bitOffset><bitWidth>8</bitWidth><access>read-write</access><enumeratedValues><name>PMMPWR</name><usage>read</usage><enumeratedValue><name>PASSWORD</name><description>Values always reads from the PMMCTL0 register</description><value>150</value></enumeratedValue></enumeratedValues>
-            <enumeratedValues><name>PMMPWW</name><usage>write</usage><enumeratedValue><name>PASSWORD</name><description>Values which must be written to the PMMCTL0 register</description><value>165</value></enumeratedValue></enumeratedValues>
+            <field>
+              <name>PMMPW</name>
+              <description>PMM Password</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <name>PMMPWR</name>
+                <usage>read</usage>
+                <enumeratedValue>
+                  <name>PASSWORD</name>
+                  <description>Values always reads from the PMMCTL0 register</description>
+                  <value>150</value>
+                </enumeratedValue>
+              </enumeratedValues>
+              <enumeratedValues>
+                <name>PMMPWW</name>
+                <usage>write</usage>
+                <enumeratedValue>
+                  <name>PASSWORD</name>
+                  <description>Values which must be written to the PMMCTL0 register</description>
+                  <value>165</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
-            </fields>
+          </fields>
         </register>
         <register>
           <name>PMMCTL1</name>
@@ -4258,11 +4281,52 @@
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
-          <field><name>REFGEN</name><description>Reference generator trigger. If written with a 1, the generation of the variable reference voltage is started. When the reference voltage request is set, this bit is cleared by hardware or writing 0.</description><bitOffset>6</bitOffset><bitWidth>1</bitWidth><access>read-write</access></field>
-            <field><name>REFBGEN</name><description>Bandgap and bandgap buffer trigger. If written with a 1, the generation of the buffered bandgap voltage is started. When the bandgap buffer voltage request is set, this bit is cleared by hardware or writing 0.</description><bitOffset>7</bitOffset><bitWidth>1</bitWidth><access>read-write</access></field>
-            <field><name>REFVSEL</name><description>Internal reference voltage level select. 00b = 1.5V, 01b = 2.0V, 10b = 2.5V</description><bitOffset>4</bitOffset><bitWidth>2</bitWidth><access>read-write</access><enumeratedValues><name>REFVSEL</name><usage>read-write</usage><enumeratedValue><name>REFVSEL_0</name><description>00b = 1.5V</description><value>0</value></enumeratedValue><enumeratedValue><name>REFVSEL_1</name><description>01b = 2.0V</description><value>1</value></enumeratedValue><enumeratedValue><name>REFVSEL_2</name><description>10b = 2.5V</description><value>2</value></enumeratedValue><enumeratedValue><name>REFVSEL_3</name><description>11b = Reserved</description><value>3</value></enumeratedValue></enumeratedValues>
+            <field>
+              <name>REFGEN</name>
+              <description>Reference generator trigger. If written with a 1, the generation of the variable reference voltage is started. When the reference voltage request is set, this bit is cleared by hardware or writing 0.</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
             </field>
-            </fields>
+            <field>
+              <name>REFBGEN</name>
+              <description>Bandgap and bandgap buffer trigger. If written with a 1, the generation of the buffered bandgap voltage is started. When the bandgap buffer voltage request is set, this bit is cleared by hardware or writing 0.</description>
+              <bitOffset>7</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>REFVSEL</name>
+              <description>Internal reference voltage level select. 00b = 1.5V, 01b = 2.0V, 10b = 2.5V</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <name>REFVSEL</name>
+                <usage>read-write</usage>
+                <enumeratedValue>
+                  <name>REFVSEL_0</name>
+                  <description>00b = 1.5V</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>REFVSEL_1</name>
+                  <description>01b = 2.0V</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>REFVSEL_2</name>
+                  <description>10b = 2.5V</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>REFVSEL_3</name>
+                  <description>11b = Reserved</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>PMMIFG</name>
@@ -5556,10 +5620,31 @@
                 </enumeratedValue>
               </enumeratedValues>
             </field>
-          <field><name>FRCTLPW</name><description>FRCTLPW Password</description><bitOffset>8</bitOffset><bitWidth>8</bitWidth><enumeratedValues><name>FRCTLPWR</name><usage>read</usage><enumeratedValue><name>PASSWORD</name><description>Value always reads from the FRCTL0 register</description><value>150</value></enumeratedValue></enumeratedValues>
-            <enumeratedValues><name>FRCTLPWW</name><usage>write</usage><enumeratedValue><name>PASSWORD</name><description>Value which must be written to the FRCTL0 register</description><value>165</value></enumeratedValue></enumeratedValues>
+            <field>
+              <name>FRCTLPW</name>
+              <description>FRCTLPW Password</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>8</bitWidth>
+              <enumeratedValues>
+                <name>FRCTLPWR</name>
+                <usage>read</usage>
+                <enumeratedValue>
+                  <name>PASSWORD</name>
+                  <description>Value always reads from the FRCTL0 register</description>
+                  <value>150</value>
+                </enumeratedValue>
+              </enumeratedValues>
+              <enumeratedValues>
+                <name>FRCTLPWW</name>
+                <usage>write</usage>
+                <enumeratedValue>
+                  <name>PASSWORD</name>
+                  <description>Value which must be written to the FRCTL0 register</description>
+                  <value>165</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
-            </fields>
+          </fields>
         </register>
         <register>
           <name>GCCTL0</name>
@@ -5741,11 +5826,43 @@
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
-          <field><name>WDTPW</name><description>Watchdog Timer Password</description><bitOffset>8</bitOffset><bitWidth>8</bitWidth><enumeratedValues><name>WDTPWR</name><usage>read</usage><enumeratedValue><name>PASSWORD</name><description>Value always read from the Watchdog Password register</description><value>105</value></enumeratedValue></enumeratedValues>
-            <enumeratedValues><name>WDTPWW</name><usage>write</usage><enumeratedValue><name>PASSWORD</name><description>Value which must be written to the Watchdog Password register</description><value>90</value></enumeratedValue></enumeratedValues>
+            <field>
+              <name>WDTPW</name>
+              <description>Watchdog Timer Password</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>8</bitWidth>
+              <enumeratedValues>
+                <name>WDTPWR</name>
+                <usage>read</usage>
+                <enumeratedValue>
+                  <name>PASSWORD</name>
+                  <description>Value always read from the Watchdog Password register</description>
+                  <value>105</value>
+                </enumeratedValue>
+              </enumeratedValues>
+              <enumeratedValues>
+                <name>WDTPWW</name>
+                <usage>write</usage>
+                <enumeratedValue>
+                  <name>PASSWORD</name>
+                  <description>Value which must be written to the Watchdog Password register</description>
+                  <value>90</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
-            <field><name>WDTIS</name><description>WDT - Timer Interval Select 0</description><bitOffset>0</bitOffset><bitWidth>3</bitWidth><writeConstraint><range><minimum>0</minimum><maximum>3</maximum></range></writeConstraint>
-            </field></fields>
+            <field>
+              <name>WDTIS</name>
+              <description>WDT - Timer Interval Select 0</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>3</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>3</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
         </register>
       </registers>
     </peripheral>
