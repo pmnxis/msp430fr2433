@@ -1,7 +1,7 @@
-#[doc = "Register `UCA1STATW_SPI` reader"]
-pub type R = crate::R<Uca1statwSpiSpec>;
-#[doc = "Register `UCA1STATW_SPI` writer"]
-pub type W = crate::W<Uca1statwSpiSpec>;
+#[doc = "Register `UCB0STATW_SPI` reader"]
+pub type R = crate::R<Ucb0statwSpiSpec>;
+#[doc = "Register `UCB0STATW_SPI` writer"]
+pub type W = crate::W<Ucb0statwSpiSpec>;
 #[doc = "Field `UCBUSY` reader - USCI Busy Flag"]
 pub type UcbusyR = crate::BitReader;
 #[doc = "Field `UCBUSY` writer - USCI Busy Flag"]
@@ -43,35 +43,35 @@ impl R {
 impl W {
     #[doc = "Bit 0 - USCI Busy Flag"]
     #[inline(always)]
-    pub fn ucbusy(&mut self) -> UcbusyW<'_, Uca1statwSpiSpec> {
+    pub fn ucbusy(&mut self) -> UcbusyW<'_, Ucb0statwSpiSpec> {
         UcbusyW::new(self, 0)
     }
     #[doc = "Bit 5 - USCI Overrun Error Flag"]
     #[inline(always)]
-    pub fn ucoe(&mut self) -> UcoeW<'_, Uca1statwSpiSpec> {
+    pub fn ucoe(&mut self) -> UcoeW<'_, Ucb0statwSpiSpec> {
         UcoeW::new(self, 5)
     }
     #[doc = "Bit 6 - USCI Frame Error Flag"]
     #[inline(always)]
-    pub fn ucfe(&mut self) -> UcfeW<'_, Uca1statwSpiSpec> {
+    pub fn ucfe(&mut self) -> UcfeW<'_, Ucb0statwSpiSpec> {
         UcfeW::new(self, 6)
     }
     #[doc = "Bit 7 - USCI Listen mode"]
     #[inline(always)]
-    pub fn uclisten(&mut self) -> UclistenW<'_, Uca1statwSpiSpec> {
+    pub fn uclisten(&mut self) -> UclistenW<'_, Ucb0statwSpiSpec> {
         UclistenW::new(self, 7)
     }
 }
-#[doc = "USCI A1 Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`uca1statw_spi::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`uca1statw_spi::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct Uca1statwSpiSpec;
-impl crate::RegisterSpec for Uca1statwSpiSpec {
+#[doc = "eUSCI_B0 Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ucb0statw_spi::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ucb0statw_spi::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Ucb0statwSpiSpec;
+impl crate::RegisterSpec for Ucb0statwSpiSpec {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [`uca1statw_spi::R`](R) reader structure"]
-impl crate::Readable for Uca1statwSpiSpec {}
-#[doc = "`write(|w| ..)` method takes [`uca1statw_spi::W`](W) writer structure"]
-impl crate::Writable for Uca1statwSpiSpec {
+#[doc = "`read()` method returns [`ucb0statw_spi::R`](R) reader structure"]
+impl crate::Readable for Ucb0statwSpiSpec {}
+#[doc = "`write(|w| ..)` method takes [`ucb0statw_spi::W`](W) writer structure"]
+impl crate::Writable for Ucb0statwSpiSpec {
     type Safety = crate::Unsafe;
 }
-#[doc = "`reset()` method sets UCA1STATW_SPI to value 0"]
-impl crate::Resettable for Uca1statwSpiSpec {}
+#[doc = "`reset()` method sets UCB0STATW_SPI to value 0"]
+impl crate::Resettable for Ucb0statwSpiSpec {}

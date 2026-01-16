@@ -1,43 +1,29 @@
 #[repr(C)]
 #[doc = "Register block"]
 pub struct RegisterBlock {
-    uca1ctl1_spi: Uca1ctl1Spi,
-    uca1ctl0_spi: Uca1ctl0Spi,
-    _reserved2: [u8; 0x04],
-    uca1br0_spi: Uca1br0Spi,
-    uca1br1_spi: Uca1br1Spi,
-    _reserved4: [u8; 0x02],
+    uca1ctlw0_spi: Uca1ctlw0Spi,
+    _reserved1: [u8; 0x04],
+    uca1brw_spi: Uca1brwSpi,
+    _reserved2: [u8; 0x02],
     uca1statw_spi: Uca1statwSpi,
-    _reserved5: [u8; 0x01],
     uca1rxbuf_spi: Uca1rxbufSpi,
     uca1txbuf_spi: Uca1txbufSpi,
-    _reserved7: [u8; 0x0a],
+    _reserved5: [u8; 0x0a],
     uca1ie_spi: Uca1ieSpi,
-    _reserved8: [u8; 0x01],
     uca1ifg_spi: Uca1ifgSpi,
-    _reserved9: [u8; 0x01],
+    _reserved7: [u8; 0x01],
     uca1iv_spi: Uca1ivSpi,
 }
 impl RegisterBlock {
-    #[doc = "0x00 - USCI A1 Control Register 1"]
+    #[doc = "0x00 - eUSCI_A1 Control Word Register 0"]
     #[inline(always)]
-    pub const fn uca1ctl1_spi(&self) -> &Uca1ctl1Spi {
-        &self.uca1ctl1_spi
+    pub const fn uca1ctlw0_spi(&self) -> &Uca1ctlw0Spi {
+        &self.uca1ctlw0_spi
     }
-    #[doc = "0x01 - USCI A1 Control Register 0"]
+    #[doc = "0x06 - eUSCI_A1 Bit Rate Control Register"]
     #[inline(always)]
-    pub const fn uca1ctl0_spi(&self) -> &Uca1ctl0Spi {
-        &self.uca1ctl0_spi
-    }
-    #[doc = "0x06 - USCI A1 Baud Rate 0"]
-    #[inline(always)]
-    pub const fn uca1br0_spi(&self) -> &Uca1br0Spi {
-        &self.uca1br0_spi
-    }
-    #[doc = "0x07 - USCI A1 Baud Rate 1"]
-    #[inline(always)]
-    pub const fn uca1br1_spi(&self) -> &Uca1br1Spi {
-        &self.uca1br1_spi
+    pub const fn uca1brw_spi(&self) -> &Uca1brwSpi {
+        &self.uca1brw_spi
     }
     #[doc = "0x0a - USCI A1 Status Register"]
     #[inline(always)]
@@ -70,26 +56,16 @@ impl RegisterBlock {
         &self.uca1iv_spi
     }
 }
-#[doc = "UCA1CTL1_SPI (rw) register accessor: USCI A1 Control Register 1\n\nYou can [`read`](crate::Reg::read) this register and get [`uca1ctl1_spi::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`uca1ctl1_spi::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@uca1ctl1_spi`] module"]
-#[doc(alias = "UCA1CTL1_SPI")]
-pub type Uca1ctl1Spi = crate::Reg<uca1ctl1_spi::Uca1ctl1SpiSpec>;
-#[doc = "USCI A1 Control Register 1"]
-pub mod uca1ctl1_spi;
-#[doc = "UCA1CTL0_SPI (rw) register accessor: USCI A1 Control Register 0\n\nYou can [`read`](crate::Reg::read) this register and get [`uca1ctl0_spi::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`uca1ctl0_spi::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@uca1ctl0_spi`] module"]
-#[doc(alias = "UCA1CTL0_SPI")]
-pub type Uca1ctl0Spi = crate::Reg<uca1ctl0_spi::Uca1ctl0SpiSpec>;
-#[doc = "USCI A1 Control Register 0"]
-pub mod uca1ctl0_spi;
-#[doc = "UCA1BR0_SPI (rw) register accessor: USCI A1 Baud Rate 0\n\nYou can [`read`](crate::Reg::read) this register and get [`uca1br0_spi::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`uca1br0_spi::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@uca1br0_spi`] module"]
-#[doc(alias = "UCA1BR0_SPI")]
-pub type Uca1br0Spi = crate::Reg<uca1br0_spi::Uca1br0SpiSpec>;
-#[doc = "USCI A1 Baud Rate 0"]
-pub mod uca1br0_spi;
-#[doc = "UCA1BR1_SPI (rw) register accessor: USCI A1 Baud Rate 1\n\nYou can [`read`](crate::Reg::read) this register and get [`uca1br1_spi::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`uca1br1_spi::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@uca1br1_spi`] module"]
-#[doc(alias = "UCA1BR1_SPI")]
-pub type Uca1br1Spi = crate::Reg<uca1br1_spi::Uca1br1SpiSpec>;
-#[doc = "USCI A1 Baud Rate 1"]
-pub mod uca1br1_spi;
+#[doc = "UCA1CTLW0_SPI (rw) register accessor: eUSCI_A1 Control Word Register 0\n\nYou can [`read`](crate::Reg::read) this register and get [`uca1ctlw0_spi::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`uca1ctlw0_spi::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@uca1ctlw0_spi`] module"]
+#[doc(alias = "UCA1CTLW0_SPI")]
+pub type Uca1ctlw0Spi = crate::Reg<uca1ctlw0_spi::Uca1ctlw0SpiSpec>;
+#[doc = "eUSCI_A1 Control Word Register 0"]
+pub mod uca1ctlw0_spi;
+#[doc = "UCA1BRW_SPI (rw) register accessor: eUSCI_A1 Bit Rate Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`uca1brw_spi::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`uca1brw_spi::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@uca1brw_spi`] module"]
+#[doc(alias = "UCA1BRW_SPI")]
+pub type Uca1brwSpi = crate::Reg<uca1brw_spi::Uca1brwSpiSpec>;
+#[doc = "eUSCI_A1 Bit Rate Control Register"]
+pub mod uca1brw_spi;
 #[doc = "UCA1STATW_SPI (rw) register accessor: USCI A1 Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`uca1statw_spi::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`uca1statw_spi::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@uca1statw_spi`] module"]
 #[doc(alias = "UCA1STATW_SPI")]
 pub type Uca1statwSpi = crate::Reg<uca1statw_spi::Uca1statwSpiSpec>;

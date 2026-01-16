@@ -14,6 +14,8 @@ pub type UcgcW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type UcscllowR = crate::BitReader;
 #[doc = "Field `UCSCLLOW` writer - SCL low"]
 pub type UcscllowW<'a, REG> = crate::BitWriter<'a, REG>;
+#[doc = "Field `UCBCNT` reader - Hardware byte counter value."]
+pub type UcbcntR = crate::FieldReader;
 impl R {
     #[doc = "Bit 4 - Bus Busy Flag"]
     #[inline(always)]
@@ -29,6 +31,11 @@ impl R {
     #[inline(always)]
     pub fn ucscllow(&self) -> UcscllowR {
         UcscllowR::new(((self.bits >> 6) & 1) != 0)
+    }
+    #[doc = "Bits 8:15 - Hardware byte counter value."]
+    #[inline(always)]
+    pub fn ucbcnt(&self) -> UcbcntR {
+        UcbcntR::new(((self.bits >> 8) & 0xff) as u8)
     }
 }
 impl W {
@@ -51,7 +58,7 @@ impl W {
 #[doc = "USCI B0 Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ucb0stat_i2c::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ucb0stat_i2c::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Ucb0statI2cSpec;
 impl crate::RegisterSpec for Ucb0statI2cSpec {
-    type Ux = u8;
+    type Ux = u16;
 }
 #[doc = "`read()` method returns [`ucb0stat_i2c::R`](R) reader structure"]
 impl crate::Readable for Ucb0statI2cSpec {}

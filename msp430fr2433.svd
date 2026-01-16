@@ -2313,6 +2313,112 @@
           <resetMask>255</resetMask>
         </register>
         <register>
+          <name>UCA0CTLW0</name>
+          <description>eUSCI_Ax Control Word Register 0</description>
+          <addressOffset>0</addressOffset>
+          <size>16</size>
+          <fields>
+            <field>
+              <name>UCSWRST</name>
+              <description>Software reset enable</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCTXBRK</name>
+              <description>Transmit break</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCTXADDR</name>
+              <description>Transmit address</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCDORM</name>
+              <description>Dormant</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCBRKIE</name>
+              <description>Receive break character interrupt enable</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCRXEIE</name>
+              <description>Receive erroneous-character interrupt enable</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCSSEL</name>
+              <description>eUSCI_A clock source select</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCSYNC</name>
+              <description>Synchronous mode enable</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCMODE</name>
+              <description>eUSCI_A mode</description>
+              <bitOffset>9</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCSPB</name>
+              <description>Stop bit select</description>
+              <bitOffset>11</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UC7BIT</name>
+              <description>Character length</description>
+              <bitOffset>12</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCMSB</name>
+              <description>MSB first select</description>
+              <bitOffset>13</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCPAR</name>
+              <description>Parity select</description>
+              <bitOffset>14</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCPEN</name>
+              <description>Parity enable</description>
+              <bitOffset>15</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
           <name>UCA0CTL0</name>
           <description>USCI A0 Control Register 0</description>
           <addressOffset>1</addressOffset>
@@ -2325,6 +2431,12 @@
           <addressOffset>6</addressOffset>
           <size>8</size>
           <resetMask>255</resetMask>
+        </register>
+        <register>
+          <name>UCA0BRW</name>
+          <description>eUSCI_Ax Baud Rate Register 0</description>
+          <addressOffset>6</addressOffset>
+          <size>16</size>
         </register>
         <register>
           <name>UCA0BR1</name>
@@ -2461,6 +2573,48 @@
           <addressOffset>19</addressOffset>
           <size>8</size>
           <resetMask>255</resetMask>
+        </register>
+        <register>
+          <name>UCA0IE</name>
+          <description>eUSCI_A0 Interrupt Enable Register</description>
+          <addressOffset>26</addressOffset>
+          <size>16</size>
+          <fields>
+            <field>
+              <name>UCRXIE</name>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCTXIE</name>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UCA0IFG</name>
+          <description>eUSCI_A0 Interrupt Flag Register</description>
+          <addressOffset>28</addressOffset>
+          <size>16</size>
+          <fields>
+            <field>
+              <name>UCRXIFG</name>
+              <description>Receive interrupt flag. Is set when RXBUF has received a complete character</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCTXIFG</name>
+              <description>Transmit interrupt flag. Is set when TXBUF is empty.</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>UCA0CTLW1</name>
@@ -2604,60 +2758,10 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>UCBRS0</name>
+              <name>UCBRS</name>
               <description>USCI Second Stage Modulation Select 0</description>
               <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCBRS1</name>
-              <description>USCI Second Stage Modulation Select 1</description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCBRS2</name>
-              <description>USCI Second Stage Modulation Select 2</description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCBRS3</name>
-              <description>USCI Second Stage Modulation Select 3</description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCBRS4</name>
-              <description>USCI Second Stage Modulation Select 4</description>
-              <bitOffset>12</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCBRS5</name>
-              <description>USCI Second Stage Modulation Select 5</description>
-              <bitOffset>13</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCBRS6</name>
-              <description>USCI Second Stage Modulation Select 6</description>
-              <bitOffset>14</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCBRS7</name>
-              <description>USCI Second Stage Modulation Select 7</description>
-              <bitOffset>15</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
+              <bitWidth>8</bitWidth>
             </field>
           </fields>
         </register>
@@ -2667,6 +2771,15 @@
           <addressOffset>12</addressOffset>
           <size>16</size>
           <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>UCRXBUF</name>
+              <description>Receive data buffer</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>UCA0TXBUF</name>
@@ -2674,6 +2787,15 @@
           <addressOffset>14</addressOffset>
           <size>16</size>
           <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>UCTXBUF</name>
+              <description>Transmit data buffer</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>UCA0IV</name>
@@ -2690,39 +2812,95 @@
       <baseAddress>1280</baseAddress>
       <registers>
         <register>
-          <name>UCA0CTL1_SPI</name>
-          <description>USCI A0 Control Register 1</description>
+          <name>UCA0CTLW0_SPI</name>
+          <description>eUSCI_A0 Control Word Register 0</description>
           <addressOffset>0</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
+          <size>16</size>
+          <fields>
+            <field>
+              <name>UCSWRST</name>
+              <description>Software reset enable</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCSTEM</name>
+              <description>STE mode select in master mode.</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCSSEL</name>
+              <description>eUSCI_A clock source select</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCSYNC</name>
+              <description>Synchronous mode enable</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCMODE</name>
+              <description>eUSCI_A mode</description>
+              <bitOffset>9</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCMST</name>
+              <description>Master mode select</description>
+              <bitOffset>11</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UC7BIT</name>
+              <description>Character length</description>
+              <bitOffset>12</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCMSB</name>
+              <description>MSB first select</description>
+              <bitOffset>13</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCCKPL</name>
+              <description>Clock polarity select</description>
+              <bitOffset>14</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCCKPH</name>
+              <description>Clock phase select</description>
+              <bitOffset>15</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>UCA0CTL0_SPI</name>
-          <description>USCI A0 Control Register 0</description>
-          <addressOffset>1</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
-        </register>
-        <register>
-          <name>UCA0BR0_SPI</name>
-          <description>USCI A0 Baud Rate 0</description>
+          <name>UCA0BRW_SPI</name>
+          <description>eUSCI_A0 Bit Rate Control Register</description>
           <addressOffset>6</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
-        </register>
-        <register>
-          <name>UCA0BR1_SPI</name>
-          <description>USCI A0 Baud Rate 1</description>
-          <addressOffset>7</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
+          <size>16</size>
         </register>
         <register>
           <name>UCA0STATW_SPI</name>
           <description>USCI A0 Status Register</description>
           <addressOffset>10</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
+          <size>16</size>
+          <resetMask>65535</resetMask>
           <fields>
             <field>
               <name>UCBUSY</name>
@@ -2758,8 +2936,8 @@
           <name>UCA0IE_SPI</name>
           <description>USCI A0 Interrupt Enable Register</description>
           <addressOffset>26</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
+          <size>16</size>
+          <resetMask>65535</resetMask>
           <fields>
             <field>
               <name>UCRXIE</name>
@@ -2806,6 +2984,15 @@
           <addressOffset>12</addressOffset>
           <size>16</size>
           <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>UCRXBUF</name>
+              <description>Receive data buffer</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>UCA0TXBUF_SPI</name>
@@ -2813,6 +3000,15 @@
           <addressOffset>14</addressOffset>
           <size>16</size>
           <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>UCTXBUF</name>
+              <description>Transmit data buffer</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>UCA0IV_SPI</name>
@@ -2829,32 +3025,110 @@
       <baseAddress>1312</baseAddress>
       <registers>
         <register>
-          <name>UCA1CTL1</name>
-          <description>USCI A1 Control Register 1</description>
+          <name>UCA1CTLW0</name>
+          <description>eUSCI_Ax Control Word Register 0</description>
           <addressOffset>0</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
-        </register>
-        <register>
-          <name>UCA1CTL0</name>
-          <description>USCI A1 Control Register 0</description>
-          <addressOffset>1</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
-        </register>
-        <register>
-          <name>UCA1BR0</name>
-          <description>USCI A1 Baud Rate 0</description>
-          <addressOffset>6</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
-        </register>
-        <register>
-          <name>UCA1BR1</name>
-          <description>USCI A1 Baud Rate 1</description>
-          <addressOffset>7</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
+          <size>16</size>
+          <fields>
+            <field>
+              <name>UCSWRST</name>
+              <description>Software reset enable</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCTXBRK</name>
+              <description>Transmit break</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCTXADDR</name>
+              <description>Transmit address</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCDORM</name>
+              <description>Dormant</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCBRKIE</name>
+              <description>Receive break character interrupt enable</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCRXEIE</name>
+              <description>Receive erroneous-character interrupt enable</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCSSEL</name>
+              <description>eUSCI_A clock source select</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCSYNC</name>
+              <description>Synchronous mode enable</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCMODE</name>
+              <description>eUSCI_A mode</description>
+              <bitOffset>9</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCSPB</name>
+              <description>Stop bit select</description>
+              <bitOffset>11</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UC7BIT</name>
+              <description>Character length</description>
+              <bitOffset>12</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCMSB</name>
+              <description>MSB first select</description>
+              <bitOffset>13</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCPAR</name>
+              <description>Parity select</description>
+              <bitOffset>14</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCPEN</name>
+              <description>Parity enable</description>
+              <bitOffset>15</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>UCA1STATW</name>
@@ -2986,6 +3260,48 @@
           <resetMask>255</resetMask>
         </register>
         <register>
+          <name>UCA1IE</name>
+          <description>eUSCI_A1 Interrupt Enable Register</description>
+          <addressOffset>26</addressOffset>
+          <size>16</size>
+          <fields>
+            <field>
+              <name>UCRXIE</name>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCTXIE</name>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UCA1IFG</name>
+          <description>eUSCI_A1 Interrupt Flag Register</description>
+          <addressOffset>28</addressOffset>
+          <size>16</size>
+          <fields>
+            <field>
+              <name>UCRXIFG</name>
+              <description>Receive interrupt flag. Is set when RXBUF has received a complete character</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCTXIFG</name>
+              <description>Transmit interrupt flag. Is set when TXBUF is empty.</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
           <name>UCA1CTLW1</name>
           <description>USCI A1 Control Word Register 1</description>
           <addressOffset>2</addressOffset>
@@ -3022,6 +3338,12 @@
               </enumeratedValues>
             </field>
           </fields>
+        </register>
+        <register>
+          <name>UCA1BRW</name>
+          <description>eUSCI_Ax Baud Rate Register 0</description>
+          <addressOffset>6</addressOffset>
+          <size>16</size>
         </register>
         <register>
           <name>UCA1MCTLW</name>
@@ -3127,60 +3449,10 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>UCBRS0</name>
+              <name>UCBRS</name>
               <description>USCI Second Stage Modulation Select 0</description>
               <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCBRS1</name>
-              <description>USCI Second Stage Modulation Select 1</description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCBRS2</name>
-              <description>USCI Second Stage Modulation Select 2</description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCBRS3</name>
-              <description>USCI Second Stage Modulation Select 3</description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCBRS4</name>
-              <description>USCI Second Stage Modulation Select 4</description>
-              <bitOffset>12</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCBRS5</name>
-              <description>USCI Second Stage Modulation Select 5</description>
-              <bitOffset>13</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCBRS6</name>
-              <description>USCI Second Stage Modulation Select 6</description>
-              <bitOffset>14</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCBRS7</name>
-              <description>USCI Second Stage Modulation Select 7</description>
-              <bitOffset>15</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
+              <bitWidth>8</bitWidth>
             </field>
           </fields>
         </register>
@@ -3190,6 +3462,15 @@
           <addressOffset>12</addressOffset>
           <size>16</size>
           <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>UCRXBUF</name>
+              <description>Receive data buffer</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>UCA1TXBUF</name>
@@ -3197,6 +3478,15 @@
           <addressOffset>14</addressOffset>
           <size>16</size>
           <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>UCTXBUF</name>
+              <description>Transmit data buffer</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>UCA1IV</name>
@@ -3213,39 +3503,95 @@
       <baseAddress>1312</baseAddress>
       <registers>
         <register>
-          <name>UCA1CTL1_SPI</name>
-          <description>USCI A1 Control Register 1</description>
+          <name>UCA1CTLW0_SPI</name>
+          <description>eUSCI_A1 Control Word Register 0</description>
           <addressOffset>0</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
+          <size>16</size>
+          <fields>
+            <field>
+              <name>UCSWRST</name>
+              <description>Software reset enable</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCSTEM</name>
+              <description>STE mode select in master mode.</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCSSEL</name>
+              <description>eUSCI_A clock source select</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCSYNC</name>
+              <description>Synchronous mode enable</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCMODE</name>
+              <description>eUSCI_A mode</description>
+              <bitOffset>9</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCMST</name>
+              <description>Master mode select</description>
+              <bitOffset>11</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UC7BIT</name>
+              <description>Character length</description>
+              <bitOffset>12</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCMSB</name>
+              <description>MSB first select</description>
+              <bitOffset>13</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCCKPL</name>
+              <description>Clock polarity select</description>
+              <bitOffset>14</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCCKPH</name>
+              <description>Clock phase select</description>
+              <bitOffset>15</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>UCA1CTL0_SPI</name>
-          <description>USCI A1 Control Register 0</description>
-          <addressOffset>1</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
-        </register>
-        <register>
-          <name>UCA1BR0_SPI</name>
-          <description>USCI A1 Baud Rate 0</description>
+          <name>UCA1BRW_SPI</name>
+          <description>eUSCI_A1 Bit Rate Control Register</description>
           <addressOffset>6</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
-        </register>
-        <register>
-          <name>UCA1BR1_SPI</name>
-          <description>USCI A1 Baud Rate 1</description>
-          <addressOffset>7</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
+          <size>16</size>
         </register>
         <register>
           <name>UCA1STATW_SPI</name>
           <description>USCI A1 Status Register</description>
           <addressOffset>10</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
+          <size>16</size>
+          <resetMask>65535</resetMask>
           <fields>
             <field>
               <name>UCBUSY</name>
@@ -3281,8 +3627,8 @@
           <name>UCA1IE_SPI</name>
           <description>USCI A1 Interrupt Enable Register</description>
           <addressOffset>26</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
+          <size>16</size>
+          <resetMask>65535</resetMask>
           <fields>
             <field>
               <name>UCRXIE</name>
@@ -3329,6 +3675,15 @@
           <addressOffset>12</addressOffset>
           <size>16</size>
           <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>UCRXBUF</name>
+              <description>Receive data buffer</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>UCA1TXBUF_SPI</name>
@@ -3336,6 +3691,15 @@
           <addressOffset>14</addressOffset>
           <size>16</size>
           <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>UCTXBUF</name>
+              <description>Transmit data buffer</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>UCA1IV_SPI</name>
@@ -3352,38 +3716,109 @@
       <baseAddress>1344</baseAddress>
       <registers>
         <register>
-          <name>UCB0CTL1</name>
-          <description>USCI B0 Control Register 1</description>
+          <name>UCB0CTLW0</name>
+          <description>eUSCI_B0 Control Word Register 0</description>
           <addressOffset>0</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
-        </register>
-        <register>
-          <name>UCB0CTL0</name>
-          <description>USCI B0 Control Register 0</description>
-          <addressOffset>1</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
-        </register>
-        <register>
-          <name>UCB0BR0</name>
-          <description>USCI B0 Baud Rate 0</description>
-          <addressOffset>6</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
-        </register>
-        <register>
-          <name>UCB0BR1</name>
-          <description>USCI B0 Baud Rate 1</description>
-          <addressOffset>7</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
+          <size>16</size>
+          <fields>
+            <field>
+              <name>UCSWRST</name>
+              <description>Software reset enable</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCTXSTT</name>
+              <description>Transmit START condition in master mode</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCTXSTP</name>
+              <description>Transmit STOP condition in master mode</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCTXNACK</name>
+              <description>Transmit a NACK</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCTR</name>
+              <description>Transmitter / receiver select</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCTXACK</name>
+              <description>Transmit ACK condition in slave mode</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCSSEL</name>
+              <description>eUSCI_A clock source select</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCSYNC</name>
+              <description>Synchronous mode enable</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCMODE</name>
+              <description>eUSCI_A mode</description>
+              <bitOffset>9</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCMST</name>
+              <description>Master mode select</description>
+              <bitOffset>11</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCMM</name>
+              <description>Multi-master environment select</description>
+              <bitOffset>13</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCSLA10</name>
+              <description>Slave addressing mode select</description>
+              <bitOffset>14</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCA10</name>
+              <description>Own addressing mode select</description>
+              <bitOffset>15</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>UCB0STAT_I2C</name>
           <description>USCI B0 Status Register</description>
           <addressOffset>8</addressOffset>
-          <size>8</size>
+          <size>16</size>
           <resetMask>255</resetMask>
           <fields>
             <field>
@@ -3406,6 +3841,13 @@
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
+            </field>
+            <field>
+              <name>UCBCNT</name>
+              <description>Hardware byte counter value.</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-only</access>
             </field>
           </fields>
         </register>
@@ -3598,6 +4040,12 @@
           </fields>
         </register>
         <register>
+          <name>UCB0BRW</name>
+          <description>eUSCI_B0 Bit Rate Control Register</description>
+          <addressOffset>6</addressOffset>
+          <size>16</size>
+        </register>
+        <register>
           <name>UCB0TBCNT</name>
           <description>USCI B0 Byte Counter Threshold Register</description>
           <addressOffset>10</addressOffset>
@@ -3626,74 +4074,10 @@
           <resetMask>65535</resetMask>
           <fields>
             <field>
-              <name>UCOA0</name>
+              <name>I2COA0</name>
               <description>I2C Own Address Bit 0</description>
               <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCOA1</name>
-              <description>I2C Own Address Bit 1</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCOA2</name>
-              <description>I2C Own Address Bit 2</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCOA3</name>
-              <description>I2C Own Address Bit 3</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCOA4</name>
-              <description>I2C Own Address Bit 4</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCOA5</name>
-              <description>I2C Own Address Bit 5</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCOA6</name>
-              <description>I2C Own Address Bit 6</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCOA7</name>
-              <description>I2C Own Address Bit 7</description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCOA8</name>
-              <description>I2C Own Address Bit 8</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCOA9</name>
-              <description>I2C Own Address Bit 9</description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
+              <bitWidth>10</bitWidth>
             </field>
             <field>
               <name>UCOAEN</name>
@@ -3719,74 +4103,10 @@
           <resetMask>65535</resetMask>
           <fields>
             <field>
-              <name>UCOA0</name>
+              <name>I2COA1</name>
               <description>I2C Own Address Bit 0</description>
               <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCOA1</name>
-              <description>I2C Own Address Bit 1</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCOA2</name>
-              <description>I2C Own Address Bit 2</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCOA3</name>
-              <description>I2C Own Address Bit 3</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCOA4</name>
-              <description>I2C Own Address Bit 4</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCOA5</name>
-              <description>I2C Own Address Bit 5</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCOA6</name>
-              <description>I2C Own Address Bit 6</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCOA7</name>
-              <description>I2C Own Address Bit 7</description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCOA8</name>
-              <description>I2C Own Address Bit 8</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCOA9</name>
-              <description>I2C Own Address Bit 9</description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
+              <bitWidth>10</bitWidth>
             </field>
             <field>
               <name>UCOAEN</name>
@@ -3805,74 +4125,10 @@
           <resetMask>65535</resetMask>
           <fields>
             <field>
-              <name>UCOA0</name>
+              <name>I2COA2</name>
               <description>I2C Own Address Bit 0</description>
               <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCOA1</name>
-              <description>I2C Own Address Bit 1</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCOA2</name>
-              <description>I2C Own Address Bit 2</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCOA3</name>
-              <description>I2C Own Address Bit 3</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCOA4</name>
-              <description>I2C Own Address Bit 4</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCOA5</name>
-              <description>I2C Own Address Bit 5</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCOA6</name>
-              <description>I2C Own Address Bit 6</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCOA7</name>
-              <description>I2C Own Address Bit 7</description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCOA8</name>
-              <description>I2C Own Address Bit 8</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCOA9</name>
-              <description>I2C Own Address Bit 9</description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
+              <bitWidth>10</bitWidth>
             </field>
             <field>
               <name>UCOAEN</name>
@@ -3891,74 +4147,10 @@
           <resetMask>65535</resetMask>
           <fields>
             <field>
-              <name>UCOA0</name>
+              <name>I2COA3</name>
               <description>I2C Own Address Bit 0</description>
               <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCOA1</name>
-              <description>I2C Own Address Bit 1</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCOA2</name>
-              <description>I2C Own Address Bit 2</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCOA3</name>
-              <description>I2C Own Address Bit 3</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCOA4</name>
-              <description>I2C Own Address Bit 4</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCOA5</name>
-              <description>I2C Own Address Bit 5</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCOA6</name>
-              <description>I2C Own Address Bit 6</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCOA7</name>
-              <description>I2C Own Address Bit 7</description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCOA8</name>
-              <description>I2C Own Address Bit 8</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCOA9</name>
-              <description>I2C Own Address Bit 9</description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
+              <bitWidth>10</bitWidth>
             </field>
             <field>
               <name>UCOAEN</name>
@@ -4465,32 +4657,124 @@
       <baseAddress>1344</baseAddress>
       <registers>
         <register>
-          <name>UCB0CTL1_SPI</name>
-          <description>USCI B0 Control Register 1</description>
+          <name>UCB0CTLW0_SPI</name>
+          <description>eUSCI_B0 Control Word Register 0</description>
           <addressOffset>0</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
+          <size>16</size>
+          <fields>
+            <field>
+              <name>UCSWRST</name>
+              <description>Software reset enable</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCSTEM</name>
+              <description>STE mode select in master mode.</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCSSEL</name>
+              <description>eUSCI_A clock source select</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCSYNC</name>
+              <description>Synchronous mode enable</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCMODE</name>
+              <description>eUSCI_A mode</description>
+              <bitOffset>9</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCMST</name>
+              <description>Master mode select</description>
+              <bitOffset>11</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UC7BIT</name>
+              <description>Character length</description>
+              <bitOffset>12</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCMSB</name>
+              <description>MSB first select</description>
+              <bitOffset>13</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCCKPL</name>
+              <description>Clock polarity select</description>
+              <bitOffset>14</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCCKPH</name>
+              <description>Clock phase select</description>
+              <bitOffset>15</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>UCB0CTL0_SPI</name>
-          <description>USCI B0 Control Register 0</description>
-          <addressOffset>1</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
-        </register>
-        <register>
-          <name>UCB0BR0_SPI</name>
-          <description>USCI B0 Baud Rate 0</description>
+          <name>UCB0BRW_SPI</name>
+          <description>eUSCI_B0 Bit Rate Control Register</description>
           <addressOffset>6</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
+          <size>16</size>
         </register>
         <register>
-          <name>UCB0BR1_SPI</name>
-          <description>USCI B0 Baud Rate 1</description>
-          <addressOffset>7</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
+          <name>UCB0STATW_SPI</name>
+          <description>eUSCI_B0 Status Register</description>
+          <addressOffset>8</addressOffset>
+          <size>16</size>
+          <fields>
+            <field>
+              <name>UCBUSY</name>
+              <description>USCI Busy Flag</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCOE</name>
+              <description>USCI Overrun Error Flag</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCFE</name>
+              <description>USCI Frame Error Flag</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>UCLISTEN</name>
+              <description>USCI Listen mode</description>
+              <bitOffset>7</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>UCB0RXBUF_SPI</name>
@@ -4498,6 +4782,15 @@
           <addressOffset>12</addressOffset>
           <size>16</size>
           <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>UCRXBUF</name>
+              <description>Receive data buffer</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>UCB0TXBUF_SPI</name>
@@ -4505,6 +4798,15 @@
           <addressOffset>14</addressOffset>
           <size>16</size>
           <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>UCTXBUF</name>
+              <description>Transmit data buffer</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>UCB0IE_SPI</name>

@@ -2,12 +2,24 @@
 pub type R = crate::R<Ucb0rxbufSpiSpec>;
 #[doc = "Register `UCB0RXBUF_SPI` writer"]
 pub type W = crate::W<Ucb0rxbufSpiSpec>;
-impl core::fmt::Debug for R {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        write!(f, "{}", self.bits())
+#[doc = "Field `UCRXBUF` reader - Receive data buffer"]
+pub type UcrxbufR = crate::FieldReader;
+#[doc = "Field `UCRXBUF` writer - Receive data buffer"]
+pub type UcrxbufW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
+impl R {
+    #[doc = "Bits 0:7 - Receive data buffer"]
+    #[inline(always)]
+    pub fn ucrxbuf(&self) -> UcrxbufR {
+        UcrxbufR::new((self.bits & 0xff) as u8)
     }
 }
-impl W {}
+impl W {
+    #[doc = "Bits 0:7 - Receive data buffer"]
+    #[inline(always)]
+    pub fn ucrxbuf(&mut self) -> UcrxbufW<'_, Ucb0rxbufSpiSpec> {
+        UcrxbufW::new(self, 0)
+    }
+}
 #[doc = "USCI B0 Receive Buffer\n\nYou can [`read`](crate::Reg::read) this register and get [`ucb0rxbuf_spi::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ucb0rxbuf_spi::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Ucb0rxbufSpiSpec;
 impl crate::RegisterSpec for Ucb0rxbufSpiSpec {

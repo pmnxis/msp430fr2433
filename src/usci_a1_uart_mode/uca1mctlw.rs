@@ -248,38 +248,10 @@ where
         self.variant(Ucbrf::Ucbrf15)
     }
 }
-#[doc = "Field `UCBRS0` reader - USCI Second Stage Modulation Select 0"]
-pub type Ucbrs0R = crate::BitReader;
-#[doc = "Field `UCBRS0` writer - USCI Second Stage Modulation Select 0"]
-pub type Ucbrs0W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `UCBRS1` reader - USCI Second Stage Modulation Select 1"]
-pub type Ucbrs1R = crate::BitReader;
-#[doc = "Field `UCBRS1` writer - USCI Second Stage Modulation Select 1"]
-pub type Ucbrs1W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `UCBRS2` reader - USCI Second Stage Modulation Select 2"]
-pub type Ucbrs2R = crate::BitReader;
-#[doc = "Field `UCBRS2` writer - USCI Second Stage Modulation Select 2"]
-pub type Ucbrs2W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `UCBRS3` reader - USCI Second Stage Modulation Select 3"]
-pub type Ucbrs3R = crate::BitReader;
-#[doc = "Field `UCBRS3` writer - USCI Second Stage Modulation Select 3"]
-pub type Ucbrs3W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `UCBRS4` reader - USCI Second Stage Modulation Select 4"]
-pub type Ucbrs4R = crate::BitReader;
-#[doc = "Field `UCBRS4` writer - USCI Second Stage Modulation Select 4"]
-pub type Ucbrs4W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `UCBRS5` reader - USCI Second Stage Modulation Select 5"]
-pub type Ucbrs5R = crate::BitReader;
-#[doc = "Field `UCBRS5` writer - USCI Second Stage Modulation Select 5"]
-pub type Ucbrs5W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `UCBRS6` reader - USCI Second Stage Modulation Select 6"]
-pub type Ucbrs6R = crate::BitReader;
-#[doc = "Field `UCBRS6` writer - USCI Second Stage Modulation Select 6"]
-pub type Ucbrs6W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `UCBRS7` reader - USCI Second Stage Modulation Select 7"]
-pub type Ucbrs7R = crate::BitReader;
-#[doc = "Field `UCBRS7` writer - USCI Second Stage Modulation Select 7"]
-pub type Ucbrs7W<'a, REG> = crate::BitWriter<'a, REG>;
+#[doc = "Field `UCBRS` reader - USCI Second Stage Modulation Select 0"]
+pub type UcbrsR = crate::FieldReader;
+#[doc = "Field `UCBRS` writer - USCI Second Stage Modulation Select 0"]
+pub type UcbrsW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bit 0 - USCI 16-times Oversampling enable"]
     #[inline(always)]
@@ -291,45 +263,10 @@ impl R {
     pub fn ucbrf(&self) -> UcbrfR {
         UcbrfR::new(((self.bits >> 4) & 0x0f) as u8)
     }
-    #[doc = "Bit 8 - USCI Second Stage Modulation Select 0"]
+    #[doc = "Bits 8:15 - USCI Second Stage Modulation Select 0"]
     #[inline(always)]
-    pub fn ucbrs0(&self) -> Ucbrs0R {
-        Ucbrs0R::new(((self.bits >> 8) & 1) != 0)
-    }
-    #[doc = "Bit 9 - USCI Second Stage Modulation Select 1"]
-    #[inline(always)]
-    pub fn ucbrs1(&self) -> Ucbrs1R {
-        Ucbrs1R::new(((self.bits >> 9) & 1) != 0)
-    }
-    #[doc = "Bit 10 - USCI Second Stage Modulation Select 2"]
-    #[inline(always)]
-    pub fn ucbrs2(&self) -> Ucbrs2R {
-        Ucbrs2R::new(((self.bits >> 10) & 1) != 0)
-    }
-    #[doc = "Bit 11 - USCI Second Stage Modulation Select 3"]
-    #[inline(always)]
-    pub fn ucbrs3(&self) -> Ucbrs3R {
-        Ucbrs3R::new(((self.bits >> 11) & 1) != 0)
-    }
-    #[doc = "Bit 12 - USCI Second Stage Modulation Select 4"]
-    #[inline(always)]
-    pub fn ucbrs4(&self) -> Ucbrs4R {
-        Ucbrs4R::new(((self.bits >> 12) & 1) != 0)
-    }
-    #[doc = "Bit 13 - USCI Second Stage Modulation Select 5"]
-    #[inline(always)]
-    pub fn ucbrs5(&self) -> Ucbrs5R {
-        Ucbrs5R::new(((self.bits >> 13) & 1) != 0)
-    }
-    #[doc = "Bit 14 - USCI Second Stage Modulation Select 6"]
-    #[inline(always)]
-    pub fn ucbrs6(&self) -> Ucbrs6R {
-        Ucbrs6R::new(((self.bits >> 14) & 1) != 0)
-    }
-    #[doc = "Bit 15 - USCI Second Stage Modulation Select 7"]
-    #[inline(always)]
-    pub fn ucbrs7(&self) -> Ucbrs7R {
-        Ucbrs7R::new(((self.bits >> 15) & 1) != 0)
+    pub fn ucbrs(&self) -> UcbrsR {
+        UcbrsR::new(((self.bits >> 8) & 0xff) as u8)
     }
 }
 impl W {
@@ -343,45 +280,10 @@ impl W {
     pub fn ucbrf(&mut self) -> UcbrfW<'_, Uca1mctlwSpec> {
         UcbrfW::new(self, 4)
     }
-    #[doc = "Bit 8 - USCI Second Stage Modulation Select 0"]
+    #[doc = "Bits 8:15 - USCI Second Stage Modulation Select 0"]
     #[inline(always)]
-    pub fn ucbrs0(&mut self) -> Ucbrs0W<'_, Uca1mctlwSpec> {
-        Ucbrs0W::new(self, 8)
-    }
-    #[doc = "Bit 9 - USCI Second Stage Modulation Select 1"]
-    #[inline(always)]
-    pub fn ucbrs1(&mut self) -> Ucbrs1W<'_, Uca1mctlwSpec> {
-        Ucbrs1W::new(self, 9)
-    }
-    #[doc = "Bit 10 - USCI Second Stage Modulation Select 2"]
-    #[inline(always)]
-    pub fn ucbrs2(&mut self) -> Ucbrs2W<'_, Uca1mctlwSpec> {
-        Ucbrs2W::new(self, 10)
-    }
-    #[doc = "Bit 11 - USCI Second Stage Modulation Select 3"]
-    #[inline(always)]
-    pub fn ucbrs3(&mut self) -> Ucbrs3W<'_, Uca1mctlwSpec> {
-        Ucbrs3W::new(self, 11)
-    }
-    #[doc = "Bit 12 - USCI Second Stage Modulation Select 4"]
-    #[inline(always)]
-    pub fn ucbrs4(&mut self) -> Ucbrs4W<'_, Uca1mctlwSpec> {
-        Ucbrs4W::new(self, 12)
-    }
-    #[doc = "Bit 13 - USCI Second Stage Modulation Select 5"]
-    #[inline(always)]
-    pub fn ucbrs5(&mut self) -> Ucbrs5W<'_, Uca1mctlwSpec> {
-        Ucbrs5W::new(self, 13)
-    }
-    #[doc = "Bit 14 - USCI Second Stage Modulation Select 6"]
-    #[inline(always)]
-    pub fn ucbrs6(&mut self) -> Ucbrs6W<'_, Uca1mctlwSpec> {
-        Ucbrs6W::new(self, 14)
-    }
-    #[doc = "Bit 15 - USCI Second Stage Modulation Select 7"]
-    #[inline(always)]
-    pub fn ucbrs7(&mut self) -> Ucbrs7W<'_, Uca1mctlwSpec> {
-        Ucbrs7W::new(self, 15)
+    pub fn ucbrs(&mut self) -> UcbrsW<'_, Uca1mctlwSpec> {
+        UcbrsW::new(self, 8)
     }
 }
 #[doc = "USCI A1 Modulation Control\n\nYou can [`read`](crate::Reg::read) this register and get [`uca1mctlw::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`uca1mctlw::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

@@ -1,18 +1,15 @@
 #[repr(C)]
 #[doc = "Register block"]
 pub struct RegisterBlock {
-    ucb0ctl1: Ucb0ctl1,
-    ucb0ctl0: Ucb0ctl0,
+    ucb0ctlw0: Ucb0ctlw0,
     ucb0ctlw1: Ucb0ctlw1,
-    _reserved3: [u8; 0x02],
-    ucb0br0: Ucb0br0,
-    ucb0br1: Ucb0br1,
-    ucb0stat_i2c: Ucb0statI2c,
-    ucb0bcnt_i2c: Ucb0bcntI2c,
+    _reserved2: [u8; 0x02],
+    ucb0brw: Ucb0brw,
+    _reserved_3_ucb: [u8; 0x02],
     ucb0tbcnt: Ucb0tbcnt,
     ucb0rxbuf: Ucb0rxbuf,
     ucb0txbuf: Ucb0txbuf,
-    _reserved10: [u8; 0x04],
+    _reserved7: [u8; 0x04],
     ucb0i2coa0: Ucb0i2coa0,
     ucb0i2coa1: Ucb0i2coa1,
     ucb0i2coa2: Ucb0i2coa2,
@@ -20,46 +17,36 @@ pub struct RegisterBlock {
     ucb0addrx: Ucb0addrx,
     ucb0addmask: Ucb0addmask,
     ucb0i2csa: Ucb0i2csa,
-    _reserved17: [u8; 0x08],
-    _reserved_17_ucb0: [u8; 0x02],
-    _reserved_18_ucb0: [u8; 0x02],
+    _reserved14: [u8; 0x08],
+    _reserved_14_ucb0: [u8; 0x02],
+    _reserved_15_ucb0: [u8; 0x02],
     ucb0iv: Ucb0iv,
 }
 impl RegisterBlock {
-    #[doc = "0x00 - USCI B0 Control Register 1"]
+    #[doc = "0x00 - eUSCI_B0 Control Word Register 0"]
     #[inline(always)]
-    pub const fn ucb0ctl1(&self) -> &Ucb0ctl1 {
-        &self.ucb0ctl1
-    }
-    #[doc = "0x01 - USCI B0 Control Register 0"]
-    #[inline(always)]
-    pub const fn ucb0ctl0(&self) -> &Ucb0ctl0 {
-        &self.ucb0ctl0
+    pub const fn ucb0ctlw0(&self) -> &Ucb0ctlw0 {
+        &self.ucb0ctlw0
     }
     #[doc = "0x02 - USCI B0 Control Word Register 1"]
     #[inline(always)]
     pub const fn ucb0ctlw1(&self) -> &Ucb0ctlw1 {
         &self.ucb0ctlw1
     }
-    #[doc = "0x06 - USCI B0 Baud Rate 0"]
+    #[doc = "0x06 - eUSCI_B0 Bit Rate Control Register"]
     #[inline(always)]
-    pub const fn ucb0br0(&self) -> &Ucb0br0 {
-        &self.ucb0br0
-    }
-    #[doc = "0x07 - USCI B0 Baud Rate 1"]
-    #[inline(always)]
-    pub const fn ucb0br1(&self) -> &Ucb0br1 {
-        &self.ucb0br1
+    pub const fn ucb0brw(&self) -> &Ucb0brw {
+        &self.ucb0brw
     }
     #[doc = "0x08 - USCI B0 Status Register"]
     #[inline(always)]
     pub const fn ucb0stat_i2c(&self) -> &Ucb0statI2c {
-        &self.ucb0stat_i2c
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(8).cast() }
     }
     #[doc = "0x09 - USCI B0 Byte Counter Register"]
     #[inline(always)]
     pub const fn ucb0bcnt_i2c(&self) -> &Ucb0bcntI2c {
-        &self.ucb0bcnt_i2c
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(9).cast() }
     }
     #[doc = "0x0a - USCI B0 Byte Counter Threshold Register"]
     #[inline(always)]
@@ -137,26 +124,11 @@ impl RegisterBlock {
         &self.ucb0iv
     }
 }
-#[doc = "UCB0CTL1 (rw) register accessor: USCI B0 Control Register 1\n\nYou can [`read`](crate::Reg::read) this register and get [`ucb0ctl1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ucb0ctl1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ucb0ctl1`] module"]
-#[doc(alias = "UCB0CTL1")]
-pub type Ucb0ctl1 = crate::Reg<ucb0ctl1::Ucb0ctl1Spec>;
-#[doc = "USCI B0 Control Register 1"]
-pub mod ucb0ctl1;
-#[doc = "UCB0CTL0 (rw) register accessor: USCI B0 Control Register 0\n\nYou can [`read`](crate::Reg::read) this register and get [`ucb0ctl0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ucb0ctl0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ucb0ctl0`] module"]
-#[doc(alias = "UCB0CTL0")]
-pub type Ucb0ctl0 = crate::Reg<ucb0ctl0::Ucb0ctl0Spec>;
-#[doc = "USCI B0 Control Register 0"]
-pub mod ucb0ctl0;
-#[doc = "UCB0BR0 (rw) register accessor: USCI B0 Baud Rate 0\n\nYou can [`read`](crate::Reg::read) this register and get [`ucb0br0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ucb0br0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ucb0br0`] module"]
-#[doc(alias = "UCB0BR0")]
-pub type Ucb0br0 = crate::Reg<ucb0br0::Ucb0br0Spec>;
-#[doc = "USCI B0 Baud Rate 0"]
-pub mod ucb0br0;
-#[doc = "UCB0BR1 (rw) register accessor: USCI B0 Baud Rate 1\n\nYou can [`read`](crate::Reg::read) this register and get [`ucb0br1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ucb0br1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ucb0br1`] module"]
-#[doc(alias = "UCB0BR1")]
-pub type Ucb0br1 = crate::Reg<ucb0br1::Ucb0br1Spec>;
-#[doc = "USCI B0 Baud Rate 1"]
-pub mod ucb0br1;
+#[doc = "UCB0CTLW0 (rw) register accessor: eUSCI_B0 Control Word Register 0\n\nYou can [`read`](crate::Reg::read) this register and get [`ucb0ctlw0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ucb0ctlw0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ucb0ctlw0`] module"]
+#[doc(alias = "UCB0CTLW0")]
+pub type Ucb0ctlw0 = crate::Reg<ucb0ctlw0::Ucb0ctlw0Spec>;
+#[doc = "eUSCI_B0 Control Word Register 0"]
+pub mod ucb0ctlw0;
 #[doc = "UCB0STAT_I2C (rw) register accessor: USCI B0 Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ucb0stat_i2c::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ucb0stat_i2c::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ucb0stat_i2c`] module"]
 #[doc(alias = "UCB0STAT_I2C")]
 pub type Ucb0statI2c = crate::Reg<ucb0stat_i2c::Ucb0statI2cSpec>;
@@ -172,6 +144,11 @@ pub mod ucb0bcnt_i2c;
 pub type Ucb0ctlw1 = crate::Reg<ucb0ctlw1::Ucb0ctlw1Spec>;
 #[doc = "USCI B0 Control Word Register 1"]
 pub mod ucb0ctlw1;
+#[doc = "UCB0BRW (rw) register accessor: eUSCI_B0 Bit Rate Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ucb0brw::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ucb0brw::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ucb0brw`] module"]
+#[doc(alias = "UCB0BRW")]
+pub type Ucb0brw = crate::Reg<ucb0brw::Ucb0brwSpec>;
+#[doc = "eUSCI_B0 Bit Rate Control Register"]
+pub mod ucb0brw;
 #[doc = "UCB0TBCNT (rw) register accessor: USCI B0 Byte Counter Threshold Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ucb0tbcnt::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ucb0tbcnt::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ucb0tbcnt`] module"]
 #[doc(alias = "UCB0TBCNT")]
 pub type Ucb0tbcnt = crate::Reg<ucb0tbcnt::Ucb0tbcntSpec>;

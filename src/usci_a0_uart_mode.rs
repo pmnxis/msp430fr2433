@@ -1,49 +1,59 @@
 #[repr(C)]
 #[doc = "Register block"]
 pub struct RegisterBlock {
-    uca0ctl1: Uca0ctl1,
-    uca0ctl0: Uca0ctl0,
+    _reserved_0_uca: [u8; 0x02],
     uca0ctlw1: Uca0ctlw1,
-    _reserved3: [u8; 0x02],
-    uca0br0: Uca0br0,
-    uca0br1: Uca0br1,
+    _reserved2: [u8; 0x02],
+    _reserved_2_uca: [u8; 0x02],
     uca0mctlw: Uca0mctlw,
     uca0statw: Uca0statw,
-    _reserved7: [u8; 0x01],
+    _reserved5: [u8; 0x01],
     uca0rxbuf: Uca0rxbuf,
     uca0txbuf: Uca0txbuf,
     uca0abctl: Uca0abctl,
-    _reserved10: [u8; 0x01],
+    _reserved8: [u8; 0x01],
     uca0irtctl: Uca0irtctl,
     uca0irrctl: Uca0irrctl,
-    _reserved12: [u8; 0x0a],
+    _reserved10: [u8; 0x06],
+    uca0ie: Uca0ie,
+    uca0ifg: Uca0ifg,
     uca0iv: Uca0iv,
 }
 impl RegisterBlock {
+    #[doc = "0x00 - eUSCI_Ax Control Word Register 0"]
+    #[inline(always)]
+    pub const fn uca0ctlw0(&self) -> &Uca0ctlw0 {
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().cast() }
+    }
     #[doc = "0x00 - USCI A0 Control Register 1"]
     #[inline(always)]
     pub const fn uca0ctl1(&self) -> &Uca0ctl1 {
-        &self.uca0ctl1
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().cast() }
     }
     #[doc = "0x01 - USCI A0 Control Register 0"]
     #[inline(always)]
     pub const fn uca0ctl0(&self) -> &Uca0ctl0 {
-        &self.uca0ctl0
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(1).cast() }
     }
     #[doc = "0x02 - USCI A0 Control Word Register 1"]
     #[inline(always)]
     pub const fn uca0ctlw1(&self) -> &Uca0ctlw1 {
         &self.uca0ctlw1
     }
+    #[doc = "0x06 - eUSCI_Ax Baud Rate Register 0"]
+    #[inline(always)]
+    pub const fn uca0brw(&self) -> &Uca0brw {
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(6).cast() }
+    }
     #[doc = "0x06 - USCI A0 Baud Rate 0"]
     #[inline(always)]
     pub const fn uca0br0(&self) -> &Uca0br0 {
-        &self.uca0br0
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(6).cast() }
     }
     #[doc = "0x07 - USCI A0 Baud Rate 1"]
     #[inline(always)]
     pub const fn uca0br1(&self) -> &Uca0br1 {
-        &self.uca0br1
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(7).cast() }
     }
     #[doc = "0x08 - USCI A0 Modulation Control"]
     #[inline(always)]
@@ -80,6 +90,16 @@ impl RegisterBlock {
     pub const fn uca0irrctl(&self) -> &Uca0irrctl {
         &self.uca0irrctl
     }
+    #[doc = "0x1a - eUSCI_A0 Interrupt Enable Register"]
+    #[inline(always)]
+    pub const fn uca0ie(&self) -> &Uca0ie {
+        &self.uca0ie
+    }
+    #[doc = "0x1c - eUSCI_A0 Interrupt Flag Register"]
+    #[inline(always)]
+    pub const fn uca0ifg(&self) -> &Uca0ifg {
+        &self.uca0ifg
+    }
     #[doc = "0x1e - USCI A0 Interrupt Vector Register"]
     #[inline(always)]
     pub const fn uca0iv(&self) -> &Uca0iv {
@@ -91,6 +111,11 @@ impl RegisterBlock {
 pub type Uca0ctl1 = crate::Reg<uca0ctl1::Uca0ctl1Spec>;
 #[doc = "USCI A0 Control Register 1"]
 pub mod uca0ctl1;
+#[doc = "UCA0CTLW0 (rw) register accessor: eUSCI_Ax Control Word Register 0\n\nYou can [`read`](crate::Reg::read) this register and get [`uca0ctlw0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`uca0ctlw0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@uca0ctlw0`] module"]
+#[doc(alias = "UCA0CTLW0")]
+pub type Uca0ctlw0 = crate::Reg<uca0ctlw0::Uca0ctlw0Spec>;
+#[doc = "eUSCI_Ax Control Word Register 0"]
+pub mod uca0ctlw0;
 #[doc = "UCA0CTL0 (rw) register accessor: USCI A0 Control Register 0\n\nYou can [`read`](crate::Reg::read) this register and get [`uca0ctl0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`uca0ctl0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@uca0ctl0`] module"]
 #[doc(alias = "UCA0CTL0")]
 pub type Uca0ctl0 = crate::Reg<uca0ctl0::Uca0ctl0Spec>;
@@ -101,6 +126,11 @@ pub mod uca0ctl0;
 pub type Uca0br0 = crate::Reg<uca0br0::Uca0br0Spec>;
 #[doc = "USCI A0 Baud Rate 0"]
 pub mod uca0br0;
+#[doc = "UCA0BRW (rw) register accessor: eUSCI_Ax Baud Rate Register 0\n\nYou can [`read`](crate::Reg::read) this register and get [`uca0brw::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`uca0brw::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@uca0brw`] module"]
+#[doc(alias = "UCA0BRW")]
+pub type Uca0brw = crate::Reg<uca0brw::Uca0brwSpec>;
+#[doc = "eUSCI_Ax Baud Rate Register 0"]
+pub mod uca0brw;
 #[doc = "UCA0BR1 (rw) register accessor: USCI A0 Baud Rate 1\n\nYou can [`read`](crate::Reg::read) this register and get [`uca0br1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`uca0br1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@uca0br1`] module"]
 #[doc(alias = "UCA0BR1")]
 pub type Uca0br1 = crate::Reg<uca0br1::Uca0br1Spec>;
@@ -126,6 +156,16 @@ pub mod uca0irtctl;
 pub type Uca0irrctl = crate::Reg<uca0irrctl::Uca0irrctlSpec>;
 #[doc = "USCI A0 IrDA Receive Control"]
 pub mod uca0irrctl;
+#[doc = "UCA0IE (rw) register accessor: eUSCI_A0 Interrupt Enable Register\n\nYou can [`read`](crate::Reg::read) this register and get [`uca0ie::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`uca0ie::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@uca0ie`] module"]
+#[doc(alias = "UCA0IE")]
+pub type Uca0ie = crate::Reg<uca0ie::Uca0ieSpec>;
+#[doc = "eUSCI_A0 Interrupt Enable Register"]
+pub mod uca0ie;
+#[doc = "UCA0IFG (rw) register accessor: eUSCI_A0 Interrupt Flag Register\n\nYou can [`read`](crate::Reg::read) this register and get [`uca0ifg::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`uca0ifg::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@uca0ifg`] module"]
+#[doc(alias = "UCA0IFG")]
+pub type Uca0ifg = crate::Reg<uca0ifg::Uca0ifgSpec>;
+#[doc = "eUSCI_A0 Interrupt Flag Register"]
+pub mod uca0ifg;
 #[doc = "UCA0CTLW1 (rw) register accessor: USCI A0 Control Word Register 1\n\nYou can [`read`](crate::Reg::read) this register and get [`uca0ctlw1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`uca0ctlw1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@uca0ctlw1`] module"]
 #[doc(alias = "UCA0CTLW1")]
 pub type Uca0ctlw1 = crate::Reg<uca0ctlw1::Uca0ctlw1Spec>;
