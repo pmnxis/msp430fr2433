@@ -1,13 +1,18 @@
-<?xml version="1.0"?>
-<device>
+<?xml version="1.0" encoding="UTF-8"?>
+<device schemaVersion="1.1" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
+  <vendor>msp430gen</vendor>
   <name>MSP430FR2433</name>
-  <size>2</size>
+  <version>1912f3a5</version>
+  <description></description>
+  <addressUnitBits>8</addressUnitBits>
+  <width>16</width>
+  <size>16</size>
   <access>read-write</access>
   <resetValue>0</resetValue>
   <peripherals>
     <peripheral>
-      <name>PORT_1_2</name>
-      <description>Port 1/2</description>
+      <name>PA</name>
+      <description>Port A</description>
       <baseAddress>512</baseAddress>
       <registers>
         <register>
@@ -1305,7 +1310,545 @@
       </registers>
     </peripheral>
     <peripheral>
-      <name>PORT_3</name>
+      <name>P1</name>
+      <description>Port 1</description>
+      <baseAddress>512</baseAddress>
+      <registers>
+        <register>
+          <name>P1IN</name>
+          <description>Port 1 Input register</description>
+          <addressOffset>0</addressOffset>
+          <size>8</size>
+          <fields>
+            <field>
+              <name>P1IN</name>
+              <description>P1IN</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>P1OUT</name>
+          <description>Port 1 Output register</description>
+          <addressOffset>2</addressOffset>
+          <size>8</size>
+          <fields>
+            <field>
+              <name>P1OUT</name>
+              <description>P1OUT</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>P1DIR</name>
+          <description>Port 1 Direction register</description>
+          <addressOffset>4</addressOffset>
+          <size>8</size>
+          <fields>
+            <field>
+              <name>P1DIR</name>
+              <description>P1DIR</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>P1REN</name>
+          <description>Port 1 Resistor Enable register</description>
+          <addressOffset>6</addressOffset>
+          <size>8</size>
+          <fields>
+            <field>
+              <name>P1REN</name>
+              <description>P1REN</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>P1SEL0</name>
+          <description>Port 1 Selection register bit 0</description>
+          <addressOffset>10</addressOffset>
+          <size>8</size>
+          <fields>
+            <field>
+              <name>P1SEL0</name>
+              <description>P1SEL0</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>P1SEL1</name>
+          <description>Port 1 Selection register bit 1</description>
+          <addressOffset>12</addressOffset>
+          <size>8</size>
+          <fields>
+            <field>
+              <name>P1SEL1</name>
+              <description>P1SEL1</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>P1SELC</name>
+          <description>Port 1 Complement Select register</description>
+          <addressOffset>22</addressOffset>
+          <size>8</size>
+          <fields>
+            <field>
+              <name>P1SELC</name>
+              <description>P1SELC</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>P1IES</name>
+          <description>Port 1 Interrupt Edge Select register</description>
+          <addressOffset>24</addressOffset>
+          <size>8</size>
+          <fields>
+            <field>
+              <name>P1IES</name>
+              <description>P1IES</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>P1IE</name>
+          <description>Port 1 Interrupt Enable register</description>
+          <addressOffset>26</addressOffset>
+          <size>8</size>
+          <fields>
+            <field>
+              <name>P1IE</name>
+              <description>P1IE</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>P1IFG</name>
+          <description>Port 1 Interrupt Flag register</description>
+          <addressOffset>28</addressOffset>
+          <size>8</size>
+          <fields>
+            <field>
+              <name>P1IFG</name>
+              <description>P1IFG</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>P1IV</name>
+          <description>Port 1 Interrupt Vector register</description>
+          <addressOffset>14</addressOffset>
+          <size>16</size>
+          <fields>
+            <field>
+              <name>P1IV</name>
+              <description>P1IV</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>16</bitWidth>
+              <enumeratedValues>
+                <name>P1IV</name>
+                <enumeratedValue>
+                  <name>NONE</name>
+                  <description>No interrupt pending</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>P1IFG0</name>
+                  <description>Interrupt Source: Port 1.0 interrupt; Interrupt Flag: P1IFG0; Interrupt Priority: Highest</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>P1IFG1</name>
+                  <description>Interrupt Source: Port 1.1 interrupt; Interrupt Flag: P1IFG1</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>P1IFG2</name>
+                  <description>Interrupt Source: Port 1.2 interrupt; Interrupt Flag: P1IFG2</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>P1IFG3</name>
+                  <description>Interrupt Source: Port 1.3 interrupt; Interrupt Flag: P1IFG3</description>
+                  <value>8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>P1IFG4</name>
+                  <description>Interrupt Source: Port 1.4 interrupt; Interrupt Flag: P1IFG4</description>
+                  <value>10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>P1IFG5</name>
+                  <description>Interrupt Source: Port 1.5 interrupt; Interrupt Flag: P1IFG5</description>
+                  <value>12</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>P1IFG6</name>
+                  <description>Interrupt Source: Port 1.6 interrupt; Interrupt Flag: P1IFG6</description>
+                  <value>14</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>P1IFG7</name>
+                  <description>Interrupt Source: Port 1.7 interrupt; Interrupt Flag: P1IFG7; Interrupt Priority: Lowest</description>
+                  <value>16</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+      </registers>
+    </peripheral>
+    <peripheral>
+      <name>P2</name>
+      <description>Port 2</description>
+      <baseAddress>512</baseAddress>
+      <registers>
+        <register>
+          <name>P2IN</name>
+          <description>Port 2 Input register</description>
+          <addressOffset>1</addressOffset>
+          <size>8</size>
+          <fields>
+            <field>
+              <name>P2IN</name>
+              <description>P2IN</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>P2OUT</name>
+          <description>Port 2 Output register</description>
+          <addressOffset>3</addressOffset>
+          <size>8</size>
+          <fields>
+            <field>
+              <name>P2OUT</name>
+              <description>P2OUT</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>P2DIR</name>
+          <description>Port 2 Direction register</description>
+          <addressOffset>5</addressOffset>
+          <size>8</size>
+          <fields>
+            <field>
+              <name>P2DIR</name>
+              <description>P2DIR</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>P2REN</name>
+          <description>Port 2 Resistor Enable register</description>
+          <addressOffset>7</addressOffset>
+          <size>8</size>
+          <fields>
+            <field>
+              <name>P2REN</name>
+              <description>P2REN</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>P2SEL0</name>
+          <description>Port 2 Selection register bit 0</description>
+          <addressOffset>11</addressOffset>
+          <size>8</size>
+          <fields>
+            <field>
+              <name>P2SEL0</name>
+              <description>P2SEL0</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>P2SEL1</name>
+          <description>Port 2 Selection register bit 1</description>
+          <addressOffset>13</addressOffset>
+          <size>8</size>
+          <fields>
+            <field>
+              <name>P2SEL1</name>
+              <description>P2SEL1</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>P2SELC</name>
+          <description>Port 2 Complement Select register</description>
+          <addressOffset>23</addressOffset>
+          <size>8</size>
+          <fields>
+            <field>
+              <name>P2SELC</name>
+              <description>P2SELC</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>P2IES</name>
+          <description>Port 2 Interrupt Edge Select register</description>
+          <addressOffset>25</addressOffset>
+          <size>8</size>
+          <fields>
+            <field>
+              <name>P2IES</name>
+              <description>P2IES</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>P2IE</name>
+          <description>Port 2 Interrupt Enable register</description>
+          <addressOffset>27</addressOffset>
+          <size>8</size>
+          <fields>
+            <field>
+              <name>P2IE</name>
+              <description>P2IE</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>P2IFG</name>
+          <description>Port 2 Interrupt Flag register</description>
+          <addressOffset>29</addressOffset>
+          <size>8</size>
+          <fields>
+            <field>
+              <name>P2IFG</name>
+              <description>P2IFG</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>P2IV</name>
+          <description>Port 2 Interrupt Vector register</description>
+          <addressOffset>30</addressOffset>
+          <size>16</size>
+          <fields>
+            <field>
+              <name>P2IV</name>
+              <description>P2IV</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>16</bitWidth>
+              <enumeratedValues>
+                <name>P2IV</name>
+                <enumeratedValue>
+                  <name>NONE</name>
+                  <description>No interrupt pending</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>P2IFG0</name>
+                  <description>Interrupt Source: Port 2.0 interrupt; Interrupt Flag: P2IFG0; Interrupt Priority: Highest</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>P2IFG1</name>
+                  <description>Interrupt Source: Port 2.1 interrupt; Interrupt Flag: P2IFG1</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>P2IFG2</name>
+                  <description>Interrupt Source: Port 2.2 interrupt; Interrupt Flag: P2IFG2</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>P2IFG3</name>
+                  <description>Interrupt Source: Port 2.3 interrupt; Interrupt Flag: P2IFG3</description>
+                  <value>8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>P2IFG4</name>
+                  <description>Interrupt Source: Port 2.4 interrupt; Interrupt Flag: P2IFG4</description>
+                  <value>10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>P2IFG5</name>
+                  <description>Interrupt Source: Port 2.5 interrupt; Interrupt Flag: P2IFG5</description>
+                  <value>12</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>P2IFG6</name>
+                  <description>Interrupt Source: Port 2.6 interrupt; Interrupt Flag: P2IFG6</description>
+                  <value>14</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>P2IFG7</name>
+                  <description>Interrupt Source: Port 2.7 interrupt; Interrupt Flag: P2IFG7; Interrupt Priority: Lowest</description>
+                  <value>16</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+      </registers>
+    </peripheral>
+    <peripheral>
+      <name>P3</name>
       <description>Port 3</description>
       <baseAddress>544</baseAddress>
       <registers>
@@ -4303,7 +4846,6 @@
               <access>read-write</access>
               <enumeratedValues>
                 <name>REFVSEL</name>
-                <usage>read-write</usage>
                 <enumeratedValue>
                   <name>REFVSEL_0</name>
                   <description>00b = 1.5V</description>
@@ -9702,10 +10244,4 @@
       </interrupt>
     </peripheral>
   </peripherals>
-  <vendorExtensions>
-    <msp430_svd>
-      <version>0.3.0</version>
-      <commit_hash>69d35ad</commit_hash>
-    </msp430_svd>
-  </vendorExtensions>
 </device>

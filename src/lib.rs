@@ -162,24 +162,42 @@ pub enum Interrupt {
     #[doc = "58 - 0xFFFC System Non-maskable"]
     SYSNMI = 58,
 }
-#[doc = "Port 1/2"]
-pub type Port1_2 = crate::Periph<port_1_2::RegisterBlock, 0x0200>;
-impl core::fmt::Debug for Port1_2 {
+#[doc = "Port A"]
+pub type Pa = crate::Periph<pa::RegisterBlock, 0x0200>;
+impl core::fmt::Debug for Pa {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Port1_2").finish()
+        f.debug_struct("Pa").finish()
     }
 }
-#[doc = "Port 1/2"]
-pub mod port_1_2;
-#[doc = "Port 3"]
-pub type Port3 = crate::Periph<port_3::RegisterBlock, 0x0220>;
-impl core::fmt::Debug for Port3 {
+#[doc = "Port A"]
+pub mod pa;
+#[doc = "Port 1"]
+pub type P1 = crate::Periph<p1::RegisterBlock, 0x0200>;
+impl core::fmt::Debug for P1 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Port3").finish()
+        f.debug_struct("P1").finish()
+    }
+}
+#[doc = "Port 1"]
+pub mod p1;
+#[doc = "Port 2"]
+pub type P2 = crate::Periph<p2::RegisterBlock, 0x0200>;
+impl core::fmt::Debug for P2 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("P2").finish()
+    }
+}
+#[doc = "Port 2"]
+pub mod p2;
+#[doc = "Port 3"]
+pub type P3 = crate::Periph<p3::RegisterBlock, 0x0220>;
+impl core::fmt::Debug for P3 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("P3").finish()
     }
 }
 #[doc = "Port 3"]
-pub mod port_3;
+pub mod p3;
 #[doc = "USCI_A0 UART Mode"]
 pub type UsciA0UartMode = crate::Periph<usci_a0_uart_mode::RegisterBlock, 0x0500>;
 impl core::fmt::Debug for UsciA0UartMode {
@@ -383,10 +401,14 @@ static mut DEVICE_PERIPHERALS: bool = false;
 #[doc = r" All the peripherals."]
 #[allow(non_snake_case)]
 pub struct Peripherals {
-    #[doc = "PORT_1_2"]
-    pub port_1_2: Port1_2,
-    #[doc = "PORT_3"]
-    pub port_3: Port3,
+    #[doc = "PA"]
+    pub pa: Pa,
+    #[doc = "P1"]
+    pub p1: P1,
+    #[doc = "P2"]
+    pub p2: P2,
+    #[doc = "P3"]
+    pub p3: P3,
     #[doc = "USCI_A0_UART_MODE"]
     pub usci_a0_uart_mode: UsciA0UartMode,
     #[doc = "USCI_A0_SPI_MODE"]
@@ -453,8 +475,10 @@ impl Peripherals {
     pub unsafe fn steal() -> Self {
         DEVICE_PERIPHERALS = true;
         Peripherals {
-            port_1_2: Port1_2::steal(),
-            port_3: Port3::steal(),
+            pa: Pa::steal(),
+            p1: P1::steal(),
+            p2: P2::steal(),
+            p3: P3::steal(),
             usci_a0_uart_mode: UsciA0UartMode::steal(),
             usci_a0_spi_mode: UsciA0SpiMode::steal(),
             usci_a1_uart_mode: UsciA1UartMode::steal(),
