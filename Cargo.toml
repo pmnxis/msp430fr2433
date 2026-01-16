@@ -1,6 +1,6 @@
 [package]
 name = "msp430fr2433"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["Jinwoo Park <pmnxis@gmail.com>"]
 description = "Peripheral access crate for TI MSP430FR2433 microcontroller"
 keywords = ["no-std", "msp430", "svd2rust", "embedded", "ti"]
