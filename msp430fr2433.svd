@@ -6464,7 +6464,7 @@
           <resetMask>65535</resetMask>
           <fields>
             <field>
-              <name>RTCIF</name>
+              <name>RTCIFG</name>
               <description>Low-Power-Counter Interrupt Flag</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
