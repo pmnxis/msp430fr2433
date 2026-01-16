@@ -1,373 +1,351 @@
 #[doc = "Register `TA2CTL` reader"]
-pub struct R(crate::R<TA2CTL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<TA2CTL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<TA2CTL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<TA2CTL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<Ta2ctlSpec>;
 #[doc = "Register `TA2CTL` writer"]
-pub struct W(crate::W<TA2CTL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TA2CTL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<TA2CTL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TA2CTL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<Ta2ctlSpec>;
 #[doc = "Field `TAIFG` reader - Timer A counter interrupt flag"]
-pub type TAIFG_R = crate::BitReader<bool>;
+pub type TaifgR = crate::BitReader;
 #[doc = "Field `TAIFG` writer - Timer A counter interrupt flag"]
-pub type TAIFG_W<'a, const O: u8> = crate::BitWriter<'a, u16, TA2CTL_SPEC, bool, O>;
+pub type TaifgW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TAIE` reader - Timer A counter interrupt enable"]
-pub type TAIE_R = crate::BitReader<bool>;
+pub type TaieR = crate::BitReader;
 #[doc = "Field `TAIE` writer - Timer A counter interrupt enable"]
-pub type TAIE_W<'a, const O: u8> = crate::BitWriter<'a, u16, TA2CTL_SPEC, bool, O>;
+pub type TaieW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TACLR` reader - Timer A counter clear"]
-pub type TACLR_R = crate::BitReader<bool>;
+pub type TaclrR = crate::BitReader;
 #[doc = "Field `TACLR` writer - Timer A counter clear"]
-pub type TACLR_W<'a, const O: u8> = crate::BitWriter<'a, u16, TA2CTL_SPEC, bool, O>;
+pub type TaclrW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Timer A mode control 1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum MC_A {
+pub enum Mc {
     #[doc = "0: Timer A mode control: 0 - Stop"]
-    MC_0 = 0,
+    Mc0 = 0,
     #[doc = "1: Timer A mode control: 1 - Up to CCR0"]
-    MC_1 = 1,
+    Mc1 = 1,
     #[doc = "2: Timer A mode control: 2 - Continuous up"]
-    MC_2 = 2,
+    Mc2 = 2,
     #[doc = "3: Timer A mode control: 3 - Up/Down"]
-    MC_3 = 3,
+    Mc3 = 3,
 }
-impl From<MC_A> for u8 {
+impl From<Mc> for u8 {
     #[inline(always)]
-    fn from(variant: MC_A) -> Self {
+    fn from(variant: Mc) -> Self {
         variant as _
     }
 }
+impl crate::FieldSpec for Mc {
+    type Ux = u8;
+}
+impl crate::IsEnum for Mc {}
 #[doc = "Field `MC` reader - Timer A mode control 1"]
-pub type MC_R = crate::FieldReader<u8, MC_A>;
-impl MC_R {
+pub type McR = crate::FieldReader<Mc>;
+impl McR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MC_A {
+    pub const fn variant(&self) -> Mc {
         match self.bits {
-            0 => MC_A::MC_0,
-            1 => MC_A::MC_1,
-            2 => MC_A::MC_2,
-            3 => MC_A::MC_3,
+            0 => Mc::Mc0,
+            1 => Mc::Mc1,
+            2 => Mc::Mc2,
+            3 => Mc::Mc3,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `MC_0`"]
-    #[inline(always)]
-    pub fn is_mc_0(&self) -> bool {
-        *self == MC_A::MC_0
-    }
-    #[doc = "Checks if the value of the field is `MC_1`"]
-    #[inline(always)]
-    pub fn is_mc_1(&self) -> bool {
-        *self == MC_A::MC_1
-    }
-    #[doc = "Checks if the value of the field is `MC_2`"]
-    #[inline(always)]
-    pub fn is_mc_2(&self) -> bool {
-        *self == MC_A::MC_2
-    }
-    #[doc = "Checks if the value of the field is `MC_3`"]
-    #[inline(always)]
-    pub fn is_mc_3(&self) -> bool {
-        *self == MC_A::MC_3
-    }
-}
-#[doc = "Field `MC` writer - Timer A mode control 1"]
-pub type MC_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u16, TA2CTL_SPEC, u8, MC_A, 2, O>;
-impl<'a, const O: u8> MC_W<'a, O> {
     #[doc = "Timer A mode control: 0 - Stop"]
     #[inline(always)]
-    pub fn mc_0(self) -> &'a mut W {
-        self.variant(MC_A::MC_0)
+    pub fn is_mc_0(&self) -> bool {
+        *self == Mc::Mc0
     }
     #[doc = "Timer A mode control: 1 - Up to CCR0"]
     #[inline(always)]
-    pub fn mc_1(self) -> &'a mut W {
-        self.variant(MC_A::MC_1)
+    pub fn is_mc_1(&self) -> bool {
+        *self == Mc::Mc1
     }
     #[doc = "Timer A mode control: 2 - Continuous up"]
     #[inline(always)]
-    pub fn mc_2(self) -> &'a mut W {
-        self.variant(MC_A::MC_2)
+    pub fn is_mc_2(&self) -> bool {
+        *self == Mc::Mc2
     }
     #[doc = "Timer A mode control: 3 - Up/Down"]
     #[inline(always)]
-    pub fn mc_3(self) -> &'a mut W {
-        self.variant(MC_A::MC_3)
+    pub fn is_mc_3(&self) -> bool {
+        *self == Mc::Mc3
+    }
+}
+#[doc = "Field `MC` writer - Timer A mode control 1"]
+pub type McW<'a, REG> = crate::FieldWriter<'a, REG, 2, Mc, crate::Safe>;
+impl<'a, REG> McW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "Timer A mode control: 0 - Stop"]
+    #[inline(always)]
+    pub fn mc_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Mc::Mc0)
+    }
+    #[doc = "Timer A mode control: 1 - Up to CCR0"]
+    #[inline(always)]
+    pub fn mc_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Mc::Mc1)
+    }
+    #[doc = "Timer A mode control: 2 - Continuous up"]
+    #[inline(always)]
+    pub fn mc_2(self) -> &'a mut crate::W<REG> {
+        self.variant(Mc::Mc2)
+    }
+    #[doc = "Timer A mode control: 3 - Up/Down"]
+    #[inline(always)]
+    pub fn mc_3(self) -> &'a mut crate::W<REG> {
+        self.variant(Mc::Mc3)
     }
 }
 #[doc = "Timer A clock input divider 1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum ID_A {
+pub enum Id {
     #[doc = "0: Timer A input divider: 0 - /1"]
-    ID_0 = 0,
+    Id0 = 0,
     #[doc = "1: Timer A input divider: 1 - /2"]
-    ID_1 = 1,
+    Id1 = 1,
     #[doc = "2: Timer A input divider: 2 - /4"]
-    ID_2 = 2,
+    Id2 = 2,
     #[doc = "3: Timer A input divider: 3 - /8"]
-    ID_3 = 3,
+    Id3 = 3,
 }
-impl From<ID_A> for u8 {
+impl From<Id> for u8 {
     #[inline(always)]
-    fn from(variant: ID_A) -> Self {
+    fn from(variant: Id) -> Self {
         variant as _
     }
 }
+impl crate::FieldSpec for Id {
+    type Ux = u8;
+}
+impl crate::IsEnum for Id {}
 #[doc = "Field `ID` reader - Timer A clock input divider 1"]
-pub type ID_R = crate::FieldReader<u8, ID_A>;
-impl ID_R {
+pub type IdR = crate::FieldReader<Id>;
+impl IdR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ID_A {
+    pub const fn variant(&self) -> Id {
         match self.bits {
-            0 => ID_A::ID_0,
-            1 => ID_A::ID_1,
-            2 => ID_A::ID_2,
-            3 => ID_A::ID_3,
+            0 => Id::Id0,
+            1 => Id::Id1,
+            2 => Id::Id2,
+            3 => Id::Id3,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `ID_0`"]
-    #[inline(always)]
-    pub fn is_id_0(&self) -> bool {
-        *self == ID_A::ID_0
-    }
-    #[doc = "Checks if the value of the field is `ID_1`"]
-    #[inline(always)]
-    pub fn is_id_1(&self) -> bool {
-        *self == ID_A::ID_1
-    }
-    #[doc = "Checks if the value of the field is `ID_2`"]
-    #[inline(always)]
-    pub fn is_id_2(&self) -> bool {
-        *self == ID_A::ID_2
-    }
-    #[doc = "Checks if the value of the field is `ID_3`"]
-    #[inline(always)]
-    pub fn is_id_3(&self) -> bool {
-        *self == ID_A::ID_3
-    }
-}
-#[doc = "Field `ID` writer - Timer A clock input divider 1"]
-pub type ID_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u16, TA2CTL_SPEC, u8, ID_A, 2, O>;
-impl<'a, const O: u8> ID_W<'a, O> {
     #[doc = "Timer A input divider: 0 - /1"]
     #[inline(always)]
-    pub fn id_0(self) -> &'a mut W {
-        self.variant(ID_A::ID_0)
+    pub fn is_id_0(&self) -> bool {
+        *self == Id::Id0
     }
     #[doc = "Timer A input divider: 1 - /2"]
     #[inline(always)]
-    pub fn id_1(self) -> &'a mut W {
-        self.variant(ID_A::ID_1)
+    pub fn is_id_1(&self) -> bool {
+        *self == Id::Id1
     }
     #[doc = "Timer A input divider: 2 - /4"]
     #[inline(always)]
-    pub fn id_2(self) -> &'a mut W {
-        self.variant(ID_A::ID_2)
+    pub fn is_id_2(&self) -> bool {
+        *self == Id::Id2
     }
     #[doc = "Timer A input divider: 3 - /8"]
     #[inline(always)]
-    pub fn id_3(self) -> &'a mut W {
-        self.variant(ID_A::ID_3)
+    pub fn is_id_3(&self) -> bool {
+        *self == Id::Id3
+    }
+}
+#[doc = "Field `ID` writer - Timer A clock input divider 1"]
+pub type IdW<'a, REG> = crate::FieldWriter<'a, REG, 2, Id, crate::Safe>;
+impl<'a, REG> IdW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "Timer A input divider: 0 - /1"]
+    #[inline(always)]
+    pub fn id_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Id::Id0)
+    }
+    #[doc = "Timer A input divider: 1 - /2"]
+    #[inline(always)]
+    pub fn id_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Id::Id1)
+    }
+    #[doc = "Timer A input divider: 2 - /4"]
+    #[inline(always)]
+    pub fn id_2(self) -> &'a mut crate::W<REG> {
+        self.variant(Id::Id2)
+    }
+    #[doc = "Timer A input divider: 3 - /8"]
+    #[inline(always)]
+    pub fn id_3(self) -> &'a mut crate::W<REG> {
+        self.variant(Id::Id3)
     }
 }
 #[doc = "Timer A clock source select 1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum TASSEL_A {
+pub enum Tassel {
     #[doc = "0: Timer A clock source select: 0 - TACLK"]
-    TASSEL_0 = 0,
+    Tassel0 = 0,
     #[doc = "1: Timer A clock source select: 1 - ACLK"]
-    TASSEL_1 = 1,
+    Tassel1 = 1,
     #[doc = "2: Timer A clock source select: 2 - SMCLK"]
-    TASSEL_2 = 2,
+    Tassel2 = 2,
     #[doc = "3: Timer A clock source select: 3 - INCLK"]
-    TASSEL_3 = 3,
+    Tassel3 = 3,
 }
-impl From<TASSEL_A> for u8 {
+impl From<Tassel> for u8 {
     #[inline(always)]
-    fn from(variant: TASSEL_A) -> Self {
+    fn from(variant: Tassel) -> Self {
         variant as _
     }
 }
+impl crate::FieldSpec for Tassel {
+    type Ux = u8;
+}
+impl crate::IsEnum for Tassel {}
 #[doc = "Field `TASSEL` reader - Timer A clock source select 1"]
-pub type TASSEL_R = crate::FieldReader<u8, TASSEL_A>;
-impl TASSEL_R {
+pub type TasselR = crate::FieldReader<Tassel>;
+impl TasselR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TASSEL_A {
+    pub const fn variant(&self) -> Tassel {
         match self.bits {
-            0 => TASSEL_A::TASSEL_0,
-            1 => TASSEL_A::TASSEL_1,
-            2 => TASSEL_A::TASSEL_2,
-            3 => TASSEL_A::TASSEL_3,
+            0 => Tassel::Tassel0,
+            1 => Tassel::Tassel1,
+            2 => Tassel::Tassel2,
+            3 => Tassel::Tassel3,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `TASSEL_0`"]
-    #[inline(always)]
-    pub fn is_tassel_0(&self) -> bool {
-        *self == TASSEL_A::TASSEL_0
-    }
-    #[doc = "Checks if the value of the field is `TASSEL_1`"]
-    #[inline(always)]
-    pub fn is_tassel_1(&self) -> bool {
-        *self == TASSEL_A::TASSEL_1
-    }
-    #[doc = "Checks if the value of the field is `TASSEL_2`"]
-    #[inline(always)]
-    pub fn is_tassel_2(&self) -> bool {
-        *self == TASSEL_A::TASSEL_2
-    }
-    #[doc = "Checks if the value of the field is `TASSEL_3`"]
-    #[inline(always)]
-    pub fn is_tassel_3(&self) -> bool {
-        *self == TASSEL_A::TASSEL_3
-    }
-}
-#[doc = "Field `TASSEL` writer - Timer A clock source select 1"]
-pub type TASSEL_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u16, TA2CTL_SPEC, u8, TASSEL_A, 2, O>;
-impl<'a, const O: u8> TASSEL_W<'a, O> {
     #[doc = "Timer A clock source select: 0 - TACLK"]
     #[inline(always)]
-    pub fn tassel_0(self) -> &'a mut W {
-        self.variant(TASSEL_A::TASSEL_0)
+    pub fn is_tassel_0(&self) -> bool {
+        *self == Tassel::Tassel0
     }
     #[doc = "Timer A clock source select: 1 - ACLK"]
     #[inline(always)]
-    pub fn tassel_1(self) -> &'a mut W {
-        self.variant(TASSEL_A::TASSEL_1)
+    pub fn is_tassel_1(&self) -> bool {
+        *self == Tassel::Tassel1
     }
     #[doc = "Timer A clock source select: 2 - SMCLK"]
     #[inline(always)]
-    pub fn tassel_2(self) -> &'a mut W {
-        self.variant(TASSEL_A::TASSEL_2)
+    pub fn is_tassel_2(&self) -> bool {
+        *self == Tassel::Tassel2
     }
     #[doc = "Timer A clock source select: 3 - INCLK"]
     #[inline(always)]
-    pub fn tassel_3(self) -> &'a mut W {
-        self.variant(TASSEL_A::TASSEL_3)
+    pub fn is_tassel_3(&self) -> bool {
+        *self == Tassel::Tassel3
+    }
+}
+#[doc = "Field `TASSEL` writer - Timer A clock source select 1"]
+pub type TasselW<'a, REG> = crate::FieldWriter<'a, REG, 2, Tassel, crate::Safe>;
+impl<'a, REG> TasselW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "Timer A clock source select: 0 - TACLK"]
+    #[inline(always)]
+    pub fn tassel_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Tassel::Tassel0)
+    }
+    #[doc = "Timer A clock source select: 1 - ACLK"]
+    #[inline(always)]
+    pub fn tassel_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Tassel::Tassel1)
+    }
+    #[doc = "Timer A clock source select: 2 - SMCLK"]
+    #[inline(always)]
+    pub fn tassel_2(self) -> &'a mut crate::W<REG> {
+        self.variant(Tassel::Tassel2)
+    }
+    #[doc = "Timer A clock source select: 3 - INCLK"]
+    #[inline(always)]
+    pub fn tassel_3(self) -> &'a mut crate::W<REG> {
+        self.variant(Tassel::Tassel3)
     }
 }
 impl R {
     #[doc = "Bit 0 - Timer A counter interrupt flag"]
     #[inline(always)]
-    pub fn taifg(&self) -> TAIFG_R {
-        TAIFG_R::new((self.bits & 1) != 0)
+    pub fn taifg(&self) -> TaifgR {
+        TaifgR::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Timer A counter interrupt enable"]
     #[inline(always)]
-    pub fn taie(&self) -> TAIE_R {
-        TAIE_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn taie(&self) -> TaieR {
+        TaieR::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Timer A counter clear"]
     #[inline(always)]
-    pub fn taclr(&self) -> TACLR_R {
-        TACLR_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn taclr(&self) -> TaclrR {
+        TaclrR::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bits 4:5 - Timer A mode control 1"]
     #[inline(always)]
-    pub fn mc(&self) -> MC_R {
-        MC_R::new(((self.bits >> 4) & 3) as u8)
+    pub fn mc(&self) -> McR {
+        McR::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bits 6:7 - Timer A clock input divider 1"]
     #[inline(always)]
-    pub fn id(&self) -> ID_R {
-        ID_R::new(((self.bits >> 6) & 3) as u8)
+    pub fn id(&self) -> IdR {
+        IdR::new(((self.bits >> 6) & 3) as u8)
     }
     #[doc = "Bits 8:9 - Timer A clock source select 1"]
     #[inline(always)]
-    pub fn tassel(&self) -> TASSEL_R {
-        TASSEL_R::new(((self.bits >> 8) & 3) as u8)
+    pub fn tassel(&self) -> TasselR {
+        TasselR::new(((self.bits >> 8) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - Timer A counter interrupt flag"]
     #[inline(always)]
-    pub fn taifg(&mut self) -> TAIFG_W<0> {
-        TAIFG_W::new(self)
+    pub fn taifg(&mut self) -> TaifgW<'_, Ta2ctlSpec> {
+        TaifgW::new(self, 0)
     }
     #[doc = "Bit 1 - Timer A counter interrupt enable"]
     #[inline(always)]
-    pub fn taie(&mut self) -> TAIE_W<1> {
-        TAIE_W::new(self)
+    pub fn taie(&mut self) -> TaieW<'_, Ta2ctlSpec> {
+        TaieW::new(self, 1)
     }
     #[doc = "Bit 2 - Timer A counter clear"]
     #[inline(always)]
-    pub fn taclr(&mut self) -> TACLR_W<2> {
-        TACLR_W::new(self)
+    pub fn taclr(&mut self) -> TaclrW<'_, Ta2ctlSpec> {
+        TaclrW::new(self, 2)
     }
     #[doc = "Bits 4:5 - Timer A mode control 1"]
     #[inline(always)]
-    pub fn mc(&mut self) -> MC_W<4> {
-        MC_W::new(self)
+    pub fn mc(&mut self) -> McW<'_, Ta2ctlSpec> {
+        McW::new(self, 4)
     }
     #[doc = "Bits 6:7 - Timer A clock input divider 1"]
     #[inline(always)]
-    pub fn id(&mut self) -> ID_W<6> {
-        ID_W::new(self)
+    pub fn id(&mut self) -> IdW<'_, Ta2ctlSpec> {
+        IdW::new(self, 6)
     }
     #[doc = "Bits 8:9 - Timer A clock source select 1"]
     #[inline(always)]
-    pub fn tassel(&mut self) -> TASSEL_W<8> {
-        TASSEL_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn tassel(&mut self) -> TasselW<'_, Ta2ctlSpec> {
+        TasselW::new(self, 8)
     }
 }
-#[doc = "Timer2_A2 Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ta2ctl](index.html) module"]
-pub struct TA2CTL_SPEC;
-impl crate::RegisterSpec for TA2CTL_SPEC {
+#[doc = "Timer2_A2 Control\n\nYou can [`read`](crate::Reg::read) this register and get [`ta2ctl::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ta2ctl::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Ta2ctlSpec;
+impl crate::RegisterSpec for Ta2ctlSpec {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [ta2ctl::R](R) reader structure"]
-impl crate::Readable for TA2CTL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [ta2ctl::W](W) writer structure"]
-impl crate::Writable for TA2CTL_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`ta2ctl::R`](R) reader structure"]
+impl crate::Readable for Ta2ctlSpec {}
+#[doc = "`write(|w| ..)` method takes [`ta2ctl::W`](W) writer structure"]
+impl crate::Writable for Ta2ctlSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets TA2CTL to value 0"]
-impl crate::Resettable for TA2CTL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for Ta2ctlSpec {}

@@ -1,108 +1,63 @@
 #[doc = "Register `UCB0STAT_I2C` reader"]
-pub struct R(crate::R<UCB0STAT_I2C_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<UCB0STAT_I2C_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<UCB0STAT_I2C_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<UCB0STAT_I2C_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<Ucb0statI2cSpec>;
 #[doc = "Register `UCB0STAT_I2C` writer"]
-pub struct W(crate::W<UCB0STAT_I2C_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<UCB0STAT_I2C_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<UCB0STAT_I2C_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<UCB0STAT_I2C_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<Ucb0statI2cSpec>;
 #[doc = "Field `UCBBUSY` reader - Bus Busy Flag"]
-pub type UCBBUSY_R = crate::BitReader<bool>;
+pub type UcbbusyR = crate::BitReader;
 #[doc = "Field `UCBBUSY` writer - Bus Busy Flag"]
-pub type UCBBUSY_W<'a, const O: u8> = crate::BitWriter<'a, u8, UCB0STAT_I2C_SPEC, bool, O>;
+pub type UcbbusyW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `UCGC` reader - General Call address received Flag"]
-pub type UCGC_R = crate::BitReader<bool>;
+pub type UcgcR = crate::BitReader;
 #[doc = "Field `UCGC` writer - General Call address received Flag"]
-pub type UCGC_W<'a, const O: u8> = crate::BitWriter<'a, u8, UCB0STAT_I2C_SPEC, bool, O>;
+pub type UcgcW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `UCSCLLOW` reader - SCL low"]
-pub type UCSCLLOW_R = crate::BitReader<bool>;
+pub type UcscllowR = crate::BitReader;
 #[doc = "Field `UCSCLLOW` writer - SCL low"]
-pub type UCSCLLOW_W<'a, const O: u8> = crate::BitWriter<'a, u8, UCB0STAT_I2C_SPEC, bool, O>;
+pub type UcscllowW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 4 - Bus Busy Flag"]
     #[inline(always)]
-    pub fn ucbbusy(&self) -> UCBBUSY_R {
-        UCBBUSY_R::new(((self.bits >> 4) & 1) != 0)
+    pub fn ucbbusy(&self) -> UcbbusyR {
+        UcbbusyR::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - General Call address received Flag"]
     #[inline(always)]
-    pub fn ucgc(&self) -> UCGC_R {
-        UCGC_R::new(((self.bits >> 5) & 1) != 0)
+    pub fn ucgc(&self) -> UcgcR {
+        UcgcR::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - SCL low"]
     #[inline(always)]
-    pub fn ucscllow(&self) -> UCSCLLOW_R {
-        UCSCLLOW_R::new(((self.bits >> 6) & 1) != 0)
+    pub fn ucscllow(&self) -> UcscllowR {
+        UcscllowR::new(((self.bits >> 6) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 4 - Bus Busy Flag"]
     #[inline(always)]
-    pub fn ucbbusy(&mut self) -> UCBBUSY_W<4> {
-        UCBBUSY_W::new(self)
+    pub fn ucbbusy(&mut self) -> UcbbusyW<'_, Ucb0statI2cSpec> {
+        UcbbusyW::new(self, 4)
     }
     #[doc = "Bit 5 - General Call address received Flag"]
     #[inline(always)]
-    pub fn ucgc(&mut self) -> UCGC_W<5> {
-        UCGC_W::new(self)
+    pub fn ucgc(&mut self) -> UcgcW<'_, Ucb0statI2cSpec> {
+        UcgcW::new(self, 5)
     }
     #[doc = "Bit 6 - SCL low"]
     #[inline(always)]
-    pub fn ucscllow(&mut self) -> UCSCLLOW_W<6> {
-        UCSCLLOW_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn ucscllow(&mut self) -> UcscllowW<'_, Ucb0statI2cSpec> {
+        UcscllowW::new(self, 6)
     }
 }
-#[doc = "USCI B0 Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ucb0stat_i2c](index.html) module"]
-pub struct UCB0STAT_I2C_SPEC;
-impl crate::RegisterSpec for UCB0STAT_I2C_SPEC {
+#[doc = "USCI B0 Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ucb0stat_i2c::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ucb0stat_i2c::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Ucb0statI2cSpec;
+impl crate::RegisterSpec for Ucb0statI2cSpec {
     type Ux = u8;
 }
-#[doc = "`read()` method returns [ucb0stat_i2c::R](R) reader structure"]
-impl crate::Readable for UCB0STAT_I2C_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [ucb0stat_i2c::W](W) writer structure"]
-impl crate::Writable for UCB0STAT_I2C_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`ucb0stat_i2c::R`](R) reader structure"]
+impl crate::Readable for Ucb0statI2cSpec {}
+#[doc = "`write(|w| ..)` method takes [`ucb0stat_i2c::W`](W) writer structure"]
+impl crate::Writable for Ucb0statI2cSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets UCB0STAT_I2C to value 0"]
-impl crate::Resettable for UCB0STAT_I2C_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for Ucb0statI2cSpec {}

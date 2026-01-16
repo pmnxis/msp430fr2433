@@ -1,126 +1,228 @@
-#[doc = r"Register block"]
 #[repr(C)]
+#[doc = "Register block"]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Port 1 Input"]
-    pub p1in: crate::Reg<p1in::P1IN_SPEC>,
-    #[doc = "0x01 - Port 2 Input"]
-    pub p2in: crate::Reg<p2in::P2IN_SPEC>,
-    #[doc = "0x02 - Port 1 Output"]
-    pub p1out: crate::Reg<p1out::P1OUT_SPEC>,
-    #[doc = "0x03 - Port 2 Output"]
-    pub p2out: crate::Reg<p2out::P2OUT_SPEC>,
-    #[doc = "0x04 - Port 1 Direction"]
-    pub p1dir: crate::Reg<p1dir::P1DIR_SPEC>,
-    #[doc = "0x05 - Port 2 Direction"]
-    pub p2dir: crate::Reg<p2dir::P2DIR_SPEC>,
-    #[doc = "0x06 - Port 1 Resistor Enable"]
-    pub p1ren: crate::Reg<p1ren::P1REN_SPEC>,
-    #[doc = "0x07 - Port 2 Resistor Enable"]
-    pub p2ren: crate::Reg<p2ren::P2REN_SPEC>,
+    p1in: P1in,
+    p2in: P2in,
+    p1out: P1out,
+    p2out: P2out,
+    p1dir: P1dir,
+    p2dir: P2dir,
+    p1ren: P1ren,
+    p2ren: P2ren,
     _reserved8: [u8; 0x02],
-    #[doc = "0x0a - Port 1 Selection 0"]
-    pub p1sel0: crate::Reg<p1sel0::P1SEL0_SPEC>,
-    #[doc = "0x0b - Port 2 Selection 0"]
-    pub p2sel0: crate::Reg<p2sel0::P2SEL0_SPEC>,
-    #[doc = "0x0c - Port 1 Selection 1"]
-    pub p1sel1: crate::Reg<p1sel1::P1SEL1_SPEC>,
-    #[doc = "0x0d - Port 2 Selection 1"]
-    pub p2sel1: crate::Reg<p2sel1::P2SEL1_SPEC>,
-    #[doc = "0x0e - Port 1 Interrupt Vector Word"]
-    pub p1iv: crate::Reg<p1iv::P1IV_SPEC>,
+    p1sel0: P1sel0,
+    p2sel0: P2sel0,
+    p1sel1: P1sel1,
+    p2sel1: P2sel1,
+    p1iv: P1iv,
     _reserved13: [u8; 0x08],
-    #[doc = "0x18 - Port 1 Interrupt Edge Select"]
-    pub p1ies: crate::Reg<p1ies::P1IES_SPEC>,
-    #[doc = "0x19 - Port 2 Interrupt Edge Select"]
-    pub p2ies: crate::Reg<p2ies::P2IES_SPEC>,
-    #[doc = "0x1a - Port 1 Interrupt Enable"]
-    pub p1ie: crate::Reg<p1ie::P1IE_SPEC>,
-    #[doc = "0x1b - Port 2 Interrupt Enable"]
-    pub p2ie: crate::Reg<p2ie::P2IE_SPEC>,
-    #[doc = "0x1c - Port 1 Interrupt Flag"]
-    pub p1ifg: crate::Reg<p1ifg::P1IFG_SPEC>,
-    #[doc = "0x1d - Port 2 Interrupt Flag"]
-    pub p2ifg: crate::Reg<p2ifg::P2IFG_SPEC>,
-    #[doc = "0x1e - Port 2 Interrupt Vector Word"]
-    pub p2iv: crate::Reg<p2iv::P2IV_SPEC>,
+    p1ies: P1ies,
+    p2ies: P2ies,
+    p1ie: P1ie,
+    p2ie: P2ie,
+    p1ifg: P1ifg,
+    p2ifg: P2ifg,
+    p2iv: P2iv,
 }
-#[doc = "P1IN register accessor: an alias for `Reg<P1IN_SPEC>`"]
-pub type P1IN = crate::Reg<p1in::P1IN_SPEC>;
+impl RegisterBlock {
+    #[doc = "0x00 - Port 1 Input"]
+    #[inline(always)]
+    pub const fn p1in(&self) -> &P1in {
+        &self.p1in
+    }
+    #[doc = "0x01 - Port 2 Input"]
+    #[inline(always)]
+    pub const fn p2in(&self) -> &P2in {
+        &self.p2in
+    }
+    #[doc = "0x02 - Port 1 Output"]
+    #[inline(always)]
+    pub const fn p1out(&self) -> &P1out {
+        &self.p1out
+    }
+    #[doc = "0x03 - Port 2 Output"]
+    #[inline(always)]
+    pub const fn p2out(&self) -> &P2out {
+        &self.p2out
+    }
+    #[doc = "0x04 - Port 1 Direction"]
+    #[inline(always)]
+    pub const fn p1dir(&self) -> &P1dir {
+        &self.p1dir
+    }
+    #[doc = "0x05 - Port 2 Direction"]
+    #[inline(always)]
+    pub const fn p2dir(&self) -> &P2dir {
+        &self.p2dir
+    }
+    #[doc = "0x06 - Port 1 Resistor Enable"]
+    #[inline(always)]
+    pub const fn p1ren(&self) -> &P1ren {
+        &self.p1ren
+    }
+    #[doc = "0x07 - Port 2 Resistor Enable"]
+    #[inline(always)]
+    pub const fn p2ren(&self) -> &P2ren {
+        &self.p2ren
+    }
+    #[doc = "0x0a - Port 1 Selection 0"]
+    #[inline(always)]
+    pub const fn p1sel0(&self) -> &P1sel0 {
+        &self.p1sel0
+    }
+    #[doc = "0x0b - Port 2 Selection 0"]
+    #[inline(always)]
+    pub const fn p2sel0(&self) -> &P2sel0 {
+        &self.p2sel0
+    }
+    #[doc = "0x0c - Port 1 Selection 1"]
+    #[inline(always)]
+    pub const fn p1sel1(&self) -> &P1sel1 {
+        &self.p1sel1
+    }
+    #[doc = "0x0d - Port 2 Selection 1"]
+    #[inline(always)]
+    pub const fn p2sel1(&self) -> &P2sel1 {
+        &self.p2sel1
+    }
+    #[doc = "0x0e - Port 1 Interrupt Vector Word"]
+    #[inline(always)]
+    pub const fn p1iv(&self) -> &P1iv {
+        &self.p1iv
+    }
+    #[doc = "0x18 - Port 1 Interrupt Edge Select"]
+    #[inline(always)]
+    pub const fn p1ies(&self) -> &P1ies {
+        &self.p1ies
+    }
+    #[doc = "0x19 - Port 2 Interrupt Edge Select"]
+    #[inline(always)]
+    pub const fn p2ies(&self) -> &P2ies {
+        &self.p2ies
+    }
+    #[doc = "0x1a - Port 1 Interrupt Enable"]
+    #[inline(always)]
+    pub const fn p1ie(&self) -> &P1ie {
+        &self.p1ie
+    }
+    #[doc = "0x1b - Port 2 Interrupt Enable"]
+    #[inline(always)]
+    pub const fn p2ie(&self) -> &P2ie {
+        &self.p2ie
+    }
+    #[doc = "0x1c - Port 1 Interrupt Flag"]
+    #[inline(always)]
+    pub const fn p1ifg(&self) -> &P1ifg {
+        &self.p1ifg
+    }
+    #[doc = "0x1d - Port 2 Interrupt Flag"]
+    #[inline(always)]
+    pub const fn p2ifg(&self) -> &P2ifg {
+        &self.p2ifg
+    }
+    #[doc = "0x1e - Port 2 Interrupt Vector Word"]
+    #[inline(always)]
+    pub const fn p2iv(&self) -> &P2iv {
+        &self.p2iv
+    }
+}
+#[doc = "P1IN (rw) register accessor: Port 1 Input\n\nYou can [`read`](crate::Reg::read) this register and get [`p1in::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`p1in::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@p1in`] module"]
+#[doc(alias = "P1IN")]
+pub type P1in = crate::Reg<p1in::P1inSpec>;
 #[doc = "Port 1 Input"]
 pub mod p1in;
-#[doc = "P2IN register accessor: an alias for `Reg<P2IN_SPEC>`"]
-pub type P2IN = crate::Reg<p2in::P2IN_SPEC>;
+#[doc = "P2IN (rw) register accessor: Port 2 Input\n\nYou can [`read`](crate::Reg::read) this register and get [`p2in::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`p2in::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@p2in`] module"]
+#[doc(alias = "P2IN")]
+pub type P2in = crate::Reg<p2in::P2inSpec>;
 #[doc = "Port 2 Input"]
 pub mod p2in;
-#[doc = "P1OUT register accessor: an alias for `Reg<P1OUT_SPEC>`"]
-pub type P1OUT = crate::Reg<p1out::P1OUT_SPEC>;
+#[doc = "P1OUT (rw) register accessor: Port 1 Output\n\nYou can [`read`](crate::Reg::read) this register and get [`p1out::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`p1out::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@p1out`] module"]
+#[doc(alias = "P1OUT")]
+pub type P1out = crate::Reg<p1out::P1outSpec>;
 #[doc = "Port 1 Output"]
 pub mod p1out;
-#[doc = "P2OUT register accessor: an alias for `Reg<P2OUT_SPEC>`"]
-pub type P2OUT = crate::Reg<p2out::P2OUT_SPEC>;
+#[doc = "P2OUT (rw) register accessor: Port 2 Output\n\nYou can [`read`](crate::Reg::read) this register and get [`p2out::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`p2out::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@p2out`] module"]
+#[doc(alias = "P2OUT")]
+pub type P2out = crate::Reg<p2out::P2outSpec>;
 #[doc = "Port 2 Output"]
 pub mod p2out;
-#[doc = "P1DIR register accessor: an alias for `Reg<P1DIR_SPEC>`"]
-pub type P1DIR = crate::Reg<p1dir::P1DIR_SPEC>;
+#[doc = "P1DIR (rw) register accessor: Port 1 Direction\n\nYou can [`read`](crate::Reg::read) this register and get [`p1dir::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`p1dir::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@p1dir`] module"]
+#[doc(alias = "P1DIR")]
+pub type P1dir = crate::Reg<p1dir::P1dirSpec>;
 #[doc = "Port 1 Direction"]
 pub mod p1dir;
-#[doc = "P2DIR register accessor: an alias for `Reg<P2DIR_SPEC>`"]
-pub type P2DIR = crate::Reg<p2dir::P2DIR_SPEC>;
+#[doc = "P2DIR (rw) register accessor: Port 2 Direction\n\nYou can [`read`](crate::Reg::read) this register and get [`p2dir::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`p2dir::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@p2dir`] module"]
+#[doc(alias = "P2DIR")]
+pub type P2dir = crate::Reg<p2dir::P2dirSpec>;
 #[doc = "Port 2 Direction"]
 pub mod p2dir;
-#[doc = "P1REN register accessor: an alias for `Reg<P1REN_SPEC>`"]
-pub type P1REN = crate::Reg<p1ren::P1REN_SPEC>;
+#[doc = "P1REN (rw) register accessor: Port 1 Resistor Enable\n\nYou can [`read`](crate::Reg::read) this register and get [`p1ren::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`p1ren::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@p1ren`] module"]
+#[doc(alias = "P1REN")]
+pub type P1ren = crate::Reg<p1ren::P1renSpec>;
 #[doc = "Port 1 Resistor Enable"]
 pub mod p1ren;
-#[doc = "P2REN register accessor: an alias for `Reg<P2REN_SPEC>`"]
-pub type P2REN = crate::Reg<p2ren::P2REN_SPEC>;
+#[doc = "P2REN (rw) register accessor: Port 2 Resistor Enable\n\nYou can [`read`](crate::Reg::read) this register and get [`p2ren::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`p2ren::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@p2ren`] module"]
+#[doc(alias = "P2REN")]
+pub type P2ren = crate::Reg<p2ren::P2renSpec>;
 #[doc = "Port 2 Resistor Enable"]
 pub mod p2ren;
-#[doc = "P1SEL0 register accessor: an alias for `Reg<P1SEL0_SPEC>`"]
-pub type P1SEL0 = crate::Reg<p1sel0::P1SEL0_SPEC>;
+#[doc = "P1SEL0 (rw) register accessor: Port 1 Selection 0\n\nYou can [`read`](crate::Reg::read) this register and get [`p1sel0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`p1sel0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@p1sel0`] module"]
+#[doc(alias = "P1SEL0")]
+pub type P1sel0 = crate::Reg<p1sel0::P1sel0Spec>;
 #[doc = "Port 1 Selection 0"]
 pub mod p1sel0;
-#[doc = "P2SEL0 register accessor: an alias for `Reg<P2SEL0_SPEC>`"]
-pub type P2SEL0 = crate::Reg<p2sel0::P2SEL0_SPEC>;
+#[doc = "P2SEL0 (rw) register accessor: Port 2 Selection 0\n\nYou can [`read`](crate::Reg::read) this register and get [`p2sel0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`p2sel0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@p2sel0`] module"]
+#[doc(alias = "P2SEL0")]
+pub type P2sel0 = crate::Reg<p2sel0::P2sel0Spec>;
 #[doc = "Port 2 Selection 0"]
 pub mod p2sel0;
-#[doc = "P1SEL1 register accessor: an alias for `Reg<P1SEL1_SPEC>`"]
-pub type P1SEL1 = crate::Reg<p1sel1::P1SEL1_SPEC>;
+#[doc = "P1SEL1 (rw) register accessor: Port 1 Selection 1\n\nYou can [`read`](crate::Reg::read) this register and get [`p1sel1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`p1sel1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@p1sel1`] module"]
+#[doc(alias = "P1SEL1")]
+pub type P1sel1 = crate::Reg<p1sel1::P1sel1Spec>;
 #[doc = "Port 1 Selection 1"]
 pub mod p1sel1;
-#[doc = "P2SEL1 register accessor: an alias for `Reg<P2SEL1_SPEC>`"]
-pub type P2SEL1 = crate::Reg<p2sel1::P2SEL1_SPEC>;
+#[doc = "P2SEL1 (rw) register accessor: Port 2 Selection 1\n\nYou can [`read`](crate::Reg::read) this register and get [`p2sel1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`p2sel1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@p2sel1`] module"]
+#[doc(alias = "P2SEL1")]
+pub type P2sel1 = crate::Reg<p2sel1::P2sel1Spec>;
 #[doc = "Port 2 Selection 1"]
 pub mod p2sel1;
-#[doc = "P1IES register accessor: an alias for `Reg<P1IES_SPEC>`"]
-pub type P1IES = crate::Reg<p1ies::P1IES_SPEC>;
+#[doc = "P1IES (rw) register accessor: Port 1 Interrupt Edge Select\n\nYou can [`read`](crate::Reg::read) this register and get [`p1ies::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`p1ies::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@p1ies`] module"]
+#[doc(alias = "P1IES")]
+pub type P1ies = crate::Reg<p1ies::P1iesSpec>;
 #[doc = "Port 1 Interrupt Edge Select"]
 pub mod p1ies;
-#[doc = "P2IES register accessor: an alias for `Reg<P2IES_SPEC>`"]
-pub type P2IES = crate::Reg<p2ies::P2IES_SPEC>;
+#[doc = "P2IES (rw) register accessor: Port 2 Interrupt Edge Select\n\nYou can [`read`](crate::Reg::read) this register and get [`p2ies::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`p2ies::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@p2ies`] module"]
+#[doc(alias = "P2IES")]
+pub type P2ies = crate::Reg<p2ies::P2iesSpec>;
 #[doc = "Port 2 Interrupt Edge Select"]
 pub mod p2ies;
-#[doc = "P1IE register accessor: an alias for `Reg<P1IE_SPEC>`"]
-pub type P1IE = crate::Reg<p1ie::P1IE_SPEC>;
+#[doc = "P1IE (rw) register accessor: Port 1 Interrupt Enable\n\nYou can [`read`](crate::Reg::read) this register and get [`p1ie::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`p1ie::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@p1ie`] module"]
+#[doc(alias = "P1IE")]
+pub type P1ie = crate::Reg<p1ie::P1ieSpec>;
 #[doc = "Port 1 Interrupt Enable"]
 pub mod p1ie;
-#[doc = "P2IE register accessor: an alias for `Reg<P2IE_SPEC>`"]
-pub type P2IE = crate::Reg<p2ie::P2IE_SPEC>;
+#[doc = "P2IE (rw) register accessor: Port 2 Interrupt Enable\n\nYou can [`read`](crate::Reg::read) this register and get [`p2ie::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`p2ie::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@p2ie`] module"]
+#[doc(alias = "P2IE")]
+pub type P2ie = crate::Reg<p2ie::P2ieSpec>;
 #[doc = "Port 2 Interrupt Enable"]
 pub mod p2ie;
-#[doc = "P1IFG register accessor: an alias for `Reg<P1IFG_SPEC>`"]
-pub type P1IFG = crate::Reg<p1ifg::P1IFG_SPEC>;
+#[doc = "P1IFG (rw) register accessor: Port 1 Interrupt Flag\n\nYou can [`read`](crate::Reg::read) this register and get [`p1ifg::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`p1ifg::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@p1ifg`] module"]
+#[doc(alias = "P1IFG")]
+pub type P1ifg = crate::Reg<p1ifg::P1ifgSpec>;
 #[doc = "Port 1 Interrupt Flag"]
 pub mod p1ifg;
-#[doc = "P2IFG register accessor: an alias for `Reg<P2IFG_SPEC>`"]
-pub type P2IFG = crate::Reg<p2ifg::P2IFG_SPEC>;
+#[doc = "P2IFG (rw) register accessor: Port 2 Interrupt Flag\n\nYou can [`read`](crate::Reg::read) this register and get [`p2ifg::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`p2ifg::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@p2ifg`] module"]
+#[doc(alias = "P2IFG")]
+pub type P2ifg = crate::Reg<p2ifg::P2ifgSpec>;
 #[doc = "Port 2 Interrupt Flag"]
 pub mod p2ifg;
-#[doc = "P1IV register accessor: an alias for `Reg<P1IV_SPEC>`"]
-pub type P1IV = crate::Reg<p1iv::P1IV_SPEC>;
+#[doc = "P1IV (rw) register accessor: Port 1 Interrupt Vector Word\n\nYou can [`read`](crate::Reg::read) this register and get [`p1iv::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`p1iv::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@p1iv`] module"]
+#[doc(alias = "P1IV")]
+pub type P1iv = crate::Reg<p1iv::P1ivSpec>;
 #[doc = "Port 1 Interrupt Vector Word"]
 pub mod p1iv;
-#[doc = "P2IV register accessor: an alias for `Reg<P2IV_SPEC>`"]
-pub type P2IV = crate::Reg<p2iv::P2IV_SPEC>;
+#[doc = "P2IV (rw) register accessor: Port 2 Interrupt Vector Word\n\nYou can [`read`](crate::Reg::read) this register and get [`p2iv::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`p2iv::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@p2iv`] module"]
+#[doc(alias = "P2IV")]
+pub type P2iv = crate::Reg<p2iv::P2ivSpec>;
 #[doc = "Port 2 Interrupt Vector Word"]
 pub mod p2iv;

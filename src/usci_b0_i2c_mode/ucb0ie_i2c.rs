@@ -1,276 +1,231 @@
 #[doc = "Register `UCB0IE_I2C` reader"]
-pub struct R(crate::R<UCB0IE_I2C_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<UCB0IE_I2C_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<UCB0IE_I2C_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<UCB0IE_I2C_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<Ucb0ieI2cSpec>;
 #[doc = "Register `UCB0IE_I2C` writer"]
-pub struct W(crate::W<UCB0IE_I2C_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<UCB0IE_I2C_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<UCB0IE_I2C_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<UCB0IE_I2C_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<Ucb0ieI2cSpec>;
 #[doc = "Field `UCRXIE0` reader - I2C Receive Interrupt Enable 0"]
-pub type UCRXIE0_R = crate::BitReader<bool>;
+pub type Ucrxie0R = crate::BitReader;
 #[doc = "Field `UCRXIE0` writer - I2C Receive Interrupt Enable 0"]
-pub type UCRXIE0_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB0IE_I2C_SPEC, bool, O>;
+pub type Ucrxie0W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `UCTXIE0` reader - I2C Transmit Interrupt Enable 0"]
-pub type UCTXIE0_R = crate::BitReader<bool>;
+pub type Uctxie0R = crate::BitReader;
 #[doc = "Field `UCTXIE0` writer - I2C Transmit Interrupt Enable 0"]
-pub type UCTXIE0_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB0IE_I2C_SPEC, bool, O>;
+pub type Uctxie0W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `UCSTTIE` reader - I2C START Condition interrupt enable"]
-pub type UCSTTIE_R = crate::BitReader<bool>;
+pub type UcsttieR = crate::BitReader;
 #[doc = "Field `UCSTTIE` writer - I2C START Condition interrupt enable"]
-pub type UCSTTIE_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB0IE_I2C_SPEC, bool, O>;
+pub type UcsttieW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `UCSTPIE` reader - I2C STOP Condition interrupt enable"]
-pub type UCSTPIE_R = crate::BitReader<bool>;
+pub type UcstpieR = crate::BitReader;
 #[doc = "Field `UCSTPIE` writer - I2C STOP Condition interrupt enable"]
-pub type UCSTPIE_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB0IE_I2C_SPEC, bool, O>;
+pub type UcstpieW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `UCALIE` reader - I2C Arbitration Lost interrupt enable"]
-pub type UCALIE_R = crate::BitReader<bool>;
+pub type UcalieR = crate::BitReader;
 #[doc = "Field `UCALIE` writer - I2C Arbitration Lost interrupt enable"]
-pub type UCALIE_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB0IE_I2C_SPEC, bool, O>;
+pub type UcalieW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `UCNACKIE` reader - I2C NACK Condition interrupt enable"]
-pub type UCNACKIE_R = crate::BitReader<bool>;
+pub type UcnackieR = crate::BitReader;
 #[doc = "Field `UCNACKIE` writer - I2C NACK Condition interrupt enable"]
-pub type UCNACKIE_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB0IE_I2C_SPEC, bool, O>;
+pub type UcnackieW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `UCBCNTIE` reader - I2C Automatic stop assertion interrupt enable"]
-pub type UCBCNTIE_R = crate::BitReader<bool>;
+pub type UcbcntieR = crate::BitReader;
 #[doc = "Field `UCBCNTIE` writer - I2C Automatic stop assertion interrupt enable"]
-pub type UCBCNTIE_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB0IE_I2C_SPEC, bool, O>;
+pub type UcbcntieW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `UCCLTOIE` reader - I2C Clock Low Timeout interrupt enable"]
-pub type UCCLTOIE_R = crate::BitReader<bool>;
+pub type UccltoieR = crate::BitReader;
 #[doc = "Field `UCCLTOIE` writer - I2C Clock Low Timeout interrupt enable"]
-pub type UCCLTOIE_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB0IE_I2C_SPEC, bool, O>;
+pub type UccltoieW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `UCRXIE1` reader - I2C Receive Interrupt Enable 1"]
-pub type UCRXIE1_R = crate::BitReader<bool>;
+pub type Ucrxie1R = crate::BitReader;
 #[doc = "Field `UCRXIE1` writer - I2C Receive Interrupt Enable 1"]
-pub type UCRXIE1_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB0IE_I2C_SPEC, bool, O>;
+pub type Ucrxie1W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `UCTXIE1` reader - I2C Transmit Interrupt Enable 1"]
-pub type UCTXIE1_R = crate::BitReader<bool>;
+pub type Uctxie1R = crate::BitReader;
 #[doc = "Field `UCTXIE1` writer - I2C Transmit Interrupt Enable 1"]
-pub type UCTXIE1_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB0IE_I2C_SPEC, bool, O>;
+pub type Uctxie1W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `UCRXIE2` reader - I2C Receive Interrupt Enable 2"]
-pub type UCRXIE2_R = crate::BitReader<bool>;
+pub type Ucrxie2R = crate::BitReader;
 #[doc = "Field `UCRXIE2` writer - I2C Receive Interrupt Enable 2"]
-pub type UCRXIE2_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB0IE_I2C_SPEC, bool, O>;
+pub type Ucrxie2W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `UCTXIE2` reader - I2C Transmit Interrupt Enable 2"]
-pub type UCTXIE2_R = crate::BitReader<bool>;
+pub type Uctxie2R = crate::BitReader;
 #[doc = "Field `UCTXIE2` writer - I2C Transmit Interrupt Enable 2"]
-pub type UCTXIE2_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB0IE_I2C_SPEC, bool, O>;
+pub type Uctxie2W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `UCRXIE3` reader - I2C Receive Interrupt Enable 3"]
-pub type UCRXIE3_R = crate::BitReader<bool>;
+pub type Ucrxie3R = crate::BitReader;
 #[doc = "Field `UCRXIE3` writer - I2C Receive Interrupt Enable 3"]
-pub type UCRXIE3_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB0IE_I2C_SPEC, bool, O>;
+pub type Ucrxie3W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `UCTXIE3` reader - I2C Transmit Interrupt Enable 3"]
-pub type UCTXIE3_R = crate::BitReader<bool>;
+pub type Uctxie3R = crate::BitReader;
 #[doc = "Field `UCTXIE3` writer - I2C Transmit Interrupt Enable 3"]
-pub type UCTXIE3_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB0IE_I2C_SPEC, bool, O>;
+pub type Uctxie3W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `UCBIT9IE` reader - I2C Bit 9 Position Interrupt Enable 3"]
-pub type UCBIT9IE_R = crate::BitReader<bool>;
+pub type Ucbit9ieR = crate::BitReader;
 #[doc = "Field `UCBIT9IE` writer - I2C Bit 9 Position Interrupt Enable 3"]
-pub type UCBIT9IE_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB0IE_I2C_SPEC, bool, O>;
+pub type Ucbit9ieW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - I2C Receive Interrupt Enable 0"]
     #[inline(always)]
-    pub fn ucrxie0(&self) -> UCRXIE0_R {
-        UCRXIE0_R::new((self.bits & 1) != 0)
+    pub fn ucrxie0(&self) -> Ucrxie0R {
+        Ucrxie0R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - I2C Transmit Interrupt Enable 0"]
     #[inline(always)]
-    pub fn uctxie0(&self) -> UCTXIE0_R {
-        UCTXIE0_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn uctxie0(&self) -> Uctxie0R {
+        Uctxie0R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - I2C START Condition interrupt enable"]
     #[inline(always)]
-    pub fn ucsttie(&self) -> UCSTTIE_R {
-        UCSTTIE_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn ucsttie(&self) -> UcsttieR {
+        UcsttieR::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - I2C STOP Condition interrupt enable"]
     #[inline(always)]
-    pub fn ucstpie(&self) -> UCSTPIE_R {
-        UCSTPIE_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn ucstpie(&self) -> UcstpieR {
+        UcstpieR::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - I2C Arbitration Lost interrupt enable"]
     #[inline(always)]
-    pub fn ucalie(&self) -> UCALIE_R {
-        UCALIE_R::new(((self.bits >> 4) & 1) != 0)
+    pub fn ucalie(&self) -> UcalieR {
+        UcalieR::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - I2C NACK Condition interrupt enable"]
     #[inline(always)]
-    pub fn ucnackie(&self) -> UCNACKIE_R {
-        UCNACKIE_R::new(((self.bits >> 5) & 1) != 0)
+    pub fn ucnackie(&self) -> UcnackieR {
+        UcnackieR::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - I2C Automatic stop assertion interrupt enable"]
     #[inline(always)]
-    pub fn ucbcntie(&self) -> UCBCNTIE_R {
-        UCBCNTIE_R::new(((self.bits >> 6) & 1) != 0)
+    pub fn ucbcntie(&self) -> UcbcntieR {
+        UcbcntieR::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - I2C Clock Low Timeout interrupt enable"]
     #[inline(always)]
-    pub fn uccltoie(&self) -> UCCLTOIE_R {
-        UCCLTOIE_R::new(((self.bits >> 7) & 1) != 0)
+    pub fn uccltoie(&self) -> UccltoieR {
+        UccltoieR::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - I2C Receive Interrupt Enable 1"]
     #[inline(always)]
-    pub fn ucrxie1(&self) -> UCRXIE1_R {
-        UCRXIE1_R::new(((self.bits >> 8) & 1) != 0)
+    pub fn ucrxie1(&self) -> Ucrxie1R {
+        Ucrxie1R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - I2C Transmit Interrupt Enable 1"]
     #[inline(always)]
-    pub fn uctxie1(&self) -> UCTXIE1_R {
-        UCTXIE1_R::new(((self.bits >> 9) & 1) != 0)
+    pub fn uctxie1(&self) -> Uctxie1R {
+        Uctxie1R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - I2C Receive Interrupt Enable 2"]
     #[inline(always)]
-    pub fn ucrxie2(&self) -> UCRXIE2_R {
-        UCRXIE2_R::new(((self.bits >> 10) & 1) != 0)
+    pub fn ucrxie2(&self) -> Ucrxie2R {
+        Ucrxie2R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 11 - I2C Transmit Interrupt Enable 2"]
     #[inline(always)]
-    pub fn uctxie2(&self) -> UCTXIE2_R {
-        UCTXIE2_R::new(((self.bits >> 11) & 1) != 0)
+    pub fn uctxie2(&self) -> Uctxie2R {
+        Uctxie2R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 12 - I2C Receive Interrupt Enable 3"]
     #[inline(always)]
-    pub fn ucrxie3(&self) -> UCRXIE3_R {
-        UCRXIE3_R::new(((self.bits >> 12) & 1) != 0)
+    pub fn ucrxie3(&self) -> Ucrxie3R {
+        Ucrxie3R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 13 - I2C Transmit Interrupt Enable 3"]
     #[inline(always)]
-    pub fn uctxie3(&self) -> UCTXIE3_R {
-        UCTXIE3_R::new(((self.bits >> 13) & 1) != 0)
+    pub fn uctxie3(&self) -> Uctxie3R {
+        Uctxie3R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 14 - I2C Bit 9 Position Interrupt Enable 3"]
     #[inline(always)]
-    pub fn ucbit9ie(&self) -> UCBIT9IE_R {
-        UCBIT9IE_R::new(((self.bits >> 14) & 1) != 0)
+    pub fn ucbit9ie(&self) -> Ucbit9ieR {
+        Ucbit9ieR::new(((self.bits >> 14) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - I2C Receive Interrupt Enable 0"]
     #[inline(always)]
-    pub fn ucrxie0(&mut self) -> UCRXIE0_W<0> {
-        UCRXIE0_W::new(self)
+    pub fn ucrxie0(&mut self) -> Ucrxie0W<'_, Ucb0ieI2cSpec> {
+        Ucrxie0W::new(self, 0)
     }
     #[doc = "Bit 1 - I2C Transmit Interrupt Enable 0"]
     #[inline(always)]
-    pub fn uctxie0(&mut self) -> UCTXIE0_W<1> {
-        UCTXIE0_W::new(self)
+    pub fn uctxie0(&mut self) -> Uctxie0W<'_, Ucb0ieI2cSpec> {
+        Uctxie0W::new(self, 1)
     }
     #[doc = "Bit 2 - I2C START Condition interrupt enable"]
     #[inline(always)]
-    pub fn ucsttie(&mut self) -> UCSTTIE_W<2> {
-        UCSTTIE_W::new(self)
+    pub fn ucsttie(&mut self) -> UcsttieW<'_, Ucb0ieI2cSpec> {
+        UcsttieW::new(self, 2)
     }
     #[doc = "Bit 3 - I2C STOP Condition interrupt enable"]
     #[inline(always)]
-    pub fn ucstpie(&mut self) -> UCSTPIE_W<3> {
-        UCSTPIE_W::new(self)
+    pub fn ucstpie(&mut self) -> UcstpieW<'_, Ucb0ieI2cSpec> {
+        UcstpieW::new(self, 3)
     }
     #[doc = "Bit 4 - I2C Arbitration Lost interrupt enable"]
     #[inline(always)]
-    pub fn ucalie(&mut self) -> UCALIE_W<4> {
-        UCALIE_W::new(self)
+    pub fn ucalie(&mut self) -> UcalieW<'_, Ucb0ieI2cSpec> {
+        UcalieW::new(self, 4)
     }
     #[doc = "Bit 5 - I2C NACK Condition interrupt enable"]
     #[inline(always)]
-    pub fn ucnackie(&mut self) -> UCNACKIE_W<5> {
-        UCNACKIE_W::new(self)
+    pub fn ucnackie(&mut self) -> UcnackieW<'_, Ucb0ieI2cSpec> {
+        UcnackieW::new(self, 5)
     }
     #[doc = "Bit 6 - I2C Automatic stop assertion interrupt enable"]
     #[inline(always)]
-    pub fn ucbcntie(&mut self) -> UCBCNTIE_W<6> {
-        UCBCNTIE_W::new(self)
+    pub fn ucbcntie(&mut self) -> UcbcntieW<'_, Ucb0ieI2cSpec> {
+        UcbcntieW::new(self, 6)
     }
     #[doc = "Bit 7 - I2C Clock Low Timeout interrupt enable"]
     #[inline(always)]
-    pub fn uccltoie(&mut self) -> UCCLTOIE_W<7> {
-        UCCLTOIE_W::new(self)
+    pub fn uccltoie(&mut self) -> UccltoieW<'_, Ucb0ieI2cSpec> {
+        UccltoieW::new(self, 7)
     }
     #[doc = "Bit 8 - I2C Receive Interrupt Enable 1"]
     #[inline(always)]
-    pub fn ucrxie1(&mut self) -> UCRXIE1_W<8> {
-        UCRXIE1_W::new(self)
+    pub fn ucrxie1(&mut self) -> Ucrxie1W<'_, Ucb0ieI2cSpec> {
+        Ucrxie1W::new(self, 8)
     }
     #[doc = "Bit 9 - I2C Transmit Interrupt Enable 1"]
     #[inline(always)]
-    pub fn uctxie1(&mut self) -> UCTXIE1_W<9> {
-        UCTXIE1_W::new(self)
+    pub fn uctxie1(&mut self) -> Uctxie1W<'_, Ucb0ieI2cSpec> {
+        Uctxie1W::new(self, 9)
     }
     #[doc = "Bit 10 - I2C Receive Interrupt Enable 2"]
     #[inline(always)]
-    pub fn ucrxie2(&mut self) -> UCRXIE2_W<10> {
-        UCRXIE2_W::new(self)
+    pub fn ucrxie2(&mut self) -> Ucrxie2W<'_, Ucb0ieI2cSpec> {
+        Ucrxie2W::new(self, 10)
     }
     #[doc = "Bit 11 - I2C Transmit Interrupt Enable 2"]
     #[inline(always)]
-    pub fn uctxie2(&mut self) -> UCTXIE2_W<11> {
-        UCTXIE2_W::new(self)
+    pub fn uctxie2(&mut self) -> Uctxie2W<'_, Ucb0ieI2cSpec> {
+        Uctxie2W::new(self, 11)
     }
     #[doc = "Bit 12 - I2C Receive Interrupt Enable 3"]
     #[inline(always)]
-    pub fn ucrxie3(&mut self) -> UCRXIE3_W<12> {
-        UCRXIE3_W::new(self)
+    pub fn ucrxie3(&mut self) -> Ucrxie3W<'_, Ucb0ieI2cSpec> {
+        Ucrxie3W::new(self, 12)
     }
     #[doc = "Bit 13 - I2C Transmit Interrupt Enable 3"]
     #[inline(always)]
-    pub fn uctxie3(&mut self) -> UCTXIE3_W<13> {
-        UCTXIE3_W::new(self)
+    pub fn uctxie3(&mut self) -> Uctxie3W<'_, Ucb0ieI2cSpec> {
+        Uctxie3W::new(self, 13)
     }
     #[doc = "Bit 14 - I2C Bit 9 Position Interrupt Enable 3"]
     #[inline(always)]
-    pub fn ucbit9ie(&mut self) -> UCBIT9IE_W<14> {
-        UCBIT9IE_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn ucbit9ie(&mut self) -> Ucbit9ieW<'_, Ucb0ieI2cSpec> {
+        Ucbit9ieW::new(self, 14)
     }
 }
-#[doc = "USCI B0 Interrupt Enable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ucb0ie_i2c](index.html) module"]
-pub struct UCB0IE_I2C_SPEC;
-impl crate::RegisterSpec for UCB0IE_I2C_SPEC {
+#[doc = "USCI B0 Interrupt Enable Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ucb0ie_i2c::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ucb0ie_i2c::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Ucb0ieI2cSpec;
+impl crate::RegisterSpec for Ucb0ieI2cSpec {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [ucb0ie_i2c::R](R) reader structure"]
-impl crate::Readable for UCB0IE_I2C_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [ucb0ie_i2c::W](W) writer structure"]
-impl crate::Writable for UCB0IE_I2C_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`ucb0ie_i2c::R`](R) reader structure"]
+impl crate::Readable for Ucb0ieI2cSpec {}
+#[doc = "`write(|w| ..)` method takes [`ucb0ie_i2c::W`](W) writer structure"]
+impl crate::Writable for Ucb0ieI2cSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets UCB0IE_I2C to value 0"]
-impl crate::Resettable for UCB0IE_I2C_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for Ucb0ieI2cSpec {}

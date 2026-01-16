@@ -1,437 +1,399 @@
 #[doc = "Register `UCA0MCTLW` reader"]
-pub struct R(crate::R<UCA0MCTLW_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<UCA0MCTLW_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<UCA0MCTLW_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<UCA0MCTLW_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<Uca0mctlwSpec>;
 #[doc = "Register `UCA0MCTLW` writer"]
-pub struct W(crate::W<UCA0MCTLW_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<UCA0MCTLW_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<UCA0MCTLW_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<UCA0MCTLW_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<Uca0mctlwSpec>;
 #[doc = "Field `UCOS16` reader - USCI 16-times Oversampling enable"]
-pub type UCOS16_R = crate::BitReader<bool>;
+pub type Ucos16R = crate::BitReader;
 #[doc = "Field `UCOS16` writer - USCI 16-times Oversampling enable"]
-pub type UCOS16_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCA0MCTLW_SPEC, bool, O>;
+pub type Ucos16W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "USCI First Stage Modulation Select 3\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum UCBRF_A {
+pub enum Ucbrf {
     #[doc = "0: USCI First Stage Modulation: 0"]
-    UCBRF_0 = 0,
+    Ucbrf0 = 0,
     #[doc = "1: USCI First Stage Modulation: 1"]
-    UCBRF_1 = 1,
+    Ucbrf1 = 1,
     #[doc = "2: USCI First Stage Modulation: 2"]
-    UCBRF_2 = 2,
+    Ucbrf2 = 2,
     #[doc = "3: USCI First Stage Modulation: 3"]
-    UCBRF_3 = 3,
+    Ucbrf3 = 3,
     #[doc = "4: USCI First Stage Modulation: 4"]
-    UCBRF_4 = 4,
+    Ucbrf4 = 4,
     #[doc = "5: USCI First Stage Modulation: 5"]
-    UCBRF_5 = 5,
+    Ucbrf5 = 5,
     #[doc = "6: USCI First Stage Modulation: 6"]
-    UCBRF_6 = 6,
+    Ucbrf6 = 6,
     #[doc = "7: USCI First Stage Modulation: 7"]
-    UCBRF_7 = 7,
+    Ucbrf7 = 7,
     #[doc = "8: USCI First Stage Modulation: 8"]
-    UCBRF_8 = 8,
+    Ucbrf8 = 8,
     #[doc = "9: USCI First Stage Modulation: 9"]
-    UCBRF_9 = 9,
+    Ucbrf9 = 9,
     #[doc = "10: USCI First Stage Modulation: A"]
-    UCBRF_10 = 10,
+    Ucbrf10 = 10,
     #[doc = "11: USCI First Stage Modulation: B"]
-    UCBRF_11 = 11,
+    Ucbrf11 = 11,
     #[doc = "12: USCI First Stage Modulation: C"]
-    UCBRF_12 = 12,
+    Ucbrf12 = 12,
     #[doc = "13: USCI First Stage Modulation: D"]
-    UCBRF_13 = 13,
+    Ucbrf13 = 13,
     #[doc = "14: USCI First Stage Modulation: E"]
-    UCBRF_14 = 14,
+    Ucbrf14 = 14,
     #[doc = "15: USCI First Stage Modulation: F"]
-    UCBRF_15 = 15,
+    Ucbrf15 = 15,
 }
-impl From<UCBRF_A> for u8 {
+impl From<Ucbrf> for u8 {
     #[inline(always)]
-    fn from(variant: UCBRF_A) -> Self {
+    fn from(variant: Ucbrf) -> Self {
         variant as _
     }
 }
+impl crate::FieldSpec for Ucbrf {
+    type Ux = u8;
+}
+impl crate::IsEnum for Ucbrf {}
 #[doc = "Field `UCBRF` reader - USCI First Stage Modulation Select 3"]
-pub type UCBRF_R = crate::FieldReader<u8, UCBRF_A>;
-impl UCBRF_R {
+pub type UcbrfR = crate::FieldReader<Ucbrf>;
+impl UcbrfR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> UCBRF_A {
+    pub const fn variant(&self) -> Ucbrf {
         match self.bits {
-            0 => UCBRF_A::UCBRF_0,
-            1 => UCBRF_A::UCBRF_1,
-            2 => UCBRF_A::UCBRF_2,
-            3 => UCBRF_A::UCBRF_3,
-            4 => UCBRF_A::UCBRF_4,
-            5 => UCBRF_A::UCBRF_5,
-            6 => UCBRF_A::UCBRF_6,
-            7 => UCBRF_A::UCBRF_7,
-            8 => UCBRF_A::UCBRF_8,
-            9 => UCBRF_A::UCBRF_9,
-            10 => UCBRF_A::UCBRF_10,
-            11 => UCBRF_A::UCBRF_11,
-            12 => UCBRF_A::UCBRF_12,
-            13 => UCBRF_A::UCBRF_13,
-            14 => UCBRF_A::UCBRF_14,
-            15 => UCBRF_A::UCBRF_15,
+            0 => Ucbrf::Ucbrf0,
+            1 => Ucbrf::Ucbrf1,
+            2 => Ucbrf::Ucbrf2,
+            3 => Ucbrf::Ucbrf3,
+            4 => Ucbrf::Ucbrf4,
+            5 => Ucbrf::Ucbrf5,
+            6 => Ucbrf::Ucbrf6,
+            7 => Ucbrf::Ucbrf7,
+            8 => Ucbrf::Ucbrf8,
+            9 => Ucbrf::Ucbrf9,
+            10 => Ucbrf::Ucbrf10,
+            11 => Ucbrf::Ucbrf11,
+            12 => Ucbrf::Ucbrf12,
+            13 => Ucbrf::Ucbrf13,
+            14 => Ucbrf::Ucbrf14,
+            15 => Ucbrf::Ucbrf15,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `UCBRF_0`"]
-    #[inline(always)]
-    pub fn is_ucbrf_0(&self) -> bool {
-        *self == UCBRF_A::UCBRF_0
-    }
-    #[doc = "Checks if the value of the field is `UCBRF_1`"]
-    #[inline(always)]
-    pub fn is_ucbrf_1(&self) -> bool {
-        *self == UCBRF_A::UCBRF_1
-    }
-    #[doc = "Checks if the value of the field is `UCBRF_2`"]
-    #[inline(always)]
-    pub fn is_ucbrf_2(&self) -> bool {
-        *self == UCBRF_A::UCBRF_2
-    }
-    #[doc = "Checks if the value of the field is `UCBRF_3`"]
-    #[inline(always)]
-    pub fn is_ucbrf_3(&self) -> bool {
-        *self == UCBRF_A::UCBRF_3
-    }
-    #[doc = "Checks if the value of the field is `UCBRF_4`"]
-    #[inline(always)]
-    pub fn is_ucbrf_4(&self) -> bool {
-        *self == UCBRF_A::UCBRF_4
-    }
-    #[doc = "Checks if the value of the field is `UCBRF_5`"]
-    #[inline(always)]
-    pub fn is_ucbrf_5(&self) -> bool {
-        *self == UCBRF_A::UCBRF_5
-    }
-    #[doc = "Checks if the value of the field is `UCBRF_6`"]
-    #[inline(always)]
-    pub fn is_ucbrf_6(&self) -> bool {
-        *self == UCBRF_A::UCBRF_6
-    }
-    #[doc = "Checks if the value of the field is `UCBRF_7`"]
-    #[inline(always)]
-    pub fn is_ucbrf_7(&self) -> bool {
-        *self == UCBRF_A::UCBRF_7
-    }
-    #[doc = "Checks if the value of the field is `UCBRF_8`"]
-    #[inline(always)]
-    pub fn is_ucbrf_8(&self) -> bool {
-        *self == UCBRF_A::UCBRF_8
-    }
-    #[doc = "Checks if the value of the field is `UCBRF_9`"]
-    #[inline(always)]
-    pub fn is_ucbrf_9(&self) -> bool {
-        *self == UCBRF_A::UCBRF_9
-    }
-    #[doc = "Checks if the value of the field is `UCBRF_10`"]
-    #[inline(always)]
-    pub fn is_ucbrf_10(&self) -> bool {
-        *self == UCBRF_A::UCBRF_10
-    }
-    #[doc = "Checks if the value of the field is `UCBRF_11`"]
-    #[inline(always)]
-    pub fn is_ucbrf_11(&self) -> bool {
-        *self == UCBRF_A::UCBRF_11
-    }
-    #[doc = "Checks if the value of the field is `UCBRF_12`"]
-    #[inline(always)]
-    pub fn is_ucbrf_12(&self) -> bool {
-        *self == UCBRF_A::UCBRF_12
-    }
-    #[doc = "Checks if the value of the field is `UCBRF_13`"]
-    #[inline(always)]
-    pub fn is_ucbrf_13(&self) -> bool {
-        *self == UCBRF_A::UCBRF_13
-    }
-    #[doc = "Checks if the value of the field is `UCBRF_14`"]
-    #[inline(always)]
-    pub fn is_ucbrf_14(&self) -> bool {
-        *self == UCBRF_A::UCBRF_14
-    }
-    #[doc = "Checks if the value of the field is `UCBRF_15`"]
-    #[inline(always)]
-    pub fn is_ucbrf_15(&self) -> bool {
-        *self == UCBRF_A::UCBRF_15
-    }
-}
-#[doc = "Field `UCBRF` writer - USCI First Stage Modulation Select 3"]
-pub type UCBRF_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u16, UCA0MCTLW_SPEC, u8, UCBRF_A, 4, O>;
-impl<'a, const O: u8> UCBRF_W<'a, O> {
     #[doc = "USCI First Stage Modulation: 0"]
     #[inline(always)]
-    pub fn ucbrf_0(self) -> &'a mut W {
-        self.variant(UCBRF_A::UCBRF_0)
+    pub fn is_ucbrf_0(&self) -> bool {
+        *self == Ucbrf::Ucbrf0
     }
     #[doc = "USCI First Stage Modulation: 1"]
     #[inline(always)]
-    pub fn ucbrf_1(self) -> &'a mut W {
-        self.variant(UCBRF_A::UCBRF_1)
+    pub fn is_ucbrf_1(&self) -> bool {
+        *self == Ucbrf::Ucbrf1
     }
     #[doc = "USCI First Stage Modulation: 2"]
     #[inline(always)]
-    pub fn ucbrf_2(self) -> &'a mut W {
-        self.variant(UCBRF_A::UCBRF_2)
+    pub fn is_ucbrf_2(&self) -> bool {
+        *self == Ucbrf::Ucbrf2
     }
     #[doc = "USCI First Stage Modulation: 3"]
     #[inline(always)]
-    pub fn ucbrf_3(self) -> &'a mut W {
-        self.variant(UCBRF_A::UCBRF_3)
+    pub fn is_ucbrf_3(&self) -> bool {
+        *self == Ucbrf::Ucbrf3
     }
     #[doc = "USCI First Stage Modulation: 4"]
     #[inline(always)]
-    pub fn ucbrf_4(self) -> &'a mut W {
-        self.variant(UCBRF_A::UCBRF_4)
+    pub fn is_ucbrf_4(&self) -> bool {
+        *self == Ucbrf::Ucbrf4
     }
     #[doc = "USCI First Stage Modulation: 5"]
     #[inline(always)]
-    pub fn ucbrf_5(self) -> &'a mut W {
-        self.variant(UCBRF_A::UCBRF_5)
+    pub fn is_ucbrf_5(&self) -> bool {
+        *self == Ucbrf::Ucbrf5
     }
     #[doc = "USCI First Stage Modulation: 6"]
     #[inline(always)]
-    pub fn ucbrf_6(self) -> &'a mut W {
-        self.variant(UCBRF_A::UCBRF_6)
+    pub fn is_ucbrf_6(&self) -> bool {
+        *self == Ucbrf::Ucbrf6
     }
     #[doc = "USCI First Stage Modulation: 7"]
     #[inline(always)]
-    pub fn ucbrf_7(self) -> &'a mut W {
-        self.variant(UCBRF_A::UCBRF_7)
+    pub fn is_ucbrf_7(&self) -> bool {
+        *self == Ucbrf::Ucbrf7
     }
     #[doc = "USCI First Stage Modulation: 8"]
     #[inline(always)]
-    pub fn ucbrf_8(self) -> &'a mut W {
-        self.variant(UCBRF_A::UCBRF_8)
+    pub fn is_ucbrf_8(&self) -> bool {
+        *self == Ucbrf::Ucbrf8
     }
     #[doc = "USCI First Stage Modulation: 9"]
     #[inline(always)]
-    pub fn ucbrf_9(self) -> &'a mut W {
-        self.variant(UCBRF_A::UCBRF_9)
+    pub fn is_ucbrf_9(&self) -> bool {
+        *self == Ucbrf::Ucbrf9
     }
     #[doc = "USCI First Stage Modulation: A"]
     #[inline(always)]
-    pub fn ucbrf_10(self) -> &'a mut W {
-        self.variant(UCBRF_A::UCBRF_10)
+    pub fn is_ucbrf_10(&self) -> bool {
+        *self == Ucbrf::Ucbrf10
     }
     #[doc = "USCI First Stage Modulation: B"]
     #[inline(always)]
-    pub fn ucbrf_11(self) -> &'a mut W {
-        self.variant(UCBRF_A::UCBRF_11)
+    pub fn is_ucbrf_11(&self) -> bool {
+        *self == Ucbrf::Ucbrf11
     }
     #[doc = "USCI First Stage Modulation: C"]
     #[inline(always)]
-    pub fn ucbrf_12(self) -> &'a mut W {
-        self.variant(UCBRF_A::UCBRF_12)
+    pub fn is_ucbrf_12(&self) -> bool {
+        *self == Ucbrf::Ucbrf12
     }
     #[doc = "USCI First Stage Modulation: D"]
     #[inline(always)]
-    pub fn ucbrf_13(self) -> &'a mut W {
-        self.variant(UCBRF_A::UCBRF_13)
+    pub fn is_ucbrf_13(&self) -> bool {
+        *self == Ucbrf::Ucbrf13
     }
     #[doc = "USCI First Stage Modulation: E"]
     #[inline(always)]
-    pub fn ucbrf_14(self) -> &'a mut W {
-        self.variant(UCBRF_A::UCBRF_14)
+    pub fn is_ucbrf_14(&self) -> bool {
+        *self == Ucbrf::Ucbrf14
     }
     #[doc = "USCI First Stage Modulation: F"]
     #[inline(always)]
-    pub fn ucbrf_15(self) -> &'a mut W {
-        self.variant(UCBRF_A::UCBRF_15)
+    pub fn is_ucbrf_15(&self) -> bool {
+        *self == Ucbrf::Ucbrf15
+    }
+}
+#[doc = "Field `UCBRF` writer - USCI First Stage Modulation Select 3"]
+pub type UcbrfW<'a, REG> = crate::FieldWriter<'a, REG, 4, Ucbrf, crate::Safe>;
+impl<'a, REG> UcbrfW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "USCI First Stage Modulation: 0"]
+    #[inline(always)]
+    pub fn ucbrf_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Ucbrf::Ucbrf0)
+    }
+    #[doc = "USCI First Stage Modulation: 1"]
+    #[inline(always)]
+    pub fn ucbrf_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Ucbrf::Ucbrf1)
+    }
+    #[doc = "USCI First Stage Modulation: 2"]
+    #[inline(always)]
+    pub fn ucbrf_2(self) -> &'a mut crate::W<REG> {
+        self.variant(Ucbrf::Ucbrf2)
+    }
+    #[doc = "USCI First Stage Modulation: 3"]
+    #[inline(always)]
+    pub fn ucbrf_3(self) -> &'a mut crate::W<REG> {
+        self.variant(Ucbrf::Ucbrf3)
+    }
+    #[doc = "USCI First Stage Modulation: 4"]
+    #[inline(always)]
+    pub fn ucbrf_4(self) -> &'a mut crate::W<REG> {
+        self.variant(Ucbrf::Ucbrf4)
+    }
+    #[doc = "USCI First Stage Modulation: 5"]
+    #[inline(always)]
+    pub fn ucbrf_5(self) -> &'a mut crate::W<REG> {
+        self.variant(Ucbrf::Ucbrf5)
+    }
+    #[doc = "USCI First Stage Modulation: 6"]
+    #[inline(always)]
+    pub fn ucbrf_6(self) -> &'a mut crate::W<REG> {
+        self.variant(Ucbrf::Ucbrf6)
+    }
+    #[doc = "USCI First Stage Modulation: 7"]
+    #[inline(always)]
+    pub fn ucbrf_7(self) -> &'a mut crate::W<REG> {
+        self.variant(Ucbrf::Ucbrf7)
+    }
+    #[doc = "USCI First Stage Modulation: 8"]
+    #[inline(always)]
+    pub fn ucbrf_8(self) -> &'a mut crate::W<REG> {
+        self.variant(Ucbrf::Ucbrf8)
+    }
+    #[doc = "USCI First Stage Modulation: 9"]
+    #[inline(always)]
+    pub fn ucbrf_9(self) -> &'a mut crate::W<REG> {
+        self.variant(Ucbrf::Ucbrf9)
+    }
+    #[doc = "USCI First Stage Modulation: A"]
+    #[inline(always)]
+    pub fn ucbrf_10(self) -> &'a mut crate::W<REG> {
+        self.variant(Ucbrf::Ucbrf10)
+    }
+    #[doc = "USCI First Stage Modulation: B"]
+    #[inline(always)]
+    pub fn ucbrf_11(self) -> &'a mut crate::W<REG> {
+        self.variant(Ucbrf::Ucbrf11)
+    }
+    #[doc = "USCI First Stage Modulation: C"]
+    #[inline(always)]
+    pub fn ucbrf_12(self) -> &'a mut crate::W<REG> {
+        self.variant(Ucbrf::Ucbrf12)
+    }
+    #[doc = "USCI First Stage Modulation: D"]
+    #[inline(always)]
+    pub fn ucbrf_13(self) -> &'a mut crate::W<REG> {
+        self.variant(Ucbrf::Ucbrf13)
+    }
+    #[doc = "USCI First Stage Modulation: E"]
+    #[inline(always)]
+    pub fn ucbrf_14(self) -> &'a mut crate::W<REG> {
+        self.variant(Ucbrf::Ucbrf14)
+    }
+    #[doc = "USCI First Stage Modulation: F"]
+    #[inline(always)]
+    pub fn ucbrf_15(self) -> &'a mut crate::W<REG> {
+        self.variant(Ucbrf::Ucbrf15)
     }
 }
 #[doc = "Field `UCBRS0` reader - USCI Second Stage Modulation Select 0"]
-pub type UCBRS0_R = crate::BitReader<bool>;
+pub type Ucbrs0R = crate::BitReader;
 #[doc = "Field `UCBRS0` writer - USCI Second Stage Modulation Select 0"]
-pub type UCBRS0_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCA0MCTLW_SPEC, bool, O>;
+pub type Ucbrs0W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `UCBRS1` reader - USCI Second Stage Modulation Select 1"]
-pub type UCBRS1_R = crate::BitReader<bool>;
+pub type Ucbrs1R = crate::BitReader;
 #[doc = "Field `UCBRS1` writer - USCI Second Stage Modulation Select 1"]
-pub type UCBRS1_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCA0MCTLW_SPEC, bool, O>;
+pub type Ucbrs1W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `UCBRS2` reader - USCI Second Stage Modulation Select 2"]
-pub type UCBRS2_R = crate::BitReader<bool>;
+pub type Ucbrs2R = crate::BitReader;
 #[doc = "Field `UCBRS2` writer - USCI Second Stage Modulation Select 2"]
-pub type UCBRS2_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCA0MCTLW_SPEC, bool, O>;
+pub type Ucbrs2W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `UCBRS3` reader - USCI Second Stage Modulation Select 3"]
-pub type UCBRS3_R = crate::BitReader<bool>;
+pub type Ucbrs3R = crate::BitReader;
 #[doc = "Field `UCBRS3` writer - USCI Second Stage Modulation Select 3"]
-pub type UCBRS3_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCA0MCTLW_SPEC, bool, O>;
+pub type Ucbrs3W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `UCBRS4` reader - USCI Second Stage Modulation Select 4"]
-pub type UCBRS4_R = crate::BitReader<bool>;
+pub type Ucbrs4R = crate::BitReader;
 #[doc = "Field `UCBRS4` writer - USCI Second Stage Modulation Select 4"]
-pub type UCBRS4_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCA0MCTLW_SPEC, bool, O>;
+pub type Ucbrs4W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `UCBRS5` reader - USCI Second Stage Modulation Select 5"]
-pub type UCBRS5_R = crate::BitReader<bool>;
+pub type Ucbrs5R = crate::BitReader;
 #[doc = "Field `UCBRS5` writer - USCI Second Stage Modulation Select 5"]
-pub type UCBRS5_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCA0MCTLW_SPEC, bool, O>;
+pub type Ucbrs5W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `UCBRS6` reader - USCI Second Stage Modulation Select 6"]
-pub type UCBRS6_R = crate::BitReader<bool>;
+pub type Ucbrs6R = crate::BitReader;
 #[doc = "Field `UCBRS6` writer - USCI Second Stage Modulation Select 6"]
-pub type UCBRS6_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCA0MCTLW_SPEC, bool, O>;
+pub type Ucbrs6W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `UCBRS7` reader - USCI Second Stage Modulation Select 7"]
-pub type UCBRS7_R = crate::BitReader<bool>;
+pub type Ucbrs7R = crate::BitReader;
 #[doc = "Field `UCBRS7` writer - USCI Second Stage Modulation Select 7"]
-pub type UCBRS7_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCA0MCTLW_SPEC, bool, O>;
+pub type Ucbrs7W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - USCI 16-times Oversampling enable"]
     #[inline(always)]
-    pub fn ucos16(&self) -> UCOS16_R {
-        UCOS16_R::new((self.bits & 1) != 0)
+    pub fn ucos16(&self) -> Ucos16R {
+        Ucos16R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 4:7 - USCI First Stage Modulation Select 3"]
     #[inline(always)]
-    pub fn ucbrf(&self) -> UCBRF_R {
-        UCBRF_R::new(((self.bits >> 4) & 0x0f) as u8)
+    pub fn ucbrf(&self) -> UcbrfR {
+        UcbrfR::new(((self.bits >> 4) & 0x0f) as u8)
     }
     #[doc = "Bit 8 - USCI Second Stage Modulation Select 0"]
     #[inline(always)]
-    pub fn ucbrs0(&self) -> UCBRS0_R {
-        UCBRS0_R::new(((self.bits >> 8) & 1) != 0)
+    pub fn ucbrs0(&self) -> Ucbrs0R {
+        Ucbrs0R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - USCI Second Stage Modulation Select 1"]
     #[inline(always)]
-    pub fn ucbrs1(&self) -> UCBRS1_R {
-        UCBRS1_R::new(((self.bits >> 9) & 1) != 0)
+    pub fn ucbrs1(&self) -> Ucbrs1R {
+        Ucbrs1R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - USCI Second Stage Modulation Select 2"]
     #[inline(always)]
-    pub fn ucbrs2(&self) -> UCBRS2_R {
-        UCBRS2_R::new(((self.bits >> 10) & 1) != 0)
+    pub fn ucbrs2(&self) -> Ucbrs2R {
+        Ucbrs2R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 11 - USCI Second Stage Modulation Select 3"]
     #[inline(always)]
-    pub fn ucbrs3(&self) -> UCBRS3_R {
-        UCBRS3_R::new(((self.bits >> 11) & 1) != 0)
+    pub fn ucbrs3(&self) -> Ucbrs3R {
+        Ucbrs3R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 12 - USCI Second Stage Modulation Select 4"]
     #[inline(always)]
-    pub fn ucbrs4(&self) -> UCBRS4_R {
-        UCBRS4_R::new(((self.bits >> 12) & 1) != 0)
+    pub fn ucbrs4(&self) -> Ucbrs4R {
+        Ucbrs4R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 13 - USCI Second Stage Modulation Select 5"]
     #[inline(always)]
-    pub fn ucbrs5(&self) -> UCBRS5_R {
-        UCBRS5_R::new(((self.bits >> 13) & 1) != 0)
+    pub fn ucbrs5(&self) -> Ucbrs5R {
+        Ucbrs5R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 14 - USCI Second Stage Modulation Select 6"]
     #[inline(always)]
-    pub fn ucbrs6(&self) -> UCBRS6_R {
-        UCBRS6_R::new(((self.bits >> 14) & 1) != 0)
+    pub fn ucbrs6(&self) -> Ucbrs6R {
+        Ucbrs6R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 15 - USCI Second Stage Modulation Select 7"]
     #[inline(always)]
-    pub fn ucbrs7(&self) -> UCBRS7_R {
-        UCBRS7_R::new(((self.bits >> 15) & 1) != 0)
+    pub fn ucbrs7(&self) -> Ucbrs7R {
+        Ucbrs7R::new(((self.bits >> 15) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - USCI 16-times Oversampling enable"]
     #[inline(always)]
-    pub fn ucos16(&mut self) -> UCOS16_W<0> {
-        UCOS16_W::new(self)
+    pub fn ucos16(&mut self) -> Ucos16W<'_, Uca0mctlwSpec> {
+        Ucos16W::new(self, 0)
     }
     #[doc = "Bits 4:7 - USCI First Stage Modulation Select 3"]
     #[inline(always)]
-    pub fn ucbrf(&mut self) -> UCBRF_W<4> {
-        UCBRF_W::new(self)
+    pub fn ucbrf(&mut self) -> UcbrfW<'_, Uca0mctlwSpec> {
+        UcbrfW::new(self, 4)
     }
     #[doc = "Bit 8 - USCI Second Stage Modulation Select 0"]
     #[inline(always)]
-    pub fn ucbrs0(&mut self) -> UCBRS0_W<8> {
-        UCBRS0_W::new(self)
+    pub fn ucbrs0(&mut self) -> Ucbrs0W<'_, Uca0mctlwSpec> {
+        Ucbrs0W::new(self, 8)
     }
     #[doc = "Bit 9 - USCI Second Stage Modulation Select 1"]
     #[inline(always)]
-    pub fn ucbrs1(&mut self) -> UCBRS1_W<9> {
-        UCBRS1_W::new(self)
+    pub fn ucbrs1(&mut self) -> Ucbrs1W<'_, Uca0mctlwSpec> {
+        Ucbrs1W::new(self, 9)
     }
     #[doc = "Bit 10 - USCI Second Stage Modulation Select 2"]
     #[inline(always)]
-    pub fn ucbrs2(&mut self) -> UCBRS2_W<10> {
-        UCBRS2_W::new(self)
+    pub fn ucbrs2(&mut self) -> Ucbrs2W<'_, Uca0mctlwSpec> {
+        Ucbrs2W::new(self, 10)
     }
     #[doc = "Bit 11 - USCI Second Stage Modulation Select 3"]
     #[inline(always)]
-    pub fn ucbrs3(&mut self) -> UCBRS3_W<11> {
-        UCBRS3_W::new(self)
+    pub fn ucbrs3(&mut self) -> Ucbrs3W<'_, Uca0mctlwSpec> {
+        Ucbrs3W::new(self, 11)
     }
     #[doc = "Bit 12 - USCI Second Stage Modulation Select 4"]
     #[inline(always)]
-    pub fn ucbrs4(&mut self) -> UCBRS4_W<12> {
-        UCBRS4_W::new(self)
+    pub fn ucbrs4(&mut self) -> Ucbrs4W<'_, Uca0mctlwSpec> {
+        Ucbrs4W::new(self, 12)
     }
     #[doc = "Bit 13 - USCI Second Stage Modulation Select 5"]
     #[inline(always)]
-    pub fn ucbrs5(&mut self) -> UCBRS5_W<13> {
-        UCBRS5_W::new(self)
+    pub fn ucbrs5(&mut self) -> Ucbrs5W<'_, Uca0mctlwSpec> {
+        Ucbrs5W::new(self, 13)
     }
     #[doc = "Bit 14 - USCI Second Stage Modulation Select 6"]
     #[inline(always)]
-    pub fn ucbrs6(&mut self) -> UCBRS6_W<14> {
-        UCBRS6_W::new(self)
+    pub fn ucbrs6(&mut self) -> Ucbrs6W<'_, Uca0mctlwSpec> {
+        Ucbrs6W::new(self, 14)
     }
     #[doc = "Bit 15 - USCI Second Stage Modulation Select 7"]
     #[inline(always)]
-    pub fn ucbrs7(&mut self) -> UCBRS7_W<15> {
-        UCBRS7_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn ucbrs7(&mut self) -> Ucbrs7W<'_, Uca0mctlwSpec> {
+        Ucbrs7W::new(self, 15)
     }
 }
-#[doc = "USCI A0 Modulation Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [uca0mctlw](index.html) module"]
-pub struct UCA0MCTLW_SPEC;
-impl crate::RegisterSpec for UCA0MCTLW_SPEC {
+#[doc = "USCI A0 Modulation Control\n\nYou can [`read`](crate::Reg::read) this register and get [`uca0mctlw::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`uca0mctlw::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Uca0mctlwSpec;
+impl crate::RegisterSpec for Uca0mctlwSpec {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [uca0mctlw::R](R) reader structure"]
-impl crate::Readable for UCA0MCTLW_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [uca0mctlw::W](W) writer structure"]
-impl crate::Writable for UCA0MCTLW_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`uca0mctlw::R`](R) reader structure"]
+impl crate::Readable for Uca0mctlwSpec {}
+#[doc = "`write(|w| ..)` method takes [`uca0mctlw::W`](W) writer structure"]
+impl crate::Writable for Uca0mctlwSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets UCA0MCTLW to value 0"]
-impl crate::Resettable for UCA0MCTLW_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for Uca0mctlwSpec {}

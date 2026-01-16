@@ -1,64 +1,23 @@
 #[doc = "Register `UCB0IV` reader"]
-pub struct R(crate::R<UCB0IV_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<UCB0IV_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<UCB0IV_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<UCB0IV_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<Ucb0ivSpec>;
 #[doc = "Register `UCB0IV` writer"]
-pub struct W(crate::W<UCB0IV_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<UCB0IV_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+pub type W = crate::W<Ucb0ivSpec>;
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        write!(f, "{}", self.bits())
     }
 }
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<UCB0IV_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<UCB0IV_SPEC>) -> Self {
-        W(writer)
-    }
-}
-impl W {
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
-        self.0.bits(bits);
-        self
-    }
-}
-#[doc = "USCI B0 Interrupt Vector Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ucb0iv](index.html) module"]
-pub struct UCB0IV_SPEC;
-impl crate::RegisterSpec for UCB0IV_SPEC {
+impl W {}
+#[doc = "USCI B0 Interrupt Vector Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ucb0iv::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ucb0iv::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Ucb0ivSpec;
+impl crate::RegisterSpec for Ucb0ivSpec {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [ucb0iv::R](R) reader structure"]
-impl crate::Readable for UCB0IV_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [ucb0iv::W](W) writer structure"]
-impl crate::Writable for UCB0IV_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`ucb0iv::R`](R) reader structure"]
+impl crate::Readable for Ucb0ivSpec {}
+#[doc = "`write(|w| ..)` method takes [`ucb0iv::W`](W) writer structure"]
+impl crate::Writable for Ucb0ivSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets UCB0IV to value 0"]
-impl crate::Resettable for UCB0IV_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for Ucb0ivSpec {}
