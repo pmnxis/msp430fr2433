@@ -5527,74 +5527,10 @@
           <resetMask>65535</resetMask>
           <fields>
             <field>
-              <name>FLLN0</name>
+              <name>FLLN</name>
               <description>FLL Multipier Bit : 0</description>
               <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>FLLN1</name>
-              <description>FLL Multipier Bit : 1</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>FLLN2</name>
-              <description>FLL Multipier Bit : 2</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>FLLN3</name>
-              <description>FLL Multipier Bit : 3</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>FLLN4</name>
-              <description>FLL Multipier Bit : 4</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>FLLN5</name>
-              <description>FLL Multipier Bit : 5</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>FLLN6</name>
-              <description>FLL Multipier Bit : 6</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>FLLN7</name>
-              <description>FLL Multipier Bit : 7</description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>FLLN8</name>
-              <description>FLL Multipier Bit : 8</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>FLLN9</name>
-              <description>FLL Multipier Bit : 9</description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
+              <bitWidth>10</bitWidth>
             </field>
             <field>
               <name>FLLD</name>
