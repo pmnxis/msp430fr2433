@@ -12,6 +12,8 @@ pub struct RegisterBlock {
     p3sel0: P3sel0,
     _reserved5: [u8; 0x01],
     p3sel1: P3sel1,
+    _reserved6: [u8; 0x09],
+    p3selc: P3selc,
 }
 impl RegisterBlock {
     #[doc = "0x00 - Port 3 Input"]
@@ -44,6 +46,11 @@ impl RegisterBlock {
     pub const fn p3sel1(&self) -> &P3sel1 {
         &self.p3sel1
     }
+    #[doc = "0x16 - Port 3 Complement Select register"]
+    #[inline(always)]
+    pub const fn p3selc(&self) -> &P3selc {
+        &self.p3selc
+    }
 }
 #[doc = "P3IN (rw) register accessor: Port 3 Input\n\nYou can [`read`](crate::Reg::read) this register and get [`p3in::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`p3in::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@p3in`] module"]
 #[doc(alias = "P3IN")]
@@ -75,3 +82,8 @@ pub mod p3sel0;
 pub type P3sel1 = crate::Reg<p3sel1::P3sel1Spec>;
 #[doc = "Port 3 Selection1"]
 pub mod p3sel1;
+#[doc = "P3SELC (rw) register accessor: Port 3 Complement Select register\n\nYou can [`read`](crate::Reg::read) this register and get [`p3selc::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`p3selc::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@p3selc`] module"]
+#[doc(alias = "P3SELC")]
+pub type P3selc = crate::Reg<p3selc::P3selcSpec>;
+#[doc = "Port 3 Complement Select register"]
+pub mod p3selc;

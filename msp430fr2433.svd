@@ -2278,6 +2278,26 @@
             </field>
           </fields>
         </register>
+        <register>
+          <name>P3SELC</name>
+          <description>Port 3 Complement Select register</description>
+          <addressOffset>22</addressOffset>
+          <size>8</size>
+          <fields>
+            <field>
+              <name>P3SELC</name>
+              <description>P3SELC</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+        </register>
       </registers>
     </peripheral>
     <peripheral>
