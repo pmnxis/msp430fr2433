@@ -46,22 +46,18 @@ pub type Flln9W<'a, REG> = crate::BitWriter<'a, REG>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Flld {
-    #[doc = "0: Multiply Selected Loop Freq. By 1"]
-    Flld0 = 0,
-    #[doc = "1: Multiply Selected Loop Freq. By 2"]
-    Flld1 = 1,
-    #[doc = "2: Multiply Selected Loop Freq. By 4"]
-    Flld2 = 2,
-    #[doc = "3: Multiply Selected Loop Freq. By 8"]
-    Flld3 = 3,
-    #[doc = "4: Multiply Selected Loop Freq. By 16"]
-    Flld4 = 4,
-    #[doc = "5: Multiply Selected Loop Freq. By 32"]
-    Flld5 = 5,
-    #[doc = "6: Reserved"]
-    Flld6 = 6,
-    #[doc = "7: Reserved"]
-    Flld7 = 7,
+    #[doc = "0: Multiply selected loop frequency by 1"]
+    _1 = 0,
+    #[doc = "1: Multiply selected loop frequency by 2"]
+    _2 = 1,
+    #[doc = "2: Multiply selected loop frequency by 4"]
+    _4 = 2,
+    #[doc = "3: Multiply selected loop frequency by 8"]
+    _8 = 3,
+    #[doc = "4: Multiply selected loop frequency by 16"]
+    _16 = 4,
+    #[doc = "5: Multiply selected loop frequency by 32"]
+    _32 = 5,
 }
 impl From<Flld> for u8 {
     #[inline(always)]
@@ -78,106 +74,84 @@ pub type FlldR = crate::FieldReader<Flld>;
 impl FlldR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Flld {
+    pub const fn variant(&self) -> Option<Flld> {
         match self.bits {
-            0 => Flld::Flld0,
-            1 => Flld::Flld1,
-            2 => Flld::Flld2,
-            3 => Flld::Flld3,
-            4 => Flld::Flld4,
-            5 => Flld::Flld5,
-            6 => Flld::Flld6,
-            7 => Flld::Flld7,
-            _ => unreachable!(),
+            0 => Some(Flld::_1),
+            1 => Some(Flld::_2),
+            2 => Some(Flld::_4),
+            3 => Some(Flld::_8),
+            4 => Some(Flld::_16),
+            5 => Some(Flld::_32),
+            _ => None,
         }
     }
-    #[doc = "Multiply Selected Loop Freq. By 1"]
+    #[doc = "Multiply selected loop frequency by 1"]
     #[inline(always)]
-    pub fn is_flld_0(&self) -> bool {
-        *self == Flld::Flld0
+    pub fn is_1(&self) -> bool {
+        *self == Flld::_1
     }
-    #[doc = "Multiply Selected Loop Freq. By 2"]
+    #[doc = "Multiply selected loop frequency by 2"]
     #[inline(always)]
-    pub fn is_flld_1(&self) -> bool {
-        *self == Flld::Flld1
+    pub fn is_2(&self) -> bool {
+        *self == Flld::_2
     }
-    #[doc = "Multiply Selected Loop Freq. By 4"]
+    #[doc = "Multiply selected loop frequency by 4"]
     #[inline(always)]
-    pub fn is_flld_2(&self) -> bool {
-        *self == Flld::Flld2
+    pub fn is_4(&self) -> bool {
+        *self == Flld::_4
     }
-    #[doc = "Multiply Selected Loop Freq. By 8"]
+    #[doc = "Multiply selected loop frequency by 8"]
     #[inline(always)]
-    pub fn is_flld_3(&self) -> bool {
-        *self == Flld::Flld3
+    pub fn is_8(&self) -> bool {
+        *self == Flld::_8
     }
-    #[doc = "Multiply Selected Loop Freq. By 16"]
+    #[doc = "Multiply selected loop frequency by 16"]
     #[inline(always)]
-    pub fn is_flld_4(&self) -> bool {
-        *self == Flld::Flld4
+    pub fn is_16(&self) -> bool {
+        *self == Flld::_16
     }
-    #[doc = "Multiply Selected Loop Freq. By 32"]
+    #[doc = "Multiply selected loop frequency by 32"]
     #[inline(always)]
-    pub fn is_flld_5(&self) -> bool {
-        *self == Flld::Flld5
-    }
-    #[doc = "Reserved"]
-    #[inline(always)]
-    pub fn is_flld_6(&self) -> bool {
-        *self == Flld::Flld6
-    }
-    #[doc = "Reserved"]
-    #[inline(always)]
-    pub fn is_flld_7(&self) -> bool {
-        *self == Flld::Flld7
+    pub fn is_32(&self) -> bool {
+        *self == Flld::_32
     }
 }
 #[doc = "Field `FLLD` writer - Loop Divider Bit : 0"]
-pub type FlldW<'a, REG> = crate::FieldWriter<'a, REG, 3, Flld, crate::Safe>;
+pub type FlldW<'a, REG> = crate::FieldWriter<'a, REG, 3, Flld>;
 impl<'a, REG> FlldW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "Multiply Selected Loop Freq. By 1"]
+    #[doc = "Multiply selected loop frequency by 1"]
     #[inline(always)]
-    pub fn flld_0(self) -> &'a mut crate::W<REG> {
-        self.variant(Flld::Flld0)
+    pub fn _1(self) -> &'a mut crate::W<REG> {
+        self.variant(Flld::_1)
     }
-    #[doc = "Multiply Selected Loop Freq. By 2"]
+    #[doc = "Multiply selected loop frequency by 2"]
     #[inline(always)]
-    pub fn flld_1(self) -> &'a mut crate::W<REG> {
-        self.variant(Flld::Flld1)
+    pub fn _2(self) -> &'a mut crate::W<REG> {
+        self.variant(Flld::_2)
     }
-    #[doc = "Multiply Selected Loop Freq. By 4"]
+    #[doc = "Multiply selected loop frequency by 4"]
     #[inline(always)]
-    pub fn flld_2(self) -> &'a mut crate::W<REG> {
-        self.variant(Flld::Flld2)
+    pub fn _4(self) -> &'a mut crate::W<REG> {
+        self.variant(Flld::_4)
     }
-    #[doc = "Multiply Selected Loop Freq. By 8"]
+    #[doc = "Multiply selected loop frequency by 8"]
     #[inline(always)]
-    pub fn flld_3(self) -> &'a mut crate::W<REG> {
-        self.variant(Flld::Flld3)
+    pub fn _8(self) -> &'a mut crate::W<REG> {
+        self.variant(Flld::_8)
     }
-    #[doc = "Multiply Selected Loop Freq. By 16"]
+    #[doc = "Multiply selected loop frequency by 16"]
     #[inline(always)]
-    pub fn flld_4(self) -> &'a mut crate::W<REG> {
-        self.variant(Flld::Flld4)
+    pub fn _16(self) -> &'a mut crate::W<REG> {
+        self.variant(Flld::_16)
     }
-    #[doc = "Multiply Selected Loop Freq. By 32"]
+    #[doc = "Multiply selected loop frequency by 32"]
     #[inline(always)]
-    pub fn flld_5(self) -> &'a mut crate::W<REG> {
-        self.variant(Flld::Flld5)
-    }
-    #[doc = "Reserved"]
-    #[inline(always)]
-    pub fn flld_6(self) -> &'a mut crate::W<REG> {
-        self.variant(Flld::Flld6)
-    }
-    #[doc = "Reserved"]
-    #[inline(always)]
-    pub fn flld_7(self) -> &'a mut crate::W<REG> {
-        self.variant(Flld::Flld7)
+    pub fn _32(self) -> &'a mut crate::W<REG> {
+        self.variant(Flld::_32)
     }
 }
 impl R {

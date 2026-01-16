@@ -2,7 +2,7 @@
 <device schemaVersion="1.1" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
   <vendor>msp430gen</vendor>
   <name>MSP430FR2433</name>
-  <version>1912f3a5</version>
+  <version>6568e1d-dirty</version>
   <description></description>
   <addressUnitBits>8</addressUnitBits>
   <width>16</width>
@@ -4726,6 +4726,19 @@
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
+              <enumeratedValues>
+                <name>SVSHE</name>
+                <enumeratedValue>
+                  <name>DISABLED</name>
+                  <description>High-side SVS (SVSH) is disabled in LPM2, LPM3, LPM4, LPM3.5, and LPM4.5. SVSH is always enabled in active mode, LPM0, and LPM1.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLED</name>
+                  <description>SVSH is always enabled.</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>PMMPW</name>
@@ -5590,45 +5603,36 @@
               <bitWidth>3</bitWidth>
               <access>read-write</access>
               <enumeratedValues>
+                <name>FLLD</name>
                 <enumeratedValue>
-                  <name>FLLD_0</name>
-                  <description>Multiply Selected Loop Freq. By 1</description>
+                  <name>/1</name>
+                  <description>Multiply selected loop frequency by 1</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>FLLD_1</name>
-                  <description>Multiply Selected Loop Freq. By 2</description>
+                  <name>/2</name>
+                  <description>Multiply selected loop frequency by 2</description>
                   <value>1</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>FLLD_2</name>
-                  <description>Multiply Selected Loop Freq. By 4</description>
+                  <name>/4</name>
+                  <description>Multiply selected loop frequency by 4</description>
                   <value>2</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>FLLD_3</name>
-                  <description>Multiply Selected Loop Freq. By 8</description>
+                  <name>/8</name>
+                  <description>Multiply selected loop frequency by 8</description>
                   <value>3</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>FLLD_4</name>
-                  <description>Multiply Selected Loop Freq. By 16</description>
+                  <name>/16</name>
+                  <description>Multiply selected loop frequency by 16</description>
                   <value>4</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>FLLD_5</name>
-                  <description>Multiply Selected Loop Freq. By 32</description>
+                  <name>/32</name>
+                  <description>Multiply selected loop frequency by 32</description>
                   <value>5</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>FLLD_6</name>
-                  <description>Reserved</description>
-                  <value>6</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>FLLD_7</name>
-                  <description>Reserved</description>
-                  <value>7</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -5697,25 +5701,16 @@
               <bitWidth>2</bitWidth>
               <access>read-write</access>
               <enumeratedValues>
+                <name>SELREF</name>
                 <enumeratedValue>
-                  <name>SELREF_0</name>
-                  <description>FLL Reference Clock Select 0</description>
+                  <name>XT1CLK</name>
+                  <description>XT1CLK</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>SELREF_1</name>
-                  <description>FLL Reference Clock Select 1</description>
+                  <name>REFOCLK</name>
+                  <description>REFOCLK</description>
                   <value>1</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>SELREF_2</name>
-                  <description>FLL Reference Clock Select 2</description>
-                  <value>2</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>SELREF_3</name>
-                  <description>FLL Reference Clock Select 3</description>
-                  <value>3</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -5735,45 +5730,26 @@
               <bitWidth>3</bitWidth>
               <access>read-write</access>
               <enumeratedValues>
+                <name>SELMS</name>
                 <enumeratedValue>
-                  <name>SELMS_0</name>
-                  <description>MCLK and SMCLK Source Select 0</description>
+                  <name>DCOCLKDIV</name>
+                  <description>DCO CLKDIV</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>SELMS_1</name>
-                  <description>MCLK and SMCLK Source Select 1</description>
+                  <name>REFOCLK</name>
+                  <description>REFOCLK</description>
                   <value>1</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>SELMS_2</name>
-                  <description>MCLK and SMCLK Source Select 2</description>
+                  <name>XT1CLK</name>
+                  <description>XT1CLK</description>
                   <value>2</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>SELMS_3</name>
-                  <description>MCLK and SMCLK Source Select 3</description>
+                  <name>VLOCLK</name>
+                  <description>VLOCLK</description>
                   <value>3</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>SELMS_4</name>
-                  <description>MCLK and SMCLK Source Select 4</description>
-                  <value>4</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>SELMS_5</name>
-                  <description>MCLK and SMCLK Source Select 5</description>
-                  <value>5</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>SELMS_6</name>
-                  <description>MCLK and SMCLK Source Select 6</description>
-                  <value>6</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>SELMS_7</name>
-                  <description>MCLK and SMCLK Source Select 7</description>
-                  <value>7</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -5783,6 +5759,19 @@
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
+              <enumeratedValues>
+                <name>SELA</name>
+                <enumeratedValue>
+                  <name>XT1CLK</name>
+                  <description>Source ACLK from XT1CLK with divider (no more than 40kHz)</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>REFOCLK</name>
+                  <description>Source ACLK from the internal 32kHz clock source</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
           </fields>
         </register>
@@ -5800,44 +5789,45 @@
               <bitWidth>3</bitWidth>
               <access>read-write</access>
               <enumeratedValues>
+                <name>DIVM</name>
                 <enumeratedValue>
-                  <name>DIVM_0</name>
-                  <description>MCLK Source Divider 0</description>
+                  <name>/1</name>
+                  <description>MCLK = Clock source /1</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>DIVM_1</name>
-                  <description>MCLK Source Divider 1</description>
+                  <name>/2</name>
+                  <description>MCLK = Clock source /2</description>
                   <value>1</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>DIVM_2</name>
-                  <description>MCLK Source Divider 2</description>
+                  <name>/4</name>
+                  <description>MCLK = Clock source /4</description>
                   <value>2</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>DIVM_3</name>
-                  <description>MCLK Source Divider 3</description>
+                  <name>/8</name>
+                  <description>MCLK = Clock source /8</description>
                   <value>3</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>DIVM_4</name>
-                  <description>MCLK Source Divider 4</description>
+                  <name>/16</name>
+                  <description>MCLK = Clock source /16</description>
                   <value>4</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>DIVM_5</name>
-                  <description>MCLK Source Divider 5</description>
+                  <name>/32</name>
+                  <description>MCLK = Clock source /32</description>
                   <value>5</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>DIVM_6</name>
-                  <description>MCLK Source Divider 6</description>
+                  <name>/64</name>
+                  <description>MCLK = Clock source /64</description>
                   <value>6</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>DIVM_7</name>
-                  <description>MCLK Source Divider 7</description>
+                  <name>/128</name>
+                  <description>MCLK = Clock source /128</description>
                   <value>7</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -5849,24 +5839,25 @@
               <bitWidth>2</bitWidth>
               <access>read-write</access>
               <enumeratedValues>
+                <name>DIVS</name>
                 <enumeratedValue>
-                  <name>DIVS_0</name>
-                  <description>SMCLK Source Divider 0</description>
+                  <name>/1</name>
+                  <description>SMCLK = MCLK /1</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>DIVS_1</name>
-                  <description>SMCLK Source Divider 1</description>
+                  <name>/2</name>
+                  <description>SMCLK = MCLK /2</description>
                   <value>1</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>DIVS_2</name>
-                  <description>SMCLK Source Divider 2</description>
+                  <name>/4</name>
+                  <description>SMCLK = MCLK /4</description>
                   <value>2</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>DIVS_3</name>
-                  <description>SMCLK Source Divider 3</description>
+                  <name>/8</name>
+                  <description>SMCLK = MCLK /8</description>
                   <value>3</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -6319,6 +6310,56 @@
           <resetMask>65535</resetMask>
           <fields>
             <field>
+              <name>WDTIS</name>
+              <description>WDT - Timer Interval Select 0</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>3</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <name>WDTIS</name>
+                <enumeratedValue>
+                  <name>/2048M</name>
+                  <description>WDT - Timer Interval Select: Watchdog clock source /2048M</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>/128M</name>
+                  <description>WDT - Timer Interval Select: Watchdog clock source /128M</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>/8192K</name>
+                  <description>WDT - Timer Interval Select: Watchdog clock source /8192K</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>/512K</name>
+                  <description>WDT - Timer Interval Select: Watchdog clock source /512K</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>/32K</name>
+                  <description>WDT - Timer Interval Select: Watchdog clock source /32K</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>/8192</name>
+                  <description>WDT - Timer Interval Select: Watchdog clock source /8192K</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>/512</name>
+                  <description>WDT - Timer Interval Select: Watchdog clock source /512</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>/64</name>
+                  <description>WDT - Timer Interval Select: Watchdog clock source /64</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
               <name>WDTCNTCL</name>
               <description>WDT - Timer Clear</description>
               <bitOffset>3</bitOffset>
@@ -6339,24 +6380,25 @@
               <bitWidth>2</bitWidth>
               <access>read-write</access>
               <enumeratedValues>
+                <name>WDTSSEL</name>
                 <enumeratedValue>
-                  <name>WDTSSEL_0</name>
+                  <name>SMCLK</name>
                   <description>WDT - Timer Clock Source Select: SMCLK</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>WDTSSEL_1</name>
+                  <name>ACLK</name>
                   <description>WDT - Timer Clock Source Select: ACLK</description>
                   <value>1</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>WDTSSEL_2</name>
-                  <description>WDT - Timer Clock Source Select: VLO_CLK</description>
+                  <name>VLOCLK</name>
+                  <description>WDT - Timer Clock Source Select: VLOCLK</description>
                   <value>2</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>WDTSSEL_3</name>
-                  <description>WDT - Timer Clock Source Select: reserved</description>
+                  <name>X_CLK</name>
+                  <description>WDT - Timer Clock Source Select: Reserved</description>
                   <value>3</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -6367,6 +6409,19 @@
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
+              <enumeratedValues>
+                <name>WDTHOLD</name>
+                <enumeratedValue>
+                  <name>UNHOLD</name>
+                  <description>Watchdog timer is not stopped</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>HOLD</name>
+                  <description>Watchdog timer is stopped</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>WDTPW</name>
@@ -6391,18 +6446,6 @@
                   <value>90</value>
                 </enumeratedValue>
               </enumeratedValues>
-            </field>
-            <field>
-              <name>WDTIS</name>
-              <description>WDT - Timer Interval Select 0</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>3</bitWidth>
-              <writeConstraint>
-                <range>
-                  <minimum>0</minimum>
-                  <maximum>3</maximum>
-                </range>
-              </writeConstraint>
             </field>
           </fields>
         </register>
@@ -6448,44 +6491,45 @@
               <bitWidth>3</bitWidth>
               <access>read-write</access>
               <enumeratedValues>
+                <name>RTCPS</name>
                 <enumeratedValue>
-                  <name>RTCPS_0</name>
-                  <description>Low-Power-Counter Clock Pre-divider Select: 0</description>
+                  <name>/1</name>
+                  <description>RTC Predivider /1</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>RTCPS_1</name>
-                  <description>Low-Power-Counter Clock Pre-divider Select: 1</description>
+                  <name>/10</name>
+                  <description>RTC Predivider /10</description>
                   <value>1</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>RTCPS_2</name>
-                  <description>Low-Power-Counter Clock Pre-divider Select: 2</description>
+                  <name>/100</name>
+                  <description>RTC Predivider /100</description>
                   <value>2</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>RTCPS_3</name>
-                  <description>Low-Power-Counter Clock Pre-divider Select: 3</description>
+                  <name>/1000</name>
+                  <description>RTC Predivider /1000</description>
                   <value>3</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>RTCPS_4</name>
-                  <description>Low-Power-Counter Clock Pre-divider Select: 4</description>
+                  <name>/16</name>
+                  <description>RTC Predivider /16</description>
                   <value>4</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>RTCPS_5</name>
-                  <description>Low-Power-Counter Clock Pre-divider Select: 5</description>
+                  <name>/64</name>
+                  <description>RTC Predivider /64</description>
                   <value>5</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>RTCPS_6</name>
-                  <description>Low-Power-Counter Clock Pre-divider Select: 6</description>
+                  <name>/256</name>
+                  <description>RTC Predivider /256</description>
                   <value>6</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>RTCPS_7</name>
-                  <description>Low-Power-Counter Clock Pre-divider Select: 7</description>
+                  <name>/1024</name>
+                  <description>RTC Predivider /1024</description>
                   <value>7</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -6497,24 +6541,25 @@
               <bitWidth>2</bitWidth>
               <access>read-write</access>
               <enumeratedValues>
+                <name>RTCSS</name>
                 <enumeratedValue>
-                  <name>RTCSS_0</name>
-                  <description>Low-Power-Counter Clock Source Select: 0</description>
+                  <name>DISABLED</name>
+                  <description>Low-Power-Counter Clock Source Select: Disabled</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>RTCSS_1</name>
-                  <description>Low-Power-Counter Clock Source Select: 1</description>
+                  <name>SMCLK</name>
+                  <description>Low-Power-Counter Clock Source Select: SMCLK</description>
                   <value>1</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>RTCSS_2</name>
-                  <description>Low-Power-Counter Clock Source Select: 2</description>
+                  <name>XT1CLK</name>
+                  <description>Low-Power-Counter Clock Source Select: XT1CLK</description>
                   <value>2</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>RTCSS_3</name>
-                  <description>Low-Power-Counter Clock Source Select: 3</description>
+                  <name>VLOCLK</name>
+                  <description>Low-Power-Counter Clock Source Select: VLOCLK</description>
                   <value>3</value>
                 </enumeratedValue>
               </enumeratedValues>

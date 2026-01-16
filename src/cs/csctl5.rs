@@ -6,22 +6,22 @@ pub type W = crate::W<Csctl5Spec>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Divm {
-    #[doc = "0: MCLK Source Divider 0"]
-    Divm0 = 0,
-    #[doc = "1: MCLK Source Divider 1"]
-    Divm1 = 1,
-    #[doc = "2: MCLK Source Divider 2"]
-    Divm2 = 2,
-    #[doc = "3: MCLK Source Divider 3"]
-    Divm3 = 3,
-    #[doc = "4: MCLK Source Divider 4"]
-    Divm4 = 4,
-    #[doc = "5: MCLK Source Divider 5"]
-    Divm5 = 5,
-    #[doc = "6: MCLK Source Divider 6"]
-    Divm6 = 6,
-    #[doc = "7: MCLK Source Divider 7"]
-    Divm7 = 7,
+    #[doc = "0: MCLK = Clock source /1"]
+    _1 = 0,
+    #[doc = "1: MCLK = Clock source /2"]
+    _2 = 1,
+    #[doc = "2: MCLK = Clock source /4"]
+    _4 = 2,
+    #[doc = "3: MCLK = Clock source /8"]
+    _8 = 3,
+    #[doc = "4: MCLK = Clock source /16"]
+    _16 = 4,
+    #[doc = "5: MCLK = Clock source /32"]
+    _32 = 5,
+    #[doc = "6: MCLK = Clock source /64"]
+    _64 = 6,
+    #[doc = "7: MCLK = Clock source /128"]
+    _128 = 7,
 }
 impl From<Divm> for u8 {
     #[inline(always)]
@@ -40,56 +40,56 @@ impl DivmR {
     #[inline(always)]
     pub const fn variant(&self) -> Divm {
         match self.bits {
-            0 => Divm::Divm0,
-            1 => Divm::Divm1,
-            2 => Divm::Divm2,
-            3 => Divm::Divm3,
-            4 => Divm::Divm4,
-            5 => Divm::Divm5,
-            6 => Divm::Divm6,
-            7 => Divm::Divm7,
+            0 => Divm::_1,
+            1 => Divm::_2,
+            2 => Divm::_4,
+            3 => Divm::_8,
+            4 => Divm::_16,
+            5 => Divm::_32,
+            6 => Divm::_64,
+            7 => Divm::_128,
             _ => unreachable!(),
         }
     }
-    #[doc = "MCLK Source Divider 0"]
+    #[doc = "MCLK = Clock source /1"]
     #[inline(always)]
-    pub fn is_divm_0(&self) -> bool {
-        *self == Divm::Divm0
+    pub fn is_1(&self) -> bool {
+        *self == Divm::_1
     }
-    #[doc = "MCLK Source Divider 1"]
+    #[doc = "MCLK = Clock source /2"]
     #[inline(always)]
-    pub fn is_divm_1(&self) -> bool {
-        *self == Divm::Divm1
+    pub fn is_2(&self) -> bool {
+        *self == Divm::_2
     }
-    #[doc = "MCLK Source Divider 2"]
+    #[doc = "MCLK = Clock source /4"]
     #[inline(always)]
-    pub fn is_divm_2(&self) -> bool {
-        *self == Divm::Divm2
+    pub fn is_4(&self) -> bool {
+        *self == Divm::_4
     }
-    #[doc = "MCLK Source Divider 3"]
+    #[doc = "MCLK = Clock source /8"]
     #[inline(always)]
-    pub fn is_divm_3(&self) -> bool {
-        *self == Divm::Divm3
+    pub fn is_8(&self) -> bool {
+        *self == Divm::_8
     }
-    #[doc = "MCLK Source Divider 4"]
+    #[doc = "MCLK = Clock source /16"]
     #[inline(always)]
-    pub fn is_divm_4(&self) -> bool {
-        *self == Divm::Divm4
+    pub fn is_16(&self) -> bool {
+        *self == Divm::_16
     }
-    #[doc = "MCLK Source Divider 5"]
+    #[doc = "MCLK = Clock source /32"]
     #[inline(always)]
-    pub fn is_divm_5(&self) -> bool {
-        *self == Divm::Divm5
+    pub fn is_32(&self) -> bool {
+        *self == Divm::_32
     }
-    #[doc = "MCLK Source Divider 6"]
+    #[doc = "MCLK = Clock source /64"]
     #[inline(always)]
-    pub fn is_divm_6(&self) -> bool {
-        *self == Divm::Divm6
+    pub fn is_64(&self) -> bool {
+        *self == Divm::_64
     }
-    #[doc = "MCLK Source Divider 7"]
+    #[doc = "MCLK = Clock source /128"]
     #[inline(always)]
-    pub fn is_divm_7(&self) -> bool {
-        *self == Divm::Divm7
+    pub fn is_128(&self) -> bool {
+        *self == Divm::_128
     }
 }
 #[doc = "Field `DIVM` writer - MCLK Divider Bit: 0"]
@@ -99,59 +99,59 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "MCLK Source Divider 0"]
+    #[doc = "MCLK = Clock source /1"]
     #[inline(always)]
-    pub fn divm_0(self) -> &'a mut crate::W<REG> {
-        self.variant(Divm::Divm0)
+    pub fn _1(self) -> &'a mut crate::W<REG> {
+        self.variant(Divm::_1)
     }
-    #[doc = "MCLK Source Divider 1"]
+    #[doc = "MCLK = Clock source /2"]
     #[inline(always)]
-    pub fn divm_1(self) -> &'a mut crate::W<REG> {
-        self.variant(Divm::Divm1)
+    pub fn _2(self) -> &'a mut crate::W<REG> {
+        self.variant(Divm::_2)
     }
-    #[doc = "MCLK Source Divider 2"]
+    #[doc = "MCLK = Clock source /4"]
     #[inline(always)]
-    pub fn divm_2(self) -> &'a mut crate::W<REG> {
-        self.variant(Divm::Divm2)
+    pub fn _4(self) -> &'a mut crate::W<REG> {
+        self.variant(Divm::_4)
     }
-    #[doc = "MCLK Source Divider 3"]
+    #[doc = "MCLK = Clock source /8"]
     #[inline(always)]
-    pub fn divm_3(self) -> &'a mut crate::W<REG> {
-        self.variant(Divm::Divm3)
+    pub fn _8(self) -> &'a mut crate::W<REG> {
+        self.variant(Divm::_8)
     }
-    #[doc = "MCLK Source Divider 4"]
+    #[doc = "MCLK = Clock source /16"]
     #[inline(always)]
-    pub fn divm_4(self) -> &'a mut crate::W<REG> {
-        self.variant(Divm::Divm4)
+    pub fn _16(self) -> &'a mut crate::W<REG> {
+        self.variant(Divm::_16)
     }
-    #[doc = "MCLK Source Divider 5"]
+    #[doc = "MCLK = Clock source /32"]
     #[inline(always)]
-    pub fn divm_5(self) -> &'a mut crate::W<REG> {
-        self.variant(Divm::Divm5)
+    pub fn _32(self) -> &'a mut crate::W<REG> {
+        self.variant(Divm::_32)
     }
-    #[doc = "MCLK Source Divider 6"]
+    #[doc = "MCLK = Clock source /64"]
     #[inline(always)]
-    pub fn divm_6(self) -> &'a mut crate::W<REG> {
-        self.variant(Divm::Divm6)
+    pub fn _64(self) -> &'a mut crate::W<REG> {
+        self.variant(Divm::_64)
     }
-    #[doc = "MCLK Source Divider 7"]
+    #[doc = "MCLK = Clock source /128"]
     #[inline(always)]
-    pub fn divm_7(self) -> &'a mut crate::W<REG> {
-        self.variant(Divm::Divm7)
+    pub fn _128(self) -> &'a mut crate::W<REG> {
+        self.variant(Divm::_128)
     }
 }
 #[doc = "SMCLK Divider Bit: 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Divs {
-    #[doc = "0: SMCLK Source Divider 0"]
-    Divs0 = 0,
-    #[doc = "1: SMCLK Source Divider 1"]
-    Divs1 = 1,
-    #[doc = "2: SMCLK Source Divider 2"]
-    Divs2 = 2,
-    #[doc = "3: SMCLK Source Divider 3"]
-    Divs3 = 3,
+    #[doc = "0: SMCLK = MCLK /1"]
+    _1 = 0,
+    #[doc = "1: SMCLK = MCLK /2"]
+    _2 = 1,
+    #[doc = "2: SMCLK = MCLK /4"]
+    _4 = 2,
+    #[doc = "3: SMCLK = MCLK /8"]
+    _8 = 3,
 }
 impl From<Divs> for u8 {
     #[inline(always)]
@@ -170,32 +170,32 @@ impl DivsR {
     #[inline(always)]
     pub const fn variant(&self) -> Divs {
         match self.bits {
-            0 => Divs::Divs0,
-            1 => Divs::Divs1,
-            2 => Divs::Divs2,
-            3 => Divs::Divs3,
+            0 => Divs::_1,
+            1 => Divs::_2,
+            2 => Divs::_4,
+            3 => Divs::_8,
             _ => unreachable!(),
         }
     }
-    #[doc = "SMCLK Source Divider 0"]
+    #[doc = "SMCLK = MCLK /1"]
     #[inline(always)]
-    pub fn is_divs_0(&self) -> bool {
-        *self == Divs::Divs0
+    pub fn is_1(&self) -> bool {
+        *self == Divs::_1
     }
-    #[doc = "SMCLK Source Divider 1"]
+    #[doc = "SMCLK = MCLK /2"]
     #[inline(always)]
-    pub fn is_divs_1(&self) -> bool {
-        *self == Divs::Divs1
+    pub fn is_2(&self) -> bool {
+        *self == Divs::_2
     }
-    #[doc = "SMCLK Source Divider 2"]
+    #[doc = "SMCLK = MCLK /4"]
     #[inline(always)]
-    pub fn is_divs_2(&self) -> bool {
-        *self == Divs::Divs2
+    pub fn is_4(&self) -> bool {
+        *self == Divs::_4
     }
-    #[doc = "SMCLK Source Divider 3"]
+    #[doc = "SMCLK = MCLK /8"]
     #[inline(always)]
-    pub fn is_divs_3(&self) -> bool {
-        *self == Divs::Divs3
+    pub fn is_8(&self) -> bool {
+        *self == Divs::_8
     }
 }
 #[doc = "Field `DIVS` writer - SMCLK Divider Bit: 0"]
@@ -205,25 +205,25 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "SMCLK Source Divider 0"]
+    #[doc = "SMCLK = MCLK /1"]
     #[inline(always)]
-    pub fn divs_0(self) -> &'a mut crate::W<REG> {
-        self.variant(Divs::Divs0)
+    pub fn _1(self) -> &'a mut crate::W<REG> {
+        self.variant(Divs::_1)
     }
-    #[doc = "SMCLK Source Divider 1"]
+    #[doc = "SMCLK = MCLK /2"]
     #[inline(always)]
-    pub fn divs_1(self) -> &'a mut crate::W<REG> {
-        self.variant(Divs::Divs1)
+    pub fn _2(self) -> &'a mut crate::W<REG> {
+        self.variant(Divs::_2)
     }
-    #[doc = "SMCLK Source Divider 2"]
+    #[doc = "SMCLK = MCLK /4"]
     #[inline(always)]
-    pub fn divs_2(self) -> &'a mut crate::W<REG> {
-        self.variant(Divs::Divs2)
+    pub fn _4(self) -> &'a mut crate::W<REG> {
+        self.variant(Divs::_4)
     }
-    #[doc = "SMCLK Source Divider 3"]
+    #[doc = "SMCLK = MCLK /8"]
     #[inline(always)]
-    pub fn divs_3(self) -> &'a mut crate::W<REG> {
-        self.variant(Divs::Divs3)
+    pub fn _8(self) -> &'a mut crate::W<REG> {
+        self.variant(Divs::_8)
     }
 }
 #[doc = "Field `SMCLKOFF` reader - SMCLK off"]

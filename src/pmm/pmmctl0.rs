@@ -14,10 +14,59 @@ pub type PmmswporW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type PmmregoffR = crate::BitReader;
 #[doc = "Field `PMMREGOFF` writer - PMM Turn Regulator off"]
 pub type PmmregoffW<'a, REG> = crate::BitWriter<'a, REG>;
+#[doc = "SVS high side enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Svshe {
+    #[doc = "0: High-side SVS (SVSH) is disabled in LPM2, LPM3, LPM4, LPM3.5, and LPM4.5. SVSH is always enabled in active mode, LPM0, and LPM1."]
+    Disabled = 0,
+    #[doc = "1: SVSH is always enabled."]
+    Enabled = 1,
+}
+impl From<Svshe> for bool {
+    #[inline(always)]
+    fn from(variant: Svshe) -> Self {
+        variant as u8 != 0
+    }
+}
 #[doc = "Field `SVSHE` reader - SVS high side enable"]
-pub type SvsheR = crate::BitReader;
+pub type SvsheR = crate::BitReader<Svshe>;
+impl SvsheR {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub const fn variant(&self) -> Svshe {
+        match self.bits {
+            false => Svshe::Disabled,
+            true => Svshe::Enabled,
+        }
+    }
+    #[doc = "High-side SVS (SVSH) is disabled in LPM2, LPM3, LPM4, LPM3.5, and LPM4.5. SVSH is always enabled in active mode, LPM0, and LPM1."]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == Svshe::Disabled
+    }
+    #[doc = "SVSH is always enabled."]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == Svshe::Enabled
+    }
+}
 #[doc = "Field `SVSHE` writer - SVS high side enable"]
-pub type SvsheW<'a, REG> = crate::BitWriter<'a, REG>;
+pub type SvsheW<'a, REG> = crate::BitWriter<'a, REG, Svshe>;
+impl<'a, REG> SvsheW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "High-side SVS (SVSH) is disabled in LPM2, LPM3, LPM4, LPM3.5, and LPM4.5. SVSH is always enabled in active mode, LPM0, and LPM1."]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Svshe::Disabled)
+    }
+    #[doc = "SVSH is always enabled."]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Svshe::Enabled)
+    }
+}
 #[doc = "PMM Password\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]

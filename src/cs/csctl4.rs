@@ -6,22 +6,14 @@ pub type W = crate::W<Csctl4Spec>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Selms {
-    #[doc = "0: MCLK and SMCLK Source Select 0"]
-    Selms0 = 0,
-    #[doc = "1: MCLK and SMCLK Source Select 1"]
-    Selms1 = 1,
-    #[doc = "2: MCLK and SMCLK Source Select 2"]
-    Selms2 = 2,
-    #[doc = "3: MCLK and SMCLK Source Select 3"]
-    Selms3 = 3,
-    #[doc = "4: MCLK and SMCLK Source Select 4"]
-    Selms4 = 4,
-    #[doc = "5: MCLK and SMCLK Source Select 5"]
-    Selms5 = 5,
-    #[doc = "6: MCLK and SMCLK Source Select 6"]
-    Selms6 = 6,
-    #[doc = "7: MCLK and SMCLK Source Select 7"]
-    Selms7 = 7,
+    #[doc = "0: DCO CLKDIV"]
+    Dcoclkdiv = 0,
+    #[doc = "1: REFOCLK"]
+    Refoclk = 1,
+    #[doc = "2: XT1CLK"]
+    Xt1clk = 2,
+    #[doc = "3: VLOCLK"]
+    Vloclk = 3,
 }
 impl From<Selms> for u8 {
     #[inline(always)]
@@ -38,112 +30,117 @@ pub type SelmsR = crate::FieldReader<Selms>;
 impl SelmsR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Selms {
+    pub const fn variant(&self) -> Option<Selms> {
         match self.bits {
-            0 => Selms::Selms0,
-            1 => Selms::Selms1,
-            2 => Selms::Selms2,
-            3 => Selms::Selms3,
-            4 => Selms::Selms4,
-            5 => Selms::Selms5,
-            6 => Selms::Selms6,
-            7 => Selms::Selms7,
-            _ => unreachable!(),
+            0 => Some(Selms::Dcoclkdiv),
+            1 => Some(Selms::Refoclk),
+            2 => Some(Selms::Xt1clk),
+            3 => Some(Selms::Vloclk),
+            _ => None,
         }
     }
-    #[doc = "MCLK and SMCLK Source Select 0"]
+    #[doc = "DCO CLKDIV"]
     #[inline(always)]
-    pub fn is_selms_0(&self) -> bool {
-        *self == Selms::Selms0
+    pub fn is_dcoclkdiv(&self) -> bool {
+        *self == Selms::Dcoclkdiv
     }
-    #[doc = "MCLK and SMCLK Source Select 1"]
+    #[doc = "REFOCLK"]
     #[inline(always)]
-    pub fn is_selms_1(&self) -> bool {
-        *self == Selms::Selms1
+    pub fn is_refoclk(&self) -> bool {
+        *self == Selms::Refoclk
     }
-    #[doc = "MCLK and SMCLK Source Select 2"]
+    #[doc = "XT1CLK"]
     #[inline(always)]
-    pub fn is_selms_2(&self) -> bool {
-        *self == Selms::Selms2
+    pub fn is_xt1clk(&self) -> bool {
+        *self == Selms::Xt1clk
     }
-    #[doc = "MCLK and SMCLK Source Select 3"]
+    #[doc = "VLOCLK"]
     #[inline(always)]
-    pub fn is_selms_3(&self) -> bool {
-        *self == Selms::Selms3
-    }
-    #[doc = "MCLK and SMCLK Source Select 4"]
-    #[inline(always)]
-    pub fn is_selms_4(&self) -> bool {
-        *self == Selms::Selms4
-    }
-    #[doc = "MCLK and SMCLK Source Select 5"]
-    #[inline(always)]
-    pub fn is_selms_5(&self) -> bool {
-        *self == Selms::Selms5
-    }
-    #[doc = "MCLK and SMCLK Source Select 6"]
-    #[inline(always)]
-    pub fn is_selms_6(&self) -> bool {
-        *self == Selms::Selms6
-    }
-    #[doc = "MCLK and SMCLK Source Select 7"]
-    #[inline(always)]
-    pub fn is_selms_7(&self) -> bool {
-        *self == Selms::Selms7
+    pub fn is_vloclk(&self) -> bool {
+        *self == Selms::Vloclk
     }
 }
 #[doc = "Field `SELMS` writer - MCLK and SMCLK Source Select Bit: 0"]
-pub type SelmsW<'a, REG> = crate::FieldWriter<'a, REG, 3, Selms, crate::Safe>;
+pub type SelmsW<'a, REG> = crate::FieldWriter<'a, REG, 3, Selms>;
 impl<'a, REG> SelmsW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "MCLK and SMCLK Source Select 0"]
+    #[doc = "DCO CLKDIV"]
     #[inline(always)]
-    pub fn selms_0(self) -> &'a mut crate::W<REG> {
-        self.variant(Selms::Selms0)
+    pub fn dcoclkdiv(self) -> &'a mut crate::W<REG> {
+        self.variant(Selms::Dcoclkdiv)
     }
-    #[doc = "MCLK and SMCLK Source Select 1"]
+    #[doc = "REFOCLK"]
     #[inline(always)]
-    pub fn selms_1(self) -> &'a mut crate::W<REG> {
-        self.variant(Selms::Selms1)
+    pub fn refoclk(self) -> &'a mut crate::W<REG> {
+        self.variant(Selms::Refoclk)
     }
-    #[doc = "MCLK and SMCLK Source Select 2"]
+    #[doc = "XT1CLK"]
     #[inline(always)]
-    pub fn selms_2(self) -> &'a mut crate::W<REG> {
-        self.variant(Selms::Selms2)
+    pub fn xt1clk(self) -> &'a mut crate::W<REG> {
+        self.variant(Selms::Xt1clk)
     }
-    #[doc = "MCLK and SMCLK Source Select 3"]
+    #[doc = "VLOCLK"]
     #[inline(always)]
-    pub fn selms_3(self) -> &'a mut crate::W<REG> {
-        self.variant(Selms::Selms3)
+    pub fn vloclk(self) -> &'a mut crate::W<REG> {
+        self.variant(Selms::Vloclk)
     }
-    #[doc = "MCLK and SMCLK Source Select 4"]
+}
+#[doc = "ACLK Source Select Bit: 0\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Sela {
+    #[doc = "0: Source ACLK from XT1CLK with divider (no more than 40kHz)"]
+    Xt1clk = 0,
+    #[doc = "1: Source ACLK from the internal 32kHz clock source"]
+    Refoclk = 1,
+}
+impl From<Sela> for bool {
     #[inline(always)]
-    pub fn selms_4(self) -> &'a mut crate::W<REG> {
-        self.variant(Selms::Selms4)
-    }
-    #[doc = "MCLK and SMCLK Source Select 5"]
-    #[inline(always)]
-    pub fn selms_5(self) -> &'a mut crate::W<REG> {
-        self.variant(Selms::Selms5)
-    }
-    #[doc = "MCLK and SMCLK Source Select 6"]
-    #[inline(always)]
-    pub fn selms_6(self) -> &'a mut crate::W<REG> {
-        self.variant(Selms::Selms6)
-    }
-    #[doc = "MCLK and SMCLK Source Select 7"]
-    #[inline(always)]
-    pub fn selms_7(self) -> &'a mut crate::W<REG> {
-        self.variant(Selms::Selms7)
+    fn from(variant: Sela) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `SELA` reader - ACLK Source Select Bit: 0"]
-pub type SelaR = crate::BitReader;
+pub type SelaR = crate::BitReader<Sela>;
+impl SelaR {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub const fn variant(&self) -> Sela {
+        match self.bits {
+            false => Sela::Xt1clk,
+            true => Sela::Refoclk,
+        }
+    }
+    #[doc = "Source ACLK from XT1CLK with divider (no more than 40kHz)"]
+    #[inline(always)]
+    pub fn is_xt1clk(&self) -> bool {
+        *self == Sela::Xt1clk
+    }
+    #[doc = "Source ACLK from the internal 32kHz clock source"]
+    #[inline(always)]
+    pub fn is_refoclk(&self) -> bool {
+        *self == Sela::Refoclk
+    }
+}
 #[doc = "Field `SELA` writer - ACLK Source Select Bit: 0"]
-pub type SelaW<'a, REG> = crate::BitWriter<'a, REG>;
+pub type SelaW<'a, REG> = crate::BitWriter<'a, REG, Sela>;
+impl<'a, REG> SelaW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Source ACLK from XT1CLK with divider (no more than 40kHz)"]
+    #[inline(always)]
+    pub fn xt1clk(self) -> &'a mut crate::W<REG> {
+        self.variant(Sela::Xt1clk)
+    }
+    #[doc = "Source ACLK from the internal 32kHz clock source"]
+    #[inline(always)]
+    pub fn refoclk(self) -> &'a mut crate::W<REG> {
+        self.variant(Sela::Refoclk)
+    }
+}
 impl R {
     #[doc = "Bits 0:2 - MCLK and SMCLK Source Select Bit: 0"]
     #[inline(always)]

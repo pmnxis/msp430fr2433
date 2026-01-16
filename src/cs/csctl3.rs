@@ -144,14 +144,10 @@ where
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Selref {
-    #[doc = "0: FLL Reference Clock Select 0"]
-    Selref0 = 0,
-    #[doc = "1: FLL Reference Clock Select 1"]
-    Selref1 = 1,
-    #[doc = "2: FLL Reference Clock Select 2"]
-    Selref2 = 2,
-    #[doc = "3: FLL Reference Clock Select 3"]
-    Selref3 = 3,
+    #[doc = "0: XT1CLK"]
+    Xt1clk = 0,
+    #[doc = "1: REFOCLK"]
+    Refoclk = 1,
 }
 impl From<Selref> for u8 {
     #[inline(always)]
@@ -168,62 +164,40 @@ pub type SelrefR = crate::FieldReader<Selref>;
 impl SelrefR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Selref {
+    pub const fn variant(&self) -> Option<Selref> {
         match self.bits {
-            0 => Selref::Selref0,
-            1 => Selref::Selref1,
-            2 => Selref::Selref2,
-            3 => Selref::Selref3,
-            _ => unreachable!(),
+            0 => Some(Selref::Xt1clk),
+            1 => Some(Selref::Refoclk),
+            _ => None,
         }
     }
-    #[doc = "FLL Reference Clock Select 0"]
+    #[doc = "XT1CLK"]
     #[inline(always)]
-    pub fn is_selref_0(&self) -> bool {
-        *self == Selref::Selref0
+    pub fn is_xt1clk(&self) -> bool {
+        *self == Selref::Xt1clk
     }
-    #[doc = "FLL Reference Clock Select 1"]
+    #[doc = "REFOCLK"]
     #[inline(always)]
-    pub fn is_selref_1(&self) -> bool {
-        *self == Selref::Selref1
-    }
-    #[doc = "FLL Reference Clock Select 2"]
-    #[inline(always)]
-    pub fn is_selref_2(&self) -> bool {
-        *self == Selref::Selref2
-    }
-    #[doc = "FLL Reference Clock Select 3"]
-    #[inline(always)]
-    pub fn is_selref_3(&self) -> bool {
-        *self == Selref::Selref3
+    pub fn is_refoclk(&self) -> bool {
+        *self == Selref::Refoclk
     }
 }
 #[doc = "Field `SELREF` writer - FLL Reference Clock Select Bit : 0"]
-pub type SelrefW<'a, REG> = crate::FieldWriter<'a, REG, 2, Selref, crate::Safe>;
+pub type SelrefW<'a, REG> = crate::FieldWriter<'a, REG, 2, Selref>;
 impl<'a, REG> SelrefW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "FLL Reference Clock Select 0"]
+    #[doc = "XT1CLK"]
     #[inline(always)]
-    pub fn selref_0(self) -> &'a mut crate::W<REG> {
-        self.variant(Selref::Selref0)
+    pub fn xt1clk(self) -> &'a mut crate::W<REG> {
+        self.variant(Selref::Xt1clk)
     }
-    #[doc = "FLL Reference Clock Select 1"]
+    #[doc = "REFOCLK"]
     #[inline(always)]
-    pub fn selref_1(self) -> &'a mut crate::W<REG> {
-        self.variant(Selref::Selref1)
-    }
-    #[doc = "FLL Reference Clock Select 2"]
-    #[inline(always)]
-    pub fn selref_2(self) -> &'a mut crate::W<REG> {
-        self.variant(Selref::Selref2)
-    }
-    #[doc = "FLL Reference Clock Select 3"]
-    #[inline(always)]
-    pub fn selref_3(self) -> &'a mut crate::W<REG> {
-        self.variant(Selref::Selref3)
+    pub fn refoclk(self) -> &'a mut crate::W<REG> {
+        self.variant(Selref::Refoclk)
     }
 }
 impl R {
