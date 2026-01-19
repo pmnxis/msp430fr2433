@@ -1,206 +1,161 @@
 #[doc = "Register `UCB0ADDMASK` reader"]
-pub struct R(crate::R<UCB0ADDMASK_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<UCB0ADDMASK_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<UCB0ADDMASK_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<UCB0ADDMASK_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<Ucb0addmaskSpec>;
 #[doc = "Register `UCB0ADDMASK` writer"]
-pub struct W(crate::W<UCB0ADDMASK_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<UCB0ADDMASK_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<UCB0ADDMASK_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<UCB0ADDMASK_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<Ucb0addmaskSpec>;
 #[doc = "Field `UCADDMASK0` reader - I2C Address Mask Bit 0"]
-pub type UCADDMASK0_R = crate::BitReader<bool>;
+pub type Ucaddmask0R = crate::BitReader;
 #[doc = "Field `UCADDMASK0` writer - I2C Address Mask Bit 0"]
-pub type UCADDMASK0_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB0ADDMASK_SPEC, bool, O>;
+pub type Ucaddmask0W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `UCADDMASK1` reader - I2C Address Mask Bit 1"]
-pub type UCADDMASK1_R = crate::BitReader<bool>;
+pub type Ucaddmask1R = crate::BitReader;
 #[doc = "Field `UCADDMASK1` writer - I2C Address Mask Bit 1"]
-pub type UCADDMASK1_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB0ADDMASK_SPEC, bool, O>;
+pub type Ucaddmask1W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `UCADDMASK2` reader - I2C Address Mask Bit 2"]
-pub type UCADDMASK2_R = crate::BitReader<bool>;
+pub type Ucaddmask2R = crate::BitReader;
 #[doc = "Field `UCADDMASK2` writer - I2C Address Mask Bit 2"]
-pub type UCADDMASK2_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB0ADDMASK_SPEC, bool, O>;
+pub type Ucaddmask2W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `UCADDMASK3` reader - I2C Address Mask Bit 3"]
-pub type UCADDMASK3_R = crate::BitReader<bool>;
+pub type Ucaddmask3R = crate::BitReader;
 #[doc = "Field `UCADDMASK3` writer - I2C Address Mask Bit 3"]
-pub type UCADDMASK3_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB0ADDMASK_SPEC, bool, O>;
+pub type Ucaddmask3W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `UCADDMASK4` reader - I2C Address Mask Bit 4"]
-pub type UCADDMASK4_R = crate::BitReader<bool>;
+pub type Ucaddmask4R = crate::BitReader;
 #[doc = "Field `UCADDMASK4` writer - I2C Address Mask Bit 4"]
-pub type UCADDMASK4_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB0ADDMASK_SPEC, bool, O>;
+pub type Ucaddmask4W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `UCADDMASK5` reader - I2C Address Mask Bit 5"]
-pub type UCADDMASK5_R = crate::BitReader<bool>;
+pub type Ucaddmask5R = crate::BitReader;
 #[doc = "Field `UCADDMASK5` writer - I2C Address Mask Bit 5"]
-pub type UCADDMASK5_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB0ADDMASK_SPEC, bool, O>;
+pub type Ucaddmask5W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `UCADDMASK6` reader - I2C Address Mask Bit 6"]
-pub type UCADDMASK6_R = crate::BitReader<bool>;
+pub type Ucaddmask6R = crate::BitReader;
 #[doc = "Field `UCADDMASK6` writer - I2C Address Mask Bit 6"]
-pub type UCADDMASK6_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB0ADDMASK_SPEC, bool, O>;
+pub type Ucaddmask6W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `UCADDMASK7` reader - I2C Address Mask Bit 7"]
-pub type UCADDMASK7_R = crate::BitReader<bool>;
+pub type Ucaddmask7R = crate::BitReader;
 #[doc = "Field `UCADDMASK7` writer - I2C Address Mask Bit 7"]
-pub type UCADDMASK7_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB0ADDMASK_SPEC, bool, O>;
+pub type Ucaddmask7W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `UCADDMASK8` reader - I2C Address Mask Bit 8"]
-pub type UCADDMASK8_R = crate::BitReader<bool>;
+pub type Ucaddmask8R = crate::BitReader;
 #[doc = "Field `UCADDMASK8` writer - I2C Address Mask Bit 8"]
-pub type UCADDMASK8_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB0ADDMASK_SPEC, bool, O>;
+pub type Ucaddmask8W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `UCADDMASK9` reader - I2C Address Mask Bit 9"]
-pub type UCADDMASK9_R = crate::BitReader<bool>;
+pub type Ucaddmask9R = crate::BitReader;
 #[doc = "Field `UCADDMASK9` writer - I2C Address Mask Bit 9"]
-pub type UCADDMASK9_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB0ADDMASK_SPEC, bool, O>;
+pub type Ucaddmask9W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - I2C Address Mask Bit 0"]
     #[inline(always)]
-    pub fn ucaddmask0(&self) -> UCADDMASK0_R {
-        UCADDMASK0_R::new((self.bits & 1) != 0)
+    pub fn ucaddmask0(&self) -> Ucaddmask0R {
+        Ucaddmask0R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - I2C Address Mask Bit 1"]
     #[inline(always)]
-    pub fn ucaddmask1(&self) -> UCADDMASK1_R {
-        UCADDMASK1_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn ucaddmask1(&self) -> Ucaddmask1R {
+        Ucaddmask1R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - I2C Address Mask Bit 2"]
     #[inline(always)]
-    pub fn ucaddmask2(&self) -> UCADDMASK2_R {
-        UCADDMASK2_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn ucaddmask2(&self) -> Ucaddmask2R {
+        Ucaddmask2R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - I2C Address Mask Bit 3"]
     #[inline(always)]
-    pub fn ucaddmask3(&self) -> UCADDMASK3_R {
-        UCADDMASK3_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn ucaddmask3(&self) -> Ucaddmask3R {
+        Ucaddmask3R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - I2C Address Mask Bit 4"]
     #[inline(always)]
-    pub fn ucaddmask4(&self) -> UCADDMASK4_R {
-        UCADDMASK4_R::new(((self.bits >> 4) & 1) != 0)
+    pub fn ucaddmask4(&self) -> Ucaddmask4R {
+        Ucaddmask4R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - I2C Address Mask Bit 5"]
     #[inline(always)]
-    pub fn ucaddmask5(&self) -> UCADDMASK5_R {
-        UCADDMASK5_R::new(((self.bits >> 5) & 1) != 0)
+    pub fn ucaddmask5(&self) -> Ucaddmask5R {
+        Ucaddmask5R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - I2C Address Mask Bit 6"]
     #[inline(always)]
-    pub fn ucaddmask6(&self) -> UCADDMASK6_R {
-        UCADDMASK6_R::new(((self.bits >> 6) & 1) != 0)
+    pub fn ucaddmask6(&self) -> Ucaddmask6R {
+        Ucaddmask6R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - I2C Address Mask Bit 7"]
     #[inline(always)]
-    pub fn ucaddmask7(&self) -> UCADDMASK7_R {
-        UCADDMASK7_R::new(((self.bits >> 7) & 1) != 0)
+    pub fn ucaddmask7(&self) -> Ucaddmask7R {
+        Ucaddmask7R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - I2C Address Mask Bit 8"]
     #[inline(always)]
-    pub fn ucaddmask8(&self) -> UCADDMASK8_R {
-        UCADDMASK8_R::new(((self.bits >> 8) & 1) != 0)
+    pub fn ucaddmask8(&self) -> Ucaddmask8R {
+        Ucaddmask8R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - I2C Address Mask Bit 9"]
     #[inline(always)]
-    pub fn ucaddmask9(&self) -> UCADDMASK9_R {
-        UCADDMASK9_R::new(((self.bits >> 9) & 1) != 0)
+    pub fn ucaddmask9(&self) -> Ucaddmask9R {
+        Ucaddmask9R::new(((self.bits >> 9) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - I2C Address Mask Bit 0"]
     #[inline(always)]
-    pub fn ucaddmask0(&mut self) -> UCADDMASK0_W<0> {
-        UCADDMASK0_W::new(self)
+    pub fn ucaddmask0(&mut self) -> Ucaddmask0W<'_, Ucb0addmaskSpec> {
+        Ucaddmask0W::new(self, 0)
     }
     #[doc = "Bit 1 - I2C Address Mask Bit 1"]
     #[inline(always)]
-    pub fn ucaddmask1(&mut self) -> UCADDMASK1_W<1> {
-        UCADDMASK1_W::new(self)
+    pub fn ucaddmask1(&mut self) -> Ucaddmask1W<'_, Ucb0addmaskSpec> {
+        Ucaddmask1W::new(self, 1)
     }
     #[doc = "Bit 2 - I2C Address Mask Bit 2"]
     #[inline(always)]
-    pub fn ucaddmask2(&mut self) -> UCADDMASK2_W<2> {
-        UCADDMASK2_W::new(self)
+    pub fn ucaddmask2(&mut self) -> Ucaddmask2W<'_, Ucb0addmaskSpec> {
+        Ucaddmask2W::new(self, 2)
     }
     #[doc = "Bit 3 - I2C Address Mask Bit 3"]
     #[inline(always)]
-    pub fn ucaddmask3(&mut self) -> UCADDMASK3_W<3> {
-        UCADDMASK3_W::new(self)
+    pub fn ucaddmask3(&mut self) -> Ucaddmask3W<'_, Ucb0addmaskSpec> {
+        Ucaddmask3W::new(self, 3)
     }
     #[doc = "Bit 4 - I2C Address Mask Bit 4"]
     #[inline(always)]
-    pub fn ucaddmask4(&mut self) -> UCADDMASK4_W<4> {
-        UCADDMASK4_W::new(self)
+    pub fn ucaddmask4(&mut self) -> Ucaddmask4W<'_, Ucb0addmaskSpec> {
+        Ucaddmask4W::new(self, 4)
     }
     #[doc = "Bit 5 - I2C Address Mask Bit 5"]
     #[inline(always)]
-    pub fn ucaddmask5(&mut self) -> UCADDMASK5_W<5> {
-        UCADDMASK5_W::new(self)
+    pub fn ucaddmask5(&mut self) -> Ucaddmask5W<'_, Ucb0addmaskSpec> {
+        Ucaddmask5W::new(self, 5)
     }
     #[doc = "Bit 6 - I2C Address Mask Bit 6"]
     #[inline(always)]
-    pub fn ucaddmask6(&mut self) -> UCADDMASK6_W<6> {
-        UCADDMASK6_W::new(self)
+    pub fn ucaddmask6(&mut self) -> Ucaddmask6W<'_, Ucb0addmaskSpec> {
+        Ucaddmask6W::new(self, 6)
     }
     #[doc = "Bit 7 - I2C Address Mask Bit 7"]
     #[inline(always)]
-    pub fn ucaddmask7(&mut self) -> UCADDMASK7_W<7> {
-        UCADDMASK7_W::new(self)
+    pub fn ucaddmask7(&mut self) -> Ucaddmask7W<'_, Ucb0addmaskSpec> {
+        Ucaddmask7W::new(self, 7)
     }
     #[doc = "Bit 8 - I2C Address Mask Bit 8"]
     #[inline(always)]
-    pub fn ucaddmask8(&mut self) -> UCADDMASK8_W<8> {
-        UCADDMASK8_W::new(self)
+    pub fn ucaddmask8(&mut self) -> Ucaddmask8W<'_, Ucb0addmaskSpec> {
+        Ucaddmask8W::new(self, 8)
     }
     #[doc = "Bit 9 - I2C Address Mask Bit 9"]
     #[inline(always)]
-    pub fn ucaddmask9(&mut self) -> UCADDMASK9_W<9> {
-        UCADDMASK9_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn ucaddmask9(&mut self) -> Ucaddmask9W<'_, Ucb0addmaskSpec> {
+        Ucaddmask9W::new(self, 9)
     }
 }
-#[doc = "USCI B0 Address Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ucb0addmask](index.html) module"]
-pub struct UCB0ADDMASK_SPEC;
-impl crate::RegisterSpec for UCB0ADDMASK_SPEC {
+#[doc = "USCI B0 Address Mask Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ucb0addmask::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ucb0addmask::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Ucb0addmaskSpec;
+impl crate::RegisterSpec for Ucb0addmaskSpec {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [ucb0addmask::R](R) reader structure"]
-impl crate::Readable for UCB0ADDMASK_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [ucb0addmask::W](W) writer structure"]
-impl crate::Writable for UCB0ADDMASK_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`ucb0addmask::R`](R) reader structure"]
+impl crate::Readable for Ucb0addmaskSpec {}
+#[doc = "`write(|w| ..)` method takes [`ucb0addmask::W`](W) writer structure"]
+impl crate::Writable for Ucb0addmaskSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets UCB0ADDMASK to value 0"]
-impl crate::Resettable for UCB0ADDMASK_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for Ucb0addmaskSpec {}

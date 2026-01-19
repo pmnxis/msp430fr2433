@@ -1,253 +1,215 @@
 #[doc = "Register `MPY32CTL0` reader"]
-pub struct R(crate::R<MPY32CTL0_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MPY32CTL0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MPY32CTL0_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MPY32CTL0_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<Mpy32ctl0Spec>;
 #[doc = "Register `MPY32CTL0` writer"]
-pub struct W(crate::W<MPY32CTL0_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<MPY32CTL0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<MPY32CTL0_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<MPY32CTL0_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<Mpy32ctl0Spec>;
 #[doc = "Field `MPYC` reader - Carry of the multiplier"]
-pub type MPYC_R = crate::BitReader<bool>;
+pub type MpycR = crate::BitReader;
 #[doc = "Field `MPYC` writer - Carry of the multiplier"]
-pub type MPYC_W<'a, const O: u8> = crate::BitWriter<'a, u16, MPY32CTL0_SPEC, bool, O>;
+pub type MpycW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MPYFRAC` reader - Fractional mode"]
-pub type MPYFRAC_R = crate::BitReader<bool>;
+pub type MpyfracR = crate::BitReader;
 #[doc = "Field `MPYFRAC` writer - Fractional mode"]
-pub type MPYFRAC_W<'a, const O: u8> = crate::BitWriter<'a, u16, MPY32CTL0_SPEC, bool, O>;
+pub type MpyfracW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MPYSAT` reader - Saturation mode"]
-pub type MPYSAT_R = crate::BitReader<bool>;
+pub type MpysatR = crate::BitReader;
 #[doc = "Field `MPYSAT` writer - Saturation mode"]
-pub type MPYSAT_W<'a, const O: u8> = crate::BitWriter<'a, u16, MPY32CTL0_SPEC, bool, O>;
+pub type MpysatW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Multiplier mode Bit:0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum MPYM_A {
+pub enum Mpym {
     #[doc = "0: Multiplier mode: MPY"]
-    MPYM_0 = 0,
+    Mpym0 = 0,
     #[doc = "1: Multiplier mode: MPYS"]
-    MPYM_1 = 1,
+    Mpym1 = 1,
     #[doc = "2: Multiplier mode: MAC"]
-    MPYM_2 = 2,
+    Mpym2 = 2,
     #[doc = "3: Multiplier mode: MACS"]
-    MPYM_3 = 3,
+    Mpym3 = 3,
 }
-impl From<MPYM_A> for u8 {
+impl From<Mpym> for u8 {
     #[inline(always)]
-    fn from(variant: MPYM_A) -> Self {
+    fn from(variant: Mpym) -> Self {
         variant as _
     }
 }
+impl crate::FieldSpec for Mpym {
+    type Ux = u8;
+}
+impl crate::IsEnum for Mpym {}
 #[doc = "Field `MPYM` reader - Multiplier mode Bit:0"]
-pub type MPYM_R = crate::FieldReader<u8, MPYM_A>;
-impl MPYM_R {
+pub type MpymR = crate::FieldReader<Mpym>;
+impl MpymR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MPYM_A {
+    pub const fn variant(&self) -> Mpym {
         match self.bits {
-            0 => MPYM_A::MPYM_0,
-            1 => MPYM_A::MPYM_1,
-            2 => MPYM_A::MPYM_2,
-            3 => MPYM_A::MPYM_3,
+            0 => Mpym::Mpym0,
+            1 => Mpym::Mpym1,
+            2 => Mpym::Mpym2,
+            3 => Mpym::Mpym3,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `MPYM_0`"]
-    #[inline(always)]
-    pub fn is_mpym_0(&self) -> bool {
-        *self == MPYM_A::MPYM_0
-    }
-    #[doc = "Checks if the value of the field is `MPYM_1`"]
-    #[inline(always)]
-    pub fn is_mpym_1(&self) -> bool {
-        *self == MPYM_A::MPYM_1
-    }
-    #[doc = "Checks if the value of the field is `MPYM_2`"]
-    #[inline(always)]
-    pub fn is_mpym_2(&self) -> bool {
-        *self == MPYM_A::MPYM_2
-    }
-    #[doc = "Checks if the value of the field is `MPYM_3`"]
-    #[inline(always)]
-    pub fn is_mpym_3(&self) -> bool {
-        *self == MPYM_A::MPYM_3
-    }
-}
-#[doc = "Field `MPYM` writer - Multiplier mode Bit:0"]
-pub type MPYM_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u16, MPY32CTL0_SPEC, u8, MPYM_A, 2, O>;
-impl<'a, const O: u8> MPYM_W<'a, O> {
     #[doc = "Multiplier mode: MPY"]
     #[inline(always)]
-    pub fn mpym_0(self) -> &'a mut W {
-        self.variant(MPYM_A::MPYM_0)
+    pub fn is_mpym_0(&self) -> bool {
+        *self == Mpym::Mpym0
     }
     #[doc = "Multiplier mode: MPYS"]
     #[inline(always)]
-    pub fn mpym_1(self) -> &'a mut W {
-        self.variant(MPYM_A::MPYM_1)
+    pub fn is_mpym_1(&self) -> bool {
+        *self == Mpym::Mpym1
     }
     #[doc = "Multiplier mode: MAC"]
     #[inline(always)]
-    pub fn mpym_2(self) -> &'a mut W {
-        self.variant(MPYM_A::MPYM_2)
+    pub fn is_mpym_2(&self) -> bool {
+        *self == Mpym::Mpym2
     }
     #[doc = "Multiplier mode: MACS"]
     #[inline(always)]
-    pub fn mpym_3(self) -> &'a mut W {
-        self.variant(MPYM_A::MPYM_3)
+    pub fn is_mpym_3(&self) -> bool {
+        *self == Mpym::Mpym3
+    }
+}
+#[doc = "Field `MPYM` writer - Multiplier mode Bit:0"]
+pub type MpymW<'a, REG> = crate::FieldWriter<'a, REG, 2, Mpym, crate::Safe>;
+impl<'a, REG> MpymW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "Multiplier mode: MPY"]
+    #[inline(always)]
+    pub fn mpym_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Mpym::Mpym0)
+    }
+    #[doc = "Multiplier mode: MPYS"]
+    #[inline(always)]
+    pub fn mpym_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Mpym::Mpym1)
+    }
+    #[doc = "Multiplier mode: MAC"]
+    #[inline(always)]
+    pub fn mpym_2(self) -> &'a mut crate::W<REG> {
+        self.variant(Mpym::Mpym2)
+    }
+    #[doc = "Multiplier mode: MACS"]
+    #[inline(always)]
+    pub fn mpym_3(self) -> &'a mut crate::W<REG> {
+        self.variant(Mpym::Mpym3)
     }
 }
 #[doc = "Field `OP1_32` reader - Bit-width of operand 1 0:16Bit / 1:32Bit"]
-pub type OP1_32_R = crate::BitReader<bool>;
+pub type Op1_32R = crate::BitReader;
 #[doc = "Field `OP1_32` writer - Bit-width of operand 1 0:16Bit / 1:32Bit"]
-pub type OP1_32_W<'a, const O: u8> = crate::BitWriter<'a, u16, MPY32CTL0_SPEC, bool, O>;
+pub type Op1_32W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OP2_32` reader - Bit-width of operand 2 0:16Bit / 1:32Bit"]
-pub type OP2_32_R = crate::BitReader<bool>;
+pub type Op2_32R = crate::BitReader;
 #[doc = "Field `OP2_32` writer - Bit-width of operand 2 0:16Bit / 1:32Bit"]
-pub type OP2_32_W<'a, const O: u8> = crate::BitWriter<'a, u16, MPY32CTL0_SPEC, bool, O>;
+pub type Op2_32W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MPYDLYWRTEN` reader - Delayed write enable"]
-pub type MPYDLYWRTEN_R = crate::BitReader<bool>;
+pub type MpydlywrtenR = crate::BitReader;
 #[doc = "Field `MPYDLYWRTEN` writer - Delayed write enable"]
-pub type MPYDLYWRTEN_W<'a, const O: u8> = crate::BitWriter<'a, u16, MPY32CTL0_SPEC, bool, O>;
+pub type MpydlywrtenW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MPYDLY32` reader - Delayed write mode"]
-pub type MPYDLY32_R = crate::BitReader<bool>;
+pub type Mpydly32R = crate::BitReader;
 #[doc = "Field `MPYDLY32` writer - Delayed write mode"]
-pub type MPYDLY32_W<'a, const O: u8> = crate::BitWriter<'a, u16, MPY32CTL0_SPEC, bool, O>;
+pub type Mpydly32W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Carry of the multiplier"]
     #[inline(always)]
-    pub fn mpyc(&self) -> MPYC_R {
-        MPYC_R::new((self.bits & 1) != 0)
+    pub fn mpyc(&self) -> MpycR {
+        MpycR::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 2 - Fractional mode"]
     #[inline(always)]
-    pub fn mpyfrac(&self) -> MPYFRAC_R {
-        MPYFRAC_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn mpyfrac(&self) -> MpyfracR {
+        MpyfracR::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Saturation mode"]
     #[inline(always)]
-    pub fn mpysat(&self) -> MPYSAT_R {
-        MPYSAT_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn mpysat(&self) -> MpysatR {
+        MpysatR::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bits 4:5 - Multiplier mode Bit:0"]
     #[inline(always)]
-    pub fn mpym(&self) -> MPYM_R {
-        MPYM_R::new(((self.bits >> 4) & 3) as u8)
+    pub fn mpym(&self) -> MpymR {
+        MpymR::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bit 6 - Bit-width of operand 1 0:16Bit / 1:32Bit"]
     #[inline(always)]
-    pub fn op1_32(&self) -> OP1_32_R {
-        OP1_32_R::new(((self.bits >> 6) & 1) != 0)
+    pub fn op1_32(&self) -> Op1_32R {
+        Op1_32R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Bit-width of operand 2 0:16Bit / 1:32Bit"]
     #[inline(always)]
-    pub fn op2_32(&self) -> OP2_32_R {
-        OP2_32_R::new(((self.bits >> 7) & 1) != 0)
+    pub fn op2_32(&self) -> Op2_32R {
+        Op2_32R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - Delayed write enable"]
     #[inline(always)]
-    pub fn mpydlywrten(&self) -> MPYDLYWRTEN_R {
-        MPYDLYWRTEN_R::new(((self.bits >> 8) & 1) != 0)
+    pub fn mpydlywrten(&self) -> MpydlywrtenR {
+        MpydlywrtenR::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Delayed write mode"]
     #[inline(always)]
-    pub fn mpydly32(&self) -> MPYDLY32_R {
-        MPYDLY32_R::new(((self.bits >> 9) & 1) != 0)
+    pub fn mpydly32(&self) -> Mpydly32R {
+        Mpydly32R::new(((self.bits >> 9) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Carry of the multiplier"]
     #[inline(always)]
-    pub fn mpyc(&mut self) -> MPYC_W<0> {
-        MPYC_W::new(self)
+    pub fn mpyc(&mut self) -> MpycW<'_, Mpy32ctl0Spec> {
+        MpycW::new(self, 0)
     }
     #[doc = "Bit 2 - Fractional mode"]
     #[inline(always)]
-    pub fn mpyfrac(&mut self) -> MPYFRAC_W<2> {
-        MPYFRAC_W::new(self)
+    pub fn mpyfrac(&mut self) -> MpyfracW<'_, Mpy32ctl0Spec> {
+        MpyfracW::new(self, 2)
     }
     #[doc = "Bit 3 - Saturation mode"]
     #[inline(always)]
-    pub fn mpysat(&mut self) -> MPYSAT_W<3> {
-        MPYSAT_W::new(self)
+    pub fn mpysat(&mut self) -> MpysatW<'_, Mpy32ctl0Spec> {
+        MpysatW::new(self, 3)
     }
     #[doc = "Bits 4:5 - Multiplier mode Bit:0"]
     #[inline(always)]
-    pub fn mpym(&mut self) -> MPYM_W<4> {
-        MPYM_W::new(self)
+    pub fn mpym(&mut self) -> MpymW<'_, Mpy32ctl0Spec> {
+        MpymW::new(self, 4)
     }
     #[doc = "Bit 6 - Bit-width of operand 1 0:16Bit / 1:32Bit"]
     #[inline(always)]
-    pub fn op1_32(&mut self) -> OP1_32_W<6> {
-        OP1_32_W::new(self)
+    pub fn op1_32(&mut self) -> Op1_32W<'_, Mpy32ctl0Spec> {
+        Op1_32W::new(self, 6)
     }
     #[doc = "Bit 7 - Bit-width of operand 2 0:16Bit / 1:32Bit"]
     #[inline(always)]
-    pub fn op2_32(&mut self) -> OP2_32_W<7> {
-        OP2_32_W::new(self)
+    pub fn op2_32(&mut self) -> Op2_32W<'_, Mpy32ctl0Spec> {
+        Op2_32W::new(self, 7)
     }
     #[doc = "Bit 8 - Delayed write enable"]
     #[inline(always)]
-    pub fn mpydlywrten(&mut self) -> MPYDLYWRTEN_W<8> {
-        MPYDLYWRTEN_W::new(self)
+    pub fn mpydlywrten(&mut self) -> MpydlywrtenW<'_, Mpy32ctl0Spec> {
+        MpydlywrtenW::new(self, 8)
     }
     #[doc = "Bit 9 - Delayed write mode"]
     #[inline(always)]
-    pub fn mpydly32(&mut self) -> MPYDLY32_W<9> {
-        MPYDLY32_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn mpydly32(&mut self) -> Mpydly32W<'_, Mpy32ctl0Spec> {
+        Mpydly32W::new(self, 9)
     }
 }
-#[doc = "MPY32 Control Register 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mpy32ctl0](index.html) module"]
-pub struct MPY32CTL0_SPEC;
-impl crate::RegisterSpec for MPY32CTL0_SPEC {
+#[doc = "MPY32 Control Register 0\n\nYou can [`read`](crate::Reg::read) this register and get [`mpy32ctl0::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`mpy32ctl0::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Mpy32ctl0Spec;
+impl crate::RegisterSpec for Mpy32ctl0Spec {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [mpy32ctl0::R](R) reader structure"]
-impl crate::Readable for MPY32CTL0_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [mpy32ctl0::W](W) writer structure"]
-impl crate::Writable for MPY32CTL0_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`mpy32ctl0::R`](R) reader structure"]
+impl crate::Readable for Mpy32ctl0Spec {}
+#[doc = "`write(|w| ..)` method takes [`mpy32ctl0::W`](W) writer structure"]
+impl crate::Writable for Mpy32ctl0Spec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets MPY32CTL0 to value 0"]
-impl crate::Resettable for MPY32CTL0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for Mpy32ctl0Spec {}

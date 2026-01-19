@@ -1,211 +1,173 @@
 #[doc = "Register `CSCTL6` reader"]
-pub struct R(crate::R<CSCTL6_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CSCTL6_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CSCTL6_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CSCTL6_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<Csctl6Spec>;
 #[doc = "Register `CSCTL6` writer"]
-pub struct W(crate::W<CSCTL6_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CSCTL6_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CSCTL6_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CSCTL6_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<Csctl6Spec>;
 #[doc = "Field `XT1AUTOOFF` reader - XT1 automatic off enable"]
-pub type XT1AUTOOFF_R = crate::BitReader<bool>;
+pub type Xt1autooffR = crate::BitReader;
 #[doc = "Field `XT1AUTOOFF` writer - XT1 automatic off enable"]
-pub type XT1AUTOOFF_W<'a, const O: u8> = crate::BitWriter<'a, u16, CSCTL6_SPEC, bool, O>;
+pub type Xt1autooffW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `XT1AGCOFF` reader - XT1 Automatic Gain Control (AGC) disable"]
-pub type XT1AGCOFF_R = crate::BitReader<bool>;
+pub type Xt1agcoffR = crate::BitReader;
 #[doc = "Field `XT1AGCOFF` writer - XT1 Automatic Gain Control (AGC) disable"]
-pub type XT1AGCOFF_W<'a, const O: u8> = crate::BitWriter<'a, u16, CSCTL6_SPEC, bool, O>;
+pub type Xt1agcoffW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `XT1BYPASS` reader - XT1 bypass mode : 0: internal 1:sourced from external pin"]
-pub type XT1BYPASS_R = crate::BitReader<bool>;
+pub type Xt1bypassR = crate::BitReader;
 #[doc = "Field `XT1BYPASS` writer - XT1 bypass mode : 0: internal 1:sourced from external pin"]
-pub type XT1BYPASS_W<'a, const O: u8> = crate::BitWriter<'a, u16, CSCTL6_SPEC, bool, O>;
+pub type Xt1bypassW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `XTS` reader - 1: Selects high-freq. oscillator"]
-pub type XTS_R = crate::BitReader<bool>;
+pub type XtsR = crate::BitReader;
 #[doc = "Field `XTS` writer - 1: Selects high-freq. oscillator"]
-pub type XTS_W<'a, const O: u8> = crate::BitWriter<'a, u16, CSCTL6_SPEC, bool, O>;
+pub type XtsW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "XT1 Drive Level mode Bit 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum XT1DRIVE_A {
+pub enum Xt1drive {
     #[doc = "0: XT1 Drive Level mode: 0"]
-    XT1DRIVE_0 = 0,
+    Xt1drive0 = 0,
     #[doc = "1: XT1 Drive Level mode: 1"]
-    XT1DRIVE_1 = 1,
+    Xt1drive1 = 1,
     #[doc = "2: XT1 Drive Level mode: 2"]
-    XT1DRIVE_2 = 2,
+    Xt1drive2 = 2,
     #[doc = "3: XT1 Drive Level mode: 3"]
-    XT1DRIVE_3 = 3,
+    Xt1drive3 = 3,
 }
-impl From<XT1DRIVE_A> for u8 {
+impl From<Xt1drive> for u8 {
     #[inline(always)]
-    fn from(variant: XT1DRIVE_A) -> Self {
+    fn from(variant: Xt1drive) -> Self {
         variant as _
     }
 }
+impl crate::FieldSpec for Xt1drive {
+    type Ux = u8;
+}
+impl crate::IsEnum for Xt1drive {}
 #[doc = "Field `XT1DRIVE` reader - XT1 Drive Level mode Bit 0"]
-pub type XT1DRIVE_R = crate::FieldReader<u8, XT1DRIVE_A>;
-impl XT1DRIVE_R {
+pub type Xt1driveR = crate::FieldReader<Xt1drive>;
+impl Xt1driveR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> XT1DRIVE_A {
+    pub const fn variant(&self) -> Xt1drive {
         match self.bits {
-            0 => XT1DRIVE_A::XT1DRIVE_0,
-            1 => XT1DRIVE_A::XT1DRIVE_1,
-            2 => XT1DRIVE_A::XT1DRIVE_2,
-            3 => XT1DRIVE_A::XT1DRIVE_3,
+            0 => Xt1drive::Xt1drive0,
+            1 => Xt1drive::Xt1drive1,
+            2 => Xt1drive::Xt1drive2,
+            3 => Xt1drive::Xt1drive3,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `XT1DRIVE_0`"]
-    #[inline(always)]
-    pub fn is_xt1drive_0(&self) -> bool {
-        *self == XT1DRIVE_A::XT1DRIVE_0
-    }
-    #[doc = "Checks if the value of the field is `XT1DRIVE_1`"]
-    #[inline(always)]
-    pub fn is_xt1drive_1(&self) -> bool {
-        *self == XT1DRIVE_A::XT1DRIVE_1
-    }
-    #[doc = "Checks if the value of the field is `XT1DRIVE_2`"]
-    #[inline(always)]
-    pub fn is_xt1drive_2(&self) -> bool {
-        *self == XT1DRIVE_A::XT1DRIVE_2
-    }
-    #[doc = "Checks if the value of the field is `XT1DRIVE_3`"]
-    #[inline(always)]
-    pub fn is_xt1drive_3(&self) -> bool {
-        *self == XT1DRIVE_A::XT1DRIVE_3
-    }
-}
-#[doc = "Field `XT1DRIVE` writer - XT1 Drive Level mode Bit 0"]
-pub type XT1DRIVE_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u16, CSCTL6_SPEC, u8, XT1DRIVE_A, 2, O>;
-impl<'a, const O: u8> XT1DRIVE_W<'a, O> {
     #[doc = "XT1 Drive Level mode: 0"]
     #[inline(always)]
-    pub fn xt1drive_0(self) -> &'a mut W {
-        self.variant(XT1DRIVE_A::XT1DRIVE_0)
+    pub fn is_xt1drive_0(&self) -> bool {
+        *self == Xt1drive::Xt1drive0
     }
     #[doc = "XT1 Drive Level mode: 1"]
     #[inline(always)]
-    pub fn xt1drive_1(self) -> &'a mut W {
-        self.variant(XT1DRIVE_A::XT1DRIVE_1)
+    pub fn is_xt1drive_1(&self) -> bool {
+        *self == Xt1drive::Xt1drive1
     }
     #[doc = "XT1 Drive Level mode: 2"]
     #[inline(always)]
-    pub fn xt1drive_2(self) -> &'a mut W {
-        self.variant(XT1DRIVE_A::XT1DRIVE_2)
+    pub fn is_xt1drive_2(&self) -> bool {
+        *self == Xt1drive::Xt1drive2
     }
     #[doc = "XT1 Drive Level mode: 3"]
     #[inline(always)]
-    pub fn xt1drive_3(self) -> &'a mut W {
-        self.variant(XT1DRIVE_A::XT1DRIVE_3)
+    pub fn is_xt1drive_3(&self) -> bool {
+        *self == Xt1drive::Xt1drive3
+    }
+}
+#[doc = "Field `XT1DRIVE` writer - XT1 Drive Level mode Bit 0"]
+pub type Xt1driveW<'a, REG> = crate::FieldWriter<'a, REG, 2, Xt1drive, crate::Safe>;
+impl<'a, REG> Xt1driveW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "XT1 Drive Level mode: 0"]
+    #[inline(always)]
+    pub fn xt1drive_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Xt1drive::Xt1drive0)
+    }
+    #[doc = "XT1 Drive Level mode: 1"]
+    #[inline(always)]
+    pub fn xt1drive_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Xt1drive::Xt1drive1)
+    }
+    #[doc = "XT1 Drive Level mode: 2"]
+    #[inline(always)]
+    pub fn xt1drive_2(self) -> &'a mut crate::W<REG> {
+        self.variant(Xt1drive::Xt1drive2)
+    }
+    #[doc = "XT1 Drive Level mode: 3"]
+    #[inline(always)]
+    pub fn xt1drive_3(self) -> &'a mut crate::W<REG> {
+        self.variant(Xt1drive::Xt1drive3)
     }
 }
 impl R {
     #[doc = "Bit 0 - XT1 automatic off enable"]
     #[inline(always)]
-    pub fn xt1autooff(&self) -> XT1AUTOOFF_R {
-        XT1AUTOOFF_R::new((self.bits & 1) != 0)
+    pub fn xt1autooff(&self) -> Xt1autooffR {
+        Xt1autooffR::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - XT1 Automatic Gain Control (AGC) disable"]
     #[inline(always)]
-    pub fn xt1agcoff(&self) -> XT1AGCOFF_R {
-        XT1AGCOFF_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn xt1agcoff(&self) -> Xt1agcoffR {
+        Xt1agcoffR::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 4 - XT1 bypass mode : 0: internal 1:sourced from external pin"]
     #[inline(always)]
-    pub fn xt1bypass(&self) -> XT1BYPASS_R {
-        XT1BYPASS_R::new(((self.bits >> 4) & 1) != 0)
+    pub fn xt1bypass(&self) -> Xt1bypassR {
+        Xt1bypassR::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - 1: Selects high-freq. oscillator"]
     #[inline(always)]
-    pub fn xts(&self) -> XTS_R {
-        XTS_R::new(((self.bits >> 5) & 1) != 0)
+    pub fn xts(&self) -> XtsR {
+        XtsR::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bits 6:7 - XT1 Drive Level mode Bit 0"]
     #[inline(always)]
-    pub fn xt1drive(&self) -> XT1DRIVE_R {
-        XT1DRIVE_R::new(((self.bits >> 6) & 3) as u8)
+    pub fn xt1drive(&self) -> Xt1driveR {
+        Xt1driveR::new(((self.bits >> 6) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - XT1 automatic off enable"]
     #[inline(always)]
-    pub fn xt1autooff(&mut self) -> XT1AUTOOFF_W<0> {
-        XT1AUTOOFF_W::new(self)
+    pub fn xt1autooff(&mut self) -> Xt1autooffW<'_, Csctl6Spec> {
+        Xt1autooffW::new(self, 0)
     }
     #[doc = "Bit 1 - XT1 Automatic Gain Control (AGC) disable"]
     #[inline(always)]
-    pub fn xt1agcoff(&mut self) -> XT1AGCOFF_W<1> {
-        XT1AGCOFF_W::new(self)
+    pub fn xt1agcoff(&mut self) -> Xt1agcoffW<'_, Csctl6Spec> {
+        Xt1agcoffW::new(self, 1)
     }
     #[doc = "Bit 4 - XT1 bypass mode : 0: internal 1:sourced from external pin"]
     #[inline(always)]
-    pub fn xt1bypass(&mut self) -> XT1BYPASS_W<4> {
-        XT1BYPASS_W::new(self)
+    pub fn xt1bypass(&mut self) -> Xt1bypassW<'_, Csctl6Spec> {
+        Xt1bypassW::new(self, 4)
     }
     #[doc = "Bit 5 - 1: Selects high-freq. oscillator"]
     #[inline(always)]
-    pub fn xts(&mut self) -> XTS_W<5> {
-        XTS_W::new(self)
+    pub fn xts(&mut self) -> XtsW<'_, Csctl6Spec> {
+        XtsW::new(self, 5)
     }
     #[doc = "Bits 6:7 - XT1 Drive Level mode Bit 0"]
     #[inline(always)]
-    pub fn xt1drive(&mut self) -> XT1DRIVE_W<6> {
-        XT1DRIVE_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn xt1drive(&mut self) -> Xt1driveW<'_, Csctl6Spec> {
+        Xt1driveW::new(self, 6)
     }
 }
-#[doc = "CS Control Register 6\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [csctl6](index.html) module"]
-pub struct CSCTL6_SPEC;
-impl crate::RegisterSpec for CSCTL6_SPEC {
+#[doc = "CS Control Register 6\n\nYou can [`read`](crate::Reg::read) this register and get [`csctl6::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`csctl6::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Csctl6Spec;
+impl crate::RegisterSpec for Csctl6Spec {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [csctl6::R](R) reader structure"]
-impl crate::Readable for CSCTL6_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [csctl6::W](W) writer structure"]
-impl crate::Writable for CSCTL6_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`csctl6::R`](R) reader structure"]
+impl crate::Readable for Csctl6Spec {}
+#[doc = "`write(|w| ..)` method takes [`csctl6::W`](W) writer structure"]
+impl crate::Writable for Csctl6Spec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets CSCTL6 to value 0"]
-impl crate::Resettable for CSCTL6_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for Csctl6Spec {}

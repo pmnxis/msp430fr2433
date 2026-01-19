@@ -1,64 +1,23 @@
 #[doc = "Register `RTCIV` reader"]
-pub struct R(crate::R<RTCIV_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<RTCIV_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<RTCIV_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<RTCIV_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<RtcivSpec>;
 #[doc = "Register `RTCIV` writer"]
-pub struct W(crate::W<RTCIV_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<RTCIV_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+pub type W = crate::W<RtcivSpec>;
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        write!(f, "{}", self.bits())
     }
 }
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<RTCIV_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<RTCIV_SPEC>) -> Self {
-        W(writer)
-    }
-}
-impl W {
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
-        self.0.bits(bits);
-        self
-    }
-}
-#[doc = "RTC interrupt vector\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rtciv](index.html) module"]
-pub struct RTCIV_SPEC;
-impl crate::RegisterSpec for RTCIV_SPEC {
+impl W {}
+#[doc = "RTC interrupt vector\n\nYou can [`read`](crate::Reg::read) this register and get [`rtciv::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`rtciv::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct RtcivSpec;
+impl crate::RegisterSpec for RtcivSpec {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [rtciv::R](R) reader structure"]
-impl crate::Readable for RTCIV_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [rtciv::W](W) writer structure"]
-impl crate::Writable for RTCIV_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`rtciv::R`](R) reader structure"]
+impl crate::Readable for RtcivSpec {}
+#[doc = "`write(|w| ..)` method takes [`rtciv::W`](W) writer structure"]
+impl crate::Writable for RtcivSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets RTCIV to value 0"]
-impl crate::Resettable for RTCIV_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for RtcivSpec {}

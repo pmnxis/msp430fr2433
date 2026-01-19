@@ -1,122 +1,77 @@
 #[doc = "Register `CSCTL8` reader"]
-pub struct R(crate::R<CSCTL8_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CSCTL8_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CSCTL8_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CSCTL8_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<Csctl8Spec>;
 #[doc = "Register `CSCTL8` writer"]
-pub struct W(crate::W<CSCTL8_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CSCTL8_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CSCTL8_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CSCTL8_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<Csctl8Spec>;
 #[doc = "Field `ACLKREQEN` reader - ACLK Clock Request Enable"]
-pub type ACLKREQEN_R = crate::BitReader<bool>;
+pub type AclkreqenR = crate::BitReader;
 #[doc = "Field `ACLKREQEN` writer - ACLK Clock Request Enable"]
-pub type ACLKREQEN_W<'a, const O: u8> = crate::BitWriter<'a, u16, CSCTL8_SPEC, bool, O>;
+pub type AclkreqenW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MCLKREQEN` reader - MCLK Clock Request Enable"]
-pub type MCLKREQEN_R = crate::BitReader<bool>;
+pub type MclkreqenR = crate::BitReader;
 #[doc = "Field `MCLKREQEN` writer - MCLK Clock Request Enable"]
-pub type MCLKREQEN_W<'a, const O: u8> = crate::BitWriter<'a, u16, CSCTL8_SPEC, bool, O>;
+pub type MclkreqenW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SMCLKREQEN` reader - SMCLK Clock Request Enable"]
-pub type SMCLKREQEN_R = crate::BitReader<bool>;
+pub type SmclkreqenR = crate::BitReader;
 #[doc = "Field `SMCLKREQEN` writer - SMCLK Clock Request Enable"]
-pub type SMCLKREQEN_W<'a, const O: u8> = crate::BitWriter<'a, u16, CSCTL8_SPEC, bool, O>;
+pub type SmclkreqenW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MODOSCREQEN` reader - MODOSC Clock Request Enable"]
-pub type MODOSCREQEN_R = crate::BitReader<bool>;
+pub type ModoscreqenR = crate::BitReader;
 #[doc = "Field `MODOSCREQEN` writer - MODOSC Clock Request Enable"]
-pub type MODOSCREQEN_W<'a, const O: u8> = crate::BitWriter<'a, u16, CSCTL8_SPEC, bool, O>;
+pub type ModoscreqenW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - ACLK Clock Request Enable"]
     #[inline(always)]
-    pub fn aclkreqen(&self) -> ACLKREQEN_R {
-        ACLKREQEN_R::new((self.bits & 1) != 0)
+    pub fn aclkreqen(&self) -> AclkreqenR {
+        AclkreqenR::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - MCLK Clock Request Enable"]
     #[inline(always)]
-    pub fn mclkreqen(&self) -> MCLKREQEN_R {
-        MCLKREQEN_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn mclkreqen(&self) -> MclkreqenR {
+        MclkreqenR::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - SMCLK Clock Request Enable"]
     #[inline(always)]
-    pub fn smclkreqen(&self) -> SMCLKREQEN_R {
-        SMCLKREQEN_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn smclkreqen(&self) -> SmclkreqenR {
+        SmclkreqenR::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - MODOSC Clock Request Enable"]
     #[inline(always)]
-    pub fn modoscreqen(&self) -> MODOSCREQEN_R {
-        MODOSCREQEN_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn modoscreqen(&self) -> ModoscreqenR {
+        ModoscreqenR::new(((self.bits >> 3) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - ACLK Clock Request Enable"]
     #[inline(always)]
-    pub fn aclkreqen(&mut self) -> ACLKREQEN_W<0> {
-        ACLKREQEN_W::new(self)
+    pub fn aclkreqen(&mut self) -> AclkreqenW<'_, Csctl8Spec> {
+        AclkreqenW::new(self, 0)
     }
     #[doc = "Bit 1 - MCLK Clock Request Enable"]
     #[inline(always)]
-    pub fn mclkreqen(&mut self) -> MCLKREQEN_W<1> {
-        MCLKREQEN_W::new(self)
+    pub fn mclkreqen(&mut self) -> MclkreqenW<'_, Csctl8Spec> {
+        MclkreqenW::new(self, 1)
     }
     #[doc = "Bit 2 - SMCLK Clock Request Enable"]
     #[inline(always)]
-    pub fn smclkreqen(&mut self) -> SMCLKREQEN_W<2> {
-        SMCLKREQEN_W::new(self)
+    pub fn smclkreqen(&mut self) -> SmclkreqenW<'_, Csctl8Spec> {
+        SmclkreqenW::new(self, 2)
     }
     #[doc = "Bit 3 - MODOSC Clock Request Enable"]
     #[inline(always)]
-    pub fn modoscreqen(&mut self) -> MODOSCREQEN_W<3> {
-        MODOSCREQEN_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn modoscreqen(&mut self) -> ModoscreqenW<'_, Csctl8Spec> {
+        ModoscreqenW::new(self, 3)
     }
 }
-#[doc = "CS Control Register 8\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [csctl8](index.html) module"]
-pub struct CSCTL8_SPEC;
-impl crate::RegisterSpec for CSCTL8_SPEC {
+#[doc = "CS Control Register 8\n\nYou can [`read`](crate::Reg::read) this register and get [`csctl8::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`csctl8::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Csctl8Spec;
+impl crate::RegisterSpec for Csctl8Spec {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [csctl8::R](R) reader structure"]
-impl crate::Readable for CSCTL8_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [csctl8::W](W) writer structure"]
-impl crate::Writable for CSCTL8_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`csctl8::R`](R) reader structure"]
+impl crate::Readable for Csctl8Spec {}
+#[doc = "`write(|w| ..)` method takes [`csctl8::W`](W) writer structure"]
+impl crate::Writable for Csctl8Spec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets CSCTL8 to value 0"]
-impl crate::Resettable for CSCTL8_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for Csctl8Spec {}
