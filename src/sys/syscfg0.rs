@@ -10,6 +10,10 @@ pub type PfwpW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type DfwpR = crate::BitReader;
 #[doc = "Field `DFWP` writer - Data FRAM Write Protection"]
 pub type DfwpW<'a, REG> = crate::BitWriter<'a, REG>;
+#[doc = "Field `FRWPOA` reader - Program FRAM write protection offset"]
+pub type FrwpoaR = crate::FieldReader;
+#[doc = "Field `FRWPOA` writer - Program FRAM write protection offset"]
+pub type FrwpoaW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "FRAM protection password\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -85,6 +89,11 @@ impl R {
     pub fn dfwp(&self) -> DfwpR {
         DfwpR::new(((self.bits >> 1) & 1) != 0)
     }
+    #[doc = "Bits 2:7 - Program FRAM write protection offset"]
+    #[inline(always)]
+    pub fn frwpoa(&self) -> FrwpoaR {
+        FrwpoaR::new(((self.bits >> 2) & 0x3f) as u8)
+    }
     #[doc = "Bits 8:15 - FRAM protection password"]
     #[inline(always)]
     pub fn frwppw(&self) -> FrwppwR {
@@ -101,6 +110,11 @@ impl W {
     #[inline(always)]
     pub fn dfwp(&mut self) -> DfwpW<'_, Syscfg0Spec> {
         DfwpW::new(self, 1)
+    }
+    #[doc = "Bits 2:7 - Program FRAM write protection offset"]
+    #[inline(always)]
+    pub fn frwpoa(&mut self) -> FrwpoaW<'_, Syscfg0Spec> {
+        FrwpoaW::new(self, 2)
     }
     #[doc = "Bits 8:15 - FRAM protection password"]
     #[inline(always)]
