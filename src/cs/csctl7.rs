@@ -19,17 +19,18 @@ pub type Enstfcnt1R = crate::BitReader;
 #[doc = "Field `ENSTFCNT1` writer - Enable start counter for XT1"]
 pub type Enstfcnt1W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "FLL unlock condition Bit: 0\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Fllunlock {
-    #[doc = "0: FLL unlock condition: 0"]
-    Fllunlock0 = 0,
-    #[doc = "1: FLL unlock condition: 1"]
-    Fllunlock1 = 1,
-    #[doc = "2: FLL unlock condition: 2"]
-    Fllunlock2 = 2,
-    #[doc = "3: FLL unlock condition: 3"]
-    Fllunlock3 = 3,
+    #[doc = "0: FLL is locked. No unlock condition currently active."]
+    Locked = 0,
+    #[doc = "1: DCOCLK is currently too slow."]
+    TooSlow = 1,
+    #[doc = "2: DCOCLK is currently too fast."]
+    TooFast = 2,
+    #[doc = "3: DCOERROR. DCO out of range."]
+    OutOfRange = 3,
 }
 impl From<Fllunlock> for u8 {
     #[inline(always)]
@@ -48,32 +49,32 @@ impl FllunlockR {
     #[inline(always)]
     pub const fn variant(&self) -> Fllunlock {
         match self.bits {
-            0 => Fllunlock::Fllunlock0,
-            1 => Fllunlock::Fllunlock1,
-            2 => Fllunlock::Fllunlock2,
-            3 => Fllunlock::Fllunlock3,
+            0 => Fllunlock::Locked,
+            1 => Fllunlock::TooSlow,
+            2 => Fllunlock::TooFast,
+            3 => Fllunlock::OutOfRange,
             _ => unreachable!(),
         }
     }
-    #[doc = "FLL unlock condition: 0"]
+    #[doc = "FLL is locked. No unlock condition currently active."]
     #[inline(always)]
-    pub fn is_fllunlock_0(&self) -> bool {
-        *self == Fllunlock::Fllunlock0
+    pub fn is_locked(&self) -> bool {
+        *self == Fllunlock::Locked
     }
-    #[doc = "FLL unlock condition: 1"]
+    #[doc = "DCOCLK is currently too slow."]
     #[inline(always)]
-    pub fn is_fllunlock_1(&self) -> bool {
-        *self == Fllunlock::Fllunlock1
+    pub fn is_too_slow(&self) -> bool {
+        *self == Fllunlock::TooSlow
     }
-    #[doc = "FLL unlock condition: 2"]
+    #[doc = "DCOCLK is currently too fast."]
     #[inline(always)]
-    pub fn is_fllunlock_2(&self) -> bool {
-        *self == Fllunlock::Fllunlock2
+    pub fn is_too_fast(&self) -> bool {
+        *self == Fllunlock::TooFast
     }
-    #[doc = "FLL unlock condition: 3"]
+    #[doc = "DCOERROR. DCO out of range."]
     #[inline(always)]
-    pub fn is_fllunlock_3(&self) -> bool {
-        *self == Fllunlock::Fllunlock3
+    pub fn is_out_of_range(&self) -> bool {
+        *self == Fllunlock::OutOfRange
     }
 }
 #[doc = "Field `FLLUNLOCK` writer - FLL unlock condition Bit: 0"]
@@ -83,39 +84,40 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "FLL unlock condition: 0"]
+    #[doc = "FLL is locked. No unlock condition currently active."]
     #[inline(always)]
-    pub fn fllunlock_0(self) -> &'a mut crate::W<REG> {
-        self.variant(Fllunlock::Fllunlock0)
+    pub fn locked(self) -> &'a mut crate::W<REG> {
+        self.variant(Fllunlock::Locked)
     }
-    #[doc = "FLL unlock condition: 1"]
+    #[doc = "DCOCLK is currently too slow."]
     #[inline(always)]
-    pub fn fllunlock_1(self) -> &'a mut crate::W<REG> {
-        self.variant(Fllunlock::Fllunlock1)
+    pub fn too_slow(self) -> &'a mut crate::W<REG> {
+        self.variant(Fllunlock::TooSlow)
     }
-    #[doc = "FLL unlock condition: 2"]
+    #[doc = "DCOCLK is currently too fast."]
     #[inline(always)]
-    pub fn fllunlock_2(self) -> &'a mut crate::W<REG> {
-        self.variant(Fllunlock::Fllunlock2)
+    pub fn too_fast(self) -> &'a mut crate::W<REG> {
+        self.variant(Fllunlock::TooFast)
     }
-    #[doc = "FLL unlock condition: 3"]
+    #[doc = "DCOERROR. DCO out of range."]
     #[inline(always)]
-    pub fn fllunlock_3(self) -> &'a mut crate::W<REG> {
-        self.variant(Fllunlock::Fllunlock3)
+    pub fn out_of_range(self) -> &'a mut crate::W<REG> {
+        self.variant(Fllunlock::OutOfRange)
     }
 }
 #[doc = "Unlock history Bit: 0\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Fllunlockhis {
-    #[doc = "0: Unlock history: 0"]
-    Fllunlockhis0 = 0,
-    #[doc = "1: Unlock history: 1"]
-    Fllunlockhis1 = 1,
-    #[doc = "2: Unlock history: 2"]
-    Fllunlockhis2 = 2,
-    #[doc = "3: Unlock history: 3"]
-    Fllunlockhis3 = 3,
+    #[doc = "0: FLL is locked. No unlock situation has been detected since the last reset of these bits."]
+    Locked = 0,
+    #[doc = "1: DCOCLK has been too slow since the bits were cleared."]
+    TooSlow = 1,
+    #[doc = "2: DCOCLK has been too fast since the bits were cleared."]
+    TooFast = 2,
+    #[doc = "3: DCOCLK has been both too fast and too slow since the bits were cleared."]
+    TooSlowAndFast = 3,
 }
 impl From<Fllunlockhis> for u8 {
     #[inline(always)]
@@ -134,32 +136,32 @@ impl FllunlockhisR {
     #[inline(always)]
     pub const fn variant(&self) -> Fllunlockhis {
         match self.bits {
-            0 => Fllunlockhis::Fllunlockhis0,
-            1 => Fllunlockhis::Fllunlockhis1,
-            2 => Fllunlockhis::Fllunlockhis2,
-            3 => Fllunlockhis::Fllunlockhis3,
+            0 => Fllunlockhis::Locked,
+            1 => Fllunlockhis::TooSlow,
+            2 => Fllunlockhis::TooFast,
+            3 => Fllunlockhis::TooSlowAndFast,
             _ => unreachable!(),
         }
     }
-    #[doc = "Unlock history: 0"]
+    #[doc = "FLL is locked. No unlock situation has been detected since the last reset of these bits."]
     #[inline(always)]
-    pub fn is_fllunlockhis_0(&self) -> bool {
-        *self == Fllunlockhis::Fllunlockhis0
+    pub fn is_locked(&self) -> bool {
+        *self == Fllunlockhis::Locked
     }
-    #[doc = "Unlock history: 1"]
+    #[doc = "DCOCLK has been too slow since the bits were cleared."]
     #[inline(always)]
-    pub fn is_fllunlockhis_1(&self) -> bool {
-        *self == Fllunlockhis::Fllunlockhis1
+    pub fn is_too_slow(&self) -> bool {
+        *self == Fllunlockhis::TooSlow
     }
-    #[doc = "Unlock history: 2"]
+    #[doc = "DCOCLK has been too fast since the bits were cleared."]
     #[inline(always)]
-    pub fn is_fllunlockhis_2(&self) -> bool {
-        *self == Fllunlockhis::Fllunlockhis2
+    pub fn is_too_fast(&self) -> bool {
+        *self == Fllunlockhis::TooFast
     }
-    #[doc = "Unlock history: 3"]
+    #[doc = "DCOCLK has been both too fast and too slow since the bits were cleared."]
     #[inline(always)]
-    pub fn is_fllunlockhis_3(&self) -> bool {
-        *self == Fllunlockhis::Fllunlockhis3
+    pub fn is_too_slow_and_fast(&self) -> bool {
+        *self == Fllunlockhis::TooSlowAndFast
     }
 }
 #[doc = "Field `FLLUNLOCKHIS` writer - Unlock history Bit: 0"]
@@ -169,35 +171,85 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "Unlock history: 0"]
+    #[doc = "FLL is locked. No unlock situation has been detected since the last reset of these bits."]
     #[inline(always)]
-    pub fn fllunlockhis_0(self) -> &'a mut crate::W<REG> {
-        self.variant(Fllunlockhis::Fllunlockhis0)
+    pub fn locked(self) -> &'a mut crate::W<REG> {
+        self.variant(Fllunlockhis::Locked)
     }
-    #[doc = "Unlock history: 1"]
+    #[doc = "DCOCLK has been too slow since the bits were cleared."]
     #[inline(always)]
-    pub fn fllunlockhis_1(self) -> &'a mut crate::W<REG> {
-        self.variant(Fllunlockhis::Fllunlockhis1)
+    pub fn too_slow(self) -> &'a mut crate::W<REG> {
+        self.variant(Fllunlockhis::TooSlow)
     }
-    #[doc = "Unlock history: 2"]
+    #[doc = "DCOCLK has been too fast since the bits were cleared."]
     #[inline(always)]
-    pub fn fllunlockhis_2(self) -> &'a mut crate::W<REG> {
-        self.variant(Fllunlockhis::Fllunlockhis2)
+    pub fn too_fast(self) -> &'a mut crate::W<REG> {
+        self.variant(Fllunlockhis::TooFast)
     }
-    #[doc = "Unlock history: 3"]
+    #[doc = "DCOCLK has been both too fast and too slow since the bits were cleared."]
     #[inline(always)]
-    pub fn fllunlockhis_3(self) -> &'a mut crate::W<REG> {
-        self.variant(Fllunlockhis::Fllunlockhis3)
+    pub fn too_slow_and_fast(self) -> &'a mut crate::W<REG> {
+        self.variant(Fllunlockhis::TooSlowAndFast)
     }
 }
 #[doc = "Field `FLLULPUC` reader - FLL unlock PUC enable"]
 pub type FllulpucR = crate::BitReader;
 #[doc = "Field `FLLULPUC` writer - FLL unlock PUC enable"]
 pub type FllulpucW<'a, REG> = crate::BitWriter<'a, REG>;
+#[doc = "Warning enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Fllwarnen {
+    #[doc = "0: FLLUNLOCKHIS status cannot set OFIFG."]
+    Disabled = 0,
+    #[doc = "1: FLLUNLOCKHIS status can set OFIFG."]
+    Enabled = 1,
+}
+impl From<Fllwarnen> for bool {
+    #[inline(always)]
+    fn from(variant: Fllwarnen) -> Self {
+        variant as u8 != 0
+    }
+}
 #[doc = "Field `FLLWARNEN` reader - Warning enable"]
-pub type FllwarnenR = crate::BitReader;
+pub type FllwarnenR = crate::BitReader<Fllwarnen>;
+impl FllwarnenR {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub const fn variant(&self) -> Fllwarnen {
+        match self.bits {
+            false => Fllwarnen::Disabled,
+            true => Fllwarnen::Enabled,
+        }
+    }
+    #[doc = "FLLUNLOCKHIS status cannot set OFIFG."]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == Fllwarnen::Disabled
+    }
+    #[doc = "FLLUNLOCKHIS status can set OFIFG."]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == Fllwarnen::Enabled
+    }
+}
 #[doc = "Field `FLLWARNEN` writer - Warning enable"]
-pub type FllwarnenW<'a, REG> = crate::BitWriter<'a, REG>;
+pub type FllwarnenW<'a, REG> = crate::BitWriter<'a, REG, Fllwarnen>;
+impl<'a, REG> FllwarnenW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "FLLUNLOCKHIS status cannot set OFIFG."]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Fllwarnen::Disabled)
+    }
+    #[doc = "FLLUNLOCKHIS status can set OFIFG."]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Fllwarnen::Enabled)
+    }
+}
 impl R {
     #[doc = "Bit 0 - DCO fault flag"]
     #[inline(always)]

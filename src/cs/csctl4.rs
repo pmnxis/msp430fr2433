@@ -3,6 +3,7 @@ pub type R = crate::R<Csctl4Spec>;
 #[doc = "Register `CSCTL4` writer"]
 pub type W = crate::W<Csctl4Spec>;
 #[doc = "MCLK and SMCLK Source Select Bit: 0\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Selms {
@@ -89,6 +90,7 @@ where
     }
 }
 #[doc = "ACLK Source Select Bit: 0\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sela {
     #[doc = "0: Source ACLK from XT1CLK with divider (no more than 40kHz)"]

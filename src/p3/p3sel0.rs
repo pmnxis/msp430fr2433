@@ -2,120 +2,22 @@
 pub type R = crate::R<P3sel0Spec>;
 #[doc = "Register `P3SEL0` writer"]
 pub type W = crate::W<P3sel0Spec>;
-#[doc = "Field `P3SEL0_0` reader - P3SEL0_0"]
-pub type P3sel0_0R = crate::BitReader;
-#[doc = "Field `P3SEL0_0` writer - P3SEL0_0"]
-pub type P3sel0_0W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `P3SEL0_1` reader - P3SEL0_1"]
-pub type P3sel0_1R = crate::BitReader;
-#[doc = "Field `P3SEL0_1` writer - P3SEL0_1"]
-pub type P3sel0_1W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `P3SEL0_2` reader - P3SEL0_2"]
-pub type P3sel0_2R = crate::BitReader;
-#[doc = "Field `P3SEL0_2` writer - P3SEL0_2"]
-pub type P3sel0_2W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `P3SEL0_3` reader - P3SEL0_3"]
-pub type P3sel0_3R = crate::BitReader;
-#[doc = "Field `P3SEL0_3` writer - P3SEL0_3"]
-pub type P3sel0_3W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `P3SEL0_4` reader - P3SEL0_4"]
-pub type P3sel0_4R = crate::BitReader;
-#[doc = "Field `P3SEL0_4` writer - P3SEL0_4"]
-pub type P3sel0_4W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `P3SEL0_5` reader - P3SEL0_5"]
-pub type P3sel0_5R = crate::BitReader;
-#[doc = "Field `P3SEL0_5` writer - P3SEL0_5"]
-pub type P3sel0_5W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `P3SEL0_6` reader - P3SEL0_6"]
-pub type P3sel0_6R = crate::BitReader;
-#[doc = "Field `P3SEL0_6` writer - P3SEL0_6"]
-pub type P3sel0_6W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `P3SEL0_7` reader - P3SEL0_7"]
-pub type P3sel0_7R = crate::BitReader;
-#[doc = "Field `P3SEL0_7` writer - P3SEL0_7"]
-pub type P3sel0_7W<'a, REG> = crate::BitWriter<'a, REG>;
+#[doc = "Field `P3SEL0` reader - P3SEL0_0"]
+pub type P3sel0R = crate::FieldReader;
+#[doc = "Field `P3SEL0` writer - P3SEL0_0"]
+pub type P3sel0W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bit 0 - P3SEL0_0"]
+    #[doc = "Bits 0:7 - P3SEL0_0"]
     #[inline(always)]
-    pub fn p3sel0_0(&self) -> P3sel0_0R {
-        P3sel0_0R::new((self.bits & 1) != 0)
-    }
-    #[doc = "Bit 1 - P3SEL0_1"]
-    #[inline(always)]
-    pub fn p3sel0_1(&self) -> P3sel0_1R {
-        P3sel0_1R::new(((self.bits >> 1) & 1) != 0)
-    }
-    #[doc = "Bit 2 - P3SEL0_2"]
-    #[inline(always)]
-    pub fn p3sel0_2(&self) -> P3sel0_2R {
-        P3sel0_2R::new(((self.bits >> 2) & 1) != 0)
-    }
-    #[doc = "Bit 3 - P3SEL0_3"]
-    #[inline(always)]
-    pub fn p3sel0_3(&self) -> P3sel0_3R {
-        P3sel0_3R::new(((self.bits >> 3) & 1) != 0)
-    }
-    #[doc = "Bit 4 - P3SEL0_4"]
-    #[inline(always)]
-    pub fn p3sel0_4(&self) -> P3sel0_4R {
-        P3sel0_4R::new(((self.bits >> 4) & 1) != 0)
-    }
-    #[doc = "Bit 5 - P3SEL0_5"]
-    #[inline(always)]
-    pub fn p3sel0_5(&self) -> P3sel0_5R {
-        P3sel0_5R::new(((self.bits >> 5) & 1) != 0)
-    }
-    #[doc = "Bit 6 - P3SEL0_6"]
-    #[inline(always)]
-    pub fn p3sel0_6(&self) -> P3sel0_6R {
-        P3sel0_6R::new(((self.bits >> 6) & 1) != 0)
-    }
-    #[doc = "Bit 7 - P3SEL0_7"]
-    #[inline(always)]
-    pub fn p3sel0_7(&self) -> P3sel0_7R {
-        P3sel0_7R::new(((self.bits >> 7) & 1) != 0)
+    pub fn p3sel0(&self) -> P3sel0R {
+        P3sel0R::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bit 0 - P3SEL0_0"]
+    #[doc = "Bits 0:7 - P3SEL0_0"]
     #[inline(always)]
-    pub fn p3sel0_0(&mut self) -> P3sel0_0W<'_, P3sel0Spec> {
-        P3sel0_0W::new(self, 0)
-    }
-    #[doc = "Bit 1 - P3SEL0_1"]
-    #[inline(always)]
-    pub fn p3sel0_1(&mut self) -> P3sel0_1W<'_, P3sel0Spec> {
-        P3sel0_1W::new(self, 1)
-    }
-    #[doc = "Bit 2 - P3SEL0_2"]
-    #[inline(always)]
-    pub fn p3sel0_2(&mut self) -> P3sel0_2W<'_, P3sel0Spec> {
-        P3sel0_2W::new(self, 2)
-    }
-    #[doc = "Bit 3 - P3SEL0_3"]
-    #[inline(always)]
-    pub fn p3sel0_3(&mut self) -> P3sel0_3W<'_, P3sel0Spec> {
-        P3sel0_3W::new(self, 3)
-    }
-    #[doc = "Bit 4 - P3SEL0_4"]
-    #[inline(always)]
-    pub fn p3sel0_4(&mut self) -> P3sel0_4W<'_, P3sel0Spec> {
-        P3sel0_4W::new(self, 4)
-    }
-    #[doc = "Bit 5 - P3SEL0_5"]
-    #[inline(always)]
-    pub fn p3sel0_5(&mut self) -> P3sel0_5W<'_, P3sel0Spec> {
-        P3sel0_5W::new(self, 5)
-    }
-    #[doc = "Bit 6 - P3SEL0_6"]
-    #[inline(always)]
-    pub fn p3sel0_6(&mut self) -> P3sel0_6W<'_, P3sel0Spec> {
-        P3sel0_6W::new(self, 6)
-    }
-    #[doc = "Bit 7 - P3SEL0_7"]
-    #[inline(always)]
-    pub fn p3sel0_7(&mut self) -> P3sel0_7W<'_, P3sel0Spec> {
-        P3sel0_7W::new(self, 7)
+    pub fn p3sel0(&mut self) -> P3sel0W<'_, P3sel0Spec> {
+        P3sel0W::new(self, 0)
     }
 }
 #[doc = "Port 3 Selection0\n\nYou can [`read`](crate::Reg::read) this register and get [`p3sel0::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`p3sel0::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

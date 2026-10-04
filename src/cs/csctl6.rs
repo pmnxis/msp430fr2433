@@ -19,6 +19,7 @@ pub type XtsR = crate::BitReader;
 #[doc = "Field `XTS` writer - 1: Selects high-freq. oscillator"]
 pub type XtsW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "XT1 Drive Level mode Bit 0\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Xt1drive {

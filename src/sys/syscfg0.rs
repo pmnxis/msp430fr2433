@@ -10,15 +10,16 @@ pub type PfwpW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type DfwpR = crate::BitReader;
 #[doc = "Field `DFWP` writer - Data FRAM Write Protection"]
 pub type DfwpW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `FRWPOA` reader - Program FRAM write protection offset"]
+#[doc = "Field `FRWPOA` reader - Program FRAM Write Protection Offset"]
 pub type FrwpoaR = crate::FieldReader;
-#[doc = "Field `FRWPOA` writer - Program FRAM write protection offset"]
+#[doc = "Field `FRWPOA` writer - Program FRAM Write Protection Offset"]
 pub type FrwpoaW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "FRAM protection password\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Frwppwr {
-    #[doc = "150: Value always read from the SYSCFG0 register"]
+    #[doc = "150: Value always read from the SYSCFG0 password field"]
     Password = 150,
 }
 impl From<Frwppwr> for u8 {
@@ -42,17 +43,18 @@ impl FrwppwR {
             _ => None,
         }
     }
-    #[doc = "Value always read from the SYSCFG0 register"]
+    #[doc = "Value always read from the SYSCFG0 password field"]
     #[inline(always)]
     pub fn is_password(&self) -> bool {
         *self == Frwppwr::Password
     }
 }
 #[doc = "FRAM protection password\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum FrwppwwWO {
-    #[doc = "165: Value which must be written to the SYSCFG0 register"]
+    #[doc = "165: Value which must be written to the SYSCFG0 password field"]
     Password = 165,
 }
 impl From<FrwppwwWO> for u8 {
@@ -72,7 +74,7 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "Value which must be written to the SYSCFG0 register"]
+    #[doc = "Value which must be written to the SYSCFG0 password field"]
     #[inline(always)]
     pub fn password(self) -> &'a mut crate::W<REG> {
         self.variant(FrwppwwWO::Password)
@@ -89,7 +91,7 @@ impl R {
     pub fn dfwp(&self) -> DfwpR {
         DfwpR::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bits 2:7 - Program FRAM write protection offset"]
+    #[doc = "Bits 2:7 - Program FRAM Write Protection Offset"]
     #[inline(always)]
     pub fn frwpoa(&self) -> FrwpoaR {
         FrwpoaR::new(((self.bits >> 2) & 0x3f) as u8)
@@ -111,7 +113,7 @@ impl W {
     pub fn dfwp(&mut self) -> DfwpW<'_, Syscfg0Spec> {
         DfwpW::new(self, 1)
     }
-    #[doc = "Bits 2:7 - Program FRAM write protection offset"]
+    #[doc = "Bits 2:7 - Program FRAM Write Protection Offset"]
     #[inline(always)]
     pub fn frwpoa(&mut self) -> FrwpoaW<'_, Syscfg0Spec> {
         FrwpoaW::new(self, 2)

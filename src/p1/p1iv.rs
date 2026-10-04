@@ -3,27 +3,28 @@ pub type R = crate::R<P1ivSpec>;
 #[doc = "Register `P1IV` writer"]
 pub type W = crate::W<P1ivSpec>;
 #[doc = "P1IV\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum P1iv {
     #[doc = "0: No interrupt pending"]
     None = 0,
     #[doc = "2: Interrupt Source: Port 1.0 interrupt; Interrupt Flag: P1IFG0; Interrupt Priority: Highest"]
-    P1ifg0 = 2,
+    Ifg0 = 2,
     #[doc = "4: Interrupt Source: Port 1.1 interrupt; Interrupt Flag: P1IFG1"]
-    P1ifg1 = 4,
+    Ifg1 = 4,
     #[doc = "6: Interrupt Source: Port 1.2 interrupt; Interrupt Flag: P1IFG2"]
-    P1ifg2 = 6,
+    Ifg2 = 6,
     #[doc = "8: Interrupt Source: Port 1.3 interrupt; Interrupt Flag: P1IFG3"]
-    P1ifg3 = 8,
+    Ifg3 = 8,
     #[doc = "10: Interrupt Source: Port 1.4 interrupt; Interrupt Flag: P1IFG4"]
-    P1ifg4 = 10,
+    Ifg4 = 10,
     #[doc = "12: Interrupt Source: Port 1.5 interrupt; Interrupt Flag: P1IFG5"]
-    P1ifg5 = 12,
+    Ifg5 = 12,
     #[doc = "14: Interrupt Source: Port 1.6 interrupt; Interrupt Flag: P1IFG6"]
-    P1ifg6 = 14,
+    Ifg6 = 14,
     #[doc = "16: Interrupt Source: Port 1.7 interrupt; Interrupt Flag: P1IFG7; Interrupt Priority: Lowest"]
-    P1ifg7 = 16,
+    Ifg7 = 16,
 }
 impl From<P1iv> for u16 {
     #[inline(always)]
@@ -43,14 +44,14 @@ impl P1ivR {
     pub const fn variant(&self) -> Option<P1iv> {
         match self.bits {
             0 => Some(P1iv::None),
-            2 => Some(P1iv::P1ifg0),
-            4 => Some(P1iv::P1ifg1),
-            6 => Some(P1iv::P1ifg2),
-            8 => Some(P1iv::P1ifg3),
-            10 => Some(P1iv::P1ifg4),
-            12 => Some(P1iv::P1ifg5),
-            14 => Some(P1iv::P1ifg6),
-            16 => Some(P1iv::P1ifg7),
+            2 => Some(P1iv::Ifg0),
+            4 => Some(P1iv::Ifg1),
+            6 => Some(P1iv::Ifg2),
+            8 => Some(P1iv::Ifg3),
+            10 => Some(P1iv::Ifg4),
+            12 => Some(P1iv::Ifg5),
+            14 => Some(P1iv::Ifg6),
+            16 => Some(P1iv::Ifg7),
             _ => None,
         }
     }
@@ -61,43 +62,43 @@ impl P1ivR {
     }
     #[doc = "Interrupt Source: Port 1.0 interrupt; Interrupt Flag: P1IFG0; Interrupt Priority: Highest"]
     #[inline(always)]
-    pub fn is_p1ifg0(&self) -> bool {
-        *self == P1iv::P1ifg0
+    pub fn is_ifg0(&self) -> bool {
+        *self == P1iv::Ifg0
     }
     #[doc = "Interrupt Source: Port 1.1 interrupt; Interrupt Flag: P1IFG1"]
     #[inline(always)]
-    pub fn is_p1ifg1(&self) -> bool {
-        *self == P1iv::P1ifg1
+    pub fn is_ifg1(&self) -> bool {
+        *self == P1iv::Ifg1
     }
     #[doc = "Interrupt Source: Port 1.2 interrupt; Interrupt Flag: P1IFG2"]
     #[inline(always)]
-    pub fn is_p1ifg2(&self) -> bool {
-        *self == P1iv::P1ifg2
+    pub fn is_ifg2(&self) -> bool {
+        *self == P1iv::Ifg2
     }
     #[doc = "Interrupt Source: Port 1.3 interrupt; Interrupt Flag: P1IFG3"]
     #[inline(always)]
-    pub fn is_p1ifg3(&self) -> bool {
-        *self == P1iv::P1ifg3
+    pub fn is_ifg3(&self) -> bool {
+        *self == P1iv::Ifg3
     }
     #[doc = "Interrupt Source: Port 1.4 interrupt; Interrupt Flag: P1IFG4"]
     #[inline(always)]
-    pub fn is_p1ifg4(&self) -> bool {
-        *self == P1iv::P1ifg4
+    pub fn is_ifg4(&self) -> bool {
+        *self == P1iv::Ifg4
     }
     #[doc = "Interrupt Source: Port 1.5 interrupt; Interrupt Flag: P1IFG5"]
     #[inline(always)]
-    pub fn is_p1ifg5(&self) -> bool {
-        *self == P1iv::P1ifg5
+    pub fn is_ifg5(&self) -> bool {
+        *self == P1iv::Ifg5
     }
     #[doc = "Interrupt Source: Port 1.6 interrupt; Interrupt Flag: P1IFG6"]
     #[inline(always)]
-    pub fn is_p1ifg6(&self) -> bool {
-        *self == P1iv::P1ifg6
+    pub fn is_ifg6(&self) -> bool {
+        *self == P1iv::Ifg6
     }
     #[doc = "Interrupt Source: Port 1.7 interrupt; Interrupt Flag: P1IFG7; Interrupt Priority: Lowest"]
     #[inline(always)]
-    pub fn is_p1ifg7(&self) -> bool {
-        *self == P1iv::P1ifg7
+    pub fn is_ifg7(&self) -> bool {
+        *self == P1iv::Ifg7
     }
 }
 #[doc = "Field `P1IV` writer - P1IV"]
@@ -114,43 +115,43 @@ where
     }
     #[doc = "Interrupt Source: Port 1.0 interrupt; Interrupt Flag: P1IFG0; Interrupt Priority: Highest"]
     #[inline(always)]
-    pub fn p1ifg0(self) -> &'a mut crate::W<REG> {
-        self.variant(P1iv::P1ifg0)
+    pub fn ifg0(self) -> &'a mut crate::W<REG> {
+        self.variant(P1iv::Ifg0)
     }
     #[doc = "Interrupt Source: Port 1.1 interrupt; Interrupt Flag: P1IFG1"]
     #[inline(always)]
-    pub fn p1ifg1(self) -> &'a mut crate::W<REG> {
-        self.variant(P1iv::P1ifg1)
+    pub fn ifg1(self) -> &'a mut crate::W<REG> {
+        self.variant(P1iv::Ifg1)
     }
     #[doc = "Interrupt Source: Port 1.2 interrupt; Interrupt Flag: P1IFG2"]
     #[inline(always)]
-    pub fn p1ifg2(self) -> &'a mut crate::W<REG> {
-        self.variant(P1iv::P1ifg2)
+    pub fn ifg2(self) -> &'a mut crate::W<REG> {
+        self.variant(P1iv::Ifg2)
     }
     #[doc = "Interrupt Source: Port 1.3 interrupt; Interrupt Flag: P1IFG3"]
     #[inline(always)]
-    pub fn p1ifg3(self) -> &'a mut crate::W<REG> {
-        self.variant(P1iv::P1ifg3)
+    pub fn ifg3(self) -> &'a mut crate::W<REG> {
+        self.variant(P1iv::Ifg3)
     }
     #[doc = "Interrupt Source: Port 1.4 interrupt; Interrupt Flag: P1IFG4"]
     #[inline(always)]
-    pub fn p1ifg4(self) -> &'a mut crate::W<REG> {
-        self.variant(P1iv::P1ifg4)
+    pub fn ifg4(self) -> &'a mut crate::W<REG> {
+        self.variant(P1iv::Ifg4)
     }
     #[doc = "Interrupt Source: Port 1.5 interrupt; Interrupt Flag: P1IFG5"]
     #[inline(always)]
-    pub fn p1ifg5(self) -> &'a mut crate::W<REG> {
-        self.variant(P1iv::P1ifg5)
+    pub fn ifg5(self) -> &'a mut crate::W<REG> {
+        self.variant(P1iv::Ifg5)
     }
     #[doc = "Interrupt Source: Port 1.6 interrupt; Interrupt Flag: P1IFG6"]
     #[inline(always)]
-    pub fn p1ifg6(self) -> &'a mut crate::W<REG> {
-        self.variant(P1iv::P1ifg6)
+    pub fn ifg6(self) -> &'a mut crate::W<REG> {
+        self.variant(P1iv::Ifg6)
     }
     #[doc = "Interrupt Source: Port 1.7 interrupt; Interrupt Flag: P1IFG7; Interrupt Priority: Lowest"]
     #[inline(always)]
-    pub fn p1ifg7(self) -> &'a mut crate::W<REG> {
-        self.variant(P1iv::P1ifg7)
+    pub fn ifg7(self) -> &'a mut crate::W<REG> {
+        self.variant(P1iv::Ifg7)
     }
 }
 impl R {

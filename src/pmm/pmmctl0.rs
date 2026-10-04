@@ -15,6 +15,7 @@ pub type PmmregoffR = crate::BitReader;
 #[doc = "Field `PMMREGOFF` writer - PMM Turn Regulator off"]
 pub type PmmregoffW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "SVS high side enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Svshe {
     #[doc = "0: High-side SVS (SVSH) is disabled in LPM2, LPM3, LPM4, LPM3.5, and LPM4.5. SVSH is always enabled in active mode, LPM0, and LPM1."]
@@ -68,6 +69,7 @@ where
     }
 }
 #[doc = "PMM Password\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Pmmpwr {
@@ -102,6 +104,7 @@ impl PmmpwR {
     }
 }
 #[doc = "PMM Password\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PmmpwwWO {

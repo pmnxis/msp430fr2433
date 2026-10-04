@@ -3,6 +3,7 @@ pub type R = crate::R<Csctl5Spec>;
 #[doc = "Register `CSCTL5` writer"]
 pub type W = crate::W<Csctl5Spec>;
 #[doc = "MCLK Divider Bit: 0\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Divm {
@@ -141,6 +142,7 @@ where
     }
 }
 #[doc = "SMCLK Divider Bit: 0\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Divs {

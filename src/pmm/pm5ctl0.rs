@@ -6,14 +6,114 @@ pub type W = crate::W<Pm5ctl0Spec>;
 pub type Locklpm5R = crate::BitReader;
 #[doc = "Field `LOCKLPM5` writer - Lock I/O pin configuration upon entry/exit to/from LPM5"]
 pub type Locklpm5W<'a, REG> = crate::BitWriter<'a, REG>;
+#[doc = "LPMx.5 switch dis/connected\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Lpm5sw {
+    #[doc = "0: LPMx.5 switch disconnected"]
+    Disconnected = 0,
+    #[doc = "1: LPMx.5 switch connected"]
+    Connected = 1,
+}
+impl From<Lpm5sw> for bool {
+    #[inline(always)]
+    fn from(variant: Lpm5sw) -> Self {
+        variant as u8 != 0
+    }
+}
 #[doc = "Field `LPM5SW` reader - LPMx.5 switch dis/connected"]
-pub type Lpm5swR = crate::BitReader;
+pub type Lpm5swR = crate::BitReader<Lpm5sw>;
+impl Lpm5swR {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub const fn variant(&self) -> Lpm5sw {
+        match self.bits {
+            false => Lpm5sw::Disconnected,
+            true => Lpm5sw::Connected,
+        }
+    }
+    #[doc = "LPMx.5 switch disconnected"]
+    #[inline(always)]
+    pub fn is_disconnected(&self) -> bool {
+        *self == Lpm5sw::Disconnected
+    }
+    #[doc = "LPMx.5 switch connected"]
+    #[inline(always)]
+    pub fn is_connected(&self) -> bool {
+        *self == Lpm5sw::Connected
+    }
+}
 #[doc = "Field `LPM5SW` writer - LPMx.5 switch dis/connected"]
-pub type Lpm5swW<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Lpm5swW<'a, REG> = crate::BitWriter<'a, REG, Lpm5sw>;
+impl<'a, REG> Lpm5swW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "LPMx.5 switch disconnected"]
+    #[inline(always)]
+    pub fn disconnected(self) -> &'a mut crate::W<REG> {
+        self.variant(Lpm5sw::Disconnected)
+    }
+    #[doc = "LPMx.5 switch connected"]
+    #[inline(always)]
+    pub fn connected(self) -> &'a mut crate::W<REG> {
+        self.variant(Lpm5sw::Connected)
+    }
+}
+#[doc = "Manual mode for LPM3.5 switch\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Lpm5sm {
+    #[doc = "0: Automatic mode. The LPM3.5 switch is fully handled by the circuitry during mode switch."]
+    Automatic = 0,
+    #[doc = "1: Manual mode. The LPM3.5 switch is specified by LPM5SW bit setting in software."]
+    Manual = 1,
+}
+impl From<Lpm5sm> for bool {
+    #[inline(always)]
+    fn from(variant: Lpm5sm) -> Self {
+        variant as u8 != 0
+    }
+}
 #[doc = "Field `LPM5SM` reader - Manual mode for LPM3.5 switch"]
-pub type Lpm5smR = crate::BitReader;
+pub type Lpm5smR = crate::BitReader<Lpm5sm>;
+impl Lpm5smR {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub const fn variant(&self) -> Lpm5sm {
+        match self.bits {
+            false => Lpm5sm::Automatic,
+            true => Lpm5sm::Manual,
+        }
+    }
+    #[doc = "Automatic mode. The LPM3.5 switch is fully handled by the circuitry during mode switch."]
+    #[inline(always)]
+    pub fn is_automatic(&self) -> bool {
+        *self == Lpm5sm::Automatic
+    }
+    #[doc = "Manual mode. The LPM3.5 switch is specified by LPM5SW bit setting in software."]
+    #[inline(always)]
+    pub fn is_manual(&self) -> bool {
+        *self == Lpm5sm::Manual
+    }
+}
 #[doc = "Field `LPM5SM` writer - Manual mode for LPM3.5 switch"]
-pub type Lpm5smW<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Lpm5smW<'a, REG> = crate::BitWriter<'a, REG, Lpm5sm>;
+impl<'a, REG> Lpm5smW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Automatic mode. The LPM3.5 switch is fully handled by the circuitry during mode switch."]
+    #[inline(always)]
+    pub fn automatic(self) -> &'a mut crate::W<REG> {
+        self.variant(Lpm5sm::Automatic)
+    }
+    #[doc = "Manual mode. The LPM3.5 switch is specified by LPM5SW bit setting in software."]
+    #[inline(always)]
+    pub fn manual(self) -> &'a mut crate::W<REG> {
+        self.variant(Lpm5sm::Manual)
+    }
+}
 impl R {
     #[doc = "Bit 0 - Lock I/O pin configuration upon entry/exit to/from LPM5"]
     #[inline(always)]

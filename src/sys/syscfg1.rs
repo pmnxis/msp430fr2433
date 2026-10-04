@@ -10,10 +10,60 @@ pub type IrenW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type IrpselR = crate::BitReader;
 #[doc = "Field `IRPSEL` writer - Infrared polarity select"]
 pub type IrpselW<'a, REG> = crate::BitWriter<'a, REG>;
+#[doc = "Infrared mode select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Irmsel {
+    #[doc = "0: ASK mode"]
+    Ask = 0,
+    #[doc = "1: FSK mode"]
+    Fsk = 1,
+}
+impl From<Irmsel> for bool {
+    #[inline(always)]
+    fn from(variant: Irmsel) -> Self {
+        variant as u8 != 0
+    }
+}
 #[doc = "Field `IRMSEL` reader - Infrared mode select"]
-pub type IrmselR = crate::BitReader;
+pub type IrmselR = crate::BitReader<Irmsel>;
+impl IrmselR {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub const fn variant(&self) -> Irmsel {
+        match self.bits {
+            false => Irmsel::Ask,
+            true => Irmsel::Fsk,
+        }
+    }
+    #[doc = "ASK mode"]
+    #[inline(always)]
+    pub fn is_ask(&self) -> bool {
+        *self == Irmsel::Ask
+    }
+    #[doc = "FSK mode"]
+    #[inline(always)]
+    pub fn is_fsk(&self) -> bool {
+        *self == Irmsel::Fsk
+    }
+}
 #[doc = "Field `IRMSEL` writer - Infrared mode select"]
-pub type IrmselW<'a, REG> = crate::BitWriter<'a, REG>;
+pub type IrmselW<'a, REG> = crate::BitWriter<'a, REG, Irmsel>;
+impl<'a, REG> IrmselW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "ASK mode"]
+    #[inline(always)]
+    pub fn ask(self) -> &'a mut crate::W<REG> {
+        self.variant(Irmsel::Ask)
+    }
+    #[doc = "FSK mode"]
+    #[inline(always)]
+    pub fn fsk(self) -> &'a mut crate::W<REG> {
+        self.variant(Irmsel::Fsk)
+    }
+}
 #[doc = "Field `IRDSSEL` reader - Infrared data source select"]
 pub type IrdsselR = crate::BitReader;
 #[doc = "Field `IRDSSEL` writer - Infrared data source select"]

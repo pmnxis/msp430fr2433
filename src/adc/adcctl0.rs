@@ -19,41 +19,36 @@ pub type AdcmscR = crate::BitReader;
 #[doc = "Field `ADCMSC` writer - ADC Multiple SampleConversion"]
 pub type AdcmscW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "ADC Sample Hold Select Bit: 0\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Adcsht {
-    #[doc = "0: ADC Sample Hold Select 0"]
-    Adcsht0 = 0,
-    #[doc = "1: ADC Sample Hold Select 1"]
-    Adcsht1 = 1,
-    #[doc = "2: ADC Sample Hold Select 2"]
-    Adcsht2 = 2,
-    #[doc = "3: ADC Sample Hold Select 3"]
-    Adcsht3 = 3,
-    #[doc = "4: ADC Sample Hold Select 4"]
-    Adcsht4 = 4,
-    #[doc = "5: ADC Sample Hold Select 5"]
-    Adcsht5 = 5,
-    #[doc = "6: ADC Sample Hold Select 6"]
-    Adcsht6 = 6,
-    #[doc = "7: ADC Sample Hold Select 7"]
-    Adcsht7 = 7,
-    #[doc = "8: ADC Sample Hold Select 8"]
-    Adcsht8 = 8,
-    #[doc = "9: ADC Sample Hold Select 9"]
-    Adcsht9 = 9,
-    #[doc = "10: ADC Sample Hold Select 10"]
-    Adcsht10 = 10,
-    #[doc = "11: ADC Sample Hold Select 11"]
-    Adcsht11 = 11,
-    #[doc = "12: ADC Sample Hold Select 12"]
-    Adcsht12 = 12,
-    #[doc = "13: ADC Sample Hold Select 13"]
-    Adcsht13 = 13,
-    #[doc = "14: ADC Sample Hold Select 14"]
-    Adcsht14 = 14,
-    #[doc = "15: ADC Sample Hold Select 15"]
-    Adcsht15 = 15,
+    #[doc = "0: 4 ADCCLK cycles"]
+    Cycles4 = 0,
+    #[doc = "1: 8 ADCCLK cycles"]
+    Cycles8 = 1,
+    #[doc = "2: 16 ADCCLK cycles"]
+    Cycles16 = 2,
+    #[doc = "3: 32 ADCCLK cycles"]
+    Cycles32 = 3,
+    #[doc = "4: 64 ADCCLK cycles"]
+    Cycles64 = 4,
+    #[doc = "5: 96 ADCCLK cycles"]
+    Cycles96 = 5,
+    #[doc = "6: 128 ADCCLK cycles"]
+    Cycles128 = 6,
+    #[doc = "7: 192 ADCCLK cycles"]
+    Cycles192 = 7,
+    #[doc = "8: 256 ADCCLK cycles"]
+    Cycles256 = 8,
+    #[doc = "9: 384 ADCCLK cycles"]
+    Cycles384 = 9,
+    #[doc = "10: 512 ADCCLK cycles"]
+    Cycles512 = 10,
+    #[doc = "11: 768 ADCCLK cycles"]
+    Cycles768 = 11,
+    #[doc = "12: 1024 ADCCLK cycles"]
+    Cycles1024 = 12,
 }
 impl From<Adcsht> for u8 {
     #[inline(always)]
@@ -70,194 +65,161 @@ pub type AdcshtR = crate::FieldReader<Adcsht>;
 impl AdcshtR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Adcsht {
+    pub const fn variant(&self) -> Option<Adcsht> {
         match self.bits {
-            0 => Adcsht::Adcsht0,
-            1 => Adcsht::Adcsht1,
-            2 => Adcsht::Adcsht2,
-            3 => Adcsht::Adcsht3,
-            4 => Adcsht::Adcsht4,
-            5 => Adcsht::Adcsht5,
-            6 => Adcsht::Adcsht6,
-            7 => Adcsht::Adcsht7,
-            8 => Adcsht::Adcsht8,
-            9 => Adcsht::Adcsht9,
-            10 => Adcsht::Adcsht10,
-            11 => Adcsht::Adcsht11,
-            12 => Adcsht::Adcsht12,
-            13 => Adcsht::Adcsht13,
-            14 => Adcsht::Adcsht14,
-            15 => Adcsht::Adcsht15,
-            _ => unreachable!(),
+            0 => Some(Adcsht::Cycles4),
+            1 => Some(Adcsht::Cycles8),
+            2 => Some(Adcsht::Cycles16),
+            3 => Some(Adcsht::Cycles32),
+            4 => Some(Adcsht::Cycles64),
+            5 => Some(Adcsht::Cycles96),
+            6 => Some(Adcsht::Cycles128),
+            7 => Some(Adcsht::Cycles192),
+            8 => Some(Adcsht::Cycles256),
+            9 => Some(Adcsht::Cycles384),
+            10 => Some(Adcsht::Cycles512),
+            11 => Some(Adcsht::Cycles768),
+            12 => Some(Adcsht::Cycles1024),
+            _ => None,
         }
     }
-    #[doc = "ADC Sample Hold Select 0"]
+    #[doc = "4 ADCCLK cycles"]
     #[inline(always)]
-    pub fn is_adcsht_0(&self) -> bool {
-        *self == Adcsht::Adcsht0
+    pub fn is_cycles_4(&self) -> bool {
+        *self == Adcsht::Cycles4
     }
-    #[doc = "ADC Sample Hold Select 1"]
+    #[doc = "8 ADCCLK cycles"]
     #[inline(always)]
-    pub fn is_adcsht_1(&self) -> bool {
-        *self == Adcsht::Adcsht1
+    pub fn is_cycles_8(&self) -> bool {
+        *self == Adcsht::Cycles8
     }
-    #[doc = "ADC Sample Hold Select 2"]
+    #[doc = "16 ADCCLK cycles"]
     #[inline(always)]
-    pub fn is_adcsht_2(&self) -> bool {
-        *self == Adcsht::Adcsht2
+    pub fn is_cycles_16(&self) -> bool {
+        *self == Adcsht::Cycles16
     }
-    #[doc = "ADC Sample Hold Select 3"]
+    #[doc = "32 ADCCLK cycles"]
     #[inline(always)]
-    pub fn is_adcsht_3(&self) -> bool {
-        *self == Adcsht::Adcsht3
+    pub fn is_cycles_32(&self) -> bool {
+        *self == Adcsht::Cycles32
     }
-    #[doc = "ADC Sample Hold Select 4"]
+    #[doc = "64 ADCCLK cycles"]
     #[inline(always)]
-    pub fn is_adcsht_4(&self) -> bool {
-        *self == Adcsht::Adcsht4
+    pub fn is_cycles_64(&self) -> bool {
+        *self == Adcsht::Cycles64
     }
-    #[doc = "ADC Sample Hold Select 5"]
+    #[doc = "96 ADCCLK cycles"]
     #[inline(always)]
-    pub fn is_adcsht_5(&self) -> bool {
-        *self == Adcsht::Adcsht5
+    pub fn is_cycles_96(&self) -> bool {
+        *self == Adcsht::Cycles96
     }
-    #[doc = "ADC Sample Hold Select 6"]
+    #[doc = "128 ADCCLK cycles"]
     #[inline(always)]
-    pub fn is_adcsht_6(&self) -> bool {
-        *self == Adcsht::Adcsht6
+    pub fn is_cycles_128(&self) -> bool {
+        *self == Adcsht::Cycles128
     }
-    #[doc = "ADC Sample Hold Select 7"]
+    #[doc = "192 ADCCLK cycles"]
     #[inline(always)]
-    pub fn is_adcsht_7(&self) -> bool {
-        *self == Adcsht::Adcsht7
+    pub fn is_cycles_192(&self) -> bool {
+        *self == Adcsht::Cycles192
     }
-    #[doc = "ADC Sample Hold Select 8"]
+    #[doc = "256 ADCCLK cycles"]
     #[inline(always)]
-    pub fn is_adcsht_8(&self) -> bool {
-        *self == Adcsht::Adcsht8
+    pub fn is_cycles_256(&self) -> bool {
+        *self == Adcsht::Cycles256
     }
-    #[doc = "ADC Sample Hold Select 9"]
+    #[doc = "384 ADCCLK cycles"]
     #[inline(always)]
-    pub fn is_adcsht_9(&self) -> bool {
-        *self == Adcsht::Adcsht9
+    pub fn is_cycles_384(&self) -> bool {
+        *self == Adcsht::Cycles384
     }
-    #[doc = "ADC Sample Hold Select 10"]
+    #[doc = "512 ADCCLK cycles"]
     #[inline(always)]
-    pub fn is_adcsht_10(&self) -> bool {
-        *self == Adcsht::Adcsht10
+    pub fn is_cycles_512(&self) -> bool {
+        *self == Adcsht::Cycles512
     }
-    #[doc = "ADC Sample Hold Select 11"]
+    #[doc = "768 ADCCLK cycles"]
     #[inline(always)]
-    pub fn is_adcsht_11(&self) -> bool {
-        *self == Adcsht::Adcsht11
+    pub fn is_cycles_768(&self) -> bool {
+        *self == Adcsht::Cycles768
     }
-    #[doc = "ADC Sample Hold Select 12"]
+    #[doc = "1024 ADCCLK cycles"]
     #[inline(always)]
-    pub fn is_adcsht_12(&self) -> bool {
-        *self == Adcsht::Adcsht12
-    }
-    #[doc = "ADC Sample Hold Select 13"]
-    #[inline(always)]
-    pub fn is_adcsht_13(&self) -> bool {
-        *self == Adcsht::Adcsht13
-    }
-    #[doc = "ADC Sample Hold Select 14"]
-    #[inline(always)]
-    pub fn is_adcsht_14(&self) -> bool {
-        *self == Adcsht::Adcsht14
-    }
-    #[doc = "ADC Sample Hold Select 15"]
-    #[inline(always)]
-    pub fn is_adcsht_15(&self) -> bool {
-        *self == Adcsht::Adcsht15
+    pub fn is_cycles_1024(&self) -> bool {
+        *self == Adcsht::Cycles1024
     }
 }
 #[doc = "Field `ADCSHT` writer - ADC Sample Hold Select Bit: 0"]
-pub type AdcshtW<'a, REG> = crate::FieldWriter<'a, REG, 4, Adcsht, crate::Safe>;
+pub type AdcshtW<'a, REG> = crate::FieldWriter<'a, REG, 4, Adcsht>;
 impl<'a, REG> AdcshtW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "ADC Sample Hold Select 0"]
+    #[doc = "4 ADCCLK cycles"]
     #[inline(always)]
-    pub fn adcsht_0(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcsht::Adcsht0)
+    pub fn cycles_4(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsht::Cycles4)
     }
-    #[doc = "ADC Sample Hold Select 1"]
+    #[doc = "8 ADCCLK cycles"]
     #[inline(always)]
-    pub fn adcsht_1(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcsht::Adcsht1)
+    pub fn cycles_8(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsht::Cycles8)
     }
-    #[doc = "ADC Sample Hold Select 2"]
+    #[doc = "16 ADCCLK cycles"]
     #[inline(always)]
-    pub fn adcsht_2(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcsht::Adcsht2)
+    pub fn cycles_16(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsht::Cycles16)
     }
-    #[doc = "ADC Sample Hold Select 3"]
+    #[doc = "32 ADCCLK cycles"]
     #[inline(always)]
-    pub fn adcsht_3(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcsht::Adcsht3)
+    pub fn cycles_32(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsht::Cycles32)
     }
-    #[doc = "ADC Sample Hold Select 4"]
+    #[doc = "64 ADCCLK cycles"]
     #[inline(always)]
-    pub fn adcsht_4(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcsht::Adcsht4)
+    pub fn cycles_64(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsht::Cycles64)
     }
-    #[doc = "ADC Sample Hold Select 5"]
+    #[doc = "96 ADCCLK cycles"]
     #[inline(always)]
-    pub fn adcsht_5(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcsht::Adcsht5)
+    pub fn cycles_96(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsht::Cycles96)
     }
-    #[doc = "ADC Sample Hold Select 6"]
+    #[doc = "128 ADCCLK cycles"]
     #[inline(always)]
-    pub fn adcsht_6(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcsht::Adcsht6)
+    pub fn cycles_128(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsht::Cycles128)
     }
-    #[doc = "ADC Sample Hold Select 7"]
+    #[doc = "192 ADCCLK cycles"]
     #[inline(always)]
-    pub fn adcsht_7(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcsht::Adcsht7)
+    pub fn cycles_192(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsht::Cycles192)
     }
-    #[doc = "ADC Sample Hold Select 8"]
+    #[doc = "256 ADCCLK cycles"]
     #[inline(always)]
-    pub fn adcsht_8(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcsht::Adcsht8)
+    pub fn cycles_256(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsht::Cycles256)
     }
-    #[doc = "ADC Sample Hold Select 9"]
+    #[doc = "384 ADCCLK cycles"]
     #[inline(always)]
-    pub fn adcsht_9(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcsht::Adcsht9)
+    pub fn cycles_384(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsht::Cycles384)
     }
-    #[doc = "ADC Sample Hold Select 10"]
+    #[doc = "512 ADCCLK cycles"]
     #[inline(always)]
-    pub fn adcsht_10(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcsht::Adcsht10)
+    pub fn cycles_512(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsht::Cycles512)
     }
-    #[doc = "ADC Sample Hold Select 11"]
+    #[doc = "768 ADCCLK cycles"]
     #[inline(always)]
-    pub fn adcsht_11(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcsht::Adcsht11)
+    pub fn cycles_768(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsht::Cycles768)
     }
-    #[doc = "ADC Sample Hold Select 12"]
+    #[doc = "1024 ADCCLK cycles"]
     #[inline(always)]
-    pub fn adcsht_12(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcsht::Adcsht12)
-    }
-    #[doc = "ADC Sample Hold Select 13"]
-    #[inline(always)]
-    pub fn adcsht_13(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcsht::Adcsht13)
-    }
-    #[doc = "ADC Sample Hold Select 14"]
-    #[inline(always)]
-    pub fn adcsht_14(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcsht::Adcsht14)
-    }
-    #[doc = "ADC Sample Hold Select 15"]
-    #[inline(always)]
-    pub fn adcsht_15(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcsht::Adcsht15)
+    pub fn cycles_1024(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsht::Cycles1024)
     }
 }
 impl R {

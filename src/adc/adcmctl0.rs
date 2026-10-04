@@ -3,6 +3,7 @@ pub type R = crate::R<Adcmctl0Spec>;
 #[doc = "Register `ADCMCTL0` writer"]
 pub type W = crate::W<Adcmctl0Spec>;
 #[doc = "ADC Input Channel Select Bit 0\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Adcinch {
@@ -245,25 +246,26 @@ where
     }
 }
 #[doc = "ADC Select Reference Bit 0\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Adcsref {
-    #[doc = "0: ADC Select Reference 0"]
-    Adcsref0 = 0,
-    #[doc = "1: ADC Select Reference 1"]
-    Adcsref1 = 1,
-    #[doc = "2: ADC Select Reference 2"]
-    Adcsref2 = 2,
-    #[doc = "3: ADC Select Reference 3"]
-    Adcsref3 = 3,
-    #[doc = "4: ADC Select Reference 4"]
-    Adcsref4 = 4,
-    #[doc = "5: ADC Select Reference 5"]
-    Adcsref5 = 5,
-    #[doc = "6: ADC Select Reference 6"]
-    Adcsref6 = 6,
-    #[doc = "7: ADC Select Reference 7"]
-    Adcsref7 = 7,
+    #[doc = "0: VR+ = AVCC and VR- = AVSS"]
+    AvccAvss = 0,
+    #[doc = "1: VR+ = VREF and VR- = AVSS"]
+    VrefAvss = 1,
+    #[doc = "2: VR+ = VEREF+ buffered and VR- = AVSS"]
+    VerefPlusBufferedAvss = 2,
+    #[doc = "3: VR+ = VEREF+ and VR- = AVSS"]
+    VerefPlusAvss = 3,
+    #[doc = "4: VR+ = AVCC and VR- = VEREF-"]
+    AvccVerefMinus = 4,
+    #[doc = "5: VR+ = VREF and VR- = VEREF-"]
+    VrefVerefMinus = 5,
+    #[doc = "6: VR+ = VEREF+ buffered and VR- = VEREF-"]
+    VerefPlusBufferedVerefMinus = 6,
+    #[doc = "7: VR+ = VEREF+ and VR- = VEREF-"]
+    VerefPlusVerefMinus = 7,
 }
 impl From<Adcsref> for u8 {
     #[inline(always)]
@@ -282,56 +284,56 @@ impl AdcsrefR {
     #[inline(always)]
     pub const fn variant(&self) -> Adcsref {
         match self.bits {
-            0 => Adcsref::Adcsref0,
-            1 => Adcsref::Adcsref1,
-            2 => Adcsref::Adcsref2,
-            3 => Adcsref::Adcsref3,
-            4 => Adcsref::Adcsref4,
-            5 => Adcsref::Adcsref5,
-            6 => Adcsref::Adcsref6,
-            7 => Adcsref::Adcsref7,
+            0 => Adcsref::AvccAvss,
+            1 => Adcsref::VrefAvss,
+            2 => Adcsref::VerefPlusBufferedAvss,
+            3 => Adcsref::VerefPlusAvss,
+            4 => Adcsref::AvccVerefMinus,
+            5 => Adcsref::VrefVerefMinus,
+            6 => Adcsref::VerefPlusBufferedVerefMinus,
+            7 => Adcsref::VerefPlusVerefMinus,
             _ => unreachable!(),
         }
     }
-    #[doc = "ADC Select Reference 0"]
+    #[doc = "VR+ = AVCC and VR- = AVSS"]
     #[inline(always)]
-    pub fn is_adcsref_0(&self) -> bool {
-        *self == Adcsref::Adcsref0
+    pub fn is_avcc_avss(&self) -> bool {
+        *self == Adcsref::AvccAvss
     }
-    #[doc = "ADC Select Reference 1"]
+    #[doc = "VR+ = VREF and VR- = AVSS"]
     #[inline(always)]
-    pub fn is_adcsref_1(&self) -> bool {
-        *self == Adcsref::Adcsref1
+    pub fn is_vref_avss(&self) -> bool {
+        *self == Adcsref::VrefAvss
     }
-    #[doc = "ADC Select Reference 2"]
+    #[doc = "VR+ = VEREF+ buffered and VR- = AVSS"]
     #[inline(always)]
-    pub fn is_adcsref_2(&self) -> bool {
-        *self == Adcsref::Adcsref2
+    pub fn is_veref_plus_buffered_avss(&self) -> bool {
+        *self == Adcsref::VerefPlusBufferedAvss
     }
-    #[doc = "ADC Select Reference 3"]
+    #[doc = "VR+ = VEREF+ and VR- = AVSS"]
     #[inline(always)]
-    pub fn is_adcsref_3(&self) -> bool {
-        *self == Adcsref::Adcsref3
+    pub fn is_veref_plus_avss(&self) -> bool {
+        *self == Adcsref::VerefPlusAvss
     }
-    #[doc = "ADC Select Reference 4"]
+    #[doc = "VR+ = AVCC and VR- = VEREF-"]
     #[inline(always)]
-    pub fn is_adcsref_4(&self) -> bool {
-        *self == Adcsref::Adcsref4
+    pub fn is_avcc_veref_minus(&self) -> bool {
+        *self == Adcsref::AvccVerefMinus
     }
-    #[doc = "ADC Select Reference 5"]
+    #[doc = "VR+ = VREF and VR- = VEREF-"]
     #[inline(always)]
-    pub fn is_adcsref_5(&self) -> bool {
-        *self == Adcsref::Adcsref5
+    pub fn is_vref_veref_minus(&self) -> bool {
+        *self == Adcsref::VrefVerefMinus
     }
-    #[doc = "ADC Select Reference 6"]
+    #[doc = "VR+ = VEREF+ buffered and VR- = VEREF-"]
     #[inline(always)]
-    pub fn is_adcsref_6(&self) -> bool {
-        *self == Adcsref::Adcsref6
+    pub fn is_veref_plus_buffered_veref_minus(&self) -> bool {
+        *self == Adcsref::VerefPlusBufferedVerefMinus
     }
-    #[doc = "ADC Select Reference 7"]
+    #[doc = "VR+ = VEREF+ and VR- = VEREF-"]
     #[inline(always)]
-    pub fn is_adcsref_7(&self) -> bool {
-        *self == Adcsref::Adcsref7
+    pub fn is_veref_plus_veref_minus(&self) -> bool {
+        *self == Adcsref::VerefPlusVerefMinus
     }
 }
 #[doc = "Field `ADCSREF` writer - ADC Select Reference Bit 0"]
@@ -341,45 +343,45 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "ADC Select Reference 0"]
+    #[doc = "VR+ = AVCC and VR- = AVSS"]
     #[inline(always)]
-    pub fn adcsref_0(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcsref::Adcsref0)
+    pub fn avcc_avss(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsref::AvccAvss)
     }
-    #[doc = "ADC Select Reference 1"]
+    #[doc = "VR+ = VREF and VR- = AVSS"]
     #[inline(always)]
-    pub fn adcsref_1(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcsref::Adcsref1)
+    pub fn vref_avss(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsref::VrefAvss)
     }
-    #[doc = "ADC Select Reference 2"]
+    #[doc = "VR+ = VEREF+ buffered and VR- = AVSS"]
     #[inline(always)]
-    pub fn adcsref_2(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcsref::Adcsref2)
+    pub fn veref_plus_buffered_avss(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsref::VerefPlusBufferedAvss)
     }
-    #[doc = "ADC Select Reference 3"]
+    #[doc = "VR+ = VEREF+ and VR- = AVSS"]
     #[inline(always)]
-    pub fn adcsref_3(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcsref::Adcsref3)
+    pub fn veref_plus_avss(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsref::VerefPlusAvss)
     }
-    #[doc = "ADC Select Reference 4"]
+    #[doc = "VR+ = AVCC and VR- = VEREF-"]
     #[inline(always)]
-    pub fn adcsref_4(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcsref::Adcsref4)
+    pub fn avcc_veref_minus(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsref::AvccVerefMinus)
     }
-    #[doc = "ADC Select Reference 5"]
+    #[doc = "VR+ = VREF and VR- = VEREF-"]
     #[inline(always)]
-    pub fn adcsref_5(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcsref::Adcsref5)
+    pub fn vref_veref_minus(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsref::VrefVerefMinus)
     }
-    #[doc = "ADC Select Reference 6"]
+    #[doc = "VR+ = VEREF+ buffered and VR- = VEREF-"]
     #[inline(always)]
-    pub fn adcsref_6(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcsref::Adcsref6)
+    pub fn veref_plus_buffered_veref_minus(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsref::VerefPlusBufferedVerefMinus)
     }
-    #[doc = "ADC Select Reference 7"]
+    #[doc = "VR+ = VEREF+ and VR- = VEREF-"]
     #[inline(always)]
-    pub fn adcsref_7(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcsref::Adcsref7)
+    pub fn veref_plus_veref_minus(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsref::VerefPlusVerefMinus)
     }
 }
 impl R {
