@@ -2,7 +2,7 @@
 <device schemaVersion="1.1" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
   <vendor>msp430gen</vendor>
   <name>MSP430FR2433</name>
-  <version>v0.4.0-28-gb0087ce-dirty</version>
+  <version>v0.4.0-29-g702f6f3-dirty</version>
   <description></description>
   <addressUnitBits>8</addressUnitBits>
   <width>16</width>
@@ -11724,14 +11724,14 @@
         </register>
         <register>
           <name>ADCLO</name>
-          <description>ADC Window Comparator High Threshold</description>
+          <description>ADC Window Comparator Low Threshold Register</description>
           <addressOffset>6</addressOffset>
           <size>16</size>
           <resetMask>65535</resetMask>
         </register>
         <register>
           <name>ADCHI</name>
-          <description>ADC Window Comparator High Threshold</description>
+          <description>ADC Window Comparator High Threshold Register</description>
           <addressOffset>8</addressOffset>
           <size>16</size>
           <resetMask>65535</resetMask>
