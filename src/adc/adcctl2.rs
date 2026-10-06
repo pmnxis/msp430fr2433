@@ -2,26 +2,123 @@
 pub type R = crate::R<Adcctl2Spec>;
 #[doc = "Register `ADCCTL2` writer"]
 pub type W = crate::W<Adcctl2Spec>;
+#[doc = "ADC Sampling Rate\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Adcsr {
+    #[doc = "0: ADC buffer supports up to approximately 200 ksps"]
+    Max200ksps = 0,
+    #[doc = "1: ADC buffer supports up to approximately 50 ksps"]
+    Max50ksps = 1,
+}
+impl From<Adcsr> for bool {
+    #[inline(always)]
+    fn from(variant: Adcsr) -> Self {
+        variant as u8 != 0
+    }
+}
 #[doc = "Field `ADCSR` reader - ADC Sampling Rate"]
-pub type AdcsrR = crate::BitReader;
+pub type AdcsrR = crate::BitReader<Adcsr>;
+impl AdcsrR {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub const fn variant(&self) -> Adcsr {
+        match self.bits {
+            false => Adcsr::Max200ksps,
+            true => Adcsr::Max50ksps,
+        }
+    }
+    #[doc = "ADC buffer supports up to approximately 200 ksps"]
+    #[inline(always)]
+    pub fn is_max_200ksps(&self) -> bool {
+        *self == Adcsr::Max200ksps
+    }
+    #[doc = "ADC buffer supports up to approximately 50 ksps"]
+    #[inline(always)]
+    pub fn is_max_50ksps(&self) -> bool {
+        *self == Adcsr::Max50ksps
+    }
+}
 #[doc = "Field `ADCSR` writer - ADC Sampling Rate"]
-pub type AdcsrW<'a, REG> = crate::BitWriter<'a, REG>;
+pub type AdcsrW<'a, REG> = crate::BitWriter<'a, REG, Adcsr>;
+impl<'a, REG> AdcsrW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "ADC buffer supports up to approximately 200 ksps"]
+    #[inline(always)]
+    pub fn max_200ksps(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsr::Max200ksps)
+    }
+    #[doc = "ADC buffer supports up to approximately 50 ksps"]
+    #[inline(always)]
+    pub fn max_50ksps(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsr::Max50ksps)
+    }
+}
+#[doc = "ADC Data Format\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Adcdf {
+    #[doc = "0: Binary unsigned. Theoretically, the analog input voltage -VREF results in 0000h, and the analog input voltage +VREF results in 03FFh."]
+    Unsigned = 0,
+    #[doc = "1: Signed binary (2s complement), left aligned. Theoretically, the analog input voltage -VREF results in 8000h, and the analog input voltage +VREF results in 7FC0h."]
+    Signed = 1,
+}
+impl From<Adcdf> for bool {
+    #[inline(always)]
+    fn from(variant: Adcdf) -> Self {
+        variant as u8 != 0
+    }
+}
 #[doc = "Field `ADCDF` reader - ADC Data Format"]
-pub type AdcdfR = crate::BitReader;
+pub type AdcdfR = crate::BitReader<Adcdf>;
+impl AdcdfR {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub const fn variant(&self) -> Adcdf {
+        match self.bits {
+            false => Adcdf::Unsigned,
+            true => Adcdf::Signed,
+        }
+    }
+    #[doc = "Binary unsigned. Theoretically, the analog input voltage -VREF results in 0000h, and the analog input voltage +VREF results in 03FFh."]
+    #[inline(always)]
+    pub fn is_unsigned(&self) -> bool {
+        *self == Adcdf::Unsigned
+    }
+    #[doc = "Signed binary (2s complement), left aligned. Theoretically, the analog input voltage -VREF results in 8000h, and the analog input voltage +VREF results in 7FC0h."]
+    #[inline(always)]
+    pub fn is_signed(&self) -> bool {
+        *self == Adcdf::Signed
+    }
+}
 #[doc = "Field `ADCDF` writer - ADC Data Format"]
-pub type AdcdfW<'a, REG> = crate::BitWriter<'a, REG>;
+pub type AdcdfW<'a, REG> = crate::BitWriter<'a, REG, Adcdf>;
+impl<'a, REG> AdcdfW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Binary unsigned. Theoretically, the analog input voltage -VREF results in 0000h, and the analog input voltage +VREF results in 03FFh."]
+    #[inline(always)]
+    pub fn unsigned(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcdf::Unsigned)
+    }
+    #[doc = "Signed binary (2s complement), left aligned. Theoretically, the analog input voltage -VREF results in 8000h, and the analog input voltage +VREF results in 7FC0h."]
+    #[inline(always)]
+    pub fn signed(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcdf::Signed)
+    }
+}
 #[doc = "ADC Resolution\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Adcres {
-    #[doc = "0: 8 bit"]
-    Adcres0 = 0,
-    #[doc = "1: 10 bit"]
-    Adcres1 = 1,
-    #[doc = "2: Reserved"]
-    Adcres2 = 2,
-    #[doc = "3: Reserved"]
-    Adcres3 = 3,
+    #[doc = "0: 8 bit (10 clock cycle conversion time)"]
+    Bits8 = 0,
+    #[doc = "1: 10 bit (12 clock cycle conversion time)"]
+    Bits10 = 1,
 }
 impl From<Adcres> for u8 {
     #[inline(always)]
@@ -38,76 +135,53 @@ pub type AdcresR = crate::FieldReader<Adcres>;
 impl AdcresR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Adcres {
+    pub const fn variant(&self) -> Option<Adcres> {
         match self.bits {
-            0 => Adcres::Adcres0,
-            1 => Adcres::Adcres1,
-            2 => Adcres::Adcres2,
-            3 => Adcres::Adcres3,
-            _ => unreachable!(),
+            0 => Some(Adcres::Bits8),
+            1 => Some(Adcres::Bits10),
+            _ => None,
         }
     }
-    #[doc = "8 bit"]
+    #[doc = "8 bit (10 clock cycle conversion time)"]
     #[inline(always)]
-    pub fn is_adcres_0(&self) -> bool {
-        *self == Adcres::Adcres0
+    pub fn is_bits_8(&self) -> bool {
+        *self == Adcres::Bits8
     }
-    #[doc = "10 bit"]
+    #[doc = "10 bit (12 clock cycle conversion time)"]
     #[inline(always)]
-    pub fn is_adcres_1(&self) -> bool {
-        *self == Adcres::Adcres1
-    }
-    #[doc = "Reserved"]
-    #[inline(always)]
-    pub fn is_adcres_2(&self) -> bool {
-        *self == Adcres::Adcres2
-    }
-    #[doc = "Reserved"]
-    #[inline(always)]
-    pub fn is_adcres_3(&self) -> bool {
-        *self == Adcres::Adcres3
+    pub fn is_bits_10(&self) -> bool {
+        *self == Adcres::Bits10
     }
 }
 #[doc = "Field `ADCRES` writer - ADC Resolution"]
-pub type AdcresW<'a, REG> = crate::FieldWriter<'a, REG, 2, Adcres, crate::Safe>;
+pub type AdcresW<'a, REG> = crate::FieldWriter<'a, REG, 2, Adcres>;
 impl<'a, REG> AdcresW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "8 bit"]
+    #[doc = "8 bit (10 clock cycle conversion time)"]
     #[inline(always)]
-    pub fn adcres_0(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcres::Adcres0)
+    pub fn bits_8(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcres::Bits8)
     }
-    #[doc = "10 bit"]
+    #[doc = "10 bit (12 clock cycle conversion time)"]
     #[inline(always)]
-    pub fn adcres_1(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcres::Adcres1)
-    }
-    #[doc = "Reserved"]
-    #[inline(always)]
-    pub fn adcres_2(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcres::Adcres2)
-    }
-    #[doc = "Reserved"]
-    #[inline(always)]
-    pub fn adcres_3(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcres::Adcres3)
+    pub fn bits_10(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcres::Bits10)
     }
 }
 #[doc = "ADC predivider Bit: 0\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Adcpdiv {
-    #[doc = "0: ADC predivider /1"]
-    Adcpdiv0 = 0,
-    #[doc = "1: ADC predivider /2"]
-    Adcpdiv1 = 1,
-    #[doc = "2: ADC predivider /64"]
-    Adcpdiv2 = 2,
-    #[doc = "3: ADC predivider reserved"]
-    Adcpdiv3 = 3,
+    #[doc = "0: Predivide by 1"]
+    _1 = 0,
+    #[doc = "1: Predivide by 4"]
+    _4 = 1,
+    #[doc = "2: Predivide by 64"]
+    _64 = 2,
 }
 impl From<Adcpdiv> for u8 {
     #[inline(always)]
@@ -124,62 +198,51 @@ pub type AdcpdivR = crate::FieldReader<Adcpdiv>;
 impl AdcpdivR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Adcpdiv {
+    pub const fn variant(&self) -> Option<Adcpdiv> {
         match self.bits {
-            0 => Adcpdiv::Adcpdiv0,
-            1 => Adcpdiv::Adcpdiv1,
-            2 => Adcpdiv::Adcpdiv2,
-            3 => Adcpdiv::Adcpdiv3,
-            _ => unreachable!(),
+            0 => Some(Adcpdiv::_1),
+            1 => Some(Adcpdiv::_4),
+            2 => Some(Adcpdiv::_64),
+            _ => None,
         }
     }
-    #[doc = "ADC predivider /1"]
+    #[doc = "Predivide by 1"]
     #[inline(always)]
-    pub fn is_adcpdiv_0(&self) -> bool {
-        *self == Adcpdiv::Adcpdiv0
+    pub fn is_1(&self) -> bool {
+        *self == Adcpdiv::_1
     }
-    #[doc = "ADC predivider /2"]
+    #[doc = "Predivide by 4"]
     #[inline(always)]
-    pub fn is_adcpdiv_1(&self) -> bool {
-        *self == Adcpdiv::Adcpdiv1
+    pub fn is_4(&self) -> bool {
+        *self == Adcpdiv::_4
     }
-    #[doc = "ADC predivider /64"]
+    #[doc = "Predivide by 64"]
     #[inline(always)]
-    pub fn is_adcpdiv_2(&self) -> bool {
-        *self == Adcpdiv::Adcpdiv2
-    }
-    #[doc = "ADC predivider reserved"]
-    #[inline(always)]
-    pub fn is_adcpdiv_3(&self) -> bool {
-        *self == Adcpdiv::Adcpdiv3
+    pub fn is_64(&self) -> bool {
+        *self == Adcpdiv::_64
     }
 }
 #[doc = "Field `ADCPDIV` writer - ADC predivider Bit: 0"]
-pub type AdcpdivW<'a, REG> = crate::FieldWriter<'a, REG, 2, Adcpdiv, crate::Safe>;
+pub type AdcpdivW<'a, REG> = crate::FieldWriter<'a, REG, 2, Adcpdiv>;
 impl<'a, REG> AdcpdivW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "ADC predivider /1"]
+    #[doc = "Predivide by 1"]
     #[inline(always)]
-    pub fn adcpdiv_0(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcpdiv::Adcpdiv0)
+    pub fn _1(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcpdiv::_1)
     }
-    #[doc = "ADC predivider /2"]
+    #[doc = "Predivide by 4"]
     #[inline(always)]
-    pub fn adcpdiv_1(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcpdiv::Adcpdiv1)
+    pub fn _4(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcpdiv::_4)
     }
-    #[doc = "ADC predivider /64"]
+    #[doc = "Predivide by 64"]
     #[inline(always)]
-    pub fn adcpdiv_2(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcpdiv::Adcpdiv2)
-    }
-    #[doc = "ADC predivider reserved"]
-    #[inline(always)]
-    pub fn adcpdiv_3(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcpdiv::Adcpdiv3)
+    pub fn _64(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcpdiv::_64)
     }
 }
 impl R {

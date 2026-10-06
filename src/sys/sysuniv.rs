@@ -2,9 +2,54 @@
 pub type R = crate::R<SysunivSpec>;
 #[doc = "Register `SYSUNIV` writer"]
 pub type W = crate::W<SysunivSpec>;
-impl core::fmt::Debug for R {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        write!(f, "{}", self.bits())
+#[doc = "User NMI vector\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+#[repr(u16)]
+pub enum Sysuniv {
+    #[doc = "2: NMIIFG NMI pin or SVSH event"]
+    NmiPin = 2,
+    #[doc = "4: OFIFG oscillator fault"]
+    OscillatorFault = 4,
+}
+impl From<Sysuniv> for u16 {
+    #[inline(always)]
+    fn from(variant: Sysuniv) -> Self {
+        variant as _
+    }
+}
+impl crate::FieldSpec for Sysuniv {
+    type Ux = u16;
+}
+impl crate::IsEnum for Sysuniv {}
+#[doc = "Field `SYSUNIV` reader - User NMI vector"]
+pub type SysunivR = crate::FieldReader<Sysuniv>;
+impl SysunivR {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub const fn variant(&self) -> Option<Sysuniv> {
+        match self.bits {
+            2 => Some(Sysuniv::NmiPin),
+            4 => Some(Sysuniv::OscillatorFault),
+            _ => None,
+        }
+    }
+    #[doc = "NMIIFG NMI pin or SVSH event"]
+    #[inline(always)]
+    pub fn is_nmi_pin(&self) -> bool {
+        *self == Sysuniv::NmiPin
+    }
+    #[doc = "OFIFG oscillator fault"]
+    #[inline(always)]
+    pub fn is_oscillator_fault(&self) -> bool {
+        *self == Sysuniv::OscillatorFault
+    }
+}
+impl R {
+    #[doc = "Bits 0:15 - User NMI vector"]
+    #[inline(always)]
+    pub fn sysuniv(&self) -> SysunivR {
+        SysunivR::new(self.bits)
     }
 }
 impl W {}

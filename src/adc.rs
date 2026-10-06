@@ -30,12 +30,12 @@ impl RegisterBlock {
     pub const fn adcctl2(&self) -> &Adcctl2 {
         &self.adcctl2
     }
-    #[doc = "0x06 - ADC Window Comparator High Threshold"]
+    #[doc = "0x06 - ADC Window Comparator Low Threshold Register"]
     #[inline(always)]
     pub const fn adclo(&self) -> &Adclo {
         &self.adclo
     }
-    #[doc = "0x08 - ADC Window Comparator High Threshold"]
+    #[doc = "0x08 - ADC Window Comparator High Threshold Register"]
     #[inline(always)]
     pub const fn adchi(&self) -> &Adchi {
         &self.adchi
@@ -81,15 +81,15 @@ pub mod adcctl1;
 pub type Adcctl2 = crate::Reg<adcctl2::Adcctl2Spec>;
 #[doc = "ADC Control 2"]
 pub mod adcctl2;
-#[doc = "ADCLO (rw) register accessor: ADC Window Comparator High Threshold\n\nYou can [`read`](crate::Reg::read) this register and get [`adclo::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`adclo::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@adclo`] module"]
+#[doc = "ADCLO (rw) register accessor: ADC Window Comparator Low Threshold Register\n\nYou can [`read`](crate::Reg::read) this register and get [`adclo::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`adclo::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@adclo`] module"]
 #[doc(alias = "ADCLO")]
 pub type Adclo = crate::Reg<adclo::AdcloSpec>;
-#[doc = "ADC Window Comparator High Threshold"]
+#[doc = "ADC Window Comparator Low Threshold Register"]
 pub mod adclo;
-#[doc = "ADCHI (rw) register accessor: ADC Window Comparator High Threshold\n\nYou can [`read`](crate::Reg::read) this register and get [`adchi::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`adchi::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@adchi`] module"]
+#[doc = "ADCHI (rw) register accessor: ADC Window Comparator High Threshold Register\n\nYou can [`read`](crate::Reg::read) this register and get [`adchi::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`adchi::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@adchi`] module"]
 #[doc(alias = "ADCHI")]
 pub type Adchi = crate::Reg<adchi::AdchiSpec>;
-#[doc = "ADC Window Comparator High Threshold"]
+#[doc = "ADC Window Comparator High Threshold Register"]
 pub mod adchi;
 #[doc = "ADCMCTL0 (rw) register accessor: ADC Memory Control 0\n\nYou can [`read`](crate::Reg::read) this register and get [`adcmctl0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`adcmctl0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@adcmctl0`] module"]
 #[doc(alias = "ADCMCTL0")]

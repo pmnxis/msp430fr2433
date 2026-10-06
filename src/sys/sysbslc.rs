@@ -2,18 +2,168 @@
 pub type R = crate::R<SysbslcSpec>;
 #[doc = "Register `SYSBSLC` writer"]
 pub type W = crate::W<SysbslcSpec>;
+#[doc = "SYS - RAM assigned to BSL\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Sysbslr {
+    #[doc = "0: No RAM assigned to BSL area"]
+    Noram = 0,
+    #[doc = "1: Lowest 16 bytes of RAM assigned to BSL"]
+    Ram = 1,
+}
+impl From<Sysbslr> for bool {
+    #[inline(always)]
+    fn from(variant: Sysbslr) -> Self {
+        variant as u8 != 0
+    }
+}
 #[doc = "Field `SYSBSLR` reader - SYS - RAM assigned to BSL"]
-pub type SysbslrR = crate::BitReader;
+pub type SysbslrR = crate::BitReader<Sysbslr>;
+impl SysbslrR {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub const fn variant(&self) -> Sysbslr {
+        match self.bits {
+            false => Sysbslr::Noram,
+            true => Sysbslr::Ram,
+        }
+    }
+    #[doc = "No RAM assigned to BSL area"]
+    #[inline(always)]
+    pub fn is_noram(&self) -> bool {
+        *self == Sysbslr::Noram
+    }
+    #[doc = "Lowest 16 bytes of RAM assigned to BSL"]
+    #[inline(always)]
+    pub fn is_ram(&self) -> bool {
+        *self == Sysbslr::Ram
+    }
+}
 #[doc = "Field `SYSBSLR` writer - SYS - RAM assigned to BSL"]
-pub type SysbslrW<'a, REG> = crate::BitWriter<'a, REG>;
+pub type SysbslrW<'a, REG> = crate::BitWriter<'a, REG, Sysbslr>;
+impl<'a, REG> SysbslrW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "No RAM assigned to BSL area"]
+    #[inline(always)]
+    pub fn noram(self) -> &'a mut crate::W<REG> {
+        self.variant(Sysbslr::Noram)
+    }
+    #[doc = "Lowest 16 bytes of RAM assigned to BSL"]
+    #[inline(always)]
+    pub fn ram(self) -> &'a mut crate::W<REG> {
+        self.variant(Sysbslr::Ram)
+    }
+}
+#[doc = "SYS - BSL Memory disabled\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Sysbsloff {
+    #[doc = "0: BSL memory is addressed when this area is read."]
+    On = 0,
+    #[doc = "1: BSL memory behaves like vacant memory. Reads cause 3FFFh to be read. Fetches cause JMP $ to be executed."]
+    Off = 1,
+}
+impl From<Sysbsloff> for bool {
+    #[inline(always)]
+    fn from(variant: Sysbsloff) -> Self {
+        variant as u8 != 0
+    }
+}
 #[doc = "Field `SYSBSLOFF` reader - SYS - BSL Memory disabled"]
-pub type SysbsloffR = crate::BitReader;
+pub type SysbsloffR = crate::BitReader<Sysbsloff>;
+impl SysbsloffR {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub const fn variant(&self) -> Sysbsloff {
+        match self.bits {
+            false => Sysbsloff::On,
+            true => Sysbsloff::Off,
+        }
+    }
+    #[doc = "BSL memory is addressed when this area is read."]
+    #[inline(always)]
+    pub fn is_on(&self) -> bool {
+        *self == Sysbsloff::On
+    }
+    #[doc = "BSL memory behaves like vacant memory. Reads cause 3FFFh to be read. Fetches cause JMP $ to be executed."]
+    #[inline(always)]
+    pub fn is_off(&self) -> bool {
+        *self == Sysbsloff::Off
+    }
+}
 #[doc = "Field `SYSBSLOFF` writer - SYS - BSL Memory disabled"]
-pub type SysbsloffW<'a, REG> = crate::BitWriter<'a, REG>;
+pub type SysbsloffW<'a, REG> = crate::BitWriter<'a, REG, Sysbsloff>;
+impl<'a, REG> SysbsloffW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "BSL memory is addressed when this area is read."]
+    #[inline(always)]
+    pub fn on(self) -> &'a mut crate::W<REG> {
+        self.variant(Sysbsloff::On)
+    }
+    #[doc = "BSL memory behaves like vacant memory. Reads cause 3FFFh to be read. Fetches cause JMP $ to be executed."]
+    #[inline(always)]
+    pub fn off(self) -> &'a mut crate::W<REG> {
+        self.variant(Sysbsloff::Off)
+    }
+}
+#[doc = "SYS - BSL Memory protection enabled\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Sysbslpe {
+    #[doc = "0: Area not protected. Read, program, and erase of BSL memory is possible."]
+    Notprot = 0,
+    #[doc = "1: Area protected"]
+    Prot = 1,
+}
+impl From<Sysbslpe> for bool {
+    #[inline(always)]
+    fn from(variant: Sysbslpe) -> Self {
+        variant as u8 != 0
+    }
+}
 #[doc = "Field `SYSBSLPE` reader - SYS - BSL Memory protection enabled"]
-pub type SysbslpeR = crate::BitReader;
+pub type SysbslpeR = crate::BitReader<Sysbslpe>;
+impl SysbslpeR {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub const fn variant(&self) -> Sysbslpe {
+        match self.bits {
+            false => Sysbslpe::Notprot,
+            true => Sysbslpe::Prot,
+        }
+    }
+    #[doc = "Area not protected. Read, program, and erase of BSL memory is possible."]
+    #[inline(always)]
+    pub fn is_notprot(&self) -> bool {
+        *self == Sysbslpe::Notprot
+    }
+    #[doc = "Area protected"]
+    #[inline(always)]
+    pub fn is_prot(&self) -> bool {
+        *self == Sysbslpe::Prot
+    }
+}
 #[doc = "Field `SYSBSLPE` writer - SYS - BSL Memory protection enabled"]
-pub type SysbslpeW<'a, REG> = crate::BitWriter<'a, REG>;
+pub type SysbslpeW<'a, REG> = crate::BitWriter<'a, REG, Sysbslpe>;
+impl<'a, REG> SysbslpeW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Area not protected. Read, program, and erase of BSL memory is possible."]
+    #[inline(always)]
+    pub fn notprot(self) -> &'a mut crate::W<REG> {
+        self.variant(Sysbslpe::Notprot)
+    }
+    #[doc = "Area protected"]
+    #[inline(always)]
+    pub fn prot(self) -> &'a mut crate::W<REG> {
+        self.variant(Sysbslpe::Prot)
+    }
+}
 impl R {
     #[doc = "Bit 2 - SYS - RAM assigned to BSL"]
     #[inline(always)]

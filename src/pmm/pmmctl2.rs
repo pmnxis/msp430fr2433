@@ -15,17 +15,12 @@ pub type TsensorenR = crate::BitReader;
 #[doc = "Field `TSENSOREN` writer - Temperature Sensor Enable"]
 pub type TsensorenW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Internal reference voltage level select. 00b = 1.5V, 01b = 2.0V, 10b = 2.5V\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Refvsel {
-    #[doc = "0: 00b = 1.5V"]
-    Refvsel0 = 0,
-    #[doc = "1: 01b = 2.0V"]
-    Refvsel1 = 1,
-    #[doc = "2: 10b = 2.5V"]
-    Refvsel2 = 2,
-    #[doc = "3: 11b = Reserved"]
-    Refvsel3 = 3,
+    #[doc = "0: 1.5 V"]
+    V1_5 = 0,
 }
 impl From<Refvsel> for u8 {
     #[inline(always)]
@@ -42,62 +37,29 @@ pub type RefvselR = crate::FieldReader<Refvsel>;
 impl RefvselR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Refvsel {
+    pub const fn variant(&self) -> Option<Refvsel> {
         match self.bits {
-            0 => Refvsel::Refvsel0,
-            1 => Refvsel::Refvsel1,
-            2 => Refvsel::Refvsel2,
-            3 => Refvsel::Refvsel3,
-            _ => unreachable!(),
+            0 => Some(Refvsel::V1_5),
+            _ => None,
         }
     }
-    #[doc = "00b = 1.5V"]
+    #[doc = "1.5 V"]
     #[inline(always)]
-    pub fn is_refvsel_0(&self) -> bool {
-        *self == Refvsel::Refvsel0
-    }
-    #[doc = "01b = 2.0V"]
-    #[inline(always)]
-    pub fn is_refvsel_1(&self) -> bool {
-        *self == Refvsel::Refvsel1
-    }
-    #[doc = "10b = 2.5V"]
-    #[inline(always)]
-    pub fn is_refvsel_2(&self) -> bool {
-        *self == Refvsel::Refvsel2
-    }
-    #[doc = "11b = Reserved"]
-    #[inline(always)]
-    pub fn is_refvsel_3(&self) -> bool {
-        *self == Refvsel::Refvsel3
+    pub fn is_v1_5(&self) -> bool {
+        *self == Refvsel::V1_5
     }
 }
 #[doc = "Field `REFVSEL` writer - Internal reference voltage level select. 00b = 1.5V, 01b = 2.0V, 10b = 2.5V"]
-pub type RefvselW<'a, REG> = crate::FieldWriter<'a, REG, 2, Refvsel, crate::Safe>;
+pub type RefvselW<'a, REG> = crate::FieldWriter<'a, REG, 2, Refvsel>;
 impl<'a, REG> RefvselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "00b = 1.5V"]
+    #[doc = "1.5 V"]
     #[inline(always)]
-    pub fn refvsel_0(self) -> &'a mut crate::W<REG> {
-        self.variant(Refvsel::Refvsel0)
-    }
-    #[doc = "01b = 2.0V"]
-    #[inline(always)]
-    pub fn refvsel_1(self) -> &'a mut crate::W<REG> {
-        self.variant(Refvsel::Refvsel1)
-    }
-    #[doc = "10b = 2.5V"]
-    #[inline(always)]
-    pub fn refvsel_2(self) -> &'a mut crate::W<REG> {
-        self.variant(Refvsel::Refvsel2)
-    }
-    #[doc = "11b = Reserved"]
-    #[inline(always)]
-    pub fn refvsel_3(self) -> &'a mut crate::W<REG> {
-        self.variant(Refvsel::Refvsel3)
+    pub fn v1_5(self) -> &'a mut crate::W<REG> {
+        self.variant(Refvsel::V1_5)
     }
 }
 #[doc = "Field `REFGEN` reader - Reference generator trigger. If written with a 1, the generation of the variable reference voltage is started. When the reference voltage request is set, this bit is cleared by hardware or writing 0."]

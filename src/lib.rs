@@ -122,6 +122,7 @@ pub static __INTERRUPTS: [Vector; 59] = [
     Vector { _handler: SYSNMI },
 ];
 #[doc = r"Enumeration of all the interrupts. This enum is seldom used in application or library crates. It is present primarily for documenting the device's implemented interrupts."]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Copy, Clone, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum Interrupt {
@@ -162,33 +163,6 @@ pub enum Interrupt {
     #[doc = "58 - 0xFFFC System Non-maskable"]
     SYSNMI = 58,
 }
-#[doc = "Port A"]
-pub type Pa = crate::Periph<pa::RegisterBlock, 0x0200>;
-impl core::fmt::Debug for Pa {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Pa").finish()
-    }
-}
-#[doc = "Port A"]
-pub mod pa;
-#[doc = "Port 1"]
-pub type P1 = crate::Periph<p1::RegisterBlock, 0x0200>;
-impl core::fmt::Debug for P1 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("P1").finish()
-    }
-}
-#[doc = "Port 1"]
-pub mod p1;
-#[doc = "Port 2"]
-pub type P2 = crate::Periph<p2::RegisterBlock, 0x0200>;
-impl core::fmt::Debug for P2 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("P2").finish()
-    }
-}
-#[doc = "Port 2"]
-pub mod p2;
 #[doc = "Port 3"]
 pub type P3 = crate::Periph<p3::RegisterBlock, 0x0220>;
 impl core::fmt::Debug for P3 {
@@ -198,60 +172,33 @@ impl core::fmt::Debug for P3 {
 }
 #[doc = "Port 3"]
 pub mod p3;
-#[doc = "USCI_A0 UART Mode"]
-pub type UsciA0UartMode = crate::Periph<usci_a0_uart_mode::RegisterBlock, 0x0500>;
-impl core::fmt::Debug for UsciA0UartMode {
+#[doc = "eUSCI_A0"]
+pub type EUsciA0 = crate::Periph<e_usci_a0::RegisterBlock, 0x0500>;
+impl core::fmt::Debug for EUsciA0 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("UsciA0UartMode").finish()
+        f.debug_struct("EUsciA0").finish()
     }
 }
-#[doc = "USCI_A0 UART Mode"]
-pub mod usci_a0_uart_mode;
-#[doc = "USCI_A0 SPI Mode"]
-pub type UsciA0SpiMode = crate::Periph<usci_a0_spi_mode::RegisterBlock, 0x0500>;
-impl core::fmt::Debug for UsciA0SpiMode {
+#[doc = "eUSCI_A0"]
+pub mod e_usci_a0;
+#[doc = "eUSCI_A1"]
+pub type EUsciA1 = crate::Periph<e_usci_a1::RegisterBlock, 0x0520>;
+impl core::fmt::Debug for EUsciA1 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("UsciA0SpiMode").finish()
+        f.debug_struct("EUsciA1").finish()
     }
 }
-#[doc = "USCI_A0 SPI Mode"]
-pub mod usci_a0_spi_mode;
-#[doc = "USCI_A1 UART Mode"]
-pub type UsciA1UartMode = crate::Periph<usci_a1_uart_mode::RegisterBlock, 0x0520>;
-impl core::fmt::Debug for UsciA1UartMode {
+#[doc = "eUSCI_A1"]
+pub mod e_usci_a1;
+#[doc = "eUSCI_B0"]
+pub type EUsciB0 = crate::Periph<e_usci_b0::RegisterBlock, 0x0540>;
+impl core::fmt::Debug for EUsciB0 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("UsciA1UartMode").finish()
+        f.debug_struct("EUsciB0").finish()
     }
 }
-#[doc = "USCI_A1 UART Mode"]
-pub mod usci_a1_uart_mode;
-#[doc = "USCI_A1 SPI Mode"]
-pub type UsciA1SpiMode = crate::Periph<usci_a1_spi_mode::RegisterBlock, 0x0520>;
-impl core::fmt::Debug for UsciA1SpiMode {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("UsciA1SpiMode").finish()
-    }
-}
-#[doc = "USCI_A1 SPI Mode"]
-pub mod usci_a1_spi_mode;
-#[doc = "USCI_B0 I2C Mode"]
-pub type UsciB0I2cMode = crate::Periph<usci_b0_i2c_mode::RegisterBlock, 0x0540>;
-impl core::fmt::Debug for UsciB0I2cMode {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("UsciB0I2cMode").finish()
-    }
-}
-#[doc = "USCI_B0 I2C Mode"]
-pub mod usci_b0_i2c_mode;
-#[doc = "USCI_B0 SPI Mode"]
-pub type UsciB0SpiMode = crate::Periph<usci_b0_spi_mode::RegisterBlock, 0x0540>;
-impl core::fmt::Debug for UsciB0SpiMode {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("UsciB0SpiMode").finish()
-    }
-}
-#[doc = "USCI_B0 SPI Mode"]
-pub mod usci_b0_spi_mode;
+#[doc = "eUSCI_B0"]
+pub mod e_usci_b0;
 #[doc = "SFR Special Function Registers"]
 pub type Sfr = crate::Periph<sfr::RegisterBlock, 0x0100>;
 impl core::fmt::Debug for Sfr {
@@ -288,105 +235,114 @@ impl core::fmt::Debug for Cs {
 }
 #[doc = "CS Clock System"]
 pub mod cs;
-#[doc = "FRAM"]
-pub type Fram = crate::Periph<fram::RegisterBlock, 0x01a0>;
-impl core::fmt::Debug for Fram {
+#[doc = "FRCTL"]
+pub type Frctl = crate::Periph<frctl::RegisterBlock, 0x01a0>;
+impl core::fmt::Debug for Frctl {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Fram").finish()
+        f.debug_struct("Frctl").finish()
     }
 }
-#[doc = "FRAM"]
-pub mod fram;
-#[doc = "CRC16"]
-pub type Crc16 = crate::Periph<crc16::RegisterBlock, 0x01c0>;
-impl core::fmt::Debug for Crc16 {
+#[doc = "FRCTL"]
+pub mod frctl;
+#[doc = "CRC"]
+pub type Crc = crate::Periph<crc::RegisterBlock, 0x01c0>;
+impl core::fmt::Debug for Crc {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Crc16").finish()
+        f.debug_struct("Crc").finish()
     }
 }
-#[doc = "CRC16"]
-pub mod crc16;
-#[doc = "Watchdog Timer"]
-pub type WatchdogTimer = crate::Periph<watchdog_timer::RegisterBlock, 0x01cc>;
-impl core::fmt::Debug for WatchdogTimer {
+#[doc = "CRC"]
+pub mod crc;
+#[doc = "WDT_A"]
+pub type WdtA = crate::Periph<wdt_a::RegisterBlock, 0x01cc>;
+impl core::fmt::Debug for WdtA {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("WatchdogTimer").finish()
+        f.debug_struct("WdtA").finish()
     }
 }
-#[doc = "Watchdog Timer"]
-pub mod watchdog_timer;
-#[doc = "Real-Time Clock"]
-pub type RealTimeClock = crate::Periph<real_time_clock::RegisterBlock, 0x0300>;
-impl core::fmt::Debug for RealTimeClock {
+#[doc = "WDT_A"]
+pub mod wdt_a;
+#[doc = "Port 1"]
+pub type P1 = crate::Periph<p1::RegisterBlock, 0x0200>;
+impl core::fmt::Debug for P1 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("RealTimeClock").finish()
+        f.debug_struct("P1").finish()
     }
 }
-#[doc = "Real-Time Clock"]
-pub mod real_time_clock;
-#[doc = "Timer0_A3"]
-pub type Timer0A3 = crate::Periph<timer_0_a3::RegisterBlock, 0x0380>;
-impl core::fmt::Debug for Timer0A3 {
+#[doc = "Port 1"]
+pub mod p1;
+#[doc = "Port 2"]
+pub type P2 = crate::Periph<p2::RegisterBlock, 0x0200>;
+impl core::fmt::Debug for P2 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Timer0A3").finish()
+        f.debug_struct("P2").finish()
     }
 }
-#[doc = "Timer0_A3"]
-pub mod timer_0_a3;
-#[doc = "Timer1_A3"]
-pub type Timer1A3 = crate::Periph<timer_1_a3::RegisterBlock, 0x03c0>;
-impl core::fmt::Debug for Timer1A3 {
+#[doc = "Port 2"]
+pub mod p2;
+#[doc = "RTC"]
+pub type Rtc = crate::Periph<rtc::RegisterBlock, 0x0300>;
+impl core::fmt::Debug for Rtc {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Timer1A3").finish()
+        f.debug_struct("Rtc").finish()
     }
 }
-#[doc = "Timer1_A3"]
-pub mod timer_1_a3;
-#[doc = "Timer2_A2"]
-pub type Timer2A2 = crate::Periph<timer_2_a2::RegisterBlock, 0x0400>;
-impl core::fmt::Debug for Timer2A2 {
+#[doc = "RTC"]
+pub mod rtc;
+#[doc = "TA0"]
+pub type Ta0 = crate::Periph<ta0::RegisterBlock, 0x0380>;
+impl core::fmt::Debug for Ta0 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Timer2A2").finish()
+        f.debug_struct("Ta0").finish()
     }
 }
-#[doc = "Timer2_A2"]
-pub mod timer_2_a2;
-#[doc = "Timer3_A2"]
-pub type Timer3A2 = crate::Periph<timer_3_a2::RegisterBlock, 0x0440>;
-impl core::fmt::Debug for Timer3A2 {
+#[doc = "TA0"]
+pub mod ta0;
+#[doc = "TA1"]
+pub type Ta1 = crate::Periph<ta1::RegisterBlock, 0x03c0>;
+impl core::fmt::Debug for Ta1 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Timer3A2").finish()
+        f.debug_struct("Ta1").finish()
     }
 }
-#[doc = "Timer3_A2"]
-pub mod timer_3_a2;
-#[doc = "MPY 16 Multiplier 16 Bit Mode"]
-pub type Mpy16 = crate::Periph<mpy_16::RegisterBlock, 0x04c0>;
-impl core::fmt::Debug for Mpy16 {
+#[doc = "TA1"]
+pub mod ta1;
+#[doc = "TA2"]
+pub type Ta2 = crate::Periph<ta2::RegisterBlock, 0x0400>;
+impl core::fmt::Debug for Ta2 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Mpy16").finish()
+        f.debug_struct("Ta2").finish()
     }
 }
-#[doc = "MPY 16 Multiplier 16 Bit Mode"]
-pub mod mpy_16;
-#[doc = "MPY 32 Multiplier 32 Bit Mode"]
-pub type Mpy32 = crate::Periph<mpy_32::RegisterBlock, 0x04d0>;
+#[doc = "TA2"]
+pub mod ta2;
+#[doc = "TA3"]
+pub type Ta3 = crate::Periph<ta3::RegisterBlock, 0x0440>;
+impl core::fmt::Debug for Ta3 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Ta3").finish()
+    }
+}
+#[doc = "TA3"]
+pub mod ta3;
+#[doc = "MPY32"]
+pub type Mpy32 = crate::Periph<mpy32::RegisterBlock, 0x04c0>;
 impl core::fmt::Debug for Mpy32 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("Mpy32").finish()
     }
 }
-#[doc = "MPY 32 Multiplier 32 Bit Mode"]
-pub mod mpy_32;
-#[doc = "Backup Memory"]
-pub type BackupMemory = crate::Periph<backup_memory::RegisterBlock, 0x0660>;
-impl core::fmt::Debug for BackupMemory {
+#[doc = "MPY32"]
+pub mod mpy32;
+#[doc = "BAKMEM"]
+pub type Bakmem = crate::Periph<bakmem::RegisterBlock, 0x0660>;
+impl core::fmt::Debug for Bakmem {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("BackupMemory").finish()
+        f.debug_struct("Bakmem").finish()
     }
 }
-#[doc = "Backup Memory"]
-pub mod backup_memory;
+#[doc = "BAKMEM"]
+pub mod bakmem;
 #[doc = "ADC"]
 pub type Adc = crate::Periph<adc::RegisterBlock, 0x0700>;
 impl core::fmt::Debug for Adc {
@@ -396,31 +352,28 @@ impl core::fmt::Debug for Adc {
 }
 #[doc = "ADC"]
 pub mod adc;
+#[doc = "Device descriptors (TLV)"]
+pub type Tlv = crate::Periph<tlv::RegisterBlock, 0x1a00>;
+impl core::fmt::Debug for Tlv {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Tlv").finish()
+    }
+}
+#[doc = "Device descriptors (TLV)"]
+pub mod tlv;
 #[no_mangle]
 static mut DEVICE_PERIPHERALS: bool = false;
 #[doc = r" All the peripherals."]
 #[allow(non_snake_case)]
 pub struct Peripherals {
-    #[doc = "PA"]
-    pub pa: Pa,
-    #[doc = "P1"]
-    pub p1: P1,
-    #[doc = "P2"]
-    pub p2: P2,
     #[doc = "P3"]
     pub p3: P3,
-    #[doc = "USCI_A0_UART_MODE"]
-    pub usci_a0_uart_mode: UsciA0UartMode,
-    #[doc = "USCI_A0_SPI_MODE"]
-    pub usci_a0_spi_mode: UsciA0SpiMode,
-    #[doc = "USCI_A1_UART_MODE"]
-    pub usci_a1_uart_mode: UsciA1UartMode,
-    #[doc = "USCI_A1_SPI_MODE"]
-    pub usci_a1_spi_mode: UsciA1SpiMode,
-    #[doc = "USCI_B0_I2C_MODE"]
-    pub usci_b0_i2c_mode: UsciB0I2cMode,
-    #[doc = "USCI_B0_SPI_MODE"]
-    pub usci_b0_spi_mode: UsciB0SpiMode,
+    #[doc = "E_USCI_A0"]
+    pub e_usci_a0: EUsciA0,
+    #[doc = "E_USCI_A1"]
+    pub e_usci_a1: EUsciA1,
+    #[doc = "E_USCI_B0"]
+    pub e_usci_b0: EUsciB0,
     #[doc = "SFR"]
     pub sfr: Sfr,
     #[doc = "PMM"]
@@ -429,30 +382,34 @@ pub struct Peripherals {
     pub sys: Sys,
     #[doc = "CS"]
     pub cs: Cs,
-    #[doc = "FRAM"]
-    pub fram: Fram,
-    #[doc = "CRC16"]
-    pub crc16: Crc16,
-    #[doc = "WATCHDOG_TIMER"]
-    pub watchdog_timer: WatchdogTimer,
-    #[doc = "REAL_TIME_CLOCK"]
-    pub real_time_clock: RealTimeClock,
-    #[doc = "TIMER_0_A3"]
-    pub timer_0_a3: Timer0A3,
-    #[doc = "TIMER_1_A3"]
-    pub timer_1_a3: Timer1A3,
-    #[doc = "TIMER_2_A2"]
-    pub timer_2_a2: Timer2A2,
-    #[doc = "TIMER_3_A2"]
-    pub timer_3_a2: Timer3A2,
-    #[doc = "MPY_16"]
-    pub mpy_16: Mpy16,
-    #[doc = "MPY_32"]
-    pub mpy_32: Mpy32,
-    #[doc = "BACKUP_MEMORY"]
-    pub backup_memory: BackupMemory,
+    #[doc = "FRCTL"]
+    pub frctl: Frctl,
+    #[doc = "CRC"]
+    pub crc: Crc,
+    #[doc = "WDT_A"]
+    pub wdt_a: WdtA,
+    #[doc = "P1"]
+    pub p1: P1,
+    #[doc = "P2"]
+    pub p2: P2,
+    #[doc = "RTC"]
+    pub rtc: Rtc,
+    #[doc = "TA0"]
+    pub ta0: Ta0,
+    #[doc = "TA1"]
+    pub ta1: Ta1,
+    #[doc = "TA2"]
+    pub ta2: Ta2,
+    #[doc = "TA3"]
+    pub ta3: Ta3,
+    #[doc = "MPY32"]
+    pub mpy32: Mpy32,
+    #[doc = "BAKMEM"]
+    pub bakmem: Bakmem,
     #[doc = "ADC"]
     pub adc: Adc,
+    #[doc = "TLV"]
+    pub tlv: Tlv,
 }
 impl Peripherals {
     #[doc = r" Returns all the peripherals *once*."]
@@ -475,32 +432,28 @@ impl Peripherals {
     pub unsafe fn steal() -> Self {
         DEVICE_PERIPHERALS = true;
         Peripherals {
-            pa: Pa::steal(),
-            p1: P1::steal(),
-            p2: P2::steal(),
             p3: P3::steal(),
-            usci_a0_uart_mode: UsciA0UartMode::steal(),
-            usci_a0_spi_mode: UsciA0SpiMode::steal(),
-            usci_a1_uart_mode: UsciA1UartMode::steal(),
-            usci_a1_spi_mode: UsciA1SpiMode::steal(),
-            usci_b0_i2c_mode: UsciB0I2cMode::steal(),
-            usci_b0_spi_mode: UsciB0SpiMode::steal(),
+            e_usci_a0: EUsciA0::steal(),
+            e_usci_a1: EUsciA1::steal(),
+            e_usci_b0: EUsciB0::steal(),
             sfr: Sfr::steal(),
             pmm: Pmm::steal(),
             sys: Sys::steal(),
             cs: Cs::steal(),
-            fram: Fram::steal(),
-            crc16: Crc16::steal(),
-            watchdog_timer: WatchdogTimer::steal(),
-            real_time_clock: RealTimeClock::steal(),
-            timer_0_a3: Timer0A3::steal(),
-            timer_1_a3: Timer1A3::steal(),
-            timer_2_a2: Timer2A2::steal(),
-            timer_3_a2: Timer3A2::steal(),
-            mpy_16: Mpy16::steal(),
-            mpy_32: Mpy32::steal(),
-            backup_memory: BackupMemory::steal(),
+            frctl: Frctl::steal(),
+            crc: Crc::steal(),
+            wdt_a: WdtA::steal(),
+            p1: P1::steal(),
+            p2: P2::steal(),
+            rtc: Rtc::steal(),
+            ta0: Ta0::steal(),
+            ta1: Ta1::steal(),
+            ta2: Ta2::steal(),
+            ta3: Ta3::steal(),
+            mpy32: Mpy32::steal(),
+            bakmem: Bakmem::steal(),
             adc: Adc::steal(),
+            tlv: Tlv::steal(),
         }
     }
 }

@@ -6,10 +6,60 @@ pub type W = crate::W<Sfrifg1Spec>;
 pub type WdtifgR = crate::BitReader;
 #[doc = "Field `WDTIFG` writer - WDT Interrupt Flag"]
 pub type WdtifgW<'a, REG> = crate::BitWriter<'a, REG>;
+#[doc = "Osc Fault Flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Ofifg {
+    #[doc = "0: No interrupt pending"]
+    Ofifg0 = 0,
+    #[doc = "1: Interrupt pending"]
+    Ofifg1 = 1,
+}
+impl From<Ofifg> for bool {
+    #[inline(always)]
+    fn from(variant: Ofifg) -> Self {
+        variant as u8 != 0
+    }
+}
 #[doc = "Field `OFIFG` reader - Osc Fault Flag"]
-pub type OfifgR = crate::BitReader;
+pub type OfifgR = crate::BitReader<Ofifg>;
+impl OfifgR {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub const fn variant(&self) -> Ofifg {
+        match self.bits {
+            false => Ofifg::Ofifg0,
+            true => Ofifg::Ofifg1,
+        }
+    }
+    #[doc = "No interrupt pending"]
+    #[inline(always)]
+    pub fn is_ofifg_0(&self) -> bool {
+        *self == Ofifg::Ofifg0
+    }
+    #[doc = "Interrupt pending"]
+    #[inline(always)]
+    pub fn is_ofifg_1(&self) -> bool {
+        *self == Ofifg::Ofifg1
+    }
+}
 #[doc = "Field `OFIFG` writer - Osc Fault Flag"]
-pub type OfifgW<'a, REG> = crate::BitWriter<'a, REG>;
+pub type OfifgW<'a, REG> = crate::BitWriter<'a, REG, Ofifg>;
+impl<'a, REG> OfifgW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "No interrupt pending"]
+    #[inline(always)]
+    pub fn ofifg_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Ofifg::Ofifg0)
+    }
+    #[doc = "Interrupt pending"]
+    #[inline(always)]
+    pub fn ofifg_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Ofifg::Ofifg1)
+    }
+}
 #[doc = "Field `VMAIFG` reader - Vacant Memory Interrupt Flag"]
 pub type VmaifgR = crate::BitReader;
 #[doc = "Field `VMAIFG` writer - Vacant Memory Interrupt Flag"]

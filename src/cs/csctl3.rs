@@ -3,24 +3,25 @@ pub type R = crate::R<Csctl3Spec>;
 #[doc = "Register `CSCTL3` writer"]
 pub type W = crate::W<Csctl3Spec>;
 #[doc = "Reference Divider Bit : 0\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Fllrefdiv {
-    #[doc = "0: Reference Divider: f(LFCLK)/1"]
-    Fllrefdiv0 = 0,
-    #[doc = "1: Reference Divider: f(LFCLK)/2"]
-    Fllrefdiv1 = 1,
-    #[doc = "2: Reference Divider: f(LFCLK)/4"]
-    Fllrefdiv2 = 2,
-    #[doc = "3: Reference Divider: f(LFCLK)/8"]
-    Fllrefdiv3 = 3,
-    #[doc = "4: Reference Divider: f(LFCLK)/12"]
-    Fllrefdiv4 = 4,
-    #[doc = "5: Reference Divider: f(LFCLK)/16"]
-    Fllrefdiv5 = 5,
-    #[doc = "6: Reference Divider: f(LFCLK)/16"]
+    #[doc = "0: fFLLREFCLK / 1"]
+    _1 = 0,
+    #[doc = "1: fFLLREFCLK / 32"]
+    _32 = 1,
+    #[doc = "2: fFLLREFCLK / 64"]
+    _64 = 2,
+    #[doc = "3: fFLLREFCLK / 128"]
+    _128 = 3,
+    #[doc = "4: fFLLREFCLK / 256"]
+    _256 = 4,
+    #[doc = "5: fFLLREFCLK / 512"]
+    _512 = 5,
+    #[doc = "6: fFLLREFCLK / 640 (only available in 24MHz clock system)"]
     Fllrefdiv6 = 6,
-    #[doc = "7: Reference Divider: f(LFCLK)/16"]
+    #[doc = "7: fFLLREFCLK / 768(only available in 24MHz clock system)"]
     Fllrefdiv7 = 7,
 }
 impl From<Fllrefdiv> for u8 {
@@ -40,53 +41,53 @@ impl FllrefdivR {
     #[inline(always)]
     pub const fn variant(&self) -> Fllrefdiv {
         match self.bits {
-            0 => Fllrefdiv::Fllrefdiv0,
-            1 => Fllrefdiv::Fllrefdiv1,
-            2 => Fllrefdiv::Fllrefdiv2,
-            3 => Fllrefdiv::Fllrefdiv3,
-            4 => Fllrefdiv::Fllrefdiv4,
-            5 => Fllrefdiv::Fllrefdiv5,
+            0 => Fllrefdiv::_1,
+            1 => Fllrefdiv::_32,
+            2 => Fllrefdiv::_64,
+            3 => Fllrefdiv::_128,
+            4 => Fllrefdiv::_256,
+            5 => Fllrefdiv::_512,
             6 => Fllrefdiv::Fllrefdiv6,
             7 => Fllrefdiv::Fllrefdiv7,
             _ => unreachable!(),
         }
     }
-    #[doc = "Reference Divider: f(LFCLK)/1"]
+    #[doc = "fFLLREFCLK / 1"]
     #[inline(always)]
-    pub fn is_fllrefdiv_0(&self) -> bool {
-        *self == Fllrefdiv::Fllrefdiv0
+    pub fn is_1(&self) -> bool {
+        *self == Fllrefdiv::_1
     }
-    #[doc = "Reference Divider: f(LFCLK)/2"]
+    #[doc = "fFLLREFCLK / 32"]
     #[inline(always)]
-    pub fn is_fllrefdiv_1(&self) -> bool {
-        *self == Fllrefdiv::Fllrefdiv1
+    pub fn is_32(&self) -> bool {
+        *self == Fllrefdiv::_32
     }
-    #[doc = "Reference Divider: f(LFCLK)/4"]
+    #[doc = "fFLLREFCLK / 64"]
     #[inline(always)]
-    pub fn is_fllrefdiv_2(&self) -> bool {
-        *self == Fllrefdiv::Fllrefdiv2
+    pub fn is_64(&self) -> bool {
+        *self == Fllrefdiv::_64
     }
-    #[doc = "Reference Divider: f(LFCLK)/8"]
+    #[doc = "fFLLREFCLK / 128"]
     #[inline(always)]
-    pub fn is_fllrefdiv_3(&self) -> bool {
-        *self == Fllrefdiv::Fllrefdiv3
+    pub fn is_128(&self) -> bool {
+        *self == Fllrefdiv::_128
     }
-    #[doc = "Reference Divider: f(LFCLK)/12"]
+    #[doc = "fFLLREFCLK / 256"]
     #[inline(always)]
-    pub fn is_fllrefdiv_4(&self) -> bool {
-        *self == Fllrefdiv::Fllrefdiv4
+    pub fn is_256(&self) -> bool {
+        *self == Fllrefdiv::_256
     }
-    #[doc = "Reference Divider: f(LFCLK)/16"]
+    #[doc = "fFLLREFCLK / 512"]
     #[inline(always)]
-    pub fn is_fllrefdiv_5(&self) -> bool {
-        *self == Fllrefdiv::Fllrefdiv5
+    pub fn is_512(&self) -> bool {
+        *self == Fllrefdiv::_512
     }
-    #[doc = "Reference Divider: f(LFCLK)/16"]
+    #[doc = "fFLLREFCLK / 640 (only available in 24MHz clock system)"]
     #[inline(always)]
     pub fn is_fllrefdiv_6(&self) -> bool {
         *self == Fllrefdiv::Fllrefdiv6
     }
-    #[doc = "Reference Divider: f(LFCLK)/16"]
+    #[doc = "fFLLREFCLK / 768(only available in 24MHz clock system)"]
     #[inline(always)]
     pub fn is_fllrefdiv_7(&self) -> bool {
         *self == Fllrefdiv::Fllrefdiv7
@@ -99,48 +100,49 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "Reference Divider: f(LFCLK)/1"]
+    #[doc = "fFLLREFCLK / 1"]
     #[inline(always)]
-    pub fn fllrefdiv_0(self) -> &'a mut crate::W<REG> {
-        self.variant(Fllrefdiv::Fllrefdiv0)
+    pub fn _1(self) -> &'a mut crate::W<REG> {
+        self.variant(Fllrefdiv::_1)
     }
-    #[doc = "Reference Divider: f(LFCLK)/2"]
+    #[doc = "fFLLREFCLK / 32"]
     #[inline(always)]
-    pub fn fllrefdiv_1(self) -> &'a mut crate::W<REG> {
-        self.variant(Fllrefdiv::Fllrefdiv1)
+    pub fn _32(self) -> &'a mut crate::W<REG> {
+        self.variant(Fllrefdiv::_32)
     }
-    #[doc = "Reference Divider: f(LFCLK)/4"]
+    #[doc = "fFLLREFCLK / 64"]
     #[inline(always)]
-    pub fn fllrefdiv_2(self) -> &'a mut crate::W<REG> {
-        self.variant(Fllrefdiv::Fllrefdiv2)
+    pub fn _64(self) -> &'a mut crate::W<REG> {
+        self.variant(Fllrefdiv::_64)
     }
-    #[doc = "Reference Divider: f(LFCLK)/8"]
+    #[doc = "fFLLREFCLK / 128"]
     #[inline(always)]
-    pub fn fllrefdiv_3(self) -> &'a mut crate::W<REG> {
-        self.variant(Fllrefdiv::Fllrefdiv3)
+    pub fn _128(self) -> &'a mut crate::W<REG> {
+        self.variant(Fllrefdiv::_128)
     }
-    #[doc = "Reference Divider: f(LFCLK)/12"]
+    #[doc = "fFLLREFCLK / 256"]
     #[inline(always)]
-    pub fn fllrefdiv_4(self) -> &'a mut crate::W<REG> {
-        self.variant(Fllrefdiv::Fllrefdiv4)
+    pub fn _256(self) -> &'a mut crate::W<REG> {
+        self.variant(Fllrefdiv::_256)
     }
-    #[doc = "Reference Divider: f(LFCLK)/16"]
+    #[doc = "fFLLREFCLK / 512"]
     #[inline(always)]
-    pub fn fllrefdiv_5(self) -> &'a mut crate::W<REG> {
-        self.variant(Fllrefdiv::Fllrefdiv5)
+    pub fn _512(self) -> &'a mut crate::W<REG> {
+        self.variant(Fllrefdiv::_512)
     }
-    #[doc = "Reference Divider: f(LFCLK)/16"]
+    #[doc = "fFLLREFCLK / 640 (only available in 24MHz clock system)"]
     #[inline(always)]
     pub fn fllrefdiv_6(self) -> &'a mut crate::W<REG> {
         self.variant(Fllrefdiv::Fllrefdiv6)
     }
-    #[doc = "Reference Divider: f(LFCLK)/16"]
+    #[doc = "fFLLREFCLK / 768(only available in 24MHz clock system)"]
     #[inline(always)]
     pub fn fllrefdiv_7(self) -> &'a mut crate::W<REG> {
         self.variant(Fllrefdiv::Fllrefdiv7)
     }
 }
 #[doc = "FLL Reference Clock Select Bit : 0\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Selref {
@@ -148,6 +150,10 @@ pub enum Selref {
     Xt1clk = 0,
     #[doc = "1: REFOCLK"]
     Refoclk = 1,
+    #[doc = "2: Reserved"]
+    Selref2 = 2,
+    #[doc = "3: Reserved"]
+    Selref3 = 3,
 }
 impl From<Selref> for u8 {
     #[inline(always)]
@@ -164,11 +170,13 @@ pub type SelrefR = crate::FieldReader<Selref>;
 impl SelrefR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<Selref> {
+    pub const fn variant(&self) -> Selref {
         match self.bits {
-            0 => Some(Selref::Xt1clk),
-            1 => Some(Selref::Refoclk),
-            _ => None,
+            0 => Selref::Xt1clk,
+            1 => Selref::Refoclk,
+            2 => Selref::Selref2,
+            3 => Selref::Selref3,
+            _ => unreachable!(),
         }
     }
     #[doc = "XT1CLK"]
@@ -181,9 +189,19 @@ impl SelrefR {
     pub fn is_refoclk(&self) -> bool {
         *self == Selref::Refoclk
     }
+    #[doc = "Reserved"]
+    #[inline(always)]
+    pub fn is_selref_2(&self) -> bool {
+        *self == Selref::Selref2
+    }
+    #[doc = "Reserved"]
+    #[inline(always)]
+    pub fn is_selref_3(&self) -> bool {
+        *self == Selref::Selref3
+    }
 }
 #[doc = "Field `SELREF` writer - FLL Reference Clock Select Bit : 0"]
-pub type SelrefW<'a, REG> = crate::FieldWriter<'a, REG, 2, Selref>;
+pub type SelrefW<'a, REG> = crate::FieldWriter<'a, REG, 2, Selref, crate::Safe>;
 impl<'a, REG> SelrefW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -198,6 +216,16 @@ where
     #[inline(always)]
     pub fn refoclk(self) -> &'a mut crate::W<REG> {
         self.variant(Selref::Refoclk)
+    }
+    #[doc = "Reserved"]
+    #[inline(always)]
+    pub fn selref_2(self) -> &'a mut crate::W<REG> {
+        self.variant(Selref::Selref2)
+    }
+    #[doc = "Reserved"]
+    #[inline(always)]
+    pub fn selref_3(self) -> &'a mut crate::W<REG> {
+        self.variant(Selref::Selref3)
     }
 }
 impl R {
