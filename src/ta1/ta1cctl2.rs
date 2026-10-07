@@ -169,9 +169,9 @@ pub type CapW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type ScciR = crate::BitReader;
 #[doc = "Field `SCCI` writer - Latched capture signal (read)"]
 pub type ScciW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `SCS` reader - Capture sychronize"]
+#[doc = "Field `SCS` reader - Capture synchronize"]
 pub type ScsR = crate::BitReader;
-#[doc = "Field `SCS` writer - Capture sychronize"]
+#[doc = "Field `SCS` writer - Capture synchronize"]
 pub type ScsW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Capture input select 1\n\nValue on reset: 0"]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
@@ -388,7 +388,7 @@ impl R {
     pub fn scci(&self) -> ScciR {
         ScciR::new(((self.bits >> 10) & 1) != 0)
     }
-    #[doc = "Bit 11 - Capture sychronize"]
+    #[doc = "Bit 11 - Capture synchronize"]
     #[inline(always)]
     pub fn scs(&self) -> ScsR {
         ScsR::new(((self.bits >> 11) & 1) != 0)
@@ -445,7 +445,7 @@ impl W {
     pub fn scci(&mut self) -> ScciW<'_, Ta1cctl2Spec> {
         ScciW::new(self, 10)
     }
-    #[doc = "Bit 11 - Capture sychronize"]
+    #[doc = "Bit 11 - Capture synchronize"]
     #[inline(always)]
     pub fn scs(&mut self) -> ScsW<'_, Ta1cctl2Spec> {
         ScsW::new(self, 11)

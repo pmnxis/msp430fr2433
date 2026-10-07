@@ -22,13 +22,13 @@ pub type Jmbout1fgW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type JmbmodeR = crate::BitReader;
 #[doc = "Field `JMBMODE` writer - SYS - JMB 16/32 Bit Mode"]
 pub type JmbmodeW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `JMBCLR0OFF` reader - SYS - Incoming JTAG Mailbox 0 Flag auto-clear disalbe"]
+#[doc = "Field `JMBCLR0OFF` reader - SYS - Incoming JTAG Mailbox 0 Flag auto-clear disable"]
 pub type Jmbclr0offR = crate::BitReader;
-#[doc = "Field `JMBCLR0OFF` writer - SYS - Incoming JTAG Mailbox 0 Flag auto-clear disalbe"]
+#[doc = "Field `JMBCLR0OFF` writer - SYS - Incoming JTAG Mailbox 0 Flag auto-clear disable"]
 pub type Jmbclr0offW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `JMBCLR1OFF` reader - SYS - Incoming JTAG Mailbox 1 Flag auto-clear disalbe"]
+#[doc = "Field `JMBCLR1OFF` reader - SYS - Incoming JTAG Mailbox 1 Flag auto-clear disable"]
 pub type Jmbclr1offR = crate::BitReader;
-#[doc = "Field `JMBCLR1OFF` writer - SYS - Incoming JTAG Mailbox 1 Flag auto-clear disalbe"]
+#[doc = "Field `JMBCLR1OFF` writer - SYS - Incoming JTAG Mailbox 1 Flag auto-clear disable"]
 pub type Jmbclr1offW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - SYS - Incoming JTAG Mailbox 0 Flag"]
@@ -56,12 +56,12 @@ impl R {
     pub fn jmbmode(&self) -> JmbmodeR {
         JmbmodeR::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bit 6 - SYS - Incoming JTAG Mailbox 0 Flag auto-clear disalbe"]
+    #[doc = "Bit 6 - SYS - Incoming JTAG Mailbox 0 Flag auto-clear disable"]
     #[inline(always)]
     pub fn jmbclr0off(&self) -> Jmbclr0offR {
         Jmbclr0offR::new(((self.bits >> 6) & 1) != 0)
     }
-    #[doc = "Bit 7 - SYS - Incoming JTAG Mailbox 1 Flag auto-clear disalbe"]
+    #[doc = "Bit 7 - SYS - Incoming JTAG Mailbox 1 Flag auto-clear disable"]
     #[inline(always)]
     pub fn jmbclr1off(&self) -> Jmbclr1offR {
         Jmbclr1offR::new(((self.bits >> 7) & 1) != 0)
@@ -93,12 +93,12 @@ impl W {
     pub fn jmbmode(&mut self) -> JmbmodeW<'_, SysjmbcSpec> {
         JmbmodeW::new(self, 4)
     }
-    #[doc = "Bit 6 - SYS - Incoming JTAG Mailbox 0 Flag auto-clear disalbe"]
+    #[doc = "Bit 6 - SYS - Incoming JTAG Mailbox 0 Flag auto-clear disable"]
     #[inline(always)]
     pub fn jmbclr0off(&mut self) -> Jmbclr0offW<'_, SysjmbcSpec> {
         Jmbclr0offW::new(self, 6)
     }
-    #[doc = "Bit 7 - SYS - Incoming JTAG Mailbox 1 Flag auto-clear disalbe"]
+    #[doc = "Bit 7 - SYS - Incoming JTAG Mailbox 1 Flag auto-clear disable"]
     #[inline(always)]
     pub fn jmbclr1off(&mut self) -> Jmbclr1offW<'_, SysjmbcSpec> {
         Jmbclr1offW::new(self, 7)

@@ -758,7 +758,7 @@ where
         self.variant(Uctxifg3::Uctxifg3_1)
     }
 }
-#[doc = "I2C Bit 9 Possition Interrupt Flag 3\n\nValue on reset: 0"]
+#[doc = "I2C Bit 9 Position Interrupt Flag 3\n\nValue on reset: 0"]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucbit9ifg {
@@ -773,7 +773,7 @@ impl From<Ucbit9ifg> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `UCBIT9IFG` reader - I2C Bit 9 Possition Interrupt Flag 3"]
+#[doc = "Field `UCBIT9IFG` reader - I2C Bit 9 Position Interrupt Flag 3"]
 pub type Ucbit9ifgR = crate::BitReader<Ucbit9ifg>;
 impl Ucbit9ifgR {
     #[doc = "Get enumerated values variant"]
@@ -795,7 +795,7 @@ impl Ucbit9ifgR {
         *self == Ucbit9ifg::Ucbit9ifg1
     }
 }
-#[doc = "Field `UCBIT9IFG` writer - I2C Bit 9 Possition Interrupt Flag 3"]
+#[doc = "Field `UCBIT9IFG` writer - I2C Bit 9 Position Interrupt Flag 3"]
 pub type Ucbit9ifgW<'a, REG> = crate::BitWriter<'a, REG, Ucbit9ifg>;
 impl<'a, REG> Ucbit9ifgW<'a, REG>
 where
@@ -883,7 +883,7 @@ impl R {
     pub fn uctxifg3(&self) -> Uctxifg3R {
         Uctxifg3R::new(((self.bits >> 13) & 1) != 0)
     }
-    #[doc = "Bit 14 - I2C Bit 9 Possition Interrupt Flag 3"]
+    #[doc = "Bit 14 - I2C Bit 9 Position Interrupt Flag 3"]
     #[inline(always)]
     pub fn ucbit9ifg(&self) -> Ucbit9ifgR {
         Ucbit9ifgR::new(((self.bits >> 14) & 1) != 0)
@@ -960,7 +960,7 @@ impl W {
     pub fn uctxifg3(&mut self) -> Uctxifg3W<'_, Ucb0ifgSpec> {
         Uctxifg3W::new(self, 13)
     }
-    #[doc = "Bit 14 - I2C Bit 9 Possition Interrupt Flag 3"]
+    #[doc = "Bit 14 - I2C Bit 9 Position Interrupt Flag 3"]
     #[inline(always)]
     pub fn ucbit9ifg(&mut self) -> Ucbit9ifgW<'_, Ucb0ifgSpec> {
         Ucbit9ifgW::new(self, 14)

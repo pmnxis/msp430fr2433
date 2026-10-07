@@ -37,7 +37,7 @@ pub enum Uciv {
     Ucbcntifg = 26,
     #[doc = "28: Interrupt Source: Clock low timeout; Interrupt Flag: UCCLTOIFG"]
     Uccltoifg = 28,
-    #[doc = "30: Interrupt Source: Nineth bit position; Interrupt Flag: UCBIT9IFG; Priority: Lowest"]
+    #[doc = "30: Interrupt Source: Ninth bit position; Interrupt Flag: UCBIT9IFG; Priority: Lowest"]
     Ucbit9ifg = 30,
 }
 impl From<Uciv> for u16 {
@@ -151,7 +151,7 @@ impl UcivR {
     pub fn is_uccltoifg(&self) -> bool {
         *self == Uciv::Uccltoifg
     }
-    #[doc = "Interrupt Source: Nineth bit position; Interrupt Flag: UCBIT9IFG; Priority: Lowest"]
+    #[doc = "Interrupt Source: Ninth bit position; Interrupt Flag: UCBIT9IFG; Priority: Lowest"]
     #[inline(always)]
     pub fn is_ucbit9ifg(&self) -> bool {
         *self == Uciv::Ucbit9ifg

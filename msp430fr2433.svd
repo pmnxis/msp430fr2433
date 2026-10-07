@@ -4971,7 +4971,7 @@
             </field>
             <field>
               <name>UCBIT9IFG</name>
-              <description>I2C Bit 9 Possition Interrupt Flag 3</description>
+              <description>I2C Bit 9 Position Interrupt Flag 3</description>
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -5131,7 +5131,7 @@
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>UCBIT9IFG</name>
-                  <description>Interrupt Source: Nineth bit position; Interrupt Flag: UCBIT9IFG; Priority: Lowest</description>
+                  <description>Interrupt Source: Ninth bit position; Interrupt Flag: UCBIT9IFG; Priority: Lowest</description>
                   <value>30</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -5940,14 +5940,14 @@
             </field>
             <field>
               <name>JMBCLR0OFF</name>
-              <description>SYS - Incoming JTAG Mailbox 0 Flag auto-clear disalbe</description>
+              <description>SYS - Incoming JTAG Mailbox 0 Flag auto-clear disable</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>JMBCLR1OFF</name>
-              <description>SYS - Incoming JTAG Mailbox 1 Flag auto-clear disalbe</description>
+              <description>SYS - Incoming JTAG Mailbox 1 Flag auto-clear disable</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -6508,12 +6508,12 @@
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>FLLD_6</name>
-                  <description>fDCOCLK / 40(Only avaliable in 24MHz clock system)</description>
+                  <description>fDCOCLK / 40(Only available in 24MHz clock system)</description>
                   <value>6</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>FLLD_7</name>
-                  <description>fDCOCLK / 48(Only avaliable in 24MHz clock system)</description>
+                  <description>fDCOCLK / 48(Only available in 24MHz clock system)</description>
                   <value>7</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -8411,7 +8411,7 @@
             </field>
             <field>
               <name>SCS</name>
-              <description>Capture sychronize</description>
+              <description>Capture synchronize</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -8585,7 +8585,7 @@
             </field>
             <field>
               <name>SCS</name>
-              <description>Capture sychronize</description>
+              <description>Capture synchronize</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -8759,7 +8759,7 @@
             </field>
             <field>
               <name>SCS</name>
-              <description>Capture sychronize</description>
+              <description>Capture synchronize</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -9206,7 +9206,7 @@
             </field>
             <field>
               <name>SCS</name>
-              <description>Capture sychronize</description>
+              <description>Capture synchronize</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -9380,7 +9380,7 @@
             </field>
             <field>
               <name>SCS</name>
-              <description>Capture sychronize</description>
+              <description>Capture synchronize</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -9554,7 +9554,7 @@
             </field>
             <field>
               <name>SCS</name>
-              <description>Capture sychronize</description>
+              <description>Capture synchronize</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -10001,7 +10001,7 @@
             </field>
             <field>
               <name>SCS</name>
-              <description>Capture sychronize</description>
+              <description>Capture synchronize</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -10175,7 +10175,7 @@
             </field>
             <field>
               <name>SCS</name>
-              <description>Capture sychronize</description>
+              <description>Capture synchronize</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -10615,7 +10615,7 @@
             </field>
             <field>
               <name>SCS</name>
-              <description>Capture sychronize</description>
+              <description>Capture synchronize</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -10789,7 +10789,7 @@
             </field>
             <field>
               <name>SCS</name>
-              <description>Capture sychronize</description>
+              <description>Capture synchronize</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>

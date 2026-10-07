@@ -23,9 +23,9 @@ pub enum Flld {
     _16 = 4,
     #[doc = "5: fDCOCLK / 32"]
     _32 = 5,
-    #[doc = "6: fDCOCLK / 40(Only avaliable in 24MHz clock system)"]
+    #[doc = "6: fDCOCLK / 40(Only available in 24MHz clock system)"]
     Flld6 = 6,
-    #[doc = "7: fDCOCLK / 48(Only avaliable in 24MHz clock system)"]
+    #[doc = "7: fDCOCLK / 48(Only available in 24MHz clock system)"]
     Flld7 = 7,
 }
 impl From<Flld> for u8 {
@@ -86,12 +86,12 @@ impl FlldR {
     pub fn is_32(&self) -> bool {
         *self == Flld::_32
     }
-    #[doc = "fDCOCLK / 40(Only avaliable in 24MHz clock system)"]
+    #[doc = "fDCOCLK / 40(Only available in 24MHz clock system)"]
     #[inline(always)]
     pub fn is_flld_6(&self) -> bool {
         *self == Flld::Flld6
     }
-    #[doc = "fDCOCLK / 48(Only avaliable in 24MHz clock system)"]
+    #[doc = "fDCOCLK / 48(Only available in 24MHz clock system)"]
     #[inline(always)]
     pub fn is_flld_7(&self) -> bool {
         *self == Flld::Flld7
@@ -134,12 +134,12 @@ where
     pub fn _32(self) -> &'a mut crate::W<REG> {
         self.variant(Flld::_32)
     }
-    #[doc = "fDCOCLK / 40(Only avaliable in 24MHz clock system)"]
+    #[doc = "fDCOCLK / 40(Only available in 24MHz clock system)"]
     #[inline(always)]
     pub fn flld_6(self) -> &'a mut crate::W<REG> {
         self.variant(Flld::Flld6)
     }
-    #[doc = "fDCOCLK / 48(Only avaliable in 24MHz clock system)"]
+    #[doc = "fDCOCLK / 48(Only available in 24MHz clock system)"]
     #[inline(always)]
     pub fn flld_7(self) -> &'a mut crate::W<REG> {
         self.variant(Flld::Flld7)
